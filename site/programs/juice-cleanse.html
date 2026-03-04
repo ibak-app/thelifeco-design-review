@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juice Cleanse Program — TheLifeCo Wellness</title>
+<meta name="description" content="TheLifeCo's Juice Cleanse offers 6–8 freshly pressed juices per day for rapid detoxification in 3–7 days. Guided by nutritionists with customised recipes. Available at all 5 resorts.">
+<meta property="og:title" content="Juice Cleanse — Intensive Juice-Only Detox at TheLifeCo">
+<meta property="og:description" content="An intensive juice-only cleanse with 6–8 freshly pressed juices per day combining fruits, vegetables, and superfoods. Perfect as a weekend reset or introduction to TheLifeCo programs.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Phuket-Green-Juice-Serving.png">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+.page-hero {
+  background-image: url('https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Phuket-Green-Juice-Serving.png');
+}
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.overview-img {
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+.overview-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.resorts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.resort-card {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/3;
+  display: block;
+  text-decoration: none;
+}
+.resort-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s;
+}
+.resort-card:hover .resort-card-img { transform: scale(1.04); }
+.resort-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,.72));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  color: #fff;
+}
+.resort-card-name { font-size: 20px; font-weight: 700; }
+.resort-card-country { font-size: 13px; opacity: .75; margin-top: 3px; }
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.faq-section { max-width: 800px; margin: 0 auto; }
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,.7);
+  margin-bottom: 20px;
+}
+.breadcrumb a { color: rgba(255,255,255,.7); text-decoration: none; }
+.breadcrumb a:hover { color: #fff; }
+.breadcrumb i { font-size: 10px; }
+@media (max-width: 1024px) {
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .resorts-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .overview-grid { grid-template-columns: 1fr; gap: 32px; }
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .resorts-grid { grid-template-columns: 1fr; }
+  .related-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .benefits-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav nav--dark">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">TheLifeCo</a>
+    <div class="nav-links">
+      <a href="../about.html">About</a>
+      <div class="nav-dropdown">
+        <a href="../resort.html">Resorts &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="../resorts/bodrum.html">Bodrum</a>
+          <a href="../resorts/antalya.html">Antalya</a>
+          <a href="../resorts/phuket.html">Phuket</a>
+          <a href="../resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
+          <a href="../resorts/st-lucia.html">St. Lucia</a>
+        </div>
+      </div>
+      <a href="../treatments.html">Programs</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="../booking.html" class="nav-cta">Book Now</a>
+    </div>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="page-hero" style="min-height:580px;">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <i class="fa-solid fa-chevron-right"></i>
+      <a href="../treatments.html">Programs</a>
+      <i class="fa-solid fa-chevron-right"></i>
+      <span>Juice Cleanse</span>
+    </nav>
+    <div class="card-tag card-tag--teal" style="margin-bottom:16px;">Cleansing</div>
+    <h1 class="text-56" style="color:#fff; margin-bottom:16px;">Juice Cleanse</h1>
+    <p style="font-size:18px; color:rgba(255,255,255,.82); max-width:600px; margin-bottom:32px; line-height:1.7;">An intensive juice-only cleanse delivering rapid detoxification through 6–8 freshly pressed juices per day, guided by expert nutritionists.</p>
+    <a href="../booking.html" class="btn btn-primary btn-lg">Book This Program</a>
+  </div>
+</section>
+
+<!-- ===== PROGRAM META ===== -->
+<section style="padding:40px 0; border-bottom:1px solid var(--border-color);">
+  <div class="container">
+    <div class="program-meta">
+      <div class="program-meta-item">
+        <i class="fa-regular fa-clock"></i>
+        <span><strong>Duration:</strong> 3–7 days</span>
+      </div>
+      <div class="program-meta-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span><strong>Available at:</strong> All 5 resorts</span>
+      </div>
+      <div class="program-meta-item">
+        <i class="fa-solid fa-layer-group"></i>
+        <span><strong>Category:</strong> Cleansing</span>
+      </div>
+      <div class="program-meta-item">
+        <i class="fa-solid fa-chart-bar"></i>
+        <span><strong>Difficulty:</strong> Accessible</span>
+      </div>
+      <div class="program-meta-item">
+        <i class="fa-solid fa-user-doctor"></i>
+        <span><strong>Nutritionist guidance:</strong> Daily</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OVERVIEW ===== -->
+<section class="section">
+  <div class="container">
+    <div class="overview-grid">
+      <div>
+        <div class="accent-line"></div>
+        <h2 class="section-heading" style="font-size:40px; margin-bottom:24px;">Program Overview</h2>
+        <p style="font-size:16px; color:var(--text-secondary); line-height:1.85; margin-bottom:20px;">The Juice Cleanse is an intensive juice-only experience for rapid, focused detoxification. Throughout each day you will receive 6–8 freshly pressed juices combining fruits, vegetables, and superfoods — each formulated to deliver maximum nutritional benefit while giving your digestive system a complete rest.</p>
+        <p style="font-size:16px; color:var(--text-secondary); line-height:1.85; margin-bottom:20px;">With durations of 3–7 days, the Juice Cleanse is perfect as a weekend reset between longer programmes, an introduction to TheLifeCo's cleansing philosophy, or a targeted intervention to kickstart weight loss or break unhealthy eating patterns.</p>
+        <p style="font-size:16px; color:var(--text-secondary); line-height:1.85;">Our nutritionists customise your daily juice selection based on your individual health goals — whether that is supporting liver detox, boosting immunity, reducing inflammation, or energising your system — so every glass is working purposefully for your body.</p>
+      </div>
+      <div class="overview-img">
+        <img src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Phuket-Green-Juice-Serving.png" alt="Fresh juice serving at TheLifeCo Phuket" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT'S INCLUDED ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <div style="max-width:760px; margin:0 auto;">
+      <div class="accent-line"></div>
+      <h2 class="section-heading" style="font-size:40px; margin-bottom:8px;">What's Included</h2>
+      <p class="section-subtitle" style="margin-bottom:40px;">Everything needed for a focused, expertly guided juice-only cleanse from arrival to departure.</p>
+      <ul class="included-list">
+        <li><i class="fa-solid fa-circle-check"></i>6–8 freshly pressed juices daily, customised for your goals</li>
+        <li><i class="fa-solid fa-circle-check"></i>Nutritionist consultation to personalise your juice protocol</li>
+        <li><i class="fa-solid fa-circle-check"></i>Custom juice recipe card set based on your health profile</li>
+        <li><i class="fa-solid fa-circle-check"></i>Curated herbal tea selection available throughout the day</li>
+        <li><i class="fa-solid fa-circle-check"></i>Light yoga sessions adapted for juice cleanse participants</li>
+        <li><i class="fa-solid fa-circle-check"></i>Wellness orientation and daily programme check-in</li>
+        <li><i class="fa-solid fa-circle-check"></i>Take-home juice recipe booklet for continued cleansing at home</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENEFITS ===== -->
+<section class="section">
+  <div class="container">
+    <div class="accent-line"></div>
+    <h2 class="section-heading" style="font-size:40px; margin-bottom:8px;">Key Benefits</h2>
+    <p class="section-subtitle" style="margin-bottom:40px;">Even a short juice cleanse delivers meaningful physiological benefits and a powerful reset.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <i class="fa-solid fa-arrows-rotate"></i>
+        <h4>Quick Body Reset</h4>
+        <p>Three to seven days is sufficient to clear accumulated dietary residue and reset your body's baseline appetite signals.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-bed"></i>
+        <h4>Digestive Rest</h4>
+        <p>Removing solid food gives the gut a complete rest, allowing the intestinal lining to repair and inflammation to reduce.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-sun"></i>
+        <h4>Vitamin Boost</h4>
+        <p>Fresh juice delivers vitamins and minerals in a highly bioavailable form, rapidly replenishing nutrient stores.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-weight-scale"></i>
+        <h4>Weight Kick-Start</h4>
+        <p>The cleanse reduces water retention, reduces bloating, and sets the metabolic conditions for healthy sustained weight loss.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AVAILABLE AT RESORTS ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="accent-line"></div>
+    <h2 class="section-heading" style="font-size:40px; margin-bottom:8px;">Available At</h2>
+    <p class="section-subtitle" style="margin-bottom:40px;">The Juice Cleanse is available at all five of our luxury resort destinations worldwide.</p>
+    <div class="resorts-grid">
+      <a href="../resorts/bodrum.html" class="resort-card">
+        <img class="resort-card-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Bodrum-Outdoor-Environment-.png" alt="TheLifeCo Bodrum resort" loading="lazy">
+        <div class="resort-card-overlay">
+          <div class="resort-card-name">Bodrum</div>
+          <div class="resort-card-country">Turkey</div>
+        </div>
+      </a>
+      <a href="../resorts/antalya.html" class="resort-card">
+        <img class="resort-card-img" src="https://www.thelifeco.com/wp-content/uploads/2019/09/bodrum-galeri-1.jpg" alt="TheLifeCo Antalya resort" loading="lazy">
+        <div class="resort-card-overlay">
+          <div class="resort-card-name">Antalya</div>
+          <div class="resort-card-country">Turkey</div>
+        </div>
+      </a>
+      <a href="../resorts/phuket.html" class="resort-card">
+        <img class="resort-card-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Phuket-entrance.png" alt="TheLifeCo Phuket resort" loading="lazy">
+        <div class="resort-card-overlay">
+          <div class="resort-card-name">Phuket</div>
+          <div class="resort-card-country">Thailand</div>
+        </div>
+      </a>
+      <a href="../resorts/sharm-el-sheikh.html" class="resort-card">
+        <img class="resort-card-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Pool-Outdoor.png" alt="TheLifeCo Sharm El Sheikh resort" loading="lazy">
+        <div class="resort-card-overlay">
+          <div class="resort-card-name">Sharm El Sheikh</div>
+          <div class="resort-card-country">Egypt</div>
+        </div>
+      </a>
+      <a href="../resorts/st-lucia.html" class="resort-card">
+        <img class="resort-card-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Lake-Outdoor.png" alt="TheLifeCo St. Lucia resort" loading="lazy">
+        <div class="resort-card-overlay">
+          <div class="resort-card-name">St. Lucia</div>
+          <div class="resort-card-country">Caribbean</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RELATED PROGRAMS ===== -->
+<section class="section">
+  <div class="container">
+    <div class="accent-line"></div>
+    <h2 class="section-heading" style="font-size:40px; margin-bottom:8px;">Related Programs</h2>
+    <p class="section-subtitle" style="margin-bottom:40px;">Take your cleansing journey further with these complementary programs.</p>
+    <div class="related-grid">
+      <div class="service-card">
+        <img class="service-card-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/Thelifeco-bodrum-green-juice.png" alt="Green Detox program" loading="lazy">
+        <div class="service-card-body">
+          <div class="card-tag">Nutrition</div>
+          <h3 class="service-card-title">Green Detox</h3>
+          <p class="service-card-desc">A fuller cleanse adding raw vegan superfood meals and a cooking workshop for a more complete experience.</p>
+          <a href="green-detox.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img class="service-card-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/theLifeCo-Bodrum-Wellness-Consultation.png" alt="Master Detox program" loading="lazy">
+        <div class="service-card-body">
+          <div class="card-tag">Detox</div>
+          <h3 class="service-card-title">Master Detox</h3>
+          <p class="service-card-desc">Our signature comprehensive detox combining raw vegan nutrition, medical monitoring, and colon hydrotherapy.</p>
+          <a href="master-detox.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img class="service-card-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Phuket-Yoga.png" alt="Weight Loss program" loading="lazy">
+        <div class="service-card-body">
+          <div class="card-tag">Wellness</div>
+          <h3 class="service-card-title">Weight Loss</h3>
+          <p class="service-card-desc">A medically guided weight loss programme combining nutrition, movement, and behavioural coaching.</p>
+          <a href="../programs/weight-loss.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="faq-section">
+      <div class="accent-line"></div>
+      <h2 class="section-heading" style="font-size:40px; margin-bottom:8px;">Frequently Asked Questions</h2>
+      <p class="section-subtitle" style="margin-bottom:40px;">Common questions from guests considering the Juice Cleanse program.</p>
+
+      <div class="faq-item">
+        <button class="faq-question">How many juices will I receive per day and when are they served?</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">You will receive between 6 and 8 juices per day depending on your programme duration and individual protocol. Juices are served at approximately 2–2.5 hour intervals throughout the day, starting with a morning energising blend and finishing with a calming evening juice. Each juice is designed to serve a specific function — from liver support to immune boosting — at the optimal time of day.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Can I exercise during the Juice Cleanse?</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Light to moderate exercise is encouraged and included in the programme through daily gentle yoga sessions. High-intensity or strenuous exercise is not recommended during a juice-only programme as your caloric intake is reduced. Walking, stretching, and light swimming are all appropriate. Our team will guide you on appropriate activity levels based on how you are feeling each day.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Will I feel hungry during a juice-only programme?</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Some guests experience mild hunger, particularly in the first 24 hours, as the body adjusts to liquid-only nutrition. This typically passes within a day as blood sugar stabilises and the body adapts. The regular juice intervals are designed to maintain steady energy and satiety. Our nutritionists are available to adjust your protocol if you experience persistent discomfort.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What should I eat before and after the cleanse?</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We recommend reducing caffeine, alcohol, processed foods, and animal products for 2–3 days before your arrival to prepare your body and make the transition easier. After the cleanse, we provide a written re-introduction guide recommending that you begin with raw fruits and vegetables before progressing to cooked whole foods over 2–3 days. This protects your results and prevents digestive discomfort from reintroducing solid food too quickly.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOOKING CTA ===== -->
+<section class="cta-block">
+  <div class="container">
+    <h2 class="section-heading">Book Your Juice<br>Cleanse Today</h2>
+    <p>A focused, powerful reset is just days away. Let our nutritionists customise your daily juice protocol for your health goals.</p>
+    <div class="cta-buttons">
+      <a href="../booking.html" class="btn btn-primary btn-lg">Book This Program</a>
+      <a href="../contact.html" class="btn btn-outline-dark btn-lg">Talk to an Expert</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">TheLifeCo</div>
+        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2005. With luxury resorts across Turkey, Thailand, Egypt, and the Caribbean.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/thelifeco" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/thelifeco" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://youtube.com/thelifeco" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Resorts</div>
+        <div class="footer-links">
+          <a href="../resorts/bodrum.html">Bodrum</a>
+          <a href="../resorts/antalya.html">Antalya</a>
+          <a href="../resorts/phuket.html">Phuket</a>
+          <a href="../resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
+          <a href="../resorts/st-lucia.html">St. Lucia</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Programs</div>
+        <div class="footer-links">
+          <a href="master-detox.html">Master Detox</a>
+          <a href="water-fasting.html">Water Fasting</a>
+          <a href="green-detox.html">Green Detox</a>
+          <a href="../programs/longevity-reset.html">Longevity Reset</a>
+          <a href="../programs/mental-wellness.html">Mental Wellness</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <div class="footer-links">
+          <a href="../about.html">About Us</a>
+          <a href="../blog.html">Blog</a>
+          <a href="../testimonials.html">Testimonials</a>
+          <a href="../faq.html">FAQ</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <div class="footer-links">
+          <a href="mailto:info@thelifeco.com">info@thelifeco.com</a>
+          <a href="tel:+902524134410">+90 252 413 44 10</a>
+          <a href="https://wa.me/905325554410">WhatsApp</a>
+        </div>
+        <div style="margin-top:24px">
+          <div class="footer-heading">Booking</div>
+          <div class="footer-links">
+            <a href="../booking.html">Book a Retreat</a>
+            <a href="../contact.html">Talk to an Expert</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 TheLifeCo Wellbeing. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

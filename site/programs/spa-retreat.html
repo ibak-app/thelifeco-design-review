@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spa Retreat — Luxury Relaxation & Rejuvenation | TheLifeCo</title>
+<meta name="description" content="TheLifeCo's Spa Retreat offers pure luxury relaxation with daily spa treatments, gentle yoga, meditation, and healthy gourmet meals. No fasting required. Perfect as a gift or wellness introduction. Available at all 5 resorts.">
+<meta property="og:title" content="Spa Retreat — Pure Luxury Wellness | TheLifeCo">
+<meta property="og:description" content="3–7 day luxury spa and relaxation retreat with daily massage or facial, gentle yoga, guided meditation, and healthy cuisine at all 5 TheLifeCo resorts worldwide.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Outdoor-Spa.png">
+<link rel="canonical" href="https://thelifeco.com/programs/spa-retreat.html">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+.page-hero {
+  min-height: 560px;
+  background-image: url('https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Outdoor-Spa.png');
+}
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.overview-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.included-section { padding: 80px 0; background: var(--bg-section); }
+.benefits-section { padding: 80px 0; }
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.resorts-section { padding: 80px 0; background: var(--bg-section); }
+.resort-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+.resort-card-mini {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: all .2s;
+  background: #fff;
+}
+.resort-card-mini:hover { border-color: var(--brand-teal); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,190,214,.12); }
+.resort-card-mini-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  background: var(--bg-section);
+}
+.resort-card-mini-body { padding: 16px; }
+.resort-card-mini-name { font-size: 15px; font-weight: 700; color: var(--brand-navy); margin-bottom: 4px; }
+.resort-card-mini-country { font-size: 12px; color: var(--text-secondary); }
+.related-section { padding: 80px 0; }
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.faq-section { padding: 80px 0; background: var(--bg-section); }
+.booking-cta { padding: 80px 0; text-align: center; background: var(--brand-navy); color: #fff; }
+.booking-cta h2 { color: #fff; margin-bottom: 16px; }
+.booking-cta p { font-size: 18px; color: rgba(255,255,255,.8); max-width: 560px; margin: 0 auto 32px; }
+.no-fasting-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(108,202,152,.15);
+  color: #3a9d5e;
+  border: 1px solid rgba(108,202,152,.3);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+@media (max-width: 1024px) {
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .resort-cards-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+  .overview-grid { grid-template-columns: 1fr; gap: 32px; }
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .resort-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .related-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .benefits-grid { grid-template-columns: 1fr; }
+  .resort-cards-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav nav--dark">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">TheLifeCo</a>
+    <div class="nav-links">
+      <a href="../about.html">About</a>
+      <div class="nav-dropdown">
+        <a href="../resort.html">Resorts &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="../resorts/bodrum.html">Bodrum</a>
+          <a href="../resorts/antalya.html">Antalya</a>
+          <a href="../resorts/phuket.html">Phuket</a>
+          <a href="../resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
+          <a href="../resorts/st-lucia.html">St. Lucia</a>
+        </div>
+      </div>
+      <a href="../treatments.html">Programs</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="../booking.html" class="nav-cta">Book Now</a>
+    </div>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="container" style="padding-top:80px">
+    <div class="card-tag card-tag--teal" style="margin-bottom:16px">Relaxation</div>
+    <h1 class="text-56" style="color:#fff;margin-bottom:16px">Spa Retreat</h1>
+    <p>Pure luxury relaxation and rejuvenation — daily spa treatments, gentle yoga, meditation, and healthy gourmet meals. No fasting, no intensity. Just pure wellbeing.</p>
+    <a href="../booking.html" class="btn btn-primary btn-lg">Book This Program</a>
+  </div>
+</section>
+
+<!-- ===== PROGRAM META ===== -->
+<section style="padding:40px 0;border-bottom:1px solid var(--border-color)">
+  <div class="container">
+    <div class="program-meta">
+      <div class="program-meta-item">
+        <i class="fa-solid fa-calendar-days"></i>
+        <span><strong>Duration:</strong> 3–7 days</span>
+      </div>
+      <div class="program-meta-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span><strong>Available at:</strong> All 5 resorts</span>
+      </div>
+      <div class="program-meta-item">
+        <i class="fa-solid fa-layer-group"></i>
+        <span><strong>Category:</strong> Relaxation</span>
+      </div>
+      <div class="program-meta-item">
+        <i class="fa-solid fa-spa"></i>
+        <span><strong>Includes:</strong> Daily spa treatment</span>
+      </div>
+      <div class="program-meta-item">
+        <i class="fa-solid fa-gift"></i>
+        <span><strong>Ideal as:</strong> A gift or introduction</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OVERVIEW ===== -->
+<section class="section">
+  <div class="container">
+    <div class="overview-grid">
+      <div>
+        <div class="no-fasting-badge">
+          <i class="fa-solid fa-circle-check"></i> No fasting or intensive protocols required
+        </div>
+        <div class="accent-line"></div>
+        <h2 class="text-40" style="margin-bottom:24px">Pure Rest. Pure Luxury. Pure Rejuvenation.</h2>
+        <p style="font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:20px">
+          TheLifeCo's Spa Retreat is designed for guests who seek complete rest and rejuvenation without committing to a structured detox or intensive wellness program. It is the ideal entry point into the TheLifeCo experience — and equally perfect as a wind-down after a more intensive program or as a thoughtful gift for someone you love.
+        </p>
+        <p style="font-size:16px;line-height:1.8;color:var(--text-secondary);margin-bottom:20px">
+          Each day features a personally selected spa treatment from our full menu — including Swedish, deep tissue, Thai, or hot stone massage; classic or anti-aging facials; and full-body wraps. Gentle morning yoga and a guided afternoon meditation anchor the day in calm, while healthy gourmet meals crafted by our nutrition team nourish without restriction.
+        </p>
+        <p style="font-size:16px;line-height:1.8;color:var(--text-secondary)">
+          Full access to pools, beaches, and resort facilities completes an experience that feels equal parts indulgent and restorative. An evening herbal tea ceremony marks each day's unhurried close.
+        </p>
+      </div>
+      <div>
+        <img
+          class="overview-img"
+          src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Outdoor-Spa.png"
+          alt="Outdoor spa at TheLifeCo Phuket"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT'S INCLUDED ===== -->
+<section class="included-section">
+  <div class="container">
+    <div class="accent-line"></div>
+    <h2 class="text-40" style="margin-bottom:8px">What's Included</h2>
+    <p class="section-subtitle" style="margin-bottom:48px">Everything you need to completely unwind — and nothing you don't want.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 64px;max-width:860px">
+      <ul class="included-list">
+        <li><i class="fa-solid fa-circle-check"></i> Welcome massage on arrival</li>
+        <li><i class="fa-solid fa-circle-check"></i> Daily spa treatment (massage, facial, or body wrap)</li>
+        <li><i class="fa-solid fa-circle-check"></i> Gentle morning yoga</li>
+        <li><i class="fa-solid fa-circle-check"></i> Guided meditation sessions</li>
+      </ul>
+      <ul class="included-list">
+        <li><i class="fa-solid fa-circle-check"></i> Healthy gourmet meals</li>
+        <li><i class="fa-solid fa-circle-check"></i> Pool &amp; beach access</li>
+        <li><i class="fa-solid fa-circle-check"></i> Wellness consultation</li>
+        <li><i class="fa-solid fa-circle-check"></i> Herbal tea ceremony</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENEFITS ===== -->
+<section class="benefits-section">
+  <div class="container">
+    <div class="accent-line"></div>
+    <h2 class="text-40" style="margin-bottom:48px">Program Benefits</h2>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <i class="fa-solid fa-feather"></i>
+        <h4>Deep Relaxation</h4>
+        <p>Daily professional spa treatments combined with a calm resort environment deliver genuine physical and mental release.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-wind"></i>
+        <h4>Stress Relief</h4>
+        <p>Disconnect from demands and obligations within a luxury sanctuary designed entirely around your comfort and recovery.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-shield-heart"></i>
+        <h4>Physical Rejuvenation</h4>
+        <p>Therapeutic massage and body treatments restore muscular ease, improve circulation, and leave the body feeling renewed.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-seedling"></i>
+        <h4>Wellness Introduction</h4>
+        <p>An ideal gateway into the TheLifeCo philosophy — healthy nutrition, movement, and mindfulness without intensity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AVAILABLE RESORTS ===== -->
+<section class="resorts-section">
+  <div class="container">
+    <div class="accent-line"></div>
+    <h2 class="text-40" style="margin-bottom:8px">Available At All 5 Resorts</h2>
+    <p class="section-subtitle" style="margin-bottom:48px">Choose your escape — from the turquoise Aegean to the warm Caribbean, the Spa Retreat is available wherever TheLifeCo is.</p>
+    <div class="resort-cards-grid">
+      <a href="../resorts/bodrum.html" class="resort-card-mini">
+        <img class="resort-card-mini-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Bodrum-Outdoor-Environment-.png" alt="TheLifeCo Bodrum resort" loading="lazy">
+        <div class="resort-card-mini-body">
+          <div class="resort-card-mini-name">Bodrum</div>
+          <div class="resort-card-mini-country">Turkey</div>
+        </div>
+      </a>
+      <a href="../resorts/antalya.html" class="resort-card-mini">
+        <img class="resort-card-mini-img" src="https://www.thelifeco.com/wp-content/uploads/2019/09/bodrum-galeri-1.jpg" alt="TheLifeCo Antalya resort" loading="lazy">
+        <div class="resort-card-mini-body">
+          <div class="resort-card-mini-name">Antalya</div>
+          <div class="resort-card-mini-country">Turkey</div>
+        </div>
+      </a>
+      <a href="../resorts/phuket.html" class="resort-card-mini">
+        <img class="resort-card-mini-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Phuket-entrance.png" alt="TheLifeCo Phuket resort" loading="lazy">
+        <div class="resort-card-mini-body">
+          <div class="resort-card-mini-name">Phuket</div>
+          <div class="resort-card-mini-country">Thailand</div>
+        </div>
+      </a>
+      <a href="../resorts/sharm-el-sheikh.html" class="resort-card-mini">
+        <img class="resort-card-mini-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Lake-Outdoor.png" alt="TheLifeCo Sharm El Sheikh resort" loading="lazy">
+        <div class="resort-card-mini-body">
+          <div class="resort-card-mini-name">Sharm El Sheikh</div>
+          <div class="resort-card-mini-country">Egypt</div>
+        </div>
+      </a>
+      <a href="../resorts/st-lucia.html" class="resort-card-mini">
+        <img class="resort-card-mini-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Pool-Outdoor.png" alt="TheLifeCo St. Lucia resort" loading="lazy">
+        <div class="resort-card-mini-body">
+          <div class="resort-card-mini-name">St. Lucia</div>
+          <div class="resort-card-mini-country">Caribbean</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RELATED PROGRAMS ===== -->
+<section class="related-section">
+  <div class="container">
+    <div class="accent-line"></div>
+    <h2 class="text-40" style="margin-bottom:48px">Related Programs</h2>
+    <div class="related-grid">
+      <div class="service-card">
+        <img class="service-card-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Phuket-Yoga.png" alt="Mental Wellness program" loading="lazy">
+        <div class="service-card-body">
+          <div class="card-tag">Wellness</div>
+          <h3 class="service-card-title">Mental Wellness</h3>
+          <p class="service-card-desc">A deeper dive into emotional balance and stress recovery through clinical psychology and mind-body practices.</p>
+          <a href="mental-wellness.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img class="service-card-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Massage-Therapy-Bodrum.png" alt="Beauty and Glow program" loading="lazy">
+        <div class="service-card-body">
+          <div class="card-tag">Beauty</div>
+          <h3 class="service-card-title">Beauty &amp; Glow</h3>
+          <p class="service-card-desc">Elevate your spa experience with collagen-boosting protocols and anti-aging aesthetics for visible radiance.</p>
+          <a href="beauty-glow.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img class="service-card-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/Thelifeco-bodrum-green-juice.png" alt="Green Detox program" loading="lazy">
+        <div class="service-card-body">
+          <div class="card-tag">Nutrition</div>
+          <h3 class="service-card-title">Green Detox</h3>
+          <p class="service-card-desc">Add a gentle nutritional cleanse to your spa experience with cold-pressed juices and raw plant nutrition.</p>
+          <a href="green-detox.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq-section">
+  <div class="container" style="max-width:760px">
+    <div class="accent-line"></div>
+    <h2 class="text-40" style="margin-bottom:48px">Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <button class="faq-question">Do I need to follow any dietary restrictions on the Spa Retreat?</button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">No strict dietary rules apply to the Spa Retreat. You will enjoy healthy, gourmet-quality meals prepared by our nutrition team, which are naturally plant-forward and free from processed ingredients. However, there is no mandatory fasting, juicing, or caloric restriction. Guests with dietary preferences or allergies — including vegan, gluten-free, or nut-free — are fully accommodated. You are also welcome to join optional nutrition consultations during your stay.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Can I choose which spa treatment I receive each day?</button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Yes. During your wellness consultation on arrival, your spa therapist will discuss your preferences, any areas of tension or concern, and your goals for the stay. From there, you collaboratively plan each day's treatment — choosing from massages (Swedish, deep tissue, Thai, hot stone, aromatherapy), facials (hydrating, brightening, anti-aging), or body treatments (wraps, scrubs, mud therapies). Your selections can be adjusted day by day based on how you feel.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Is the Spa Retreat suitable as a gift?</button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">The Spa Retreat is one of our most gifted experiences. It requires no prior wellness knowledge, involves no intensive protocols, and is enjoyable for virtually anyone seeking rest and pampering in a beautiful resort environment. Gift bookings can be arranged for 3, 5, or 7-day stays, with the recipient choosing their preferred resort and dates. Gift certificates carry a 12-month validity and can be purchased through our booking team or online.</div>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Can the Spa Retreat be combined with other TheLifeCo programs?</button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">Absolutely. Many guests use the Spa Retreat as either a gentle introduction before transitioning into a more structured program on a future visit, or as a restorative wind-down period following a Master Detox or other intensive program. If you are interested in combining elements of the Spa Retreat with aspects of another program during a single stay, our wellness consultants can design a hybrid schedule tailored to your needs.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOOKING CTA ===== -->
+<section class="booking-cta">
+  <div class="container">
+    <h2 class="text-40">You Deserve Pure Rest</h2>
+    <p>Book a Spa Retreat for yourself or as a gift — no fasting, no rules, just genuine luxury relaxation at one of the world's finest wellness resorts.</p>
+    <div class="cta-buttons">
+      <a href="../booking.html" class="btn btn-primary btn-lg">Book This Program</a>
+      <a href="../contact.html" class="btn btn-outline btn-lg">Talk to an Expert</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">TheLifeCo</div>
+        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2005. With luxury resorts across Turkey, Thailand, Egypt, and the Caribbean.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/thelifeco" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/thelifeco" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://youtube.com/thelifeco" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Resorts</div>
+        <div class="footer-links">
+          <a href="../resorts/bodrum.html">Bodrum</a>
+          <a href="../resorts/antalya.html">Antalya</a>
+          <a href="../resorts/phuket.html">Phuket</a>
+          <a href="../resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
+          <a href="../resorts/st-lucia.html">St. Lucia</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Programs</div>
+        <div class="footer-links">
+          <a href="master-detox.html">Master Detox</a>
+          <a href="water-fasting.html">Water Fasting</a>
+          <a href="green-detox.html">Green Detox</a>
+          <a href="longevity-reset.html">Longevity Reset</a>
+          <a href="mental-wellness.html">Mental Wellness</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <div class="footer-links">
+          <a href="../about.html">About Us</a>
+          <a href="../blog.html">Blog</a>
+          <a href="../testimonials.html">Testimonials</a>
+          <a href="../faq.html">FAQ</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <div class="footer-links">
+          <a href="mailto:info@thelifeco.com">info@thelifeco.com</a>
+          <a href="tel:+902524134410">+90 252 413 44 10</a>
+          <a href="https://wa.me/905325554410">WhatsApp</a>
+        </div>
+        <div style="margin-top:24px">
+          <div class="footer-heading">Booking</div>
+          <div class="footer-links">
+            <a href="../booking.html">Book a Retreat</a>
+            <a href="../contact.html">Talk to an Expert</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 TheLifeCo Wellbeing. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

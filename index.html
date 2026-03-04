@@ -8,76 +8,181 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter',system-ui,sans-serif;background:#09090b;color:#e4e4e7;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
-.hub{max-width:480px;width:100%}
+.hub{max-width:560px;width:100%}
 h1{font-size:24px;font-weight:800;text-align:center;margin-bottom:4px}
 h1 span{background:linear-gradient(135deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .sub{text-align:center;color:#71717a;font-size:13px;margin-bottom:28px}
-.ver-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#71717a;margin:20px 0 8px;padding-left:4px}
+.ver-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#71717a;margin:24px 0 8px;padding-left:4px}
 .card{display:block;background:#131316;border:1px solid #27272a;border-radius:12px;padding:20px;margin-bottom:10px;text-decoration:none;color:inherit;transition:all .2s}
 .card:hover{border-color:#3b82f6;transform:translateY(-2px)}
 .card h2{font-size:15px;font-weight:700;margin-bottom:3px}
 .card p{font-size:12px;color:#71717a;line-height:1.5}
 .badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;margin-bottom:5px;text-transform:uppercase}
-.b1{background:#3b82f620;color:#3b82f6}.b2{background:#8b5cf620;color:#8b5cf6}.b3{background:#22c55e20;color:#22c55e}
-.card.current{border-color:#3b82f640}
+.b-figma{background:#a259ff20;color:#a259ff}
+.b-live{background:#22c55e20;color:#22c55e}
+.b-report{background:#3b82f620;color:#3b82f6}
+.b-review{background:#8b5cf620;color:#8b5cf6}
+.featured{display:block;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);border:1px solid #2c5364;border-radius:12px;padding:24px;text-decoration:none;color:inherit;text-align:center;margin-bottom:10px;transition:all .2s}
+.featured:hover{border-color:#3b82f6;transform:translateY(-2px)}
+.featured h2{font-size:16px;font-weight:700;color:#93c5fd;margin-bottom:4px}
+.featured p{font-size:12px;color:#94a3b8}
+.page-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px}
+.page-link{display:block;background:#131316;border:1px solid #27272a;border-radius:10px;padding:14px 16px;text-decoration:none;color:inherit;transition:all .2s;font-size:13px}
+.page-link:hover{border-color:#3b82f6;transform:translateY(-1px)}
+.page-link .name{font-weight:600;color:#e4e4e7;margin-bottom:2px}
+.page-link .desc{font-size:11px;color:#71717a}
+.section-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+.section-grid .page-link{padding:10px 12px}
 .links{text-align:center;margin-top:20px;font-size:12px;color:#71717a}
 .links a{color:#3b82f6;text-decoration:none}
-.latest{display:flex;gap:8px;margin-bottom:16px}
-.latest a{flex:1;display:block;background:linear-gradient(135deg,#1e1b4b,#172554);border:1px solid #312e81;border-radius:10px;padding:16px;text-decoration:none;color:inherit;text-align:center;transition:all .2s}
-.latest a:hover{border-color:#3b82f6;transform:translateY(-1px)}
-.latest a h3{font-size:14px;font-weight:700;color:#93c5fd}
-.latest a p{font-size:11px;color:#71717a;margin-top:2px}
+.divider{border:none;border-top:1px solid #27272a;margin:24px 0}
 </style>
 </head>
 <body>
 <div class="hub">
 <h1>TheLifeCo <span>Design Review</span></h1>
-<p class="sub">New website design review for internal focus group</p>
+<p class="sub">Website design review &amp; full rebranded site</p>
 
-<!-- LIVE WEBSITE -->
-<a href="site/index.html" class="card" style="display:block;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);border-color:#2c5364;text-align:center;margin-bottom:20px">
-<span class="badge" style="background:#22c55e30;color:#22c55e">LIVE</span>
-<h2 style="color:#93c5fd">View Implemented Website &rarr;</h2>
-<p style="color:#94a3b8">3 pages: Homepage, Resorts, Treatments — built from Figma design</p>
+<!-- V2: FULL REBRANDED SITE -->
+<div class="ver-label">Full Website — 24 Pages, Real Content &amp; Branding</div>
+<a href="site/index.html" class="featured">
+<span class="badge b-live">LIVE</span>
+<h2>View Full Website &rarr;</h2>
+<p>Homepage with real TheLifeCo content, images, and brand colors</p>
 </a>
 
-<!-- LATEST (always points to newest version) -->
-<div class="latest">
-<a href="report.html">
-<h3>Design Analysis</h3>
-<p>Latest version</p>
+<div class="page-grid">
+<a href="site/resort.html" class="page-link">
+<div class="name">Resorts Overview</div>
+<div class="desc">All 5 locations</div>
 </a>
-<a href="review.html">
-<h3>Full Review</h3>
-<p>Latest version</p>
+<a href="site/treatments.html" class="page-link">
+<div class="name">Programs</div>
+<div class="desc">15+ wellness programs</div>
+</a>
+<a href="site/about.html" class="page-link">
+<div class="name">About</div>
+<div class="desc">Story &amp; philosophy</div>
+</a>
+<a href="site/contact.html" class="page-link">
+<div class="name">Contact</div>
+<div class="desc">Form &amp; locations</div>
+</a>
+<a href="site/booking.html" class="page-link">
+<div class="name">Booking</div>
+<div class="desc">3-step booking flow</div>
+</a>
+<a href="site/blog.html" class="page-link">
+<div class="name">Blog</div>
+<div class="desc">Wellness articles</div>
+</a>
+<a href="site/faq.html" class="page-link">
+<div class="name">FAQ</div>
+<div class="desc">27 questions, 5 categories</div>
+</a>
+<a href="site/testimonials.html" class="page-link">
+<div class="name">Testimonials</div>
+<div class="desc">Guest reviews &amp; press</div>
 </a>
 </div>
 
-<!-- VERSION 1 -->
-<div class="ver-label">Version 1 &mdash; March 4, 2026</div>
-<a href="v1/report.html" class="card current">
-<span class="badge b1">V1</span>
-<h2>Design Analysis Report</h2>
-<p>File structure, frame previews, design system, content inventory, section breakdown with renders.</p>
+<div class="ver-label" style="margin-top:8px">Resort Pages</div>
+<div class="section-grid">
+<a href="site/resorts/bodrum.html" class="page-link">
+<div class="name">Bodrum</div>
 </a>
-<a href="v1/review.html" class="card current">
-<span class="badge b2">V1</span>
-<h2>Comprehensive Review</h2>
-<p>CEO summary, readiness scores, brand gap, UX audit, CTAs, marketing, competitors, wording, accessibility, actions.</p>
+<a href="site/resorts/antalya.html" class="page-link">
+<div class="name">Antalya</div>
+</a>
+<a href="site/resorts/phuket.html" class="page-link">
+<div class="name">Phuket</div>
+</a>
+<a href="site/resorts/sharm-el-sheikh.html" class="page-link">
+<div class="name">Sharm El Sheikh</div>
+</a>
+<a href="site/resorts/st-lucia.html" class="page-link">
+<div class="name">St. Lucia</div>
+</a>
+</div>
+
+<div class="ver-label" style="margin-top:8px">Program Pages</div>
+<div class="section-grid">
+<a href="site/programs/master-detox.html" class="page-link">
+<div class="name">Master Detox</div>
+</a>
+<a href="site/programs/water-fasting.html" class="page-link">
+<div class="name">Water Fasting</div>
+</a>
+<a href="site/programs/green-detox.html" class="page-link">
+<div class="name">Green Detox</div>
+</a>
+<a href="site/programs/juice-cleanse.html" class="page-link">
+<div class="name">Juice Cleanse</div>
+</a>
+<a href="site/programs/diabetes-recovery.html" class="page-link">
+<div class="name">Diabetes Recovery</div>
+</a>
+<a href="site/programs/weight-loss.html" class="page-link">
+<div class="name">Weight Loss</div>
+</a>
+<a href="site/programs/mental-wellness.html" class="page-link">
+<div class="name">Mental Wellness</div>
+</a>
+<a href="site/programs/longevity-reset.html" class="page-link">
+<div class="name">Longevity Reset</div>
+</a>
+<a href="site/programs/beauty-glow.html" class="page-link">
+<div class="name">Beauty &amp; Glow</div>
+</a>
+<a href="site/programs/spa-retreat.html" class="page-link">
+<div class="name">Spa Retreat</div>
+</a>
+</div>
+
+<hr class="divider">
+
+<!-- V1: ORIGINAL FIGMA DESIGN -->
+<div class="ver-label">Original Figma Design — Pixel-Perfect Implementation</div>
+<a href="site/v1/index.html" class="featured" style="background:linear-gradient(135deg,#1a1025,#2d1b4e,#1a1025);border-color:#4c1d95">
+<span class="badge b-figma">FIGMA V1</span>
+<h2>View Figma Design Pages &rarr;</h2>
+<p>3 pages matching the original Figma file — grayscale, Manrope font</p>
 </a>
 
-<!-- Future versions will go here -->
-<!--
-<div class="ver-label">Version 2 &mdash; TBD</div>
-<a href="v2/report.html" class="card">
-<span class="badge b3">V2</span>
-<h2>Design Analysis — Refined</h2>
-<p>With LifeCo brand colors, high-res images, and updated content.</p>
+<div class="page-grid">
+<a href="site/v1/index.html" class="page-link">
+<div class="name">Homepage (Figma)</div>
+<div class="desc">Frame 01 — Mainpage</div>
 </a>
--->
+<a href="site/v1/resort.html" class="page-link">
+<div class="name">Resort (Figma)</div>
+<div class="desc">Frame 02 — Resort Detail</div>
+</a>
+<a href="site/v1/treatments.html" class="page-link">
+<div class="name">Treatments (Figma)</div>
+<div class="desc">Frame 03 — Programs</div>
+</a>
+</div>
+
+<hr class="divider">
+
+<!-- REPORTS -->
+<div class="ver-label">Design Analysis Reports</div>
+<div class="page-grid">
+<a href="report.html" class="page-link">
+<span class="badge b-report">V1</span>
+<div class="name">Design Analysis</div>
+<div class="desc">Structure, previews, tokens</div>
+</a>
+<a href="review.html" class="page-link">
+<span class="badge b-review">V1</span>
+<div class="name">Full Review</div>
+<div class="desc">CEO summary, UX audit</div>
+</a>
+</div>
 
 <div class="links">
-<a href="https://www.figma.com/design/yezWJ0zJpAj8HwztrnQLck/TheLifeCo-Web-Project" target="_blank">Open Figma &rarr;</a>
+<a href="https://www.figma.com/design/yezWJ0zJpAj8HwztrnQLck/TheLifeCo-Web-Project" target="_blank">Open Figma File &rarr;</a>
 </div>
 </div>
 </body>

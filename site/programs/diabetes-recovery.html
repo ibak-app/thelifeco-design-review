@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diabetes Recovery Program — TheLifeCo Wellness</title>
+<meta name="description" content="TheLifeCo's doctor-led Diabetes Recovery program uses evidence-based nutritional and lifestyle interventions to support metabolic health and diabetes management. Available at Bodrum and Antalya. 14–28 days.">
+<meta property="og:title" content="Diabetes Recovery — Doctor-Led Metabolic Health Program at TheLifeCo">
+<meta property="og:description" content="A comprehensive doctor-led program using evidence-based nutritional and lifestyle interventions to support metabolic health. Many guests see significant improvements in blood sugar within the first week.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://destinationdeluxe.com/wp-content/uploads/2025/04/theLifeCo-Bodrum-Wellness-Consultation.png">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+.page-hero {
+  background-image: url('https://destinationdeluxe.com/wp-content/uploads/2025/04/theLifeCo-Bodrum-Wellness-Consultation.png');
+}
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.overview-img {
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+.overview-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.resorts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 680px;
+}
+.resort-card {
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/3;
+  display: block;
+  text-decoration: none;
+}
+.resort-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s;
+}
+.resort-card:hover .resort-card-img { transform: scale(1.04); }
+.resort-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,.72));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+  color: #fff;
+}
+.resort-card-name { font-size: 20px; font-weight: 700; }
+.resort-card-country { font-size: 13px; opacity: .75; margin-top: 3px; }
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.faq-section { max-width: 800px; margin: 0 auto; }
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,.7);
+  margin-bottom: 20px;
+}
+.breadcrumb a { color: rgba(255,255,255,.7); text-decoration: none; }
+.breadcrumb a:hover { color: #fff; }
+.breadcrumb i { font-size: 10px; }
+.medical-disclaimer {
+  background: rgba(0,96,156,.06);
+  border: 1px solid rgba(0,96,156,.18);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-top: 32px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+.medical-disclaimer i {
+  color: var(--brand-navy);
+  font-size: 18px;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+.medical-disclaimer p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+@media (max-width: 1024px) {
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .resorts-grid { max-width: 100%; }
+}
+@media (max-width: 768px) {
+  .overview-grid { grid-template-columns: 1fr; gap: 32px; }
+  .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+  .resorts-grid { grid-template-columns: 1fr; }
+  .related-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .benefits-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav nav--dark">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">TheLifeCo</a>
+    <div class="nav-links">
+      <a href="../about.html">About</a>
+      <div class="nav-dropdown">
+        <a href="../resort.html">Resorts &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="../resorts/bodrum.html">Bodrum</a>
+          <a href="../resorts/antalya.html">Antalya</a>
+          <a href="../resorts/phuket.html">Phuket</a>
+          <a href="../resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
+          <a href="../resorts/st-lucia.html">St. Lucia</a>
+        </div>
+      </div>
+      <a href="../treatments.html">Programs</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="../booking.html" class="nav-cta">Book Now</a>
+    </div>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="page-hero" style="min-height:580px;">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <i class="fa-solid fa-chevron-right"></i>
+      <a href="../treatments.html">Programs</a>
+      <i class="fa-solid fa-chevron-right"></i>
+      <span>Diabetes Recovery</span>
+    </nav>
+    <div class="card-tag card-tag--orange" style="margin-bottom:16px;">Medical</div>
+    <h1 class="text-56" style="color:#fff; margin-bottom:16px;">Diabetes Recovery</h1>
+    <p style="font-size:18px; color:rgba(255,255,255,.82); max-width:600px; margin-bottom:32px; line-height:1.7;">A comprehensive doctor-led program combining evidence-based nutrition, exercise therapy, and continuous glucose monitoring to support lasting metabolic health.</p>
+    <a href="../booking.html" class="btn btn-primary btn-lg">Book This Program</a>
+  </div>
+</section>
+
+<!-- ===== PROGRAM META ===== -->
+<section style="padding:40px 0; border-bottom:1px solid var(--border-color);">
+  <div class="container">
+    <div class="program-meta">
+      <div class="program-meta-item">
+        <i class="fa-regular fa-clock"></i>
+        <span><strong>Duration:</strong> 14–28 days</span>
+      </div>
+      <div class="program-meta-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span><strong>Available at:</strong> Bodrum, Antalya</span>
+      </div>
+      <div class="program-meta-item">
+        <i class="fa-solid fa-layer-group"></i>
+        <span><strong>Category:</strong> Medical</span>
+      </div>
+      <div class="program-meta-item">
+        <i class="fa-solid fa-chart-bar"></i>
+        <span><strong>Difficulty:</strong> Structured</span>
+      </div>
+      <div class="program-meta-item">
+        <i class="fa-solid fa-user-doctor"></i>
+        <span><strong>Medical supervision:</strong> Daily with endocrinologist</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OVERVIEW ===== -->
+<section class="section">
+  <div class="container">
+    <div class="overview-grid">
+      <div>
+        <div class="accent-line"></div>
+        <h2 class="section-heading" style="font-size:40px; margin-bottom:24px;">Program Overview</h2>
+        <p style="font-size:16px; color:var(--text-secondary); line-height:1.85; margin-bottom:20px;">TheLifeCo's Diabetes Recovery is a comprehensive, doctor-led programme that uses rigorously evidence-based nutritional and lifestyle interventions to support metabolic health and diabetes management. Combining continuous glucose monitoring with plant-based nutrition, structured exercise therapy, and stress management, the programme addresses the multiple factors that drive blood sugar dysregulation.</p>
+        <p style="font-size:16px; color:var(--text-secondary); line-height:1.85; margin-bottom:20px;">Many guests observe significant improvements in fasting blood glucose levels within the first week of the programme. HbA1c testing at programme start and conclusion allows us to document meaningful metabolic change, and our endocrinologists work alongside you to adjust any medications in coordination with your primary care physician where appropriate.</p>
+        <p style="font-size:16px; color:var(--text-secondary); line-height:1.85;">Personalised protocols are developed based on whether you are managing Type 1 or Type 2 diabetes, your current medication regimen, and your individual metabolic profile. You leave with a detailed home management plan and benefit from a structured 3-month follow-up programme.</p>
+        <div class="medical-disclaimer">
+          <i class="fa-solid fa-circle-info"></i>
+          <p>This programme supports and complements — but does not replace — your existing medical care. Any medication adjustments are made only in coordination with your treating physician. Please consult your doctor before booking and bring your full medication list and recent blood work to your arrival consultation.</p>
+        </div>
+      </div>
+      <div class="overview-img">
+        <img src="https://destinationdeluxe.com/wp-content/uploads/2025/04/theLifeCo-Bodrum-Wellness-Consultation.png" alt="Medical consultation and health assessment at TheLifeCo Bodrum" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT'S INCLUDED ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <div style="max-width:760px; margin:0 auto;">
+      <div class="accent-line"></div>
+      <h2 class="section-heading" style="font-size:40px; margin-bottom:8px;">What's Included</h2>
+      <p class="section-subtitle" style="margin-bottom:40px;">A complete medically supervised programme with the tools and knowledge for sustainable long-term diabetes management.</p>
+      <ul class="included-list">
+        <li><i class="fa-solid fa-circle-check"></i>Endocrinologist consultation and full metabolic health assessment</li>
+        <li><i class="fa-solid fa-circle-check"></i>Continuous glucose monitoring throughout the programme</li>
+        <li><i class="fa-solid fa-circle-check"></i>HbA1c testing at programme start and conclusion</li>
+        <li><i class="fa-solid fa-circle-check"></i>Personalised low-glycaemic plant-based meal plans</li>
+        <li><i class="fa-solid fa-circle-check"></i>Structured exercise therapy programme with daily sessions</li>
+        <li><i class="fa-solid fa-circle-check"></i>Stress management training including mindfulness and breathwork</li>
+        <li><i class="fa-solid fa-circle-check"></i>Medical-grade supplement protocol for metabolic support</li>
+        <li><i class="fa-solid fa-circle-check"></i>Daily medical check-ups and progress reviews</li>
+        <li><i class="fa-solid fa-circle-check"></i>Comprehensive home management plan on departure</li>
+        <li><i class="fa-solid fa-circle-check"></i>Structured 3-month remote follow-up programme</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BENEFITS ===== -->
+<section class="section">
+  <div class="container">
+    <div class="accent-line"></div>
+    <h2 class="section-heading" style="font-size:40px; margin-bottom:8px;">Key Benefits</h2>
+    <p class="section-subtitle" style="margin-bottom:40px;">Transformative metabolic improvements documented by our medical team across hundreds of programme participants.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <i class="fa-solid fa-chart-line"></i>
+        <h4>Blood Sugar Stabilisation</h4>
+        <p>Continuous monitoring combined with a low-glycaemic nutrition protocol drives meaningful, measurable reductions in blood glucose.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-syringe"></i>
+        <h4>Reduced Insulin Dependency</h4>
+        <p>Many Type 2 guests achieve significant reductions in insulin requirements under medical supervision as insulin sensitivity improves.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-person-walking"></i>
+        <h4>Sustainable Lifestyle Change</h4>
+        <p>Education, skill-building, and habit formation during the programme create the foundation for lasting healthy choices at home.</p>
+      </div>
+      <div class="benefit-card">
+        <i class="fa-solid fa-heart-pulse"></i>
+        <h4>Long-Term Health Improvement</h4>
+        <p>A 3-month follow-up programme ensures you maintain and build on your results, reducing long-term diabetes complication risk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AVAILABLE AT RESORTS ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="accent-line"></div>
+    <h2 class="section-heading" style="font-size:40px; margin-bottom:8px;">Available At</h2>
+    <p class="section-subtitle" style="margin-bottom:40px;">The Diabetes Recovery program is offered at our two flagship Turkish resorts with full endocrinology and medical facilities.</p>
+    <div class="resorts-grid">
+      <a href="../resorts/bodrum.html" class="resort-card">
+        <img class="resort-card-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Bodrum-Outdoor-Environment-.png" alt="TheLifeCo Bodrum resort" loading="lazy">
+        <div class="resort-card-overlay">
+          <div class="resort-card-name">Bodrum</div>
+          <div class="resort-card-country">Turkey</div>
+        </div>
+      </a>
+      <a href="../resorts/antalya.html" class="resort-card">
+        <img class="resort-card-img" src="https://www.thelifeco.com/wp-content/uploads/2019/09/bodrum-galeri-1.jpg" alt="TheLifeCo Antalya resort" loading="lazy">
+        <div class="resort-card-overlay">
+          <div class="resort-card-name">Antalya</div>
+          <div class="resort-card-country">Turkey</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RELATED PROGRAMS ===== -->
+<section class="section">
+  <div class="container">
+    <div class="accent-line"></div>
+    <h2 class="section-heading" style="font-size:40px; margin-bottom:8px;">Related Programs</h2>
+    <p class="section-subtitle" style="margin-bottom:40px;">Programmes that complement or extend the benefits of the Diabetes Recovery journey.</p>
+    <div class="related-grid">
+      <div class="service-card">
+        <img class="service-card-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Phuket-Yoga.png" alt="Weight Loss program" loading="lazy">
+        <div class="service-card-body">
+          <div class="card-tag">Wellness</div>
+          <h3 class="service-card-title">Weight Loss</h3>
+          <p class="service-card-desc">A medically guided weight loss programme that directly supports improved insulin sensitivity and metabolic health.</p>
+          <a href="../programs/weight-loss.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img class="service-card-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCO-Bodrum-raw-food-sushi.png" alt="Longevity Reset program" loading="lazy">
+        <div class="service-card-body">
+          <div class="card-tag">Medical</div>
+          <h3 class="service-card-title">Longevity Reset</h3>
+          <p class="service-card-desc">Advanced medical protocols and personalised nutrition for healthy aging and sustained metabolic vitality.</p>
+          <a href="../programs/longevity-reset.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img class="service-card-img" src="https://destinationdeluxe.com/wp-content/uploads/2025/04/theLifeCo-Bodrum-Wellness-Consultation.png" alt="Master Detox program" loading="lazy">
+        <div class="service-card-body">
+          <div class="card-tag">Detox</div>
+          <h3 class="service-card-title">Master Detox</h3>
+          <p class="service-card-desc">Our comprehensive medically supervised detox for cellular cleansing and metabolic reset.</p>
+          <a href="master-detox.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="faq-section">
+      <div class="accent-line"></div>
+      <h2 class="section-heading" style="font-size:40px; margin-bottom:8px;">Frequently Asked Questions</h2>
+      <p class="section-subtitle" style="margin-bottom:40px;">Important questions answered about the Diabetes Recovery medical programme.</p>
+
+      <div class="faq-item">
+        <button class="faq-question">Is this programme suitable for both Type 1 and Type 2 diabetes?</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes, we accept guests with both Type 1 and Type 2 diabetes, and we develop entirely separate personalised protocols for each. Type 2 diabetes has significantly greater reversibility potential through lifestyle intervention, and many guests with Type 2 achieve substantial reductions in HbA1c and medication dependence. For Type 1 guests, our focus is on improved blood sugar stability, reduced variability, and enhanced quality of life through better nutritional and lifestyle strategies.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">Will my current diabetes medications be changed during the programme?</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Any medication adjustments are made only by our endocrinologists in coordination with your treating physician back home, and always with your full knowledge and consent. As blood glucose improves through the programme, reductions in certain medications may become appropriate under medical guidance — but we never make changes without transparent communication and proper safety protocols in place. Bring your full medication list and your most recent blood test results to your arrival consultation.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">What does the 3-month follow-up programme involve?</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Our 3-month remote follow-up includes monthly video consultations with your assigned doctor, ongoing access to our nutritionist via messaging, a structured eating and exercise framework tailored for your home environment, and a final 3-month HbA1c re-test recommendation for you to complete with your local GP. This follow-up period is critical for consolidating the metabolic improvements achieved during your stay and ensuring sustainable long-term results.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">How quickly can I expect to see improvements in my blood sugar?</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Many guests with Type 2 diabetes observe measurable improvements in fasting glucose within the first 5–7 days of the programme, primarily driven by the shift to a low-glycaemic plant-based nutrition protocol and the introduction of daily structured exercise. Continuous glucose monitoring allows us to track your response in real time and adjust your programme accordingly. Results vary based on individual metabolic status, programme duration, medication use, and adherence to the protocols.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BOOKING CTA ===== -->
+<section class="cta-block">
+  <div class="container">
+    <h2 class="section-heading">Take Control of Your<br>Metabolic Health</h2>
+    <p>Our endocrinologists and wellness team are ready to design a personalised recovery programme built around your specific diagnosis, goals, and lifestyle.</p>
+    <div class="cta-buttons">
+      <a href="../booking.html" class="btn btn-primary btn-lg">Book This Program</a>
+      <a href="../contact.html" class="btn btn-outline-dark btn-lg">Talk to an Expert</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">TheLifeCo</div>
+        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2005. With luxury resorts across Turkey, Thailand, Egypt, and the Caribbean.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/thelifeco" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/thelifeco" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://youtube.com/thelifeco" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Resorts</div>
+        <div class="footer-links">
+          <a href="../resorts/bodrum.html">Bodrum</a>
+          <a href="../resorts/antalya.html">Antalya</a>
+          <a href="../resorts/phuket.html">Phuket</a>
+          <a href="../resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
+          <a href="../resorts/st-lucia.html">St. Lucia</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Programs</div>
+        <div class="footer-links">
+          <a href="master-detox.html">Master Detox</a>
+          <a href="water-fasting.html">Water Fasting</a>
+          <a href="green-detox.html">Green Detox</a>
+          <a href="../programs/longevity-reset.html">Longevity Reset</a>
+          <a href="../programs/mental-wellness.html">Mental Wellness</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <div class="footer-links">
+          <a href="../about.html">About Us</a>
+          <a href="../blog.html">Blog</a>
+          <a href="../testimonials.html">Testimonials</a>
+          <a href="../faq.html">FAQ</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <div class="footer-links">
+          <a href="mailto:info@thelifeco.com">info@thelifeco.com</a>
+          <a href="tel:+902524134410">+90 252 413 44 10</a>
+          <a href="https://wa.me/905325554410">WhatsApp</a>
+        </div>
+        <div style="margin-top:24px">
+          <div class="footer-heading">Booking</div>
+          <div class="footer-links">
+            <a href="../booking.html">Book a Retreat</a>
+            <a href="../contact.html">Talk to an Expert</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 TheLifeCo Wellbeing. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

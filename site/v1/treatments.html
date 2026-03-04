@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheLifeCo — Treatment Programs</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* Treatment hero */
+.treat-hero{
+  padding:120px 0 60px;
+  text-align:center;
+  background:var(--bg-section);
+}
+.treat-hero h1{
+  font-size:56px;
+  font-weight:700;
+  line-height:1.1;
+  letter-spacing:-1.5px;
+  margin-bottom:16px;
+  max-width:700px;
+  margin-left:auto;margin-right:auto;
+}
+.treat-hero p{
+  font-size:16px;
+  color:var(--text-secondary);
+  max-width:500px;
+  margin:0 auto 32px;
+}
+
+/* Discovery bar */
+.discovery{
+  padding:48px 0;
+  border-bottom:1px solid var(--border-color);
+}
+.discovery h3{
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:8px;
+}
+.discovery p{
+  font-size:14px;
+  color:var(--text-secondary);
+  margin-bottom:24px;
+}
+
+/* Treatment grid */
+.treatments-section{padding:80px 0}
+.treatments-filters{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:32px;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.treatments-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+/* Category sidebar */
+.treatments-layout{
+  display:grid;
+  grid-template-columns:280px 1fr;
+  gap:48px;
+}
+.category-sidebar{
+  position:sticky;
+  top:20px;
+  align-self:start;
+}
+.category-item{
+  padding:12px 16px;
+  border-radius:12px;
+  font-size:14px;
+  font-weight:500;
+  color:var(--text-secondary);
+  cursor:pointer;
+  transition:all .2s;
+  margin-bottom:4px;
+  display:block;
+}
+.category-item:hover,.category-item.active{
+  background:var(--bg-section);
+  color:var(--text-primary);
+  font-weight:600;
+}
+
+/* Events */
+.events{padding:80px 0;background:var(--bg-section)}
+.events-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:24px;
+  margin-top:32px;
+}
+
+/* Popular retreats */
+.popular{padding:80px 0}
+.popular-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:32px;
+}
+.popular-card{
+  border-radius:16px;
+  overflow:hidden;
+  position:relative;
+  aspect-ratio:3/4;
+  display:flex;
+  align-items:flex-end;
+  padding:24px;
+  color:var(--white);
+}
+.popular-card:nth-child(1){background:linear-gradient(transparent 50%,rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80') center/cover}
+.popular-card:nth-child(2){background:linear-gradient(transparent 50%,rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=400&q=80') center/cover}
+.popular-card:nth-child(3){background:linear-gradient(transparent 50%,rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80') center/cover}
+.popular-card h3{font-size:20px;font-weight:700}
+.popular-card p{font-size:14px;opacity:.8;margin-top:4px}
+
+/* FAQ */
+.faq{padding:80px 0}
+
+@media(max-width:1024px){
+  .treatments-layout{grid-template-columns:1fr}
+  .category-sidebar{display:none}
+}
+@media(max-width:768px){
+  .treat-hero h1{font-size:32px}
+  .treatments-grid{grid-template-columns:1fr}
+  .events-grid{grid-template-columns:1fr}
+  .popular-grid{grid-template-columns:1fr}
+  .treatments-filters{flex-direction:column;align-items:stretch}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav nav--dark">
+  <div class="container">
+    <a href="index.html" class="nav-logo">TheLifeCo</a>
+    <div class="nav-links">
+      <a href="index.html">Retreats</a>
+      <a href="resort.html">Resorts</a>
+      <a href="#">Medical</a>
+      <a href="treatments.html">Treatments</a>
+    </div>
+    <div class="nav-right">
+      <a href="#">Login</a>
+      <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+    </div>
+    <div class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="treat-hero">
+  <div class="container">
+    <h1>Find The Best Treatment Program For You</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Discover the right program for your health goals.</p>
+    <a href="#" class="btn btn-primary btn-lg">Talk to an expert</a>
+  </div>
+</section>
+
+<!-- ===== DISCOVERY ===== -->
+<section class="discovery">
+  <div class="container">
+    <h3>Let's discover which treatments suits you best</h3>
+    <p>Answer a few questions and we'll recommend the perfect program for your needs.</p>
+    <a href="#" class="btn btn-outline-dark btn-sm">Start Discovery <i class="fa-solid fa-arrow-right"></i></a>
+  </div>
+</section>
+
+<!-- ===== TREATMENTS ===== -->
+<section class="treatments-section">
+  <div class="container">
+    <div class="treatments-layout">
+      <!-- Categories sidebar -->
+      <aside class="category-sidebar">
+        <h3 style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:16px">Categories</h3>
+        <a class="category-item active">All Programs</a>
+        <a class="category-item">Chronic Disease Recovery & Prevention</a>
+        <a class="category-item">Weight Loss & Management</a>
+        <a class="category-item">Healthy Aging & Longevity</a>
+        <a class="category-item">Mental Health & Stress Management</a>
+        <a class="category-item">Cleansing & Detoxing</a>
+      </aside>
+
+      <!-- Main content -->
+      <div>
+        <div class="treatments-filters">
+          <div class="filter-pills">
+            <button class="pill active">All</button>
+            <button class="pill">Programs</button>
+            <button class="pill">Conditions</button>
+          </div>
+          <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-secondary)">
+            Sort by: <select style="border:1px solid var(--border-color);border-radius:8px;padding:8px 12px;font-size:14px;font-family:var(--font-primary);background:var(--white)"><option>Popular</option><option>A-Z</option><option>Newest</option></select>
+          </div>
+        </div>
+
+        <div class="treatments-grid">
+          <!-- 15 treatment cards -->
+          <div class="treatment-card">
+            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80') center/cover"></div>
+            <div class="treatment-card-body">
+              <div class="treatment-card-category">Cleansing & Detoxing</div>
+              <h3 class="treatment-card-title">Digestive & Gut Health</h3>
+              <p class="treatment-card-desc">Restore your digestive system with our specialized gut health protocol.</p>
+            </div>
+            <div class="treatment-card-footer">
+              <span class="text-12 text-secondary">7-14 days</span>
+              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80') center/cover"></div>
+            <div class="treatment-card-body">
+              <div class="treatment-card-category">Cleansing & Detoxing</div>
+              <h3 class="treatment-card-title">Medically Supervised Water Fasting</h3>
+              <p class="treatment-card-desc">A doctor-guided fasting protocol for deep cellular renewal.</p>
+            </div>
+            <div class="treatment-card-footer">
+              <span class="text-12 text-secondary">7-21 days</span>
+              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=400&q=80') center/cover"></div>
+            <div class="treatment-card-body">
+              <div class="treatment-card-category">Mental Health</div>
+              <h3 class="treatment-card-title">Mental Wellness Program</h3>
+              <p class="treatment-card-desc">Holistic approach combining meditation, therapy, and nutrition.</p>
+            </div>
+            <div class="treatment-card-footer">
+              <span class="text-12 text-secondary">7-14 days</span>
+              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80') center/cover"></div>
+            <div class="treatment-card-body">
+              <div class="treatment-card-category">Chronic Disease</div>
+              <h3 class="treatment-card-title">Cancer Prevention & Support</h3>
+              <p class="treatment-card-desc">Integrative program supporting cancer prevention and recovery.</p>
+            </div>
+            <div class="treatment-card-footer">
+              <span class="text-12 text-secondary">14-21 days</span>
+              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=400&q=80') center/cover"></div>
+            <div class="treatment-card-body">
+              <div class="treatment-card-category">Weight Loss</div>
+              <h3 class="treatment-card-title">Beauty & Body Reshaping</h3>
+              <p class="treatment-card-desc">Combine wellness treatments with body transformation.</p>
+            </div>
+            <div class="treatment-card-footer">
+              <span class="text-12 text-secondary">7-14 days</span>
+              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=80') center/cover"></div>
+            <div class="treatment-card-body">
+              <div class="treatment-card-category">Cleansing & Detoxing</div>
+              <h3 class="treatment-card-title">Liver Detox</h3>
+              <p class="treatment-card-desc">Targeted liver cleansing for improved metabolic function.</p>
+            </div>
+            <div class="treatment-card-footer">
+              <span class="text-12 text-secondary">7-10 days</span>
+              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80') center/cover"></div>
+            <div class="treatment-card-body">
+              <div class="treatment-card-category">Cleansing & Detoxing</div>
+              <h3 class="treatment-card-title">Green Juice Cleanse</h3>
+              <p class="treatment-card-desc">Nutrient-rich juice cleanse to revitalize your body.</p>
+            </div>
+            <div class="treatment-card-footer">
+              <span class="text-12 text-secondary">5-7 days</span>
+              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=400&q=80') center/cover"></div>
+            <div class="treatment-card-body">
+              <div class="treatment-card-category">Longevity</div>
+              <h3 class="treatment-card-title">Ultimate Longevity</h3>
+              <p class="treatment-card-desc">Advanced protocols for healthy aging and vitality extension.</p>
+            </div>
+            <div class="treatment-card-footer">
+              <span class="text-12 text-secondary">14-21 days</span>
+              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&q=80') center/cover"></div>
+            <div class="treatment-card-body">
+              <div class="treatment-card-category">Chronic Disease</div>
+              <h3 class="treatment-card-title">Diabetes Program</h3>
+              <p class="treatment-card-desc">Comprehensive diabetes management and reversal program.</p>
+            </div>
+            <div class="treatment-card-footer">
+              <span class="text-12 text-secondary">14-28 days</span>
+              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=400&q=80') center/cover"></div>
+            <div class="treatment-card-body">
+              <div class="treatment-card-category">Chronic Disease</div>
+              <h3 class="treatment-card-title">Cardiovascular Disease Program</h3>
+              <p class="treatment-card-desc">Heart health optimization through integrated wellness.</p>
+            </div>
+            <div class="treatment-card-footer">
+              <span class="text-12 text-secondary">14-21 days</span>
+              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&q=80') center/cover"></div>
+            <div class="treatment-card-body">
+              <div class="treatment-card-category">Chronic Disease</div>
+              <h3 class="treatment-card-title">Inflammation & Immune Reset</h3>
+              <p class="treatment-card-desc">Reset your immune system and reduce chronic inflammation.</p>
+            </div>
+            <div class="treatment-card-footer">
+              <span class="text-12 text-secondary">10-14 days</span>
+              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80') center/cover"></div>
+            <div class="treatment-card-body">
+              <div class="treatment-card-category">Weight Loss</div>
+              <h3 class="treatment-card-title">Weight Loss & Management</h3>
+              <p class="treatment-card-desc">Sustainable weight management with medical supervision.</p>
+            </div>
+            <div class="treatment-card-footer">
+              <span class="text-12 text-secondary">7-21 days</span>
+              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80') center/cover"></div>
+            <div class="treatment-card-body">
+              <div class="treatment-card-category">Cleansing & Detoxing</div>
+              <h3 class="treatment-card-title">Master Detox</h3>
+              <p class="treatment-card-desc">Our signature comprehensive detoxification program.</p>
+            </div>
+            <div class="treatment-card-footer">
+              <span class="text-12 text-secondary">7-21 days</span>
+              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=400&q=80') center/cover"></div>
+            <div class="treatment-card-body">
+              <div class="treatment-card-category">Longevity</div>
+              <h3 class="treatment-card-title">Hormonal Longevity</h3>
+              <p class="treatment-card-desc">Women's & men's hormonal optimization for healthy aging.</p>
+            </div>
+            <div class="treatment-card-footer">
+              <span class="text-12 text-secondary">7-14 days</span>
+              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <div class="treatment-card">
+            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80') center/cover"></div>
+            <div class="treatment-card-body">
+              <div class="treatment-card-category">Mental Health</div>
+              <h3 class="treatment-card-title">Chronic Fatigue Recovery</h3>
+              <p class="treatment-card-desc">Restore your energy and overcome chronic fatigue syndrome.</p>
+            </div>
+            <div class="treatment-card-footer">
+              <span class="text-12 text-secondary">14-21 days</span>
+              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-block section--gray">
+  <div class="container">
+    <h2 class="section-heading">Let's discover which<br>treatments suit you best</h2>
+    <p>Take our quick assessment to find the perfect program for your health goals and lifestyle.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn btn-primary btn-lg">Talk to an expert</a>
+      <a href="#" class="btn btn-outline-dark btn-lg">Start Discovery</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EVENTS ===== -->
+<section class="events">
+  <div class="container">
+    <h2 class="section-heading">Explore this month's events</h2>
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-date">
+          <div class="event-day">15</div>
+          <div class="event-month">Mar</div>
+        </div>
+        <div class="event-info">
+          <h4>Wellness Webinar: Introduction to Detox</h4>
+          <p>Join our medical experts for a free online session about detoxification and its benefits.</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date">
+          <div class="event-day">22</div>
+          <div class="event-month">Mar</div>
+        </div>
+        <div class="event-info">
+          <h4>Open Day: Antalya Resort Tour</h4>
+          <p>Visit our Antalya resort and experience our wellness programs firsthand.</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date">
+          <div class="event-day">28</div>
+          <div class="event-month">Mar</div>
+        </div>
+        <div class="event-info">
+          <h4>Nutrition Workshop</h4>
+          <p>Learn about gut health, anti-inflammatory diets, and sustainable nutrition habits.</p>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-date">
+          <div class="event-day">05</div>
+          <div class="event-month">Apr</div>
+        </div>
+        <div class="event-info">
+          <h4>Spring Detox Retreat Launch</h4>
+          <p>Special pricing for our seasonal detox retreat program in Bodrum.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+  <div class="container">
+    <h2 class="section-heading">Your Questions, Answered</h2>
+    <div>
+      <div class="faq-item active">
+        <button class="faq-question">What is a detox program?</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">A detox program is a medically supervised protocol designed to help your body eliminate toxins and restore optimal function. Our programs combine nutrition, fasting, supplements, and holistic therapies for comprehensive cleansing.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How long should I stay?</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Program duration depends on your goals and health condition. Most programs range from 7-21 days. Our medical team will recommend the optimal duration during your consultation.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is medical supervision included?</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes, all our programs include full medical supervision. You'll have regular check-ups, blood work, and consultations with our medical team throughout your stay.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I combine treatments?</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Absolutely. Many guests combine multiple programs during their stay. Our team will create a personalized protocol that addresses all your health goals.</div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What should I bring?</button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We provide all wellness amenities including robes, slippers, and toiletries. Bring comfortable clothing, any prescribed medications, and your medical records for the initial consultation.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POPULAR RETREATS ===== -->
+<section class="popular section--gray">
+  <div class="container">
+    <h2 class="section-heading" style="color:var(--text-primary)">See Popular Retreats</h2>
+    <div class="popular-grid">
+      <div class="popular-card">
+        <div>
+          <h3>Master Detox in Antalya</h3>
+          <p>7 days &middot; Turkey</p>
+        </div>
+      </div>
+      <div class="popular-card">
+        <div>
+          <h3>Longevity Retreat</h3>
+          <p>14 days &middot; Phuket</p>
+        </div>
+      </div>
+      <div class="popular-card">
+        <div>
+          <h3>Water Fasting Program</h3>
+          <p>10 days &middot; Bodrum</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">TheLifeCo</div>
+        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2003. With resorts in Turkey, Thailand, and beyond.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Resorts</div>
+        <div class="footer-links">
+          <a href="#">Antalya</a>
+          <a href="#">Bodrum</a>
+          <a href="#">Phuket</a>
+          <a href="#">St. Lucia</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Programs</div>
+        <div class="footer-links">
+          <a href="#">Master Detox</a>
+          <a href="#">Water Fasting</a>
+          <a href="#">Longevity</a>
+          <a href="#">Mental Wellness</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">BOATSY App</div>
+        <div class="footer-links">
+          <a href="#">Download on App Store</a>
+          <a href="#">Get on Google Play</a>
+        </div>
+        <div style="margin-top:24px">
+          <div class="footer-heading">Contact</div>
+          <div class="footer-links">
+            <a href="#">info@thelifeco.com</a>
+            <a href="#">+90 242 000 00 00</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 TheLifeCo. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditionals</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Tab switching
+document.querySelectorAll('.tabs').forEach(tabs=>{
+  tabs.querySelectorAll('.tab').forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      tabs.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    const wasActive=item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('active'));
+    if(!wasActive)item.classList.add('active');
+  });
+});
+
+// Filter pills
+document.querySelectorAll('.filter-pills').forEach(pills=>{
+  pills.querySelectorAll('.pill').forEach(pill=>{
+    pill.addEventListener('click',()=>{
+      pills.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
+      pill.classList.add('active');
+    });
+  });
+});
+
+// Category sidebar
+document.querySelectorAll('.category-item').forEach(item=>{
+  item.addEventListener('click',()=>{
+    document.querySelectorAll('.category-item').forEach(i=>i.classList.remove('active'));
+    item.classList.add('active');
+  });
+});
+</script>
+
+</body>
+</html>

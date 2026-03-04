@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheLifeCo — Frequently Asked Questions | Wellness Programs, Booking &amp; More</title>
+<meta name="description" content="Find answers to common questions about TheLifeCo's wellness programs, resort locations, booking process, medical protocols, and what to expect during your stay.">
+<meta name="keywords" content="TheLifeCo FAQ, wellness retreat questions, detox program info, booking wellness retreat, TheLifeCo medical programs, resort FAQ">
+<meta property="og:title" content="TheLifeCo — Frequently Asked Questions">
+<meta property="og:description" content="Everything you need to know about our wellness programs, resorts, and booking process.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://destinationdeluxe.com/wp-content/uploads/2025/04/theLifeCo-Bodrum-Wellness-Consultation.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TheLifeCo — FAQ">
+<meta name="twitter:description" content="Answers to all your questions about TheLifeCo wellness programs, booking, and resorts.">
+<link rel="canonical" href="https://thelifeco.com/faq.html">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+/* ── FAQ Hero ──────────────────────────────────────────── */
+.faq-hero {
+  padding: 160px 0 80px;
+  background: var(--off-white-3);
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+.faq-hero .accent-line {
+  margin: 0 auto 24px;
+}
+.faq-hero h1 {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: var(--brand-dark);
+  margin-bottom: 20px;
+  line-height: 1.05;
+}
+.faq-hero p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 520px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.faq-hero-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+  padding: 14px 24px;
+  max-width: 480px;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,.06);
+  transition: box-shadow .2s, border-color .2s;
+}
+.faq-hero-search:focus-within {
+  border-color: var(--brand-teal);
+  box-shadow: 0 4px 24px rgba(0,190,214,.15);
+}
+.faq-hero-search input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-family: var(--font-primary);
+  font-size: 15px;
+  color: var(--text-primary);
+  outline: none;
+}
+.faq-hero-search input::placeholder { color: var(--text-muted); }
+.faq-hero-search i { color: var(--text-muted); }
+
+/* ── FAQ Tabs Section ──────────────────────────────────── */
+.faq-section {
+  padding: 72px 0 96px;
+}
+.faq-tabs-bar {
+  margin-bottom: 56px;
+  display: flex;
+  justify-content: center;
+}
+.faq-tabs-bar .tabs {
+  margin-bottom: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.faq-tabs-bar .tab {
+  padding: 12px 28px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.faq-tabs-bar .tab i { font-size: 13px; }
+
+/* ── FAQ Panels ────────────────────────────────────────── */
+.faq-panel {
+  display: none;
+  max-width: 840px;
+  margin: 0 auto;
+}
+.faq-panel.active { display: block; }
+
+.faq-panel-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--border-color);
+}
+.faq-panel-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.icon-general { background: rgba(20,24,39,.08); color: var(--brand-dark); }
+.icon-programs { background: rgba(0,190,214,.1); color: #007a8c; }
+.icon-booking { background: rgba(246,163,88,.12); color: #b06b1a; }
+.icon-medical { background: rgba(0,96,156,.1); color: var(--brand-navy); }
+.icon-resorts { background: rgba(80,200,120,.1); color: #1a7a3c; }
+
+.faq-panel-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--brand-dark);
+  margin-bottom: 2px;
+}
+.faq-panel-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+.faq-panel-count {
+  margin-left: auto;
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--off-white-2);
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* ── FAQ Accordion ─────────────────────────────────────── */
+/* Uses .faq-item, .faq-question, .faq-answer, .faq-answer-inner from style.css */
+.faq-list {
+  margin-top: 4px;
+}
+.faq-question:hover { color: var(--brand-navy); }
+.faq-item.active .faq-question { color: var(--brand-navy); }
+.faq-item.active .faq-answer { max-height: 600px; }
+.faq-answer-inner strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+.faq-answer-inner a {
+  color: var(--brand-navy);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ── Bottom CTA ────────────────────────────────────────── */
+.faq-cta {
+  background: linear-gradient(135deg, var(--brand-navy) 0%, #004a7a 100%);
+  padding: 88px 0;
+  text-align: center;
+  color: var(--white);
+}
+.faq-cta h2 {
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: -.5px;
+  margin-bottom: 14px;
+  color: var(--white);
+}
+.faq-cta p {
+  font-size: 18px;
+  color: rgba(255,255,255,.75);
+  max-width: 520px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.faq-cta-channels {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+.faq-cta-channel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: rgba(255,255,255,.7);
+}
+.faq-cta-channel i { color: var(--brand-teal); font-size: 18px; }
+.faq-cta-channel a {
+  color: var(--white);
+  font-weight: 600;
+}
+.faq-cta-channel a:hover { color: var(--brand-teal); }
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .faq-hero h1 { font-size: 48px; }
+  .faq-cta h2 { font-size: 36px; }
+}
+@media (max-width: 768px) {
+  .faq-hero { padding: 120px 0 56px; }
+  .faq-hero h1 { font-size: 36px; letter-spacing: -1px; }
+  .faq-hero p { font-size: 16px; }
+  .faq-panel-title { font-size: 22px; }
+  .faq-cta h2 { font-size: 28px; }
+  .faq-cta p { font-size: 16px; }
+  .faq-cta-channels { gap: 20px; flex-direction: column; align-items: center; }
+}
+@media (max-width: 480px) {
+  .faq-hero h1 { font-size: 28px; }
+  .faq-tabs-bar .tab { padding: 10px 18px; font-size: 14px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav nav--dark">
+  <div class="container">
+    <a href="index.html" class="nav-logo">TheLifeCo</a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <div class="nav-dropdown">
+        <a href="resort.html">Resorts &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="resorts/bodrum.html">Bodrum</a>
+          <a href="resorts/antalya.html">Antalya</a>
+          <a href="resorts/phuket.html">Phuket</a>
+          <a href="resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
+          <a href="resorts/st-lucia.html">St. Lucia</a>
+        </div>
+      </div>
+      <a href="treatments.html">Programs</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="booking.html" class="nav-cta">Book Now</a>
+    </div>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="faq-hero">
+  <div class="container">
+    <div class="accent-line"></div>
+    <h1>Frequently Asked<br>Questions</h1>
+    <p>Everything you need to know about our wellness programs, resort locations, booking process, and what to expect during your stay.</p>
+    <div class="faq-hero-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search questions...">
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ TABS + CONTENT ===== -->
+<section class="faq-section">
+  <div class="container">
+
+    <!-- Category Tabs -->
+    <div class="faq-tabs-bar">
+      <div class="tabs">
+        <button class="tab active" data-target="#faq-general">
+          <i class="fa-solid fa-circle-info"></i> General
+        </button>
+        <button class="tab" data-target="#faq-programs">
+          <i class="fa-solid fa-leaf"></i> Programs
+        </button>
+        <button class="tab" data-target="#faq-booking">
+          <i class="fa-solid fa-calendar-check"></i> Booking
+        </button>
+        <button class="tab" data-target="#faq-medical">
+          <i class="fa-solid fa-stethoscope"></i> Medical
+        </button>
+        <button class="tab" data-target="#faq-resorts">
+          <i class="fa-solid fa-location-dot"></i> Resorts
+        </button>
+      </div>
+    </div>
+
+    <!-- ── GENERAL ── -->
+    <div class="faq-panel active" id="faq-general">
+      <div class="faq-panel-header">
+        <div class="faq-panel-icon icon-general"><i class="fa-solid fa-circle-info"></i></div>
+        <div>
+          <h2 class="faq-panel-title">General</h2>
+          <p class="faq-panel-subtitle">About TheLifeCo and our wellness philosophy</p>
+        </div>
+        <span class="faq-panel-count">6 questions</span>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">What is TheLifeCo?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              TheLifeCo is a world-leading wellness and medical retreat company founded in 2005. With five luxury resort destinations spanning Turkey (Bodrum and Antalya), Thailand (Phuket), Egypt (Sharm El Sheikh), and the Caribbean (St. Lucia), we have helped over <strong>30,000 guests from 80+ countries</strong> transform their health. Our approach is rooted in the Four Pillars of wellness — nutrition, physical activity, mental wellness, and inner peace — delivered through medically supervised programs designed by a multidisciplinary team of doctors, nutritionists, therapists, and wellness coaches.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Where are your resort locations?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              We operate five resort destinations worldwide. <strong>Bodrum and Antalya</strong> are located on Turkey's stunning Aegean and Mediterranean coasts respectively. <strong>Phuket</strong> sits in southern Thailand amidst lush tropical scenery. <strong>Sharm El Sheikh</strong> offers year-round warmth on Egypt's Red Sea. <strong>St. Lucia</strong> is our newest destination, set in the Caribbean's paradise surroundings. Each location has a distinct character and specialisation — our consultants are happy to recommend the right fit for your goals.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How long has TheLifeCo been operating?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              TheLifeCo was founded in <strong>2005</strong> — making us one of the longest-established medically supervised wellness retreat operators in the world. Over two decades, we have refined our protocols continuously, built a trusted international medical team, and welcomed guests from over 80 countries. Our longevity reflects the quality of our outcomes and the trust of our guest community. We have received numerous international accolades, including the World Spa Awards and consistent recognition from Tatler, Condé Nast Traveller, Forbes, and Vogue.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What makes TheLifeCo different from a regular spa?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              The distinction is fundamental. A spa offers relaxation and cosmetic treatments, often without any medical involvement. TheLifeCo is a <strong>medically supervised wellness retreat</strong> where every program is designed, monitored, and adjusted by licensed physicians. We have on-site doctors 24 hours a day, conduct comprehensive blood tests on arrival, and deliver evidence-based protocols for genuine health transformation — not temporary relaxation. We address root causes: metabolic dysfunction, chronic inflammation, nutritional deficiency, and psychological stress — not symptoms. Guests leave with measurable, clinically verified improvements.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Are programs suitable for complete beginners?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Absolutely. We welcome guests at every stage of their wellness journey. If you have never done a detox, never tried plant-based eating, and have no prior experience with wellness retreats, you are in exactly the right place. Our team is experienced at guiding first-time guests through every step with patience and expertise. We offer programs at varying intensity levels — from gentle introductory detoxes to advanced clinical fasting protocols — so you will always begin at a level that is appropriate and safe for your starting point.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Is TheLifeCo suitable for couples and families?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes, and many of our most profound transformations happen when guests share the experience with someone they love. Our <strong>Bodrum resort is adults-only</strong>, creating a focused atmosphere ideal for couples. Our Antalya, Phuket, and St. Lucia resorts welcome families, with programs tailored for parents and older children separately. We offer dedicated couples wellness packages that blend shared program elements with individual consultations, allowing each person to pursue personal health goals while building new habits together.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── PROGRAMS ── -->
+    <div class="faq-panel" id="faq-programs">
+      <div class="faq-panel-header">
+        <div class="faq-panel-icon icon-programs"><i class="fa-solid fa-leaf"></i></div>
+        <div>
+          <h2 class="faq-panel-title">Programs</h2>
+          <p class="faq-panel-subtitle">Our wellness and medical programs explained</p>
+        </div>
+        <span class="faq-panel-count">6 questions</span>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">What programs do you offer?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              We offer over 20 distinct programs, organised into five main categories. <strong>Detox programs</strong> include the Master Detox, Green Detox, and Raw Food Detox. <strong>Fasting programs</strong> include supervised Water Fasting (1 to 21 days) and Intermittent Fasting protocols. <strong>Medical programs</strong> include Diabetes Recovery, Cardiovascular Health, Chronic Inflammation, and Autoimmune Support. <strong>Wellness programs</strong> include Mental Wellness, Longevity Reset, Beauty &amp; Glow, and Weight Management. <strong>Fitness programs</strong> include Yoga Immersion and Body Transformation. Programs can be combined and are always personalised.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What is the Master Detox program?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              The Master Detox is our signature program and the most popular entry point for new guests. It combines structured cold-pressed juice protocols, targeted nutritional supplements, and a full schedule of detoxifying therapies — including colon hydrotherapy, lymphatic drainage massage, infrared sauna, and therapeutic bodywork. Daily one-on-one consultations with our medical team monitor your progress and adjust the protocol as needed. Most guests experience significant improvements in energy, digestion, and mental clarity within the first three to four days.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How long should I stay for real results?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              We recommend a <strong>minimum of 7 days</strong> to experience meaningful physiological change. The first two to three days are typically an adjustment period. Days four through seven is where most guests begin feeling tangible benefits. For deeper cellular repair, chronic condition management, or significant weight goals, a <strong>14 to 21-day stay</strong> allows the body time to complete full detoxification cycles, establish new metabolic patterns, and embed lasting behavioural change. We are happy to advise on optimal duration after reviewing your health questionnaire.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can I combine programs during one stay?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes — and this is the norm rather than the exception at TheLifeCo. Because your program is fully personalised, your daily schedule is designed to draw from multiple disciplines simultaneously. A guest focusing on weight management might combine elements of detox, supervised fasting, fitness training, and nutritional coaching in a single stay. Our medical team orchestrates the combination, ensuring the interventions complement rather than conflict with each other, and adjusts the balance as your body responds.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What diet do guests follow during their stay?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Our nutritional philosophy is centred on <strong>raw, organic, plant-based food</strong>. Depending on your program, this ranges from cold-pressed juices and smoothies (during detox and fasting programs) to beautifully prepared raw-vegan meals featuring salads, nut-based dishes, dehydrated breads, and raw-food sushi. All produce is organic, locally sourced where possible, and prepared by chefs trained in plant-based cuisine. Guests frequently tell us they are surprised by how satisfying and varied the food is — many leave with new favourite dishes they continue preparing at home.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Is it suitable for beginners with no wellness experience?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              We welcome guests at all levels. If you have no prior wellness experience, our team will guide you from day one with clarity, patience, and genuine care. Our pre-arrival medical consultation allows us to understand your baseline and starting comfort level so we can calibrate the program appropriately. Many guests arrive sceptical and leave transformed — both physically and in their relationship to their own health and lifestyle.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── BOOKING ── -->
+    <div class="faq-panel" id="faq-booking">
+      <div class="faq-panel-header">
+        <div class="faq-panel-icon icon-booking"><i class="fa-solid fa-calendar-check"></i></div>
+        <div>
+          <h2 class="faq-panel-title">Booking</h2>
+          <p class="faq-panel-subtitle">Reservations, pricing, and logistics</p>
+        </div>
+        <span class="faq-panel-count">6 questions</span>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">How do I book a retreat?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              You can book through multiple channels: online via our <a href="booking.html">booking page</a>, by emailing <a href="mailto:info@thelifeco.com">info@thelifeco.com</a>, by calling <a href="tel:+902524134410">+90 252 413 44 10</a>, or via <a href="https://wa.me/905325554410">WhatsApp</a>. We recommend a brief call with one of our wellness consultants before finalising — this conversation helps us understand your goals and ensure we recommend the right program, location, and duration. There is no obligation to book during this consultation.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What is included in the price?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Your program price includes: accommodation in a wellness-oriented room or suite; all meals and juices aligned to your program (organic, raw-vegan); your full daily program schedule of group sessions; daily medical consultations; core treatment sessions specified in your program (massage, hydrotherapy, colonics); access to all resort facilities including pools and relaxation areas; and a pre-departure consultation with aftercare recommendations. Optional add-ons such as aesthetic therapies, private yoga, or extended spa treatments are priced separately.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What is the cancellation policy?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Cancellations made <strong>30 or more days before arrival</strong> receive a full refund of any deposit paid. Cancellations made <strong>14 to 29 days before arrival</strong> receive a 50% refund. Cancellations within 14 days of arrival are non-refundable, though we will do our best to accommodate rescheduling requests where possible. We strongly recommend travel insurance that covers medical cancellation, and we are happy to provide supporting documentation for insurance claims.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Do you offer group discounts?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. For groups of four or more guests booking simultaneously, we offer preferential pricing and can arrange complementary group programming alongside individual sessions. Corporate wellness groups, retreats for friend groups, and family bookings all qualify. Please contact our corporate wellness team directly to discuss bespoke group packages, which can include dedicated group activities, private welcome dinners, and tailored program combinations.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">How far in advance should I book?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              We recommend booking at least <strong>4 to 8 weeks in advance</strong> to secure your preferred dates, accommodation type, and program. Peak periods — particularly July, August, and the Christmas–New Year window — can fill several months ahead. Last-minute availability does exist occasionally, particularly at shoulder seasons, but we cannot guarantee specific programs or room categories for late bookings. The earlier you book, the more time our medical team has to review your health questionnaire and prepare a fully personalised protocol.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Do you offer payment plans?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. For programs of 14 days or longer, we offer structured payment plans that allow you to spread the cost over two to four monthly instalments. Terms vary by program and location. Please contact our reservations team to discuss the options available for your chosen retreat. We want financial planning to be straightforward so you can focus entirely on your health transformation.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── MEDICAL ── -->
+    <div class="faq-panel" id="faq-medical">
+      <div class="faq-panel-header">
+        <div class="faq-panel-icon icon-medical"><i class="fa-solid fa-stethoscope"></i></div>
+        <div>
+          <h2 class="faq-panel-title">Medical</h2>
+          <p class="faq-panel-subtitle">Health, safety, and clinical supervision</p>
+        </div>
+        <span class="faq-panel-count">5 questions</span>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">Is medical supervision included?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes — unconditionally. All TheLifeCo locations operate with <strong>24/7 on-site medical supervision</strong>. Our resident physicians are available at all times for consultations, monitoring, and emergencies. This is a fundamental distinction between TheLifeCo and non-medical wellness retreats. Your safety is never compromised, and the presence of qualified physicians enables us to offer advanced programs — including extended water fasting and therapeutic interventions — that cannot be offered responsibly without continuous medical oversight.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What medical tests are performed on arrival?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Upon arrival, every guest undergoes a comprehensive medical assessment including: a full blood panel (CBC, metabolic panel, liver and kidney function, lipid profile, glucose, thyroid); body composition analysis; blood pressure and vital signs; and a detailed face-to-face consultation with our physician. These baseline results guide the personalisation of your program. A follow-up assessment at the end of your stay quantifies the improvements achieved, giving you measurable evidence of your transformation.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Can I do a program if I have a health condition?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes, and this is one of our most impactful areas of work. We have dedicated programs for <strong>Type 2 diabetes recovery, cardiovascular risk reduction, chronic inflammation, metabolic syndrome, autoimmune support, and chronic fatigue</strong>, among others. If you have a chronic condition, our team conducts a detailed pre-arrival review to confirm we can support you safely and effectively. In some cases, we may request additional records or specialist clearance — always in your best interests.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Are your doctors licensed and qualified?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes, fully. All physicians at TheLifeCo are licensed medical doctors qualified in their home countries and experienced in integrative and lifestyle medicine. Our medical team includes internists, endocrinologists, nutritional medicine specialists, and general practitioners — each with dedicated training in wellness and therapeutic medicine. We hold multiple international accreditations that validate our clinical standards, and our protocols are reviewed regularly by our medical advisory board.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What happens if I feel unwell during my stay?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              It is normal to experience mild adjustment symptoms in the first one to three days of a detox program — low energy, mild headaches, or digestive changes are common as the body transitions. These are monitored and managed by our medical team as part of your daily consultation. If anything more significant arises, our on-site physicians are available around the clock. In the rare event of a medical emergency requiring hospital-level care, we maintain relationships with local hospitals and will arrange immediate transfer with a member of our team accompanying you.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ── RESORTS ── -->
+    <div class="faq-panel" id="faq-resorts">
+      <div class="faq-panel-header">
+        <div class="faq-panel-icon icon-resorts"><i class="fa-solid fa-location-dot"></i></div>
+        <div>
+          <h2 class="faq-panel-title">Resorts</h2>
+          <p class="faq-panel-subtitle">Our locations and what to expect on-site</p>
+        </div>
+        <span class="faq-panel-count">5 questions</span>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-question">Which resort is best for me?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Each location has a distinct character. <strong>Bodrum</strong> is our adults-only flagship on the Aegean coast — ideal for a calm, focused experience in a stunning Mediterranean setting. <strong>Antalya</strong> has the largest medical department, best for guests with specific chronic health goals. <strong>Phuket</strong> offers lush tropical surroundings with a particularly strong yoga, meditation, and mindfulness offering — popular for mental and emotional renewal. <strong>Sharm El Sheikh</strong> provides year-round warmth in a Red Sea desert setting. <strong>St. Lucia</strong> is our newest Caribbean destination, combining island luxury with a full wellness program. Our consultants recommend based on your priorities.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Are the resorts adults-only?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Our <strong>Bodrum resort is adults-only</strong>, creating a particularly calm and focused atmosphere ideal for those seeking deep detox and undistracted rest. Our Antalya, Phuket, Sharm El Sheikh, and St. Lucia resorts welcome families, with programs that can be tailored for parents and older children separately. If you are travelling as a couple seeking maximum tranquillity, Bodrum is our strongest recommendation. If you are bringing family, our consultants will help you choose the most suitable alternative location.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What amenities are included at the resorts?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              All TheLifeCo resorts feature: temperature-controlled pools and relaxation areas; yoga and meditation studios; treatment rooms for massage, hydrotherapy, and specialist therapies; medical consultation suites; organic restaurant and juice bar; garden or nature spaces for outdoor practice; and a fully equipped wellness centre. Rooms are designed with rest and recovery in mind — spacious, naturally lit, and intentionally calm. Televisions are not included in rooms, in keeping with our digital detox philosophy.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">Is there Wi-Fi at the resorts?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes, Wi-Fi is available throughout all our resorts. However, we warmly encourage guests to treat their stay as an opportunity for a genuine digital detox. Reducing screen time, disconnecting from social media, and allowing the mind to truly rest is an important part of the mental wellness dimension of our programs. Many guests report that the enforced separation from constant digital input is one of the most surprising and valuable aspects of their retreat. You are, of course, entirely free to use Wi-Fi as needed.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">What about dietary requirements and allergies?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              All food served at TheLifeCo is already <strong>100% plant-based, organic, and free from gluten, dairy, and refined sugars</strong> — so many common dietary requirements are already accommodated by default. If you have specific allergies (such as nuts or seeds), please declare them during booking and on your health questionnaire. Our kitchen team will ensure your meals are safe, varied, and delicious. We have supported guests with coeliac disease, severe nut allergies, and a wide range of other dietary needs without compromise to the program experience.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="faq-cta">
+  <div class="container">
+    <h2>Still Have Questions?</h2>
+    <p>Our wellness consultants are available to answer any remaining questions and help you choose the right program, location, and duration for your goals.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-primary btn-lg">Talk to Our Team</a>
+      <a href="booking.html" class="btn btn-outline btn-lg">Book Your Retreat</a>
+    </div>
+    <div class="faq-cta-channels">
+      <div class="faq-cta-channel">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Email us at <a href="mailto:info@thelifeco.com">info@thelifeco.com</a></span>
+      </div>
+      <div class="faq-cta-channel">
+        <i class="fa-solid fa-phone"></i>
+        <span>Call <a href="tel:+902524134410">+90 252 413 44 10</a></span>
+      </div>
+      <div class="faq-cta-channel">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span><a href="https://wa.me/905325554410">Chat on WhatsApp</a></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">TheLifeCo</div>
+        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2005. With luxury resorts across Turkey, Thailand, Egypt, and the Caribbean.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/thelifeco" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/thelifeco" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://youtube.com/thelifeco" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Resorts</div>
+        <div class="footer-links">
+          <a href="resorts/bodrum.html">Bodrum</a>
+          <a href="resorts/antalya.html">Antalya</a>
+          <a href="resorts/phuket.html">Phuket</a>
+          <a href="resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
+          <a href="resorts/st-lucia.html">St. Lucia</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Programs</div>
+        <div class="footer-links">
+          <a href="programs/master-detox.html">Master Detox</a>
+          <a href="programs/water-fasting.html">Water Fasting</a>
+          <a href="programs/green-detox.html">Green Detox</a>
+          <a href="programs/longevity-reset.html">Longevity Reset</a>
+          <a href="programs/mental-wellness.html">Mental Wellness</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <div class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="blog.html">Blog</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <div class="footer-links">
+          <a href="mailto:info@thelifeco.com">info@thelifeco.com</a>
+          <a href="tel:+902524134410">+90 252 413 44 10</a>
+          <a href="https://wa.me/905325554410">WhatsApp</a>
+        </div>
+        <div style="margin-top:24px">
+          <div class="footer-heading">Booking</div>
+          <div class="footer-links">
+            <a href="booking.html">Book a Retreat</a>
+            <a href="contact.html">Talk to an Expert</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 TheLifeCo Wellbeing. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// Tab switching for FAQ panels
+document.addEventListener('DOMContentLoaded', function () {
+  var tabs = document.querySelectorAll('.faq-tabs-bar .tab');
+  var panels = document.querySelectorAll('.faq-panel');
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+
+      var targetId = tab.dataset.target.replace('#', '');
+      panels.forEach(function (panel) {
+        panel.classList.toggle('active', panel.id === targetId);
+      });
+    });
+  });
+});
+</script>
+</body>
+</html>

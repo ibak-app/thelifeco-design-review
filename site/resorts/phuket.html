@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheLifeCo Phuket — Tropical Wellness on Nai Thon Beach</title>
+<meta name="description" content="TheLifeCo Phuket sits on pristine Nai Thon Beach, Thailand. 5 swimming pools, biohacking lab, SHA Plus certified, outdoor spa pavilions, raw food workshops, and tropical wellness programs.">
+<meta property="og:title" content="TheLifeCo Phuket — Tropical Wellness on Nai Thon Beach">
+<meta property="og:description" content="Set on Phuket's pristine Nai Thon Beach with 5 pools, a biohacking lab, outdoor spa pavilions, and SHA Plus certification for the ultimate tropical wellness experience.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Lake-Outdoor.png">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* ── Page Hero ─────────────────────────────────────────── */
+.page-hero {
+  position: relative;
+  width: 100%;
+  min-height: 620px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.35) 0%, rgba(0,0,0,.20) 50%, rgba(0,0,0,.65) 100%),
+    url('https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Lake-Outdoor.png') center/cover no-repeat;
+  color: #fff;
+  overflow: hidden;
+}
+.page-hero-content {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 64px;
+  width: 100%;
+}
+.page-hero-breadcrumb {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .5px;
+  opacity: .75;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.page-hero-breadcrumb a { color: #fff; text-decoration: none; }
+.page-hero-breadcrumb a:hover { opacity: 1; text-decoration: underline; }
+.page-hero-title {
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  margin-bottom: 16px;
+  color: #fff;
+}
+.page-hero-subtitle {
+  font-size: 18px;
+  opacity: .85;
+  max-width: 560px;
+  line-height: 1.65;
+  margin-bottom: 32px;
+}
+.page-hero-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.page-hero-tag {
+  padding: 6px 16px;
+  border-radius: 100px;
+  background: rgba(255,255,255,.18);
+  backdrop-filter: blur(8px);
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.25);
+}
+
+/* ── Quick Facts ───────────────────────────────────────── */
+.quick-facts {
+  background: var(--brand-navy);
+  color: #fff;
+  padding: 0;
+}
+.quick-facts-inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.quick-fact {
+  padding: 28px 24px;
+  border-right: 1px solid rgba(255,255,255,.12);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.quick-fact:last-child { border-right: none; }
+.quick-fact-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--brand-teal);
+  flex-shrink: 0;
+}
+.quick-fact-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .6px;
+  text-transform: uppercase;
+  opacity: .6;
+  margin-bottom: 4px;
+}
+.quick-fact-value {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* ── About Section ─────────────────────────────────────── */
+.resort-about {
+  padding: 96px 0;
+}
+.resort-about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.resort-about-img {
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+.resort-about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.resort-about-eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--brand-teal);
+  margin-bottom: 16px;
+}
+.resort-about-title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  color: var(--brand-navy);
+  margin-bottom: 24px;
+}
+.resort-about-body {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* ── Programs ──────────────────────────────────────────── */
+.resort-programs {
+  padding: 88px 0;
+  background: var(--bg-section);
+}
+.resort-programs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.program-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  padding: 32px;
+  transition: all .22s;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+}
+.program-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,96,156,.1);
+  border-color: var(--brand-navy);
+}
+.program-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(0,96,156,.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--brand-navy);
+}
+.program-card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--brand-navy);
+}
+.program-card-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+}
+.program-card-link {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand-navy);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+.program-card:hover .program-card-link { color: var(--brand-teal); }
+
+/* ── Amenities ─────────────────────────────────────────── */
+.resort-amenities {
+  padding: 88px 0;
+}
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.amenity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background: #fff;
+  transition: border-color .2s;
+}
+.amenity-item:hover { border-color: var(--brand-teal); }
+.amenity-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(0,190,214,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--brand-teal);
+  flex-shrink: 0;
+}
+.amenity-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+  padding-top: 10px;
+}
+
+/* ── Gallery ───────────────────────────────────────────── */
+.resort-gallery {
+  padding: 88px 0;
+  background: var(--bg-section);
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s;
+}
+.gallery-item:hover img { transform: scale(1.04); }
+
+/* ── Getting There ─────────────────────────────────────── */
+.resort-getting-there {
+  padding: 88px 0;
+}
+.getting-there-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+  margin-top: 48px;
+}
+.transport-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  background: #fff;
+  margin-bottom: 16px;
+}
+.transport-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(0,96,156,.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--brand-navy);
+  flex-shrink: 0;
+}
+.transport-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--brand-navy);
+  margin-bottom: 6px;
+}
+.transport-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+.getting-there-info {
+  padding: 32px;
+  border-radius: 16px;
+  background: var(--bg-section);
+  border: 1px solid var(--border-color);
+}
+.getting-there-info h3 {
+  font-size: 20px;
+  color: var(--brand-navy);
+  margin-bottom: 16px;
+}
+.getting-there-info p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* ── Resort CTA ────────────────────────────────────────── */
+.resort-cta {
+  padding: 88px 0;
+  background: var(--brand-navy);
+  color: #fff;
+  text-align: center;
+}
+.resort-cta h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -1.5px;
+  margin-bottom: 16px;
+}
+.resort-cta p {
+  font-size: 18px;
+  opacity: .82;
+  max-width: 520px;
+  margin: 0 auto 36px;
+  line-height: 1.65;
+}
+.resort-cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .page-hero-title { font-size: 56px; }
+  .quick-facts-inner { grid-template-columns: repeat(2, 1fr); }
+  .quick-fact:nth-child(2) { border-right: none; }
+  .quick-fact:nth-child(1),
+  .quick-fact:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,.12); }
+  .resort-programs-grid { grid-template-columns: repeat(2, 1fr); }
+  .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .page-hero { min-height: 520px; }
+  .page-hero-title { font-size: 40px; letter-spacing: -1px; }
+  .page-hero-subtitle { font-size: 16px; }
+  .page-hero-content { padding-bottom: 48px; }
+  .resort-about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .resort-about-title { font-size: 32px; }
+  .resort-programs-grid { grid-template-columns: 1fr; }
+  .amenities-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .getting-there-grid { grid-template-columns: 1fr; gap: 32px; }
+  .resort-cta h2 { font-size: 36px; }
+  .resort-cta-buttons { flex-direction: column; align-items: center; }
+  .quick-facts-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .page-hero-title { font-size: 32px; }
+  .amenities-grid { grid-template-columns: 1fr; }
+  .quick-facts-inner { grid-template-columns: 1fr; }
+  .quick-fact { border-right: none; border-bottom: 1px solid rgba(255,255,255,.12); }
+  .quick-fact:last-child { border-bottom: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav">
+  <div class="container">
+    <a href="../index.html" class="nav-logo">TheLifeCo</a>
+    <div class="nav-links">
+      <a href="../about.html">About</a>
+      <div class="nav-dropdown">
+        <a href="../resort.html">Resorts &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="../resorts/bodrum.html">Bodrum</a>
+          <a href="../resorts/antalya.html">Antalya</a>
+          <a href="../resorts/phuket.html">Phuket</a>
+          <a href="../resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
+          <a href="../resorts/st-lucia.html">St. Lucia</a>
+        </div>
+      </div>
+      <a href="../treatments.html">Programs</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="../booking.html" class="nav-cta">Book Now</a>
+    </div>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-hero-breadcrumb">
+      <a href="../index.html">Home</a>
+      <i class="fa-solid fa-chevron-right" style="font-size:10px;opacity:.6"></i>
+      <a href="../resort.html">Resorts</a>
+      <i class="fa-solid fa-chevron-right" style="font-size:10px;opacity:.6"></i>
+      <span>Phuket</span>
+    </div>
+    <h1 class="page-hero-title">TheLifeCo Phuket</h1>
+    <p class="page-hero-subtitle">Five pools, a biohacking lab, and outdoor spa pavilions set among tropical gardens on the pristine shores of Nai Thon Beach.</p>
+    <div class="page-hero-tags">
+      <span class="page-hero-tag"><i class="fa-solid fa-water"></i> 5 Pools</span>
+      <span class="page-hero-tag"><i class="fa-solid fa-umbrella-beach"></i> Nai Thon Beach</span>
+      <span class="page-hero-tag"><i class="fa-solid fa-shield-halved"></i> SHA Plus Certified</span>
+      <span class="page-hero-tag"><i class="fa-solid fa-microchip"></i> Biohacking Lab</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUICK FACTS ===== -->
+<div class="quick-facts">
+  <div class="quick-facts-inner">
+    <div class="quick-fact">
+      <div class="quick-fact-icon"><i class="fa-solid fa-location-dot"></i></div>
+      <div>
+        <div class="quick-fact-label">Location</div>
+        <div class="quick-fact-value">Nai Thon Beach, Thailand</div>
+      </div>
+    </div>
+    <div class="quick-fact">
+      <div class="quick-fact-icon"><i class="fa-solid fa-water"></i></div>
+      <div>
+        <div class="quick-fact-label">Pools</div>
+        <div class="quick-fact-value">5 Swimming Pools</div>
+      </div>
+    </div>
+    <div class="quick-fact">
+      <div class="quick-fact-icon"><i class="fa-solid fa-shield-halved"></i></div>
+      <div>
+        <div class="quick-fact-label">Certification</div>
+        <div class="quick-fact-value">SHA Plus Certified</div>
+      </div>
+    </div>
+    <div class="quick-fact">
+      <div class="quick-fact-icon"><i class="fa-solid fa-cloud-sun-rain"></i></div>
+      <div>
+        <div class="quick-fact-label">Climate</div>
+        <div class="quick-fact-value">Tropical, warm year-round</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="resort-about">
+  <div class="container">
+    <div class="resort-about-grid">
+      <div class="resort-about-img">
+        <img
+          src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Pool-Outdoor.png"
+          alt="Outdoor pool at TheLifeCo Phuket"
+          loading="lazy"
+        >
+      </div>
+      <div>
+        <div class="resort-about-eyebrow">Tropical Wellness Paradise</div>
+        <h2 class="resort-about-title">Nai Thon Beach: Where Nature Meets Biohacking</h2>
+        <p class="resort-about-body">Set on Phuket's pristine Nai Thon Beach — one of the island's most unspoiled stretches of coastline — TheLifeCo Phuket is a sanctuary where tropical paradise and cutting-edge wellness technology converge. Five beautifully landscaped swimming pools are nestled within tropical gardens, creating intimate spaces for relaxation and recovery.</p>
+        <p class="resort-about-body">The resort's biohacking lab is among the most advanced in Southeast Asia, featuring the latest devices for cellular optimization and performance enhancement. Our outdoor spa pavilions offer treatments within a naturally healing jungle and ocean environment, while the infrared sauna and juice bar support daily detox protocols.</p>
+        <p class="resort-about-body">Phuket is also our most culturally rich destination. Raw food workshops are led by international chefs including resident wellness chef Donatas, and guests can participate in acro yoga sessions, mandala painting, and local cultural activities. SHA Plus certification guarantees the highest standards of health and safety throughout your stay.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROGRAMS ===== -->
+<section class="resort-programs">
+  <div class="container">
+    <div class="resort-about-eyebrow" style="color:var(--brand-teal);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Available at Phuket</div>
+    <h2 class="section-heading" style="margin-bottom:0">Programs at This Resort</h2>
+    <div class="resort-programs-grid">
+
+      <a href="../programs/master-detox.html" class="program-card">
+        <div class="program-card-icon"><i class="fa-solid fa-flask"></i></div>
+        <div class="program-card-title">Master Detox</div>
+        <p class="program-card-desc">Signature full-body cleansing program complemented by Phuket's tropical climate, outdoor therapies, and fresh raw food kitchen.</p>
+        <span class="program-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="../programs/green-detox.html" class="program-card">
+        <div class="program-card-icon"><i class="fa-solid fa-seedling"></i></div>
+        <div class="program-card-title">Green Detox</div>
+        <p class="program-card-desc">Plant-based detox enhanced with tropical fresh produce, outdoor juice bar sessions, and beach-side breathwork and meditation.</p>
+        <span class="program-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="../programs/longevity-reset.html" class="program-card">
+        <div class="program-card-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="program-card-title">Longevity Reset</div>
+        <p class="program-card-desc">Advanced longevity protocols using Phuket's biohacking lab, infrared sauna, and personalised nutrition from our raw food kitchen.</p>
+        <span class="program-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="../programs/mental-wellness.html" class="program-card">
+        <div class="program-card-icon"><i class="fa-solid fa-brain"></i></div>
+        <div class="program-card-title">Mental Wellness</div>
+        <p class="program-card-desc">Beach-front yoga, tropical meditation gardens, acro yoga, and professional counselling for complete mental and emotional renewal.</p>
+        <span class="program-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="../programs/water-fasting.html" class="program-card">
+        <div class="program-card-icon"><i class="fa-solid fa-droplet"></i></div>
+        <div class="program-card-title">Water Fasting</div>
+        <p class="program-card-desc">Medically supervised fasting in a tropical sanctuary, with gentle beach walks, pool time, and daily medical check-ins throughout.</p>
+        <span class="program-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+      <a href="../programs/beauty-glow.html" class="program-card">
+        <div class="program-card-icon"><i class="fa-solid fa-star"></i></div>
+        <div class="program-card-title">Beauty &amp; Glow</div>
+        <p class="program-card-desc">Outdoor spa treatments, tropical raw nutrition, infrared sauna, and mandala painting sessions for beauty from the inside out.</p>
+        <span class="program-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== AMENITIES ===== -->
+<section class="resort-amenities">
+  <div class="container">
+    <div class="resort-about-eyebrow" style="color:var(--brand-teal);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Facilities</div>
+    <h2 class="section-heading" style="margin-bottom:0">Resort Amenities</h2>
+    <div class="amenities-grid">
+
+      <div class="amenity-item">
+        <div class="amenity-icon"><i class="fa-solid fa-water"></i></div>
+        <div class="amenity-name">5 Swimming Pools</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon"><i class="fa-solid fa-umbrella-beach"></i></div>
+        <div class="amenity-name">Nai Thon Beach Access</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon"><i class="fa-solid fa-microchip"></i></div>
+        <div class="amenity-name">Biohacking Lab</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="amenity-name">SHA Plus Certified</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon"><i class="fa-solid fa-spa"></i></div>
+        <div class="amenity-name">Outdoor Spa Pavilions</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon"><i class="fa-solid fa-utensils"></i></div>
+        <div class="amenity-name">Raw Food Kitchen</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon"><i class="fa-solid fa-person-praying"></i></div>
+        <div class="amenity-name">Yoga Pavilion</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon"><i class="fa-solid fa-sun"></i></div>
+        <div class="amenity-name">Infrared Sauna</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon"><i class="fa-solid fa-glass-water-droplet"></i></div>
+        <div class="amenity-name">Outdoor Juice Bar</div>
+      </div>
+      <div class="amenity-item">
+        <div class="amenity-icon"><i class="fa-solid fa-palette"></i></div>
+        <div class="amenity-name">Art Studio</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="resort-gallery">
+  <div class="container">
+    <div class="resort-about-eyebrow" style="color:var(--brand-teal);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Gallery</div>
+    <h2 class="section-heading" style="margin-bottom:0">Life at TheLifeCo Phuket</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Phuket-Yoga.png" alt="Yoga session at TheLifeCo Phuket" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Phuket-suite-room.png" alt="Suite room at TheLifeCo Phuket" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Rawfood-Workshop-with-Donatas.png" alt="Raw food workshop with Chef Donatas at TheLifeCo Phuket" loading="lazy">
+      </div>
+      <div class="gallery-item">
+        <img src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Phuket-Acro-yoga.png" alt="Acro yoga at TheLifeCo Phuket" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GETTING THERE ===== -->
+<section class="resort-getting-there">
+  <div class="container">
+    <div class="resort-about-eyebrow" style="color:var(--brand-teal);font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Travel</div>
+    <h2 class="section-heading" style="margin-bottom:0">Getting to Phuket</h2>
+    <div class="getting-there-grid">
+      <div>
+        <div class="transport-card">
+          <div class="transport-icon"><i class="fa-solid fa-plane-arrival"></i></div>
+          <div>
+            <div class="transport-title">Phuket International Airport (HKT)</div>
+            <p class="transport-desc">Phuket Airport receives direct international flights from Bangkok, Singapore, Kuala Lumpur, Dubai, Hong Kong, and major European cities during high season.</p>
+          </div>
+        </div>
+        <div class="transport-card">
+          <div class="transport-icon"><i class="fa-solid fa-car"></i></div>
+          <div>
+            <div class="transport-title">20-Minute Airport Transfer</div>
+            <p class="transport-desc">Nai Thon Beach is conveniently located on the northwest coast of Phuket, just 20 minutes from the airport along the coastal highway.</p>
+          </div>
+        </div>
+        <div class="transport-card">
+          <div class="transport-icon"><i class="fa-solid fa-route"></i></div>
+          <div>
+            <div class="transport-title">Exploring the Island</div>
+            <p class="transport-desc">TheLifeCo Phuket can assist with day excursions to Phang Nga Bay, the Old Town, and nearby temples for guests who wish to explore between program sessions.</p>
+          </div>
+        </div>
+      </div>
+      <div class="getting-there-info">
+        <h3>Planning Your Journey</h3>
+        <p>Phuket enjoys a tropical climate with warm temperatures throughout the year. The dry season from November to April offers ideal beach and outdoor conditions. The monsoon season (May–October) brings lush greenery and quieter crowds, and the resort remains fully operational year-round.</p>
+        <p style="margin-top:16px">Thai visa requirements vary by nationality — most visitors receive a 30-day visa exemption on arrival. Our team can provide guidance specific to your country of origin and assist with any pre-arrival arrangements.</p>
+        <div style="margin-top:24px">
+          <a href="../contact.html" class="btn btn-navy">Ask About Travel Arrangements</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="resort-cta">
+  <div class="container">
+    <h2>Book Your Stay at Phuket</h2>
+    <p>Immerse yourself in tropical wellness on Thailand's most beautiful beach. Our team will design the perfect program for your health goals.</p>
+    <div class="resort-cta-buttons">
+      <a href="../booking.html" class="btn btn-primary btn-lg">Reserve Your Place</a>
+      <a href="../contact.html" class="btn btn-outline btn-lg">Talk to an Expert</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">TheLifeCo</div>
+        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2005. With luxury resorts across Turkey, Thailand, Egypt, and the Caribbean.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/thelifeco" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/thelifeco" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://youtube.com/thelifeco" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Resorts</div>
+        <div class="footer-links">
+          <a href="../resorts/bodrum.html">Bodrum</a>
+          <a href="../resorts/antalya.html">Antalya</a>
+          <a href="../resorts/phuket.html">Phuket</a>
+          <a href="../resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
+          <a href="../resorts/st-lucia.html">St. Lucia</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Programs</div>
+        <div class="footer-links">
+          <a href="../programs/master-detox.html">Master Detox</a>
+          <a href="../programs/water-fasting.html">Water Fasting</a>
+          <a href="../programs/green-detox.html">Green Detox</a>
+          <a href="../programs/longevity-reset.html">Longevity Reset</a>
+          <a href="../programs/mental-wellness.html">Mental Wellness</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <div class="footer-links">
+          <a href="../about.html">About Us</a>
+          <a href="../blog.html">Blog</a>
+          <a href="../testimonials.html">Testimonials</a>
+          <a href="../faq.html">FAQ</a>
+          <a href="../contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <div class="footer-links">
+          <a href="mailto:info@thelifeco.com">info@thelifeco.com</a>
+          <a href="tel:+902524134410">+90 252 413 44 10</a>
+          <a href="https://wa.me/905325554410">WhatsApp</a>
+        </div>
+        <div style="margin-top:24px">
+          <div class="footer-heading">Booking</div>
+          <div class="footer-links">
+            <a href="../booking.html">Book a Retreat</a>
+            <a href="../contact.html">Talk to an Expert</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 TheLifeCo Wellbeing. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.js"></script>
+</body>
+</html>

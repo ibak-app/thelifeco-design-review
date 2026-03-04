@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheLifeCo — Guest Testimonials &amp; Success Stories | 30,000+ Lives Transformed</title>
+<meta name="description" content="Read real transformation stories from TheLifeCo guests. 30,000+ guests from 80+ countries have experienced life-changing detox, weight loss, diabetes recovery, and mental wellness results.">
+<meta name="keywords" content="TheLifeCo testimonials, wellness retreat reviews, detox success stories, weight loss retreat reviews, diabetes recovery results, TheLifeCo guest reviews">
+<meta property="og:title" content="TheLifeCo — Guest Testimonials &amp; Success Stories">
+<meta property="og:description" content="30,000+ guests from 80+ countries have transformed their health at TheLifeCo. Read their stories.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Pool-Outdoor.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TheLifeCo — Guest Testimonials">
+<meta name="twitter:description" content="Real transformation stories from 30,000+ TheLifeCo guests worldwide.">
+<link rel="canonical" href="https://thelifeco.com/testimonials.html">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+
+/* ── Hero ──────────────────────────────────────────────── */
+.testimonials-hero {
+  padding: 160px 0 80px;
+  background: var(--off-white-3);
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+.testimonials-hero .accent-line {
+  margin: 0 auto 24px;
+}
+.testimonials-hero h1 {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: var(--brand-dark);
+  margin-bottom: 20px;
+  line-height: 1.05;
+}
+.testimonials-hero p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 540px;
+  margin: 0 auto 56px;
+  line-height: 1.75;
+}
+
+/* Hero stats */
+.hero-stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  max-width: 720px;
+  margin: 0 auto;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  background: var(--white);
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,.06);
+}
+.hero-stat-item {
+  flex: 1;
+  padding: 32px 24px;
+  text-align: center;
+  border-right: 1px solid var(--border-color);
+}
+.hero-stat-item:last-child { border-right: none; }
+.hero-stat-number {
+  font-size: 44px;
+  font-weight: 700;
+  color: var(--brand-navy);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.hero-stat-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+.hero-stat-stars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: var(--brand-orange);
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+/* ── Press logos ───────────────────────────────────────── */
+.press-logos-section {
+  padding: 56px 0;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--white);
+}
+.press-logos-label {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+.press-logos-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 56px;
+  flex-wrap: wrap;
+}
+.press-logo-item {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: .5px;
+  opacity: .55;
+  white-space: nowrap;
+  transition: opacity .2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.press-logo-item:hover { opacity: .85; }
+.press-logo-item i { font-size: 16px; }
+
+/* ── Filter + Grid ─────────────────────────────────────── */
+.testimonials-section {
+  padding: 72px 0 88px;
+  background: var(--white);
+}
+.testimonials-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.testimonials-count {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ── Testimonial card ──────────────────────────────────── */
+/* Extends .testimonial base class from style.css */
+.testimonial {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.testimonial-quote-icon {
+  font-size: 36px;
+  color: var(--brand-teal);
+  opacity: .25;
+  line-height: 1;
+  margin-bottom: 4px;
+  font-family: Georgia, serif;
+}
+.testimonial-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  flex: 1;
+  font-style: italic;
+}
+.testimonial-author-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+}
+.testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  flex-shrink: 0;
+}
+.avatar-navy { background: linear-gradient(135deg, var(--brand-navy), #004a7a); }
+.avatar-teal { background: linear-gradient(135deg, var(--brand-teal), #00a0b8); }
+.avatar-orange { background: linear-gradient(135deg, var(--brand-orange), #d4852e); }
+.avatar-dark { background: linear-gradient(135deg, var(--brand-dark), #2a2f46); }
+.avatar-green { background: linear-gradient(135deg, var(--brand-green), #3a9d5e); }
+
+.testimonial-author {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand-navy);
+  margin-bottom: 2px;
+}
+.testimonial-meta {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.testimonial-badge {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.badge-detox { background: rgba(0,190,214,.1); color: #007a8c; }
+.badge-weight { background: rgba(246,163,88,.15); color: #b06b1a; }
+.badge-medical { background: rgba(0,96,156,.1); color: var(--brand-navy); }
+.badge-wellness { background: rgba(108,202,152,.15); color: #2d8a5e; }
+
+/* Press card variant */
+.testimonial--press {
+  background: var(--brand-dark);
+  border-color: transparent;
+}
+.testimonial--press .testimonial-quote-icon { color: var(--brand-teal); opacity: .4; }
+.testimonial--press .testimonial-text { color: rgba(255,255,255,.88); }
+.testimonial--press .testimonial-author-row { border-top-color: rgba(255,255,255,.12); }
+.testimonial--press .testimonial-author { color: var(--brand-teal); }
+.testimonial--press .testimonial-meta { color: rgba(255,255,255,.45); }
+.testimonial--press .testimonial-stars { color: var(--brand-orange); }
+
+/* ── CTA ───────────────────────────────────────────────── */
+.testimonials-cta {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.4) 50%, rgba(0,0,0,.6) 100%),
+    url('https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Pool-Outdoor.png') center/cover no-repeat;
+  padding: 120px 0;
+  text-align: center;
+  color: var(--white);
+}
+.testimonials-cta h2 {
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+.testimonials-cta p {
+  font-size: 18px;
+  color: rgba(255,255,255,.8);
+  max-width: 520px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+
+/* ── Responsive ────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .testimonials-hero h1 { font-size: 48px; }
+  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-cta h2 { font-size: 40px; }
+  .press-logos-row { gap: 36px; }
+}
+@media (max-width: 768px) {
+  .testimonials-hero { padding: 120px 0 56px; }
+  .testimonials-hero h1 { font-size: 36px; letter-spacing: -1px; }
+  .testimonials-hero p { font-size: 16px; }
+  .hero-stats-row { flex-direction: column; border-radius: 16px; }
+  .hero-stat-item { border-right: none; border-bottom: 1px solid var(--border-color); }
+  .hero-stat-item:last-child { border-bottom: none; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .testimonials-cta h2 { font-size: 30px; letter-spacing: -.5px; }
+  .testimonials-cta p { font-size: 16px; }
+  .testimonials-cta { padding: 80px 0; }
+  .press-logos-row { gap: 24px; }
+  .testimonials-filter { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .testimonials-hero h1 { font-size: 28px; }
+  .hero-stat-number { font-size: 36px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav nav--dark">
+  <div class="container">
+    <a href="index.html" class="nav-logo">TheLifeCo</a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <div class="nav-dropdown">
+        <a href="resort.html">Resorts &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="resorts/bodrum.html">Bodrum</a>
+          <a href="resorts/antalya.html">Antalya</a>
+          <a href="resorts/phuket.html">Phuket</a>
+          <a href="resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
+          <a href="resorts/st-lucia.html">St. Lucia</a>
+        </div>
+      </div>
+      <a href="treatments.html">Programs</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="booking.html" class="nav-cta">Book Now</a>
+    </div>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="testimonials-hero">
+  <div class="container">
+    <div class="accent-line"></div>
+    <h1>Stories That<br>Inspire</h1>
+    <p>Over 30,000 guests from 80+ countries have transformed their health at TheLifeCo. Here are some of their stories.</p>
+
+    <div class="hero-stats-row">
+      <div class="hero-stat-item">
+        <div class="hero-stat-number">30,000+</div>
+        <div class="hero-stat-label">Guests Transformed</div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="hero-stat-number">80+</div>
+        <div class="hero-stat-label">Countries Represented</div>
+      </div>
+      <div class="hero-stat-item">
+        <div class="hero-stat-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <div class="hero-stat-label">5-Star Average Rating</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRESS LOGOS ===== -->
+<section class="press-logos-section">
+  <div class="container">
+    <p class="press-logos-label">As featured in</p>
+    <div class="press-logos-row">
+      <div class="press-logo-item">
+        <i class="fa-solid fa-trophy"></i>
+        World Spa Awards
+      </div>
+      <div class="press-logo-item">
+        <i class="fa-regular fa-newspaper"></i>
+        Tatler
+      </div>
+      <div class="press-logo-item">
+        <i class="fa-solid fa-globe"></i>
+        Cond&eacute; Nast Traveller
+      </div>
+      <div class="press-logo-item">
+        <i class="fa-brands fa-font-awesome"></i>
+        Forbes
+      </div>
+      <div class="press-logo-item">
+        <i class="fa-solid fa-gem"></i>
+        Vogue
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS GRID ===== -->
+<section class="testimonials-section">
+  <div class="container">
+
+    <div class="testimonials-filter">
+      <div class="filter-pills" style="margin-bottom:0">
+        <button class="pill active">All</button>
+        <button class="pill">Detox</button>
+        <button class="pill">Weight Loss</button>
+        <button class="pill">Medical</button>
+        <button class="pill">Wellness</button>
+      </div>
+      <span class="testimonials-count">Showing 12 of 240+ reviews</span>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <!-- 1: Detox -->
+      <div class="testimonial">
+        <div class="testimonial-quote-icon">&ldquo;</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">I arrived exhausted, bloated, and running on caffeine and willpower. By day five of the Master Detox I felt genuinely alive for the first time in years. My digestion, sleep, and energy all shifted in ways I could not have imagined. I left Bodrum a completely different person.</p>
+        <div class="testimonial-author-row">
+          <div class="testimonial-avatar avatar-navy">SC</div>
+          <div>
+            <div class="testimonial-author">Sarah C.</div>
+            <div class="testimonial-meta">London, UK &middot; 14-day Master Detox, Bodrum</div>
+          </div>
+          <span class="testimonial-badge badge-detox">Detox</span>
+        </div>
+      </div>
+
+      <!-- 2: Weight Loss -->
+      <div class="testimonial">
+        <div class="testimonial-quote-icon">&ldquo;</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">In 21 days at Antalya I lost 11 kilograms — but more importantly I learned exactly why my weight had been creeping up for a decade. The medical team identified hormonal imbalances and gave me a clear protocol to follow at home. Eight months later I have maintained every kilogram of that loss.</p>
+        <div class="testimonial-author-row">
+          <div class="testimonial-avatar avatar-teal">MR</div>
+          <div>
+            <div class="testimonial-author">Marco R.</div>
+            <div class="testimonial-meta">Milan, Italy &middot; 21-day Weight Management, Antalya</div>
+          </div>
+          <span class="testimonial-badge badge-weight">Weight Loss</span>
+        </div>
+      </div>
+
+      <!-- 3: Medical / Diabetes -->
+      <div class="testimonial">
+        <div class="testimonial-quote-icon">&ldquo;</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">My HbA1c dropped from 9.2% to 6.1% in three weeks. My endocrinologist back home is genuinely stunned. I came to TheLifeCo sceptical — my diabetes had been managed for six years but was getting worse. What the doctors here achieved through nutrition and lifestyle intervention is extraordinary.</p>
+        <div class="testimonial-author-row">
+          <div class="testimonial-avatar avatar-orange">JA</div>
+          <div>
+            <div class="testimonial-author">James A.</div>
+            <div class="testimonial-meta">Toronto, Canada &middot; 21-day Diabetes Recovery, Antalya</div>
+          </div>
+          <span class="testimonial-badge badge-medical">Medical</span>
+        </div>
+      </div>
+
+      <!-- 4: Press — Tatler -->
+      <div class="testimonial testimonial--press">
+        <div class="testimonial-quote-icon">&ldquo;</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">A life-changing detox experience combining cutting-edge medical science with ancient healing traditions. TheLifeCo sets the standard against which all wellness retreats should be judged. The medical rigour here is genuinely exceptional.</p>
+        <div class="testimonial-author-row">
+          <div class="testimonial-avatar avatar-teal" style="font-size:10px">TAT</div>
+          <div>
+            <div class="testimonial-author">Tatler Magazine</div>
+            <div class="testimonial-meta">Press Feature &middot; TheLifeCo Bodrum Review</div>
+          </div>
+          <span class="testimonial-badge" style="background:rgba(0,190,214,.2);color:var(--brand-teal)">Press</span>
+        </div>
+      </div>
+
+      <!-- 5: Wellness / Mental Health -->
+      <div class="testimonial">
+        <div class="testimonial-quote-icon">&ldquo;</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">I came for the physical detox but what shifted most profoundly was my mental state. After years of anxiety and chronic stress, two weeks in Phuket — with daily meditation, breathwork sessions, and conversations with the wellness coaches — gave me tools I still use every single day.</p>
+        <div class="testimonial-author-row">
+          <div class="testimonial-avatar avatar-green">LN</div>
+          <div>
+            <div class="testimonial-author">Laura N.</div>
+            <div class="testimonial-meta">Stockholm, Sweden &middot; 14-day Mental Wellness, Phuket</div>
+          </div>
+          <span class="testimonial-badge badge-wellness">Wellness</span>
+        </div>
+      </div>
+
+      <!-- 6: Detox / Water Fasting -->
+      <div class="testimonial">
+        <div class="testimonial-quote-icon">&ldquo;</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">Seven days of water fasting under medical supervision was the most challenging and rewarding thing I have ever done. By day four the mental clarity was extraordinary — a sharpness I had not felt since my twenties. The doctors monitored everything meticulously. I felt completely safe throughout.</p>
+        <div class="testimonial-author-row">
+          <div class="testimonial-avatar avatar-dark">DK</div>
+          <div>
+            <div class="testimonial-author">David K.</div>
+            <div class="testimonial-meta">Dubai, UAE &middot; 7-day Water Fasting, Bodrum</div>
+          </div>
+          <span class="testimonial-badge badge-detox">Detox</span>
+        </div>
+      </div>
+
+      <!-- 7: Press — Conde Nast -->
+      <div class="testimonial testimonial--press">
+        <div class="testimonial-quote-icon">&ldquo;</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">TheLifeCo stands apart with its Four Pillars approach — nutrition, physical activity, mental wellness, and inner peace. The results guests achieve here are not temporary; they are the foundation of a genuinely different life. One of the world's most credible wellness destinations, without qualification.</p>
+        <div class="testimonial-author-row">
+          <div class="testimonial-avatar avatar-orange" style="font-size:10px">CNT</div>
+          <div>
+            <div class="testimonial-author">Cond&eacute; Nast Traveller</div>
+            <div class="testimonial-meta">Press Feature &middot; World's Best Wellness Retreats</div>
+          </div>
+          <span class="testimonial-badge" style="background:rgba(0,190,214,.2);color:var(--brand-teal)">Press</span>
+        </div>
+      </div>
+
+      <!-- 8: Weight Loss -->
+      <div class="testimonial">
+        <div class="testimonial-quote-icon">&ldquo;</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">I have tried every diet programme imaginable over fifteen years. Nothing has come close to what happened at TheLifeCo. In 14 days my relationship with food completely changed. I stopped craving sugar entirely — something I thought was impossible. The raw food is genuinely delicious and deeply satisfying.</p>
+        <div class="testimonial-author-row">
+          <div class="testimonial-avatar avatar-navy">AM</div>
+          <div>
+            <div class="testimonial-author">Aisha M.</div>
+            <div class="testimonial-meta">Riyadh, Saudi Arabia &middot; 14-day Weight Management, Bodrum</div>
+          </div>
+          <span class="testimonial-badge badge-weight">Weight Loss</span>
+        </div>
+      </div>
+
+      <!-- 9: Medical / Cardiovascular -->
+      <div class="testimonial">
+        <div class="testimonial-quote-icon">&ldquo;</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">My cardiologist had been warning me about cholesterol and blood pressure for three years. After 21 days at Antalya my LDL dropped by 38% and my blood pressure normalised without medication. The team built a protocol addressing my cardiovascular health systematically, not superficially. I am genuinely grateful.</p>
+        <div class="testimonial-author-row">
+          <div class="testimonial-avatar avatar-teal">RH</div>
+          <div>
+            <div class="testimonial-author">Richard H.</div>
+            <div class="testimonial-meta">New York, USA &middot; 21-day Cardiovascular Program, Antalya</div>
+          </div>
+          <span class="testimonial-badge badge-medical">Medical</span>
+        </div>
+      </div>
+
+      <!-- 10: Wellness / Longevity -->
+      <div class="testimonial">
+        <div class="testimonial-quote-icon">&ldquo;</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">At 58 I felt old. After two weeks on the Longevity Reset in Phuket I feel more vital than I did at 45. The combination of personalised supplementation, anti-inflammatory nutrition, and daily movement therapy made a difference I can feel in my joints, my sleep, and my cognitive sharpness.</p>
+        <div class="testimonial-author-row">
+          <div class="testimonial-avatar avatar-orange">FW</div>
+          <div>
+            <div class="testimonial-author">Francesca W.</div>
+            <div class="testimonial-meta">Sydney, Australia &middot; 14-day Longevity Reset, Phuket</div>
+          </div>
+          <span class="testimonial-badge badge-wellness">Wellness</span>
+        </div>
+      </div>
+
+      <!-- 11: Press — Forbes -->
+      <div class="testimonial testimonial--press">
+        <div class="testimonial-quote-icon">&ldquo;</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">TheLifeCo's Master Detox programme is one of the most comprehensive and clinically credible wellness experiences available anywhere in the world. The combination of medical oversight, personalised nutrition, and immersive environment produces results that self-managed approaches simply cannot replicate.</p>
+        <div class="testimonial-author-row">
+          <div class="testimonial-avatar avatar-dark" style="font-size:11px">FBS</div>
+          <div>
+            <div class="testimonial-author">Forbes</div>
+            <div class="testimonial-meta">Press Feature &middot; Best Wellness Destinations 2024</div>
+          </div>
+          <span class="testimonial-badge" style="background:rgba(0,190,214,.2);color:var(--brand-teal)">Press</span>
+        </div>
+      </div>
+
+      <!-- 12: Detox / First-Timer -->
+      <div class="testimonial">
+        <div class="testimonial-quote-icon">&ldquo;</div>
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="testimonial-text">I was nervous as a first-timer — I had never done anything like this. The team immediately put me at ease. Every day I had a doctor who knew my name, my numbers, and my goals. By day three I stopped missing coffee. By day seven I cried with gratitude. This changed how I live my life.</p>
+        <div class="testimonial-author-row">
+          <div class="testimonial-avatar avatar-green">YT</div>
+          <div>
+            <div class="testimonial-author">Yuki T.</div>
+            <div class="testimonial-meta">Tokyo, Japan &middot; 10-day Green Detox, Bodrum</div>
+          </div>
+          <span class="testimonial-badge badge-detox">Detox</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:56px">
+      <a href="booking.html" class="btn btn-outline-dark btn-lg">Read More Stories</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="testimonials-cta">
+  <div class="container">
+    <h2>Ready to Write<br>Your Own Story?</h2>
+    <p>Join 30,000+ guests who have transformed their health at TheLifeCo. Your journey starts with a single conversation.</p>
+    <div class="cta-buttons">
+      <a href="contact.html" class="btn btn-primary btn-lg">Talk to an Expert</a>
+      <a href="booking.html" class="btn btn-outline btn-lg">Book Your Retreat</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">TheLifeCo</div>
+        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2005. With luxury resorts across Turkey, Thailand, Egypt, and the Caribbean.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/thelifeco" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/thelifeco" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://youtube.com/thelifeco" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Resorts</div>
+        <div class="footer-links">
+          <a href="resorts/bodrum.html">Bodrum</a>
+          <a href="resorts/antalya.html">Antalya</a>
+          <a href="resorts/phuket.html">Phuket</a>
+          <a href="resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
+          <a href="resorts/st-lucia.html">St. Lucia</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Programs</div>
+        <div class="footer-links">
+          <a href="programs/master-detox.html">Master Detox</a>
+          <a href="programs/water-fasting.html">Water Fasting</a>
+          <a href="programs/green-detox.html">Green Detox</a>
+          <a href="programs/longevity-reset.html">Longevity Reset</a>
+          <a href="programs/mental-wellness.html">Mental Wellness</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <div class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="blog.html">Blog</a>
+          <a href="testimonials.html">Testimonials</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Contact</div>
+        <div class="footer-links">
+          <a href="mailto:info@thelifeco.com">info@thelifeco.com</a>
+          <a href="tel:+902524134410">+90 252 413 44 10</a>
+          <a href="https://wa.me/905325554410">WhatsApp</a>
+        </div>
+        <div style="margin-top:24px">
+          <div class="footer-heading">Booking</div>
+          <div class="footer-links">
+            <a href="booking.html">Book a Retreat</a>
+            <a href="contact.html">Talk to an Expert</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 TheLifeCo Wellbeing. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

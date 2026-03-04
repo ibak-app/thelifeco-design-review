@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheLifeCo — Book Your Retreat</title>
+<meta name="description" content="Book your personalized wellness retreat at TheLifeCo. Choose from 5 luxury resort destinations across Turkey, Thailand, Egypt, and the Caribbean. Master Detox, Water Fasting, Longevity Reset, and more.">
+<meta name="keywords" content="book wellness retreat, TheLifeCo booking, detox retreat booking, Bodrum wellness, Phuket retreat">
+<meta property="og:title" content="TheLifeCo — Book Your Wellness Retreat">
+<meta property="og:description" content="Choose your destination and program. Our team will design a personalized wellness journey just for you.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thelifeco.com/booking.html">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TheLifeCo — Book Your Wellness Retreat">
+<meta name="twitter:description" content="Choose your destination and program and let us design a personalized wellness journey for you.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* --- Hero --- */
+.booking-hero {
+  padding: 140px 0 72px;
+  background: var(--bg-section);
+  text-align: center;
+}
+.booking-hero .accent-line { margin: 0 auto 24px; }
+.booking-hero h1 {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+.booking-hero p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* --- Booking form card --- */
+.booking-form-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* --- Step header --- */
+.booking-step-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 32px 48px 0;
+}
+.booking-step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--brand-navy);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.booking-step-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+.booking-step-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.booking-step-divider {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 28px 48px;
+}
+
+/* --- Resort radio cards --- */
+.resort-radio-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  padding: 0 48px;
+}
+.resort-radio-label {
+  cursor: pointer;
+  display: block;
+}
+.resort-radio-label input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.resort-radio-card {
+  border: 2px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+.resort-radio-label input[type="radio"]:checked + .resort-radio-card {
+  border-color: var(--brand-navy);
+  box-shadow: 0 0 0 3px rgba(0, 96, 156, 0.15);
+}
+.resort-radio-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  background: var(--off-white-2);
+}
+.resort-radio-body {
+  padding: 12px;
+  text-align: center;
+}
+.resort-radio-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+.resort-radio-country {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.resort-radio-check {
+  display: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--brand-navy);
+  color: var(--white);
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  margin: 0 auto 4px;
+}
+.resort-radio-label input[type="radio"]:checked + .resort-radio-card .resort-radio-check {
+  display: flex;
+}
+
+/* --- Step 2 (program) --- */
+.booking-program-row {
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.booking-select-wrap {
+  position: relative;
+}
+.booking-select-wrap select {
+  width: 100%;
+  padding: 16px 48px 16px 20px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 14px;
+  font-family: var(--font-primary);
+  font-size: 15px;
+  color: var(--text-primary);
+  background: var(--white);
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: border-color 0.2s;
+}
+.booking-select-wrap select:focus {
+  border-color: var(--brand-navy);
+  box-shadow: 0 0 0 3px rgba(0, 96, 156, 0.08);
+}
+.booking-select-wrap::after {
+  content: '';
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 6px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23919191' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/contain no-repeat;
+  pointer-events: none;
+}
+.program-note {
+  background: rgba(0, 190, 214, 0.08);
+  border: 1px solid rgba(0, 190, 214, 0.2);
+  border-radius: 14px;
+  padding: 16px 20px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.program-note strong { color: var(--brand-teal); }
+
+/* --- Step 3 (details) --- */
+.booking-details-grid {
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.booking-details-grid .full-width { grid-column: 1 / -1; }
+
+.bform-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.bform-group input,
+.bform-group select,
+.bform-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  font-family: var(--font-primary);
+  font-size: 15px;
+  color: var(--text-primary);
+  background: var(--white);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.bform-group input:focus,
+.bform-group select:focus,
+.bform-group textarea:focus {
+  border-color: var(--brand-navy);
+  box-shadow: 0 0 0 3px rgba(0, 96, 156, 0.08);
+}
+.bform-group textarea {
+  height: 100px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+/* --- Form footer --- */
+.booking-form-footer {
+  padding: 32px 48px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 32px;
+}
+.booking-form-assurance {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+.booking-form-assurance i { color: var(--brand-teal); font-size: 16px; }
+
+/* --- What to Expect section --- */
+.expect-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.2s;
+}
+.expect-card:hover {
+  border-color: var(--brand-teal);
+  transform: translateY(-4px);
+}
+.expect-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 13px;
+  background: rgba(0, 190, 214, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-teal);
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.expect-step {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+.expect-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+}
+.expect-desc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* --- FAQ section --- */
+.booking-faq { max-width: 800px; margin: 0 auto; }
+
+/* --- Help CTA strip --- */
+.help-strip {
+  background: var(--bg-section);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.help-strip h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+.help-strip p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  max-width: 480px;
+}
+.help-strip-buttons {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .resort-radio-grid { grid-template-columns: repeat(3, 1fr); }
+  .booking-hero h1 { font-size: 48px; }
+}
+@media (max-width: 768px) {
+  .booking-hero { padding: 120px 0 56px; }
+  .booking-hero h1 { font-size: 36px; letter-spacing: -1px; }
+  .booking-hero p { font-size: 16px; }
+  .booking-step-header { padding: 24px 20px 0; }
+  .booking-step-divider { margin: 20px; }
+  .resort-radio-grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+  .booking-program-row { grid-template-columns: 1fr; padding: 0 20px; }
+  .booking-details-grid { grid-template-columns: 1fr; padding: 0 20px; }
+  .booking-details-grid .full-width { grid-column: 1; }
+  .booking-form-footer { flex-direction: column; padding: 24px 20px; text-align: center; }
+  .help-strip { flex-direction: column; text-align: center; }
+  .help-strip-buttons { flex-direction: column; width: 100%; }
+}
+@media (max-width: 480px) {
+  .booking-hero h1 { font-size: 28px; }
+  .resort-radio-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav nav--dark">
+  <div class="container">
+    <a href="index.html" class="nav-logo">TheLifeCo</a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <div class="nav-dropdown">
+        <a href="resort.html">Resorts &#9662;</a>
+        <div class="nav-dropdown-menu">
+          <a href="resorts/bodrum.html">Bodrum</a>
+          <a href="resorts/antalya.html">Antalya</a>
+          <a href="resorts/phuket.html">Phuket</a>
+          <a href="resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
+          <a href="resorts/st-lucia.html">St. Lucia</a>
+        </div>
+      </div>
+      <a href="treatments.html">Programs</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="booking.html" class="nav-cta">Book Now</a>
+    </div>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="booking-hero">
+  <div class="container">
+    <div class="accent-line"></div>
+    <h1>Book Your Wellness Retreat</h1>
+    <p>Choose your destination and program, and our team will create a personalized wellness journey just for you.</p>
+  </div>
+</section>
+
+<!-- ===== BOOKING FORM ===== -->
+<section class="section">
+  <div class="container">
+    <form action="#" method="post" novalidate>
+      <div class="booking-form-card">
+
+        <!-- Step 1: Resort -->
+        <div class="booking-step-header">
+          <div class="booking-step-number">1</div>
+          <div>
+            <div class="booking-step-label">Step One</div>
+            <div class="booking-step-title">Choose Your Resort Destination</div>
+          </div>
+        </div>
+        <hr class="booking-step-divider">
+        <div class="resort-radio-grid">
+          <label class="resort-radio-label">
+            <input type="radio" name="resort" value="bodrum" checked>
+            <div class="resort-radio-card">
+              <div class="resort-radio-check"><i class="fa-solid fa-check"></i></div>
+              <img class="resort-radio-img" src="https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=300&q=80" alt="Bodrum resort view" loading="lazy">
+              <div class="resort-radio-body">
+                <div class="resort-radio-name">Bodrum</div>
+                <div class="resort-radio-country">Turkey</div>
+              </div>
+            </div>
+          </label>
+          <label class="resort-radio-label">
+            <input type="radio" name="resort" value="antalya">
+            <div class="resort-radio-card">
+              <div class="resort-radio-check"><i class="fa-solid fa-check"></i></div>
+              <img class="resort-radio-img" src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=300&q=80" alt="Antalya resort view" loading="lazy">
+              <div class="resort-radio-body">
+                <div class="resort-radio-name">Antalya</div>
+                <div class="resort-radio-country">Turkey</div>
+              </div>
+            </div>
+          </label>
+          <label class="resort-radio-label">
+            <input type="radio" name="resort" value="phuket">
+            <div class="resort-radio-card">
+              <div class="resort-radio-check"><i class="fa-solid fa-check"></i></div>
+              <img class="resort-radio-img" src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=300&q=80" alt="Phuket resort view" loading="lazy">
+              <div class="resort-radio-body">
+                <div class="resort-radio-name">Phuket</div>
+                <div class="resort-radio-country">Thailand</div>
+              </div>
+            </div>
+          </label>
+          <label class="resort-radio-label">
+            <input type="radio" name="resort" value="sharm">
+            <div class="resort-radio-card">
+              <div class="resort-radio-check"><i class="fa-solid fa-check"></i></div>
+              <img class="resort-radio-img" src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=300&q=80" alt="Sharm El Sheikh resort view" loading="lazy">
+              <div class="resort-radio-body">
+                <div class="resort-radio-name">Sharm El Sheikh</div>
+                <div class="resort-radio-country">Egypt</div>
+              </div>
+            </div>
+          </label>
+          <label class="resort-radio-label">
+            <input type="radio" name="resort" value="st-lucia">
+            <div class="resort-radio-card">
+              <div class="resort-radio-check"><i class="fa-solid fa-check"></i></div>
+              <img class="resort-radio-img" src="https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=300&q=80" alt="St. Lucia resort view" loading="lazy">
+              <div class="resort-radio-body">
+                <div class="resort-radio-name">St. Lucia</div>
+                <div class="resort-radio-country">Caribbean</div>
+              </div>
+            </div>
+          </label>
+        </div>
+
+        <!-- Step 2: Program -->
+        <div class="booking-step-header" style="margin-top:40px">
+          <div class="booking-step-number">2</div>
+          <div>
+            <div class="booking-step-label">Step Two</div>
+            <div class="booking-step-title">Choose Your Wellness Program</div>
+          </div>
+        </div>
+        <hr class="booking-step-divider">
+        <div class="booking-program-row">
+          <div class="bform-group">
+            <label for="booking-program">Program</label>
+            <div class="booking-select-wrap">
+              <select id="booking-program" name="program" required>
+                <option value="">Select a program...</option>
+                <option value="master-detox">Master Detox</option>
+                <option value="water-fasting">Water Fasting</option>
+                <option value="green-detox">Green Detox</option>
+                <option value="juice-cleanse">Juice Cleanse</option>
+                <option value="diabetes-recovery">Diabetes Recovery</option>
+                <option value="weight-loss">Weight Loss</option>
+                <option value="mental-wellness">Mental Wellness</option>
+                <option value="longevity-reset">Longevity Reset</option>
+                <option value="beauty-glow">Beauty &amp; Glow</option>
+                <option value="spa-retreat">Spa Retreat</option>
+              </select>
+            </div>
+          </div>
+          <div class="program-note">
+            <strong>Not sure which program is right for you?</strong> Select any option above and describe your goals in the message field. Our wellness consultants will personally recommend the best fit before confirming your booking.
+          </div>
+        </div>
+
+        <!-- Step 3: Details -->
+        <div class="booking-step-header" style="margin-top:40px">
+          <div class="booking-step-number">3</div>
+          <div>
+            <div class="booking-step-label">Step Three</div>
+            <div class="booking-step-title">Your Details</div>
+          </div>
+        </div>
+        <hr class="booking-step-divider">
+        <div class="booking-details-grid">
+          <div class="bform-group">
+            <label for="booking-name">Full Name</label>
+            <input type="text" id="booking-name" name="name" placeholder="Jane Smith" required autocomplete="name">
+          </div>
+          <div class="bform-group">
+            <label for="booking-email">Email Address</label>
+            <input type="email" id="booking-email" name="email" placeholder="jane@example.com" required autocomplete="email">
+          </div>
+          <div class="bform-group">
+            <label for="booking-phone">Phone Number</label>
+            <input type="tel" id="booking-phone" name="phone" placeholder="+1 555 000 0000" autocomplete="tel">
+          </div>
+          <div class="bform-group">
+            <label for="booking-guests">Number of Guests</label>
+            <div class="booking-select-wrap">
+              <select id="booking-guests" name="guests">
+                <option value="1">1 Guest (Solo)</option>
+                <option value="2">2 Guests (Couple)</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5+">5+ Guests (Group)</option>
+              </select>
+            </div>
+          </div>
+          <div class="bform-group">
+            <label for="booking-dates">Preferred Dates</label>
+            <input type="text" id="booking-dates" name="dates" placeholder="e.g. 15 June – 22 June 2025">
+          </div>
+          <div class="bform-group">
+            <label for="booking-duration">Program Duration</label>
+            <div class="booking-select-wrap">
+              <select id="booking-duration" name="duration">
+                <option value="">Not sure yet</option>
+                <option value="3">3 Days</option>
+                <option value="5">5 Days</option>
+                <option value="7">7 Days</option>
+                <option value="10">10 Days</option>
+                <option value="14">14 Days</option>
+                <option value="21">21 Days</option>
+              </select>
+            </div>
+          </div>
+          <div class="bform-group full-width">
+            <label for="booking-requests">Special Requests or Health Notes</label>
+            <textarea id="booking-requests" name="requests" placeholder="Please share any dietary requirements, health conditions, allergies, or specific wellness goals you would like us to know about..."></textarea>
+          </div>
+        </div>
+
+        <!-- Form footer -->
+        <div class="booking-form-footer">
+          <div class="booking-form-assurance">
+            <i class="fa-solid fa-lock"></i>
+            <span>Your information is secure and will never be shared with third parties.</span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg">
+            Request Booking <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ===== WHAT TO EXPECT ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <div style="text-align:center;max-width:560px;margin:0 auto 56px">
+      <div class="accent-line" style="margin:0 auto 20px"></div>
+      <h2 class="text-40 font-700" style="margin-bottom:16px">What to Expect</h2>
+      <p class="text-16 text-secondary">From the moment you submit your request to your final day at the resort, we take care of every detail.</p>
+    </div>
+    <div class="grid grid-4">
+      <div class="expect-card">
+        <div class="expect-icon"><i class="fa-solid fa-stethoscope"></i></div>
+        <div class="expect-step">Step 1</div>
+        <div class="expect-title">Wellness Consultation</div>
+        <p class="expect-desc">A dedicated consultant reaches out within 24 hours to discuss your health history, goals, and preferences over a private call.</p>
+      </div>
+      <div class="expect-card">
+        <div class="expect-icon" style="background:rgba(0,96,156,0.1);color:var(--brand-navy)"><i class="fa-solid fa-clipboard-list"></i></div>
+        <div class="expect-step">Step 2</div>
+        <div class="expect-title">Personalized Program Design</div>
+        <p class="expect-desc">Our medical and wellness team creates a bespoke program schedule matched to your specific needs, timeline, and goals.</p>
+      </div>
+      <div class="expect-card">
+        <div class="expect-icon" style="background:rgba(246,163,88,0.1);color:var(--brand-orange)"><i class="fa-solid fa-bed"></i></div>
+        <div class="expect-step">Step 3</div>
+        <div class="expect-title">Luxury Accommodation</div>
+        <p class="expect-desc">Settle into your private suite or villa at the resort. All meals, therapies, and scheduled activities are included in your program.</p>
+      </div>
+      <div class="expect-card">
+        <div class="expect-icon" style="background:rgba(20,24,39,0.08);color:var(--brand-dark)"><i class="fa-solid fa-heart-pulse"></i></div>
+        <div class="expect-step">Step 4</div>
+        <div class="expect-title">Post-Retreat Aftercare</div>
+        <p class="expect-desc">Receive a detailed aftercare plan, nutritional guidelines, and ongoing support from your consultant for 30 days after your retreat.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;max-width:560px;margin:0 auto 56px">
+      <div class="accent-line" style="margin:0 auto 20px"></div>
+      <h2 class="text-40 font-700" style="margin-bottom:16px">Booking Questions</h2>
+      <p class="text-16 text-secondary">Everything you need to know before making your reservation.</p>
+    </div>
+    <div class="booking-faq">
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">How far in advance should I book my retreat?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">We recommend booking at least 4–6 weeks in advance to ensure your preferred resort, program, and dates are available. For peak seasons (May–September and December–January), we suggest booking 2–3 months ahead. Last-minute availability is sometimes possible — contact us directly for urgent requests.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Is a deposit required to confirm my booking?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Yes, a 30% deposit is required to secure your reservation. The remaining balance is due 14 days before your arrival. We accept all major credit cards, bank transfers, and PayPal. Full payment plans are available for longer stays — ask your consultant for details.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">What is the cancellation and refund policy?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Cancellations made 30+ days before arrival receive a full deposit refund. Cancellations 14–30 days before arrival receive a 50% refund. Cancellations within 14 days of arrival are non-refundable, but we will work with you to reschedule at no extra charge in case of medical emergencies. Travel insurance is strongly recommended.</div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Can I customize my program after booking?</button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">Absolutely. Your program is finalized during the pre-arrival consultation call. You can adjust therapy types, activity intensity, meal preferences, and add-on treatments up to 7 days before arrival. Once on site, your lead physician and wellness coach can further adapt the program based on daily assessments.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HELP CTA ===== -->
+<section class="section section--gray">
+  <div class="container">
+    <div class="help-strip">
+      <div>
+        <h3>Need help choosing?</h3>
+        <p>Not sure which resort or program is right for you? Our wellness experts are happy to guide you — no commitment required.</p>
+      </div>
+      <div class="help-strip-buttons">
+        <a href="contact.html" class="btn btn-primary btn-lg">Talk to an Expert</a>
+        <a href="treatments.html" class="btn btn-outline-dark btn-lg">Explore Programs</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">TheLifeCo</div>
+        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2005. With luxury resorts across Turkey, Thailand, Egypt, and the Caribbean.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/thelifeco"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://facebook.com/thelifeco"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://youtube.com/thelifeco"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div><div class="footer-heading">Resorts</div><div class="footer-links"><a href="resorts/bodrum.html">Bodrum</a><a href="resorts/antalya.html">Antalya</a><a href="resorts/phuket.html">Phuket</a><a href="resorts/sharm-el-sheikh.html">Sharm El Sheikh</a><a href="resorts/st-lucia.html">St. Lucia</a></div></div>
+      <div><div class="footer-heading">Programs</div><div class="footer-links"><a href="programs/master-detox.html">Master Detox</a><a href="programs/water-fasting.html">Water Fasting</a><a href="programs/green-detox.html">Green Detox</a><a href="programs/longevity-reset.html">Longevity Reset</a><a href="programs/mental-wellness.html">Mental Wellness</a></div></div>
+      <div><div class="footer-heading">Company</div><div class="footer-links"><a href="about.html">About Us</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></div>
+      <div><div class="footer-heading">Contact</div><div class="footer-links"><a href="mailto:info@thelifeco.com">info@thelifeco.com</a><a href="tel:+902524134410">+90 252 413 44 10</a><a href="https://wa.me/905325554410">WhatsApp</a></div><div style="margin-top:24px"><div class="footer-heading">Booking</div><div class="footer-links"><a href="booking.html">Book a Retreat</a><a href="contact.html">Talk to an Expert</a></div></div></div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2025 TheLifeCo Wellbeing. All rights reserved.</span>
+      <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a><a href="#">Cookie Policy</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
