@@ -8,153 +8,276 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Urbanist:wght@600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Urbanist:wght@600&display=swap">
 <style>
 /* ============================================
    Resort Page — Pixel-perfect from Figma Frame 02
    Frame: 1440 x 3431px
    ============================================ */
 
-/* --- Font override: ensure Manrope + Urbanist available --- */
 :root{
   --font-primary:'Manrope',system-ui,-apple-system,sans-serif;
+  --font-nav:'Inter',system-ui,sans-serif;
   --font-urbanist:'Urbanist',system-ui,sans-serif;
 }
 
 /* ============================================
-   1. HERO  (y=0, h=~310)
-   Dark image background, nav overlay, centered heading
+   NAVIGATION
+   ============================================ */
+.nav-figma{
+  position:absolute;top:0;left:0;right:0;z-index:100;
+  padding:20px 80px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-figma-logo{
+  font-family:var(--font-primary);
+  font-size:20px;font-weight:700;color:#fff;letter-spacing:-.5px;
+  text-decoration:none;
+}
+.nav-figma-center{display:flex;align-items:center;gap:32px}
+.nav-figma-center a{
+  font-family:var(--font-nav);
+  font-size:14px;font-weight:500;color:#fff;opacity:.85;
+  text-decoration:none;
+  transition:opacity .2s;
+}
+.nav-figma-center a:hover{opacity:1}
+.nav-figma-right{display:flex;align-items:center;gap:16px}
+.nav-figma-search{
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.3);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:14px;background:transparent;cursor:pointer;
+  transition:border-color .2s;
+}
+.nav-figma-search:hover{border-color:#fff}
+.nav-figma-lang{
+  display:flex;align-items:center;gap:5px;
+  padding:7px 14px;border-radius:8px;
+  border:1px solid rgba(255,255,255,.3);
+  font-family:var(--font-nav);
+  font-size:13px;font-weight:600;color:#fff;
+  background:transparent;cursor:pointer;
+  transition:border-color .2s;
+}
+.nav-figma-lang:hover{border-color:#fff}
+.nav-figma-cta{
+  padding:10px 22px;border-radius:100px;
+  border:1px solid rgba(255,255,255,.5);
+  font-family:var(--font-nav);
+  font-size:13px;font-weight:600;color:#fff;
+  background:transparent;
+  text-decoration:none;
+  transition:border-color .2s, background .2s;
+}
+.nav-figma-cta:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+
+/* ============================================
+   1. HERO  (~310px tall)
    ============================================ */
 .resort-hero{
   position:relative;
-  min-height:310px;
+  height:310px;
   display:flex;
   flex-direction:column;
   justify-content:flex-end;
   background:
-    linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.35) 60%,rgba(0,0,0,.55) 100%),
+    linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.3) 50%,rgba(0,0,0,.55) 100%),
     url('https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=1440&q=80') center/cover no-repeat;
-  color:var(--white);
+  color:#fff;
   overflow:hidden;
 }
-.resort-hero-content{
-  max-width:var(--content-width);
-  margin:0 auto;
-  padding:0 var(--gutter) 60px;
+.resort-hero-inner{
+  padding:0 80px 32px;
   width:100%;
-  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:0;
 }
 .resort-hero-heading{
   font-family:var(--font-primary);
   font-size:56px;
   font-weight:400;
-  line-height:1.1;
-  letter-spacing:-1px;
-  color:var(--white);
+  line-height:1.08;
+  letter-spacing:-1.5px;
+  color:#fff;
   margin:0;
+  max-width:600px;
+}
+.resort-hero-location{
+  position:absolute;
+  bottom:52px;
+  right:80px;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  background:#000;
+  color:#fff;
+  padding:8px 18px;
+  border-radius:100px;
+  font-family:var(--font-primary);
+  font-size:14px;
+  font-weight:600;
+}
+.resort-hero-location i{font-size:13px;opacity:.8}
+/* Progress bar strip at hero bottom */
+.resort-hero-progress{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:4px;
+  background:rgba(255,255,255,.2);
+}
+.resort-hero-progress-fill{
+  height:100%;
+  width:33%;
+  background:#fff;
+  border-radius:2px;
 }
 
 /* ============================================
-   2. RESORT SHOWCASE / SLIDER  (y=~310, h=~600)
-   Left: image with prev/next arrows
-   Right: dark panel with tabs + content
+   2. FILTER BAR  (white bg, below hero)
    ============================================ */
-.resort-showcase{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:600px;
-}
-.resort-showcase-img{
-  background:url('https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=800&q=80') center/cover no-repeat;
-  min-height:600px;
-  position:relative;
-  transition:opacity .3s ease;
-}
-/* Prev / Next arrows overlaid on the image panel */
-.resort-showcase-nav{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  width:48px;
-  height:48px;
-  border-radius:50%;
-  background:rgba(255,255,255,.15);
-  backdrop-filter:blur(6px);
-  border:1px solid rgba(255,255,255,.25);
+.resort-filter-bar{
+  background:#fff;
+  padding:24px 80px 20px;
   display:flex;
   align-items:center;
-  justify-content:center;
-  color:var(--white);
-  font-size:20px;
-  cursor:pointer;
-  transition:background .2s;
-  z-index:10;
+  justify-content:space-between;
+  border-bottom:1px solid #e7e7e7;
 }
-.resort-showcase-nav:hover{background:rgba(255,255,255,.28)}
-.resort-showcase-nav--prev{left:24px}
-.resort-showcase-nav--next{right:24px}
-
-.resort-showcase-panel{
-  background:var(--near-black-2);
-  color:var(--white);
-  padding:56px 64px;
+.resort-filter-pills{
   display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-/* Tab pills — inside the dark panel */
-.resort-tabs{
-  display:flex;
+  align-items:center;
   gap:8px;
-  flex-wrap:wrap;
-  margin-bottom:40px;
 }
-.resort-tab{
+.resort-pill{
   padding:9px 22px;
   border-radius:100px;
   font-family:var(--font-primary);
-  font-size:13px;
-  font-weight:600;
+  font-size:14px;
+  font-weight:500;
+  border:1px solid #e7e7e7;
+  color:#717171;
+  background:transparent;
   cursor:pointer;
   transition:all .2s;
-  border:1px solid rgba(255,255,255,.2);
-  color:rgba(255,255,255,.6);
-  background:transparent;
 }
-.resort-tab.active,
-.resort-tab:hover{
-  background:var(--white);
-  color:var(--black);
-  border-color:var(--white);
+.resort-pill.active,
+.resort-pill:hover{
+  background:#000;
+  color:#fff;
+  border-color:#000;
+}
+.resort-view-toggles{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.resort-view-btn{
+  width:34px;height:34px;
+  border-radius:6px;
+  border:1px solid #e7e7e7;
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;color:#717171;
+  background:transparent;cursor:pointer;
+  transition:all .2s;
+}
+.resort-view-btn.active,
+.resort-view-btn:hover{
+  background:#000;color:#fff;border-color:#000;
 }
 
-.resort-showcase-name{
+/* ============================================
+   3. RESORT SLIDER  (white bg, large card)
+   ============================================ */
+.resort-slider-section{
+  background:#fff;
+  padding:24px 80px 40px;
+}
+.resort-slider-card{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  height:420px;
+  background:#141414;
+}
+/* Main slider image */
+.resort-slider-img{
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.15) 40%,rgba(0,0,0,.72) 100%),
+    url('https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=1440&q=80') center/cover no-repeat;
+  transition:opacity .3s ease;
+}
+/* Prev/Next arrows */
+.resort-slider-arrow{
+  position:absolute;
+  top:50%;transform:translateY(-50%);
+  width:44px;height:44px;
+  border-radius:50%;
+  background:rgba(255,255,255,.18);
+  backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.3);
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:18px;
+  cursor:pointer;
+  z-index:10;
+  transition:background .2s;
+}
+.resort-slider-arrow:hover{background:rgba(255,255,255,.32)}
+.resort-slider-arrow--prev{left:20px}
+.resort-slider-arrow--next{right:20px}
+/* Text overlay at bottom */
+.resort-slider-overlay{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:32px 40px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  z-index:5;
+}
+.resort-slider-text{}
+.resort-slider-name{
   font-family:var(--font-primary);
-  font-size:72px;
+  font-size:64px;
   font-weight:700;
   line-height:1;
   letter-spacing:-2px;
-  margin-bottom:12px;
+  color:#fff;
+  margin-bottom:8px;
 }
-.resort-showcase-subtitle{
+.resort-slider-subtitle{
   font-family:var(--font-primary);
-  font-size:24px;
+  font-size:18px;
   font-weight:700;
-  line-height:1.3;
-  margin-bottom:20px;
-  color:var(--white);
+  color:#fff;
+  margin-bottom:6px;
 }
-.resort-showcase-desc{
+.resort-slider-desc{
   font-family:var(--font-primary);
-  font-size:16px;
+  font-size:14px;
   font-weight:400;
-  line-height:1.75;
-  color:rgba(255,255,255,.7);
-  max-width:420px;
-  margin-bottom:36px;
+  color:rgba(255,255,255,.75);
+  line-height:1.7;
+  max-width:480px;
 }
-.resort-showcase-cta{
+.resort-slider-desc .see-more{
+  color:rgba(255,255,255,.6);
+  font-size:13px;
+  cursor:pointer;
+  text-decoration:underline;
+}
+.resort-slider-cta-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:20px;
+  flex-shrink:0;
+  padding-bottom:4px;
+}
+.resort-slider-cta{
   display:inline-flex;
   align-items:center;
   gap:8px;
@@ -163,29 +286,60 @@
   font-family:var(--font-primary);
   font-size:15px;
   font-weight:600;
-  background:var(--white);
-  color:var(--black);
-  transition:background .2s, color .2s;
-  align-self:flex-start;
+  background:#fff;
+  color:#000;
+  text-decoration:none;
+  white-space:nowrap;
+  transition:background .2s;
 }
-.resort-showcase-cta:hover{background:rgba(255,255,255,.88)}
+.resort-slider-cta:hover{background:rgba(255,255,255,.88)}
+/* Slider dots */
+.resort-slider-dots{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  justify-content:center;
+  margin-top:16px;
+}
+.resort-slider-dot{
+  width:24px;height:4px;border-radius:2px;
+  background:#d9d9d9;cursor:pointer;
+  transition:background .2s, width .2s;
+}
+.resort-slider-dot.active{
+  background:#000;
+  width:32px;
+}
 
 /* ============================================
-   3. CTA SECTION  (y=~1326)
-   White bg, font-weight 300 heading, two buttons 20px/600
+   4. CTA BANNER  (dark section, bg image)
    ============================================ */
-.resort-cta-section{
-  padding:100px 0;
-  background:var(--white);
+.resort-cta-banner{
+  position:relative;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.4) 50%,rgba(0,0,0,.7) 100%),
+    url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1440&q=80') center/cover no-repeat;
+  padding:80px 80px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
   text-align:center;
+  color:#fff;
+  min-height:280px;
+  overflow:hidden;
 }
 .resort-cta-heading{
   font-family:var(--font-primary);
   font-size:36px;
   font-weight:300;
   line-height:1.3;
-  color:var(--black);
+  color:#fff;
   margin-bottom:40px;
+  letter-spacing:-.5px;
+}
+.resort-cta-heading span{
+  display:block;
 }
 .resort-cta-buttons{
   display:flex;
@@ -198,420 +352,550 @@
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
-  padding:16px 40px;
+  padding:16px 44px;
   border-radius:100px;
   font-family:var(--font-primary);
-  font-size:20px;
+  font-size:16px;
   font-weight:600;
-  background:var(--black);
-  color:var(--white);
+  background:#fff;
+  color:#000;
+  text-decoration:none;
   transition:background .2s;
 }
-.resort-btn-book:hover{background:var(--dark-gray)}
+.resort-btn-book:hover{background:rgba(255,255,255,.88)}
 .resort-btn-expert{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  gap:8px;
-  padding:16px 40px;
+  padding:16px 44px;
   border-radius:100px;
   font-family:var(--font-primary);
-  font-size:20px;
+  font-size:16px;
   font-weight:600;
   background:transparent;
-  color:var(--black);
-  border:1px solid var(--border-dark);
+  color:#fff;
+  border:1px solid rgba(255,255,255,.5);
+  text-decoration:none;
   transition:border-color .2s;
 }
-.resort-btn-expert:hover{border-color:var(--black)}
+.resort-btn-expert:hover{border-color:#fff}
 
 /* ============================================
-   4. TESTIMONIALS  (y=1650, bg=#202020 dark)
+   5. TESTIMONIALS  (dark #202020)
    ============================================ */
 .resort-testimonials{
-  padding:90px 0;
   background:#202020;
-  color:var(--white);
+  color:#fff;
+  padding:72px 80px 80px;
 }
-.testimonials-header{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  margin-bottom:56px;
-  gap:32px;
-}
-.testimonials-heading{
+/* Centered title */
+.testimonials-title{
   font-family:var(--font-primary);
   font-size:56px;
   font-weight:400;
   line-height:1.1;
   letter-spacing:-1.5px;
-  color:var(--white);
-  margin:0;
+  color:#fff;
+  text-align:center;
+  margin-bottom:48px;
 }
+/* Top row: 10,000+ | divider | 3x TheGuardian cards */
+.testimonials-top-row{
+  display:flex;
+  align-items:stretch;
+  gap:0;
+  margin-bottom:56px;
+  border-radius:16px;
+  overflow:hidden;
+}
+/* Rating block */
 .testimonials-rating-block{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-end;
-  gap:6px;
-  padding-top:6px;
-}
-.testimonials-count{
-  font-family:var(--font-primary);
-  font-size:24px;
-  font-weight:700;
-  color:var(--white);
-}
-.testimonials-stars-row{
-  display:flex;
-  gap:3px;
-  color:#e1bf8b;
-  font-size:18px;
-}
-.testimonials-cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
-.t-card{
   background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.1);
-  border-radius:16px;
-  padding:32px;
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-}
-.t-card-stars{
-  display:flex;
-  gap:3px;
-  color:#e1bf8b;
-  font-size:14px;
-}
-.t-card-text{
-  font-family:var(--font-primary);
-  font-size:15px;
-  font-weight:400;
-  line-height:1.8;
-  color:rgba(255,255,255,.8);
-  flex:1;
-}
-.t-card-author{
-  font-family:var(--font-primary);
-  font-size:14px;
-  font-weight:600;
-  color:var(--white);
-}
-.t-card-source{
-  font-family:var(--font-primary);
-  font-size:12px;
-  color:rgba(255,255,255,.45);
-  margin-top:2px;
-}
-
-/* ============================================
-   5. VALENTINE PROMO BANNER  (y=~2564)
-   Dark split layout: image left, text right
-   ============================================ */
-.valentine-section{
-  padding:80px 0;
-  background:var(--white);
-}
-.valentine-banner{
-  border-radius:24px;
-  overflow:hidden;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  min-height:420px;
-  background:var(--near-black-2);
-}
-.valentine-img{
-  background:
-    url('https://images.unsplash.com/photo-1515023115689-589c33041d3c?w=800&q=80') center/cover no-repeat;
-  min-height:420px;
-}
-.valentine-content{
-  padding:64px 56px;
+  border-right:none;
+  padding:28px 32px;
   display:flex;
   flex-direction:column;
   justify-content:center;
-  color:var(--white);
+  align-items:flex-start;
+  gap:8px;
+  min-width:140px;
+  flex-shrink:0;
 }
-.valentine-tag{
+.testimonials-count{
   font-family:var(--font-primary);
-  font-size:14px;
-  font-weight:600;
-  color:rgba(255,255,255,.5);
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-  margin-bottom:20px;
+  font-size:24px;font-weight:700;color:#fff;
 }
-.valentine-title{
-  font-family:var(--font-primary);
-  font-size:40px;
-  font-weight:600;
-  line-height:1.2;
-  color:var(--white);
-  margin-bottom:16px;
+.testimonials-stars{
+  display:flex;gap:3px;
+  color:#e1bf8b;font-size:18px;
 }
-.valentine-earn{
+/* Vertical divider */
+.testimonials-divider{
+  width:1px;background:rgba(255,255,255,.1);
+  flex-shrink:0;
+}
+/* Guardian review cards */
+.testimonials-press-cards{
+  flex:1;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:0;
+}
+.t-press-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-left:none;
+  padding:24px 28px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.t-press-source{
   font-family:var(--font-primary);
-  font-size:32px;
-  font-weight:700;
-  line-height:1.2;
-  letter-spacing:3.84px;
-  color:var(--white);
+  font-size:16px;font-weight:700;color:#fff;
+}
+.t-press-stars{
+  display:flex;gap:3px;color:#e1bf8b;font-size:13px;
+}
+.t-press-text{
+  font-family:var(--font-primary);
+  font-size:14px;font-weight:400;
+  line-height:1.7;color:rgba(255,255,255,.7);
+}
+/* Bottom split: large quote left + reviews right */
+.testimonials-bottom{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  align-items:start;
+}
+/* Left: big quote text + photo mosaic */
+.testimonials-big-quote{
+  display:flex;
+  flex-direction:column;
+  gap:24px;
+}
+.testimonials-big-text{
+  font-family:var(--font-primary);
+  font-size:36px;
+  font-weight:400;
+  line-height:1.25;
+  letter-spacing:-.8px;
+  color:#fff;
+}
+.testimonials-mosaic{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:8px;
+  border-radius:12px;
+  overflow:hidden;
+}
+.mosaic-img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  background:#333;
+  border-radius:8px;
+}
+.mosaic-img--tall{
+  grid-row:span 2;
+  aspect-ratio:auto;
+  height:100%;
+  min-height:200px;
+}
+/* Right: individual review items */
+.testimonials-reviews{
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+.t-review-item{
+  padding-bottom:28px;
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.t-review-item:last-child{border-bottom:none;padding-bottom:0}
+.t-review-meta{
+  display:flex;
+  align-items:center;
+  gap:16px;
   margin-bottom:8px;
 }
-.valentine-use{
+.t-review-location{
+  display:flex;align-items:center;gap:5px;
   font-family:var(--font-primary);
-  font-size:26px;
-  font-weight:400;
-  line-height:1.3;
-  letter-spacing:3.12px;
-  color:rgba(255,255,255,.75);
-  margin-bottom:36px;
+  font-size:13px;color:rgba(255,255,255,.55);
 }
-.valentine-btn{
+.t-review-location i{font-size:11px}
+.t-review-author{
+  display:flex;align-items:center;gap:5px;
+  font-family:var(--font-primary);
+  font-size:13px;color:rgba(255,255,255,.55);
+}
+.t-review-author i{font-size:11px}
+.t-review-title{
+  font-family:var(--font-primary);
+  font-size:20px;font-weight:700;color:#fff;
+  margin-bottom:8px;
+}
+.t-review-stars{
+  display:flex;gap:3px;color:#e1bf8b;font-size:13px;
+  margin-bottom:10px;
+}
+.t-review-text{
+  font-family:var(--font-primary);
+  font-size:14px;font-weight:400;
+  line-height:1.7;color:rgba(255,255,255,.65);
+}
+.t-review-see-more{
+  color:rgba(255,255,255,.45);
+  font-size:13px;cursor:pointer;
+}
+/* CTA row below reviews */
+.testimonials-actions{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin-top:40px;
+  justify-content:flex-end;
+}
+.testimonials-btn{
   display:inline-flex;
   align-items:center;
-  gap:8px;
   padding:14px 32px;
   border-radius:100px;
   font-family:var(--font-primary);
   font-size:15px;
   font-weight:600;
-  background:var(--white);
-  color:var(--black);
-  align-self:flex-start;
-  transition:background .2s;
+  text-decoration:none;
+  transition:all .2s;
 }
-.valentine-btn:hover{background:rgba(255,255,255,.88)}
+.testimonials-btn--outline{
+  background:transparent;
+  color:#fff;
+  border:1px solid rgba(255,255,255,.4);
+}
+.testimonials-btn--outline:hover{border-color:#fff}
+.testimonials-btn--solid{
+  background:#fff;
+  color:#000;
+}
+.testimonials-btn--solid:hover{background:rgba(255,255,255,.88)}
 
 /* ============================================
-   6. FOOTER  (y=~3025, bg=#ffffff — white in Figma)
-   Urbanist 600 14px for link column headings + links
+   6. PROMO ROW  (white bg, 2 cards)
+   ============================================ */
+.promo-section{
+  background:#fff;
+  padding:56px 80px;
+}
+.promo-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+/* Valentine card */
+.promo-card-valentine{
+  position:relative;
+  border-radius:20px;
+  overflow:hidden;
+  min-height:380px;
+  background:#1a1a1a;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.promo-card-valentine-img{
+  position:absolute;
+  top:0;left:0;right:0;bottom:0;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.5) 100%),
+    url('https://images.unsplash.com/photo-1515023115689-589c33041d3c?w=800&q=80') center/cover no-repeat;
+}
+.promo-card-valentine-content{
+  position:relative;z-index:1;
+  padding:32px 36px;
+  color:#fff;
+}
+.promo-valentine-label{
+  font-family:var(--font-primary);
+  font-size:20px;
+  font-weight:300;
+  color:rgba(255,255,255,.65);
+  line-height:1.2;
+  margin-bottom:4px;
+}
+.promo-valentine-title{
+  font-family:var(--font-primary);
+  font-size:36px;
+  font-weight:600;
+  line-height:1.1;
+  color:#fff;
+  margin-bottom:28px;
+}
+.promo-valentine-btns{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+.promo-valentine-btn-outline{
+  display:inline-flex;align-items:center;
+  padding:11px 24px;border-radius:100px;
+  font-family:var(--font-primary);
+  font-size:14px;font-weight:600;
+  background:#fff;color:#000;
+  text-decoration:none;
+  transition:background .2s;
+}
+.promo-valentine-btn-outline:hover{background:rgba(255,255,255,.88)}
+.promo-valentine-btn-dark{
+  display:inline-flex;align-items:center;
+  padding:11px 24px;border-radius:100px;
+  font-family:var(--font-primary);
+  font-size:14px;font-weight:600;
+  background:#000;color:#fff;
+  text-decoration:none;
+  transition:background .2s;
+}
+.promo-valentine-btn-dark:hover{background:#333}
+
+/* Wallet card */
+.promo-card-wallet{
+  border-radius:20px;
+  border:1px solid #e7e7e7;
+  padding:52px 56px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:0;
+  background:#fff;
+  min-height:380px;
+}
+.promo-wallet-earn{
+  font-family:var(--font-primary);
+  font-size:36px;
+  font-weight:800;
+  line-height:1.1;
+  letter-spacing:3px;
+  color:#000;
+  text-transform:uppercase;
+  margin-bottom:4px;
+}
+.promo-wallet-use{
+  font-family:var(--font-primary);
+  font-size:20px;
+  font-weight:400;
+  letter-spacing:2.5px;
+  color:#717171;
+  text-transform:uppercase;
+  margin-bottom:40px;
+}
+.promo-wallet-script{
+  font-family:'Palatino Linotype','Book Antiqua',Palatino,Georgia,serif;
+  font-size:52px;
+  font-weight:400;
+  font-style:italic;
+  color:#000;
+  line-height:1;
+  letter-spacing:-1px;
+}
+
+/* ============================================
+   7. FOOTER
    ============================================ */
 .footer-v2{
-  background:var(--white);
-  color:var(--black);
+  background:#fff;
+  color:#000;
   padding:72px 0 0;
-  border-top:1px solid var(--border-color);
+  border-top:1px solid #e7e7e7;
 }
 .footer-v2-inner{
-  max-width:var(--content-width);
+  max-width:1200px;
   margin:0 auto;
-  padding:0 var(--gutter);
+  padding:0 20px;
+}
+.footer-v2-top-row{
+  display:flex;
+  justify-content:flex-end;
+  margin-bottom:32px;
+}
+.footer-v2-brand-logo{
+  font-family:var(--font-primary);
+  font-size:32px;
+  font-weight:700;
+  color:#000;
+  letter-spacing:-1px;
 }
 .footer-v2-grid{
   display:grid;
-  grid-template-columns:1.6fr 1fr 1fr 1fr 1fr;
+  grid-template-columns:1.5fr 1fr 1fr 1fr 1fr;
   gap:40px;
   padding-bottom:56px;
-  border-bottom:1px solid var(--border-color);
+  border-bottom:1px solid #e7e7e7;
 }
-
-/* Brand column */
+/* Brand col */
 .footer-v2-brand{
   font-family:var(--font-primary);
-  font-size:20px;
-  font-weight:700;
-  color:var(--black);
-  margin-bottom:14px;
-  letter-spacing:-.3px;
+  font-size:20px;font-weight:700;color:#000;
+  margin-bottom:14px;letter-spacing:-.3px;
+  display:none;
 }
 .footer-v2-tagline{
   font-family:var(--font-primary);
-  font-size:13px;
-  font-weight:400;
-  color:var(--text-secondary);
-  line-height:1.7;
-  margin-bottom:28px;
-  max-width:240px;
+  font-size:13px;font-weight:400;
+  color:#717171;line-height:1.7;
+  margin-bottom:28px;max-width:240px;
 }
 .footer-v2-app-label{
   font-family:var(--font-primary);
-  font-size:16px;
-  font-weight:600;
-  color:var(--black);
+  font-size:16px;font-weight:600;color:#000;
   margin-bottom:12px;
 }
 .footer-v2-app-badges{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  margin-bottom:28px;
+  display:flex;flex-direction:column;gap:8px;margin-bottom:28px;
 }
 .footer-v2-badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:9px 18px;
-  border-radius:10px;
-  border:1px solid var(--border-color);
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 18px;border-radius:10px;
+  border:1px solid #e7e7e7;
   font-family:var(--font-primary);
-  font-size:13px;
-  font-weight:600;
-  color:var(--black);
-  transition:border-color .2s;
-  width:fit-content;
+  font-size:13px;font-weight:600;color:#000;
+  text-decoration:none;transition:border-color .2s;width:fit-content;
 }
-.footer-v2-badge:hover{border-color:var(--black)}
-.footer-v2-badge i{font-size:16px;color:var(--text-secondary)}
+.footer-v2-badge:hover{border-color:#000}
+.footer-v2-badge i{font-size:16px;color:#717171}
 .footer-v2-follow-label{
   font-family:var(--font-primary);
-  font-size:16px;
-  font-weight:600;
-  color:var(--black);
-  margin-bottom:12px;
+  font-size:16px;font-weight:600;color:#000;margin-bottom:12px;
 }
-.footer-v2-socials{
-  display:flex;
-  gap:10px;
-}
+.footer-v2-socials{display:flex;gap:10px;}
 .footer-v2-social-icon{
-  width:36px;
-  height:36px;
-  border-radius:50%;
-  border:1px solid var(--border-color);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:var(--text-secondary);
-  font-size:14px;
+  width:36px;height:36px;border-radius:50%;
+  border:1px solid #e7e7e7;
+  display:flex;align-items:center;justify-content:center;
+  color:#717171;font-size:14px;text-decoration:none;
   transition:all .2s;
 }
-.footer-v2-social-icon:hover{border-color:var(--black);color:var(--black)}
-
-/* Link column heading — Urbanist 600 14px */
+.footer-v2-social-icon:hover{border-color:#000;color:#000}
+/* Link column heading */
 .footer-v2-col-heading{
   font-family:var(--font-urbanist);
-  font-size:14px;
-  font-weight:600;
-  color:var(--black);
-  margin-bottom:18px;
-  letter-spacing:.2px;
+  font-size:14px;font-weight:600;color:#000;
+  margin-bottom:18px;letter-spacing:.2px;
 }
-/* Link column items — Urbanist 600 14px */
 .footer-v2-links{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+  display:flex;flex-direction:column;gap:12px;
 }
 .footer-v2-links a{
   font-family:var(--font-urbanist);
-  font-size:14px;
-  font-weight:600;
-  color:var(--text-secondary);
-  transition:color .2s;
-  line-height:1.3;
+  font-size:14px;font-weight:600;
+  color:#717171;text-decoration:none;
+  transition:color .2s;line-height:1.3;
 }
-.footer-v2-links a:hover{color:var(--black)}
-
+.footer-v2-links a:hover{color:#000}
 /* Address row */
 .footer-v2-address-row{
-  padding:24px 0;
-  border-bottom:1px solid var(--border-color);
-  display:flex;
-  align-items:center;
-  gap:12px;
+  padding:24px 0;border-bottom:1px solid #e7e7e7;
+  display:flex;align-items:center;gap:12px;
 }
-.footer-v2-address-row i{
-  font-size:14px;
-  color:var(--text-muted);
-  flex-shrink:0;
-}
+.footer-v2-address-row i{font-size:14px;color:#919191;flex-shrink:0}
 .footer-v2-address{
   font-family:var(--font-primary);
-  font-size:13px;
-  color:var(--text-secondary);
-  line-height:1.6;
+  font-size:13px;color:#717171;line-height:1.6;
 }
-
 /* Bottom bar */
 .footer-v2-bottom{
   padding:20px 0 28px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:16px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
 }
 .footer-v2-copy{
   font-family:var(--font-primary);
-  font-size:12px;
-  color:var(--text-secondary);
+  font-size:12px;color:#717171;
 }
 .footer-v2-legal{
-  display:flex;
-  align-items:center;
-  gap:24px;
-  flex-wrap:wrap;
+  display:flex;align-items:center;gap:20px;flex-wrap:wrap;
 }
 .footer-v2-legal a{
   font-family:var(--font-primary);
-  font-size:12px;
-  color:var(--text-secondary);
+  font-size:12px;color:#717171;text-decoration:none;
   transition:color .2s;
 }
-.footer-v2-legal a:hover{color:var(--black)}
-.footer-v2-legal-sep{
-  width:1px;
-  height:12px;
-  background:var(--border-color);
-}
+.footer-v2-legal a:hover{color:#000}
+.footer-v2-legal-sep{width:1px;height:12px;background:#e7e7e7}
 .footer-v2-locale{
-  display:flex;
-  align-items:center;
-  gap:12px;
+  display:flex;align-items:center;gap:12px;
 }
 .footer-v2-locale span{
   font-family:var(--font-primary);
-  font-size:12px;
-  font-weight:700;
-  color:var(--text-primary);
-  cursor:pointer;
+  font-size:12px;font-weight:700;color:#000;cursor:pointer;
 }
 
 /* ============================================
    Responsive
    ============================================ */
+@media(max-width:1200px){
+  .nav-figma{padding:20px 48px}
+  .resort-hero-inner{padding:0 48px 32px}
+  .resort-hero-location{right:48px}
+  .resort-filter-bar{padding:20px 48px 16px}
+  .resort-slider-section{padding:20px 48px 32px}
+  .resort-cta-banner{padding:64px 48px}
+  .resort-testimonials{padding:64px 48px 72px}
+  .promo-section{padding:48px 48px}
+}
+
 @media(max-width:1024px){
-  .resort-showcase-panel{padding:48px 40px}
-  .resort-showcase-name{font-size:56px}
-  .resort-hero-heading{font-size:44px}
+  .resort-hero-heading{font-size:42px}
+  .resort-slider-name{font-size:48px}
+  .testimonials-title{font-size:40px}
+  .testimonials-big-text{font-size:28px}
+  .promo-wallet-earn{font-size:28px}
   .footer-v2-grid{grid-template-columns:repeat(3,1fr)}
 }
 
 @media(max-width:768px){
-  .resort-hero{min-height:260px}
+  .nav-figma{padding:16px 20px}
+  .nav-figma-center{display:none}
+
+  .resort-hero{height:260px}
+  .resort-hero-inner{padding:0 20px 24px}
   .resort-hero-heading{font-size:32px;letter-spacing:-.5px}
-  .resort-hero-content{padding-bottom:40px}
+  .resort-hero-location{right:20px;bottom:44px}
 
-  .resort-showcase{grid-template-columns:1fr}
-  .resort-showcase-img{min-height:300px}
-  .resort-showcase-panel{padding:40px 24px}
-  .resort-showcase-name{font-size:40px}
-  .resort-showcase-subtitle{font-size:18px}
+  .resort-filter-bar{padding:16px 20px 12px;flex-wrap:wrap;gap:12px}
+  .resort-slider-section{padding:16px 20px 24px}
+  .resort-slider-card{height:340px}
+  .resort-slider-name{font-size:36px;letter-spacing:-1px}
+  .resort-slider-subtitle{font-size:14px}
+  .resort-slider-desc{display:none}
+  .resort-slider-overlay{padding:20px 24px;flex-direction:column;align-items:flex-start;gap:16px}
+  .resort-slider-cta-wrap{align-items:flex-start}
 
-  .resort-cta-section{padding:64px 0}
+  .resort-cta-banner{padding:48px 20px;min-height:220px}
   .resort-cta-heading{font-size:28px}
-  .resort-btn-book,.resort-btn-expert{font-size:16px;padding:14px 28px}
   .resort-cta-buttons{flex-direction:column;align-items:stretch}
+  .resort-btn-book,.resort-btn-expert{padding:14px 32px;font-size:15px}
 
-  .resort-testimonials{padding:64px 0}
-  .testimonials-header{flex-direction:column;gap:20px}
-  .testimonials-heading{font-size:36px}
-  .testimonials-rating-block{align-items:flex-start}
-  .testimonials-cards{grid-template-columns:1fr}
+  .resort-testimonials{padding:48px 20px 56px}
+  .testimonials-title{font-size:32px}
+  .testimonials-top-row{flex-direction:column;border-radius:12px}
+  .testimonials-rating-block{border-right:1px solid rgba(255,255,255,.1);border-bottom:none}
+  .testimonials-press-cards{grid-template-columns:1fr}
+  .t-press-card{border-left:1px solid rgba(255,255,255,.1);border-top:none}
+  .testimonials-bottom{grid-template-columns:1fr}
+  .testimonials-big-text{font-size:24px}
+  .testimonials-mosaic{display:none}
+  .testimonials-actions{justify-content:flex-start}
 
-  .valentine-banner{grid-template-columns:1fr}
-  .valentine-img{min-height:260px}
-  .valentine-content{padding:40px 28px}
-  .valentine-title{font-size:28px}
-  .valentine-earn{font-size:22px;letter-spacing:2px}
-  .valentine-use{font-size:18px;letter-spacing:1.5px}
+  .promo-section{padding:32px 20px}
+  .promo-grid{grid-template-columns:1fr}
+  .promo-card-valentine{min-height:280px}
+  .promo-card-wallet{min-height:auto;padding:36px 32px}
+  .promo-wallet-earn{font-size:22px;letter-spacing:2px}
+  .promo-wallet-use{font-size:16px;letter-spacing:1.5px}
+  .promo-wallet-script{font-size:40px}
 
   .footer-v2-grid{grid-template-columns:1fr 1fr}
   .footer-v2-bottom{flex-direction:column;align-items:flex-start}
@@ -620,10 +904,9 @@
 
 @media(max-width:480px){
   .resort-hero-heading{font-size:26px}
-  .resort-showcase-name{font-size:32px}
-  .testimonials-heading{font-size:28px}
-  .resort-tabs{gap:6px}
-  .resort-tab{padding:8px 16px;font-size:12px}
+  .resort-slider-name{font-size:28px}
+  .resort-pill{padding:7px 14px;font-size:13px}
+  .testimonials-title{font-size:26px}
   .footer-v2-grid{grid-template-columns:1fr}
 }
 </style>
@@ -631,169 +914,277 @@
 <body>
 
 <!-- ===== NAVIGATION ===== -->
-<nav class="nav">
-  <div class="container">
-    <a href="index.html" class="nav-logo">TheLifeCo</a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="resort.html">Resorts</a>
-      <a href="treatments.html">Treatments</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-    </div>
-    <div class="nav-right">
-      <a href="#" class="nav-lang">EN</a>
-      <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-      <a href="#">Login</a>
-    </div>
-    <div class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')">
-      <span></span><span></span><span></span>
-    </div>
+<nav class="nav-figma">
+  <a href="index.html" class="nav-figma-logo">TheLifeCo</a>
+  <div class="nav-figma-center">
+    <a href="index.html">Retreats</a>
+    <a href="resort.html">Resorts</a>
+    <a href="treatments.html">Medical</a>
+    <a href="treatments.html">Treatments</a>
+  </div>
+  <div class="nav-figma-right">
+    <button class="nav-figma-search" aria-label="Search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+    <button class="nav-figma-lang">
+      EN <i class="fa-solid fa-chevron-down" style="font-size:10px"></i>
+    </button>
+    <a href="#" class="nav-figma-cta">Talk to an expert</a>
   </div>
 </nav>
 
 <!-- ===== 1. HERO ===== -->
 <section class="resort-hero">
-  <div class="resort-hero-content">
-    <h1 class="resort-hero-heading">Discover The Resort Best Suits You</h1>
+  <div class="resort-hero-inner">
+    <h1 class="resort-hero-heading">Discover The Resort<br>Best Suits You</h1>
+  </div>
+  <div class="resort-hero-location">
+    <i class="fa-solid fa-location-dot"></i>
+    St. Lucia
+  </div>
+  <div class="resort-hero-progress">
+    <div class="resort-hero-progress-fill"></div>
   </div>
 </section>
 
-<!-- ===== 2. RESORT SHOWCASE / SLIDER ===== -->
-<div class="resort-showcase">
-
-  <!-- Left: image panel with prev/next arrows -->
-  <div class="resort-showcase-img" id="showcase-img">
-    <button class="resort-showcase-nav resort-showcase-nav--prev" aria-label="Previous resort" id="btn-prev">
-      <i class="fa-solid fa-angle-left"></i>
+<!-- ===== 2. FILTER BAR ===== -->
+<div class="resort-filter-bar">
+  <div class="resort-filter-pills">
+    <button class="resort-pill active">All</button>
+    <button class="resort-pill">Turkey</button>
+    <button class="resort-pill">Thailand</button>
+    <button class="resort-pill">St. Lucia</button>
+    <button class="resort-pill">Greece</button>
+    <button class="resort-pill">Egypt</button>
+  </div>
+  <div class="resort-view-toggles">
+    <button class="resort-view-btn active" aria-label="Grid view">
+      <i class="fa-solid fa-table-cells-large"></i>
     </button>
-    <button class="resort-showcase-nav resort-showcase-nav--next" aria-label="Next resort" id="btn-next">
-      <i class="fa-solid fa-angle-right"></i>
+    <button class="resort-view-btn" aria-label="List view">
+      <i class="fa-solid fa-list"></i>
     </button>
   </div>
-
-  <!-- Right: dark content panel -->
-  <div class="resort-showcase-panel">
-    <div class="resort-tabs" id="resort-tabs">
-      <button class="resort-tab" data-idx="0">Bodrum</button>
-      <button class="resort-tab" data-idx="1">Antalya</button>
-      <button class="resort-tab active" data-idx="2">Phuket</button>
-      <button class="resort-tab" data-idx="3">Sharm El Sheikh</button>
-      <button class="resort-tab" data-idx="4">St Lucia</button>
-    </div>
-    <div id="resort-name" class="resort-showcase-name">Phuket</div>
-    <div id="resort-subtitle" class="resort-showcase-subtitle">Phuket's Best Detox Center with Unique Programs</div>
-    <p id="resort-desc" class="resort-showcase-desc">We invite you to a health journey at one of Thailand's most beautiful islands, Phuket. At TheLifeCo Phuket, you will find world-class wellness programs combined with the natural beauty of the Andaman Sea.</p>
-    <a href="#" class="resort-showcase-cta" id="resort-cta-link">
-      <span id="resort-cta-text">Step Into The Phuket Resort</span>
-      <i class="fa-solid fa-arrow-right"></i>
-    </a>
-  </div>
-
 </div>
 
-<!-- ===== 3. CTA SECTION ===== -->
-<section class="resort-cta-section">
-  <div class="container">
-    <h2 class="resort-cta-heading">Start your health journey<br>with TheLifeCo</h2>
-    <div class="resort-cta-buttons">
-      <a href="#" class="resort-btn-book">Book Now</a>
-      <a href="#" class="resort-btn-expert">Talk To An Expert</a>
-    </div>
-  </div>
-</section>
+<!-- ===== 3. RESORT SLIDER ===== -->
+<section class="resort-slider-section">
+  <div class="resort-slider-card">
 
-<!-- ===== 4. TESTIMONIALS ===== -->
-<section class="resort-testimonials">
-  <div class="container">
-    <div class="testimonials-header">
-      <h2 class="testimonials-heading">Testimonials</h2>
-      <div class="testimonials-rating-block">
-        <div class="testimonials-count">10.000+</div>
-        <div class="testimonials-stars-row">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-      </div>
-    </div>
-    <div class="testimonials-cards">
-      <div class="t-card">
-        <div class="t-card-stars">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <p class="t-card-text">"An extraordinary wellness experience. The medical team guided me through every step of my detox journey with exceptional care and professionalism."</p>
-        <div>
-          <div class="t-card-author">Sarah M.</div>
-          <div class="t-card-source">TheGuardian</div>
-        </div>
-      </div>
-      <div class="t-card">
-        <div class="t-card-stars">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <p class="t-card-text">"I came for the detox but left with a completely new perspective on health and well-being. Life-changing in every sense of the word."</p>
-        <div>
-          <div class="t-card-author">James K.</div>
-          <div class="t-card-source">TripAdvisor</div>
-        </div>
-      </div>
-      <div class="t-card">
-        <div class="t-card-stars">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-        </div>
-        <p class="t-card-text">"The combination of medical expertise and holistic wellness made this unlike any spa experience I have ever had. Truly transformative."</p>
-        <div>
-          <div class="t-card-author">Elena R.</div>
-          <div class="t-card-source">Trustpilot</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Background image (changes per slide) -->
+    <div class="resort-slider-img" id="slider-img"></div>
 
-<!-- ===== 5. VALENTINE PROMO BANNER ===== -->
-<section class="valentine-section">
-  <div class="container">
-    <div class="valentine-banner">
-      <div class="valentine-img"></div>
-      <div class="valentine-content">
-        <div class="valentine-tag">Limited Offer</div>
-        <h2 class="valentine-title">Best gift for your valentine</h2>
-        <div class="valentine-earn">Earn %10 of your purchase</div>
-        <div class="valentine-use">&amp; use it on your next trip</div>
-        <a href="#" class="valentine-btn">
-          Explore Gifts <i class="fa-solid fa-arrow-right"></i>
+    <!-- Prev arrow -->
+    <button class="resort-slider-arrow resort-slider-arrow--prev" id="slider-prev" aria-label="Previous resort">
+      <i class="fa-solid fa-angle-left"></i>
+    </button>
+    <!-- Next arrow -->
+    <button class="resort-slider-arrow resort-slider-arrow--next" id="slider-next" aria-label="Next resort">
+      <i class="fa-solid fa-angle-right"></i>
+    </button>
+
+    <!-- Text overlay -->
+    <div class="resort-slider-overlay">
+      <div class="resort-slider-text">
+        <div class="resort-slider-name" id="slider-name">Phuket</div>
+        <div class="resort-slider-subtitle" id="slider-subtitle">Phuket's Best Detox Center with Unique Programs</div>
+        <p class="resort-slider-desc" id="slider-desc">We invite you to a health journey at one of Thailand's most beautiful islands, Phuket. At TheLifeCo Phuket, we offer you detox, healthy nutrition and wellness programs, along with natural therapies with professional medical... <span class="see-more">see more</span></p>
+      </div>
+      <div class="resort-slider-cta-wrap">
+        <a href="#" class="resort-slider-cta" id="slider-cta">
+          Step into The Phuket Resort
         </a>
       </div>
     </div>
+
+  </div>
+
+  <!-- Dots -->
+  <div class="resort-slider-dots" id="slider-dots">
+    <div class="resort-slider-dot" data-idx="0"></div>
+    <div class="resort-slider-dot" data-idx="1"></div>
+    <div class="resort-slider-dot active" data-idx="2"></div>
+    <div class="resort-slider-dot" data-idx="3"></div>
+    <div class="resort-slider-dot" data-idx="4"></div>
   </div>
 </section>
 
-<!-- ===== 6. FOOTER ===== -->
+<!-- ===== 4. CTA BANNER ===== -->
+<section class="resort-cta-banner">
+  <h2 class="resort-cta-heading">
+    <span>Start your health journey</span>
+    <span>with TheLifeCo</span>
+  </h2>
+  <div class="resort-cta-buttons">
+    <a href="#" class="resort-btn-book">Book Now</a>
+    <a href="#" class="resort-btn-expert">Talk To An Expert</a>
+  </div>
+</section>
+
+<!-- ===== 5. TESTIMONIALS ===== -->
+<section class="resort-testimonials">
+
+  <h2 class="testimonials-title">Testimonials</h2>
+
+  <!-- Top row: rating + 3 press cards -->
+  <div class="testimonials-top-row">
+    <div class="testimonials-rating-block">
+      <div class="testimonials-count">10.000+</div>
+      <div class="testimonials-stars">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+      </div>
+    </div>
+    <div class="testimonials-divider"></div>
+    <div class="testimonials-press-cards">
+      <div class="t-press-card">
+        <div class="t-press-source">TheGuardian</div>
+        <div class="t-press-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p class="t-press-text">"Lorem ipsum dolor sit amet consectetur."</p>
+      </div>
+      <div class="t-press-card">
+        <div class="t-press-source">TheGuardian</div>
+        <div class="t-press-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p class="t-press-text">"Lorem ipsum dolor sit amet consectetur."</p>
+      </div>
+      <div class="t-press-card">
+        <div class="t-press-source">TheGuardian</div>
+        <div class="t-press-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p class="t-press-text">"Lorem ipsum dolor sit amet consectetur."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom split: big quote left + reviews right -->
+  <div class="testimonials-bottom">
+
+    <!-- Left: big quote + mosaic -->
+    <div class="testimonials-big-quote">
+      <div class="testimonials-big-text">Lorem ipsum dolor sit amet</div>
+      <div class="testimonials-mosaic">
+        <img class="mosaic-img mosaic-img--tall"
+          src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=400&q=80"
+          alt="Wellness" loading="lazy">
+        <img class="mosaic-img"
+          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80"
+          alt="Nature" loading="lazy">
+        <img class="mosaic-img"
+          src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80"
+          alt="Meditation" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Right: individual reviews -->
+    <div>
+      <div class="testimonials-reviews">
+        <div class="t-review-item">
+          <div class="t-review-meta">
+            <span class="t-review-location">
+              <i class="fa-solid fa-location-dot"></i> St. Lucia
+            </span>
+            <span class="t-review-author">
+              <i class="fa-regular fa-user"></i> Feyyaz S.
+            </span>
+          </div>
+          <div class="t-review-title">Everything was great.</div>
+          <div class="t-review-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="t-review-text">Lorem ipsum dolor sit amet consectetur. Nisl scelerisque viverra maecenas bibendum integer gravida. Netus eu sed risus volutpat. Lorem ipsum dolor sit amet consectetur. Nisl sceleriq... <span class="t-review-see-more">see more</span></p>
+        </div>
+        <div class="t-review-item">
+          <div class="t-review-meta">
+            <span class="t-review-location">
+              <i class="fa-solid fa-location-dot"></i> St. Lucia
+            </span>
+            <span class="t-review-author">
+              <i class="fa-regular fa-user"></i> Ceren Canli
+            </span>
+          </div>
+          <div class="t-review-title">Completely refreshing!</div>
+          <div class="t-review-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="t-review-text">Lorem ipsum dolor sit amet consectetur. Nisl scelerisque viverra maecenas bibendum integer gravida. Netus eu sed risus volutpat. Lorem ipsum dolor sit amet consectetur. Nisl sceleriq... <span class="t-review-see-more">see more</span></p>
+        </div>
+      </div>
+      <div class="testimonials-actions">
+        <a href="#" class="testimonials-btn testimonials-btn--outline">Give us feedback</a>
+        <a href="#" class="testimonials-btn testimonials-btn--solid">See All Experiences</a>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ===== 6. PROMO ROW ===== -->
+<section class="promo-section">
+  <div class="promo-grid">
+
+    <!-- Valentine card -->
+    <div class="promo-card-valentine">
+      <div class="promo-card-valentine-img"></div>
+      <div class="promo-card-valentine-content">
+        <div class="promo-valentine-label">Best gift</div>
+        <div class="promo-valentine-title">for your<br>valentine</div>
+        <div class="promo-valentine-btns">
+          <a href="#" class="promo-valentine-btn-outline">Book an Appointment</a>
+          <a href="#" class="promo-valentine-btn-dark">Learn More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Wallet card -->
+    <div class="promo-card-wallet">
+      <div class="promo-wallet-earn">EARN %10 OF YOUR<br>PURCHASE</div>
+      <div class="promo-wallet-use">&amp; USE IT ON YOUR NEXT TRIP</div>
+      <div class="promo-wallet-script">wallet</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 7. FOOTER ===== -->
 <footer class="footer-v2">
   <div class="footer-v2-inner">
 
+    <!-- Brand logo aligned right -->
+    <div class="footer-v2-top-row">
+      <div class="footer-v2-brand-logo">TheLifeCo</div>
+    </div>
+
     <div class="footer-v2-grid">
 
-      <!-- Column 1: Brand + App + Social -->
+      <!-- Column 1: App + Social -->
       <div>
-        <div class="footer-v2-brand">TheLifeCo</div>
-        <p class="footer-v2-tagline">Transformative wellness retreats since 2003. Medically supervised programs in Turkey, Thailand, Egypt, and the Caribbean.</p>
         <div class="footer-v2-app-label">Download BOATSY App</div>
         <div class="footer-v2-app-badges">
           <a href="#" class="footer-v2-badge">
@@ -805,28 +1196,50 @@
         </div>
         <div class="footer-v2-follow-label">Follow Us</div>
         <div class="footer-v2-socials">
-          <a href="#" class="footer-v2-social-icon"><i class="fa-brands fa-instagram"></i></a>
           <a href="#" class="footer-v2-social-icon"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="footer-v2-social-icon"><i class="fa-brands fa-youtube"></i></a>
           <a href="#" class="footer-v2-social-icon"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" class="footer-v2-social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="footer-v2-social-icon"><i class="fa-brands fa-instagram"></i></a>
         </div>
       </div>
 
-      <!-- Column 2: Retreatments -->
+      <!-- Column 2: Centers -->
+      <div>
+        <div class="footer-v2-col-heading">Centers</div>
+        <div class="footer-v2-links">
+          <a href="#">Bodrum</a>
+          <a href="#">Antalya</a>
+          <a href="#">Phuket</a>
+          <a href="#">Sharm El Sheikh</a>
+          <a href="#">St. Lucia</a>
+        </div>
+      </div>
+
+      <!-- Column 3: Retreatments -->
       <div>
         <div class="footer-v2-col-heading">Retreatments</div>
         <div class="footer-v2-links">
-          <a href="#">Weight Loss</a>
-          <a href="#">Diabetes Recovery</a>
-          <a href="#">Water Fasting</a>
-          <a href="#">Liver Sustainability</a>
-          <a href="#">Longevity Program</a>
-          <a href="#">Mental Wellness</a>
+          <a href="#">Weight Loss Retreatment</a>
+          <a href="#">Diabetes Recovery Retreatment</a>
+          <a href="#">Water Fasting Retreatment</a>
+          <a href="#">Liver Support Protocol</a>
+          <a href="#">Get Fit &amp; Healthy Retreatment</a>
+          <a href="#">Mindful Living Retreatment</a>
         </div>
       </div>
 
-      <!-- Column 3: Explore -->
+      <!-- Column 4: Meal Plans -->
+      <div>
+        <div class="footer-v2-col-heading">Meal Plans</div>
+        <div class="footer-v2-links">
+          <a href="#">Master Cleanse Retreatment</a>
+          <a href="#">Green Detox Retreatment</a>
+          <a href="#">Intermittent Fasting Retreatment</a>
+          <a href="#">Ketogenic Retreatment</a>
+          <a href="#">Low Calorie Retreatment</a>
+        </div>
+      </div>
+
+      <!-- Column 5: Explore -->
       <div>
         <div class="footer-v2-col-heading">Explore</div>
         <div class="footer-v2-links">
@@ -835,39 +1248,13 @@
           <a href="#">Blog</a>
           <a href="#">Contact Us</a>
           <a href="#">Habit Building App</a>
-          <a href="#">Press Kit</a>
           <a href="#">TheLifeCo Gift Voucher</a>
         </div>
       </div>
 
-      <!-- Column 4: Centers -->
-      <div>
-        <div class="footer-v2-col-heading">Centers</div>
-        <div class="footer-v2-links">
-          <a href="#">Bodrum</a>
-          <a href="#">Antalya</a>
-          <a href="#">Phuket</a>
-          <a href="#">Sharm El Sheikh</a>
-          <a href="#">St Lucia</a>
-        </div>
-      </div>
+    </div>
 
-      <!-- Column 5: Meal Plans -->
-      <div>
-        <div class="footer-v2-col-heading">Meal Plans</div>
-        <div class="footer-v2-links">
-          <a href="#">Master Cleanse</a>
-          <a href="#">Green Detox</a>
-          <a href="#">Intermittent Fasting</a>
-          <a href="#">Ketogenic</a>
-          <a href="#">Raw Food</a>
-          <a href="#">Alkaline Diet</a>
-        </div>
-      </div>
-
-    </div><!-- /footer-v2-grid -->
-
-    <!-- Address row -->
+    <!-- Address -->
     <div class="footer-v2-address-row">
       <i class="fa-solid fa-location-dot"></i>
       <span class="footer-v2-address">Maslak Mah. Büyükdere Cad. USO Center No: 245 Kat: 15 İç Kapı No: 56 Maslak / Sarıyer / İstanbul</span>
@@ -892,122 +1279,125 @@
       </div>
     </div>
 
-  </div><!-- /footer-v2-inner -->
+  </div>
 </footer>
 
 <script>
 /* =============================================
-   Resort showcase slider
-   All DOM updates use textContent / style properties
-   to avoid any innerHTML XSS surface.
+   Resort slider data
    ============================================= */
 var resorts = [
   {
     name: 'Bodrum',
     subtitle: "Turkey's Premier Aegean Wellness Retreat",
-    desc: 'Experience world-class detox and wellness programs on the crystal-clear shores of the Aegean Sea. Bodrum combines ancient Turkish wellness traditions with cutting-edge medical protocols.',
-    img: 'https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=800&q=80',
-    ctaLabel: 'Step Into The Bodrum Resort'
+    desc: "Experience world-class detox and wellness programs on the crystal-clear shores of the Aegean Sea. Bodrum combines ancient Turkish wellness traditions with cutting-edge medical protocols.",
+    img: 'https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=1440&q=80',
+    ctaLabel: 'Step into The Bodrum Resort'
   },
   {
     name: 'Antalya',
     subtitle: "The Mediterranean's Leading Health Destination",
-    desc: 'Set against the stunning Taurus mountains and turquoise Mediterranean coast, TheLifeCo Antalya offers a full spectrum of medically supervised detox and wellness programs.',
-    img: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=800&q=80',
-    ctaLabel: 'Step Into The Antalya Resort'
+    desc: "Set against the stunning Taurus mountains and turquoise Mediterranean coast, TheLifeCo Antalya offers a full spectrum of medically supervised detox and wellness programs.",
+    img: 'https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=1440&q=80',
+    ctaLabel: 'Step into The Antalya Resort'
   },
   {
     name: 'Phuket',
     subtitle: "Phuket's Best Detox Center with Unique Programs",
-    desc: "We invite you to a health journey at one of Thailand's most beautiful islands, Phuket. At TheLifeCo Phuket, you will find world-class wellness programs combined with the natural beauty of the Andaman Sea.",
-    img: 'https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=800&q=80',
-    ctaLabel: 'Step Into The Phuket Resort'
+    desc: "We invite you to a health journey at one of Thailand's most beautiful islands, Phuket. At TheLifeCo Phuket, we offer you detox, healthy nutrition and wellness programs, along with natural therapies with professional medical...",
+    img: 'https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=1440&q=80',
+    ctaLabel: 'Step into The Phuket Resort'
   },
   {
     name: 'Sharm El Sheikh',
     subtitle: "Egypt's Premier Red Sea Wellness Escape",
     desc: "Nestled between the crystal waters of the Red Sea and the dramatic Sinai mountains, TheLifeCo Sharm El Sheikh offers a transformative wellness experience in one of Egypt's most iconic destinations.",
-    img: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=800&q=80',
-    ctaLabel: 'Step Into The Sharm El Sheikh Resort'
+    img: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=1440&q=80',
+    ctaLabel: 'Step into The Sharm El Sheikh Resort'
   },
   {
-    name: 'St Lucia',
+    name: 'St. Lucia',
     subtitle: "Caribbean's Finest Detox and Wellness Paradise",
-    desc: 'Surrounded by lush rainforests and the sparkling Caribbean Sea, TheLifeCo St Lucia is the ultimate destination for those seeking deep transformation in an extraordinary natural setting.',
-    img: 'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&q=80',
-    ctaLabel: 'Step Into The St Lucia Resort'
+    desc: "Surrounded by lush rainforests and the sparkling Caribbean Sea, TheLifeCo St. Lucia is the ultimate destination for those seeking deep transformation in an extraordinary natural setting.",
+    img: 'https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1440&q=80',
+    ctaLabel: 'Step into The St. Lucia Resort'
   }
 ];
 
-var currentResort = 2;
+var currentIdx = 2;
 
-var elImg      = document.getElementById('showcase-img');
-var elName     = document.getElementById('resort-name');
-var elSubtitle = document.getElementById('resort-subtitle');
-var elDesc     = document.getElementById('resort-desc');
-var elCtaText  = document.getElementById('resort-cta-text');
-var tabs       = document.querySelectorAll('.resort-tab');
+var elImg     = document.getElementById('slider-img');
+var elName    = document.getElementById('slider-name');
+var elSub     = document.getElementById('slider-subtitle');
+var elDesc    = document.getElementById('slider-desc');
+var elCta     = document.getElementById('slider-cta');
+var dots      = document.querySelectorAll('.resort-slider-dot');
+var pills     = document.querySelectorAll('.resort-filter-pills .resort-pill');
 
-function updateShowcase(idx) {
+function setSlide(idx) {
   var r = resorts[idx];
 
-  // Fade image out, swap background, fade back in
+  /* Fade transition */
   elImg.style.opacity = '0';
-  (function(bgUrl) {
+  (function(bg) {
     setTimeout(function() {
-      elImg.style.backgroundImage = 'url(' + bgUrl + ')';
+      elImg.style.backgroundImage =
+        'linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.15) 40%,rgba(0,0,0,.72) 100%),' +
+        'url(' + bg + ')';
       elImg.style.opacity = '1';
     }, 150);
   })(r.img);
 
-  // Safe text updates — no innerHTML used
-  elName.textContent     = r.name;
-  elSubtitle.textContent = r.subtitle;
-  elDesc.textContent     = r.desc;
-  elCtaText.textContent  = r.ctaLabel;
+  elName.textContent = r.name;
+  elSub.textContent  = r.subtitle;
+  elCta.textContent  = r.ctaLabel;
 
-  // Sync tab active state
-  tabs.forEach(function(tab, i) {
-    if (i === idx) {
-      tab.classList.add('active');
-    } else {
-      tab.classList.remove('active');
-    }
+  /* Rebuild desc safely */
+  elDesc.textContent = r.desc + ' ';
+  var seeMore = document.createElement('span');
+  seeMore.className = 'see-more';
+  seeMore.textContent = 'see more';
+  elDesc.appendChild(seeMore);
+
+  /* Sync dots */
+  dots.forEach(function(dot, i) {
+    dot.classList.toggle('active', i === idx);
   });
 
-  currentResort = idx;
+  currentIdx = idx;
 }
 
-// Tab clicks
-tabs.forEach(function(tab) {
-  tab.addEventListener('click', function() {
-    updateShowcase(parseInt(tab.getAttribute('data-idx'), 10));
+/* Init with current resort */
+setSlide(currentIdx);
+
+document.getElementById('slider-prev').addEventListener('click', function() {
+  setSlide((currentIdx - 1 + resorts.length) % resorts.length);
+});
+document.getElementById('slider-next').addEventListener('click', function() {
+  setSlide((currentIdx + 1) % resorts.length);
+});
+
+dots.forEach(function(dot) {
+  dot.addEventListener('click', function() {
+    setSlide(parseInt(dot.getAttribute('data-idx'), 10));
   });
 });
 
-// Arrow buttons
-document.getElementById('btn-prev').addEventListener('click', function() {
-  var next = (currentResort - 1 + resorts.length) % resorts.length;
-  updateShowcase(next);
-});
-document.getElementById('btn-next').addEventListener('click', function() {
-  var next = (currentResort + 1) % resorts.length;
-  updateShowcase(next);
+/* Filter pills */
+pills.forEach(function(pill) {
+  pill.addEventListener('click', function() {
+    pills.forEach(function(p) { p.classList.remove('active'); });
+    pill.classList.add('active');
+  });
 });
 
-/* =============================================
-   FAQ accordion — shared utility kept for reuse
-   ============================================= */
-document.querySelectorAll('.faq-question').forEach(function(q) {
-  q.addEventListener('click', function() {
-    var item = q.closest('.faq-item');
-    var isOpen = item.classList.contains('active');
-    document.querySelectorAll('.faq-item').forEach(function(i) {
-      i.classList.remove('active');
+/* View toggle */
+document.querySelectorAll('.resort-view-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.resort-view-btn').forEach(function(b) {
+      b.classList.remove('active');
     });
-    if (!isOpen) {
-      item.classList.add('active');
-    }
+    btn.classList.add('active');
   });
 });
 </script>

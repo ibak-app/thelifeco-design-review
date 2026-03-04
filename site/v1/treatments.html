@@ -8,75 +8,85 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Urbanist:wght@600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Urbanist:wght@600&display=swap" rel="stylesheet">
 <style>
 /* =========================================
    Treatments Page — Pixel-Perfect Figma F03
-   Frame: 1440 x 3711px
+   Frame 398:1955  |  1440 × 3711 px
    ========================================= */
 
-/* Override font imports to use Manrope 300-800 */
-:root {
-  --font-primary: 'Manrope', system-ui, -apple-system, sans-serif;
-  --font-urbanist: 'Urbanist', system-ui, sans-serif;
-}
-
-/* ---- Navigation (light, on white) ---- */
-.treat-nav {
+/* ---------- NAV (white bg, dark text) ---------- */
+.t-nav {
   position: relative;
-  background: var(--white);
-  border-bottom: 1px solid var(--border-color);
-  padding: 0;
+  background: #fff;
+  border-bottom: 1px solid #e7e7e7;
   z-index: 100;
 }
-.treat-nav .container {
+.t-nav-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 72px;
 }
-.treat-nav-logo {
-  font-family: var(--font-primary);
+.t-nav-logo {
+  font-family: 'Manrope', sans-serif;
   font-size: 20px;
   font-weight: 700;
-  color: var(--black);
+  color: #000;
   letter-spacing: -0.5px;
   text-decoration: none;
+  white-space: nowrap;
 }
-.treat-nav-links {
+.t-nav-links {
   display: flex;
   align-items: center;
   gap: 36px;
 }
-.treat-nav-links a {
-  font-family: var(--font-primary);
-  font-size: 15px;
+.t-nav-links a {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
   font-weight: 500;
-  color: var(--text-primary);
+  color: #000;
   text-decoration: none;
-  opacity: 0.8;
+  opacity: 0.75;
   transition: opacity 0.2s;
 }
-.treat-nav-links a:hover,
-.treat-nav-links a.active {
-  opacity: 1;
-}
-.treat-nav-right {
+.t-nav-links a:hover,
+.t-nav-links a.active { opacity: 1; }
+.t-nav-right {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 24px;
 }
-.treat-nav-right a {
-  font-family: var(--font-primary);
-  font-size: 15px;
-  font-weight: 500;
-  color: var(--text-primary);
+.t-nav-right a {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
   text-decoration: none;
-  opacity: 0.8;
+  opacity: 0.75;
   transition: opacity 0.2s;
 }
-.treat-nav-right a:hover { opacity: 1; }
-.treat-nav-toggle {
+.t-nav-right a:hover { opacity: 1; }
+.t-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.t-nav-cta:hover { background: #000; color: #fff; }
+.t-nav-toggle {
   display: none;
   flex-direction: column;
   gap: 5px;
@@ -85,358 +95,627 @@
   border: none;
   padding: 4px;
 }
-.treat-nav-toggle span {
+.t-nav-toggle span {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--black);
+  background: #000;
 }
 
-/* ---- Hero / Search area ---- */
-.treat-hero {
-  background: var(--white);
-  padding: 72px 0 0;
-}
-.treat-hero-inner {
+/* ---------- HERO (full-width landscape image + text overlay) ---------- */
+.t-hero {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  gap: 0;
+  align-items: flex-end;
 }
-.treat-hero-top {
-  padding-bottom: 40px;
-  border-bottom: 1px solid var(--border-color);
+.t-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(25%);
 }
-.treat-hero h1 {
-  font-family: var(--font-primary);
+.t-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.15) 0%,
+    rgba(0,0,0,0.45) 60%,
+    rgba(0,0,0,0.65) 100%
+  );
+}
+.t-hero-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px 60px;
+}
+.t-hero-content h1 {
+  font-family: 'Manrope', sans-serif;
   font-size: 56px;
   font-weight: 400;
+  color: #fff;
   line-height: 1.1;
-  letter-spacing: -1px;
-  color: var(--black);
-  margin-bottom: 40px;
-  max-width: 700px;
+  letter-spacing: -1.5px;
+  max-width: 680px;
 }
-.treat-controls {
-  display: flex;
-  align-items: center;
-  gap: 32px;
-}
-.treat-dropdown {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--font-primary);
-  font-size: 32px;
-  font-weight: 400;
-  color: var(--black);
-  cursor: pointer;
-  user-select: none;
-  background: none;
-  border: none;
-  padding: 0;
-}
-.treat-dropdown i {
-  font-size: 22px;
-  color: var(--black);
-}
-
-/* ---- Category filter tags row ---- */
-.treat-tags-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 28px 0 0;
-  flex-wrap: wrap;
-}
-.treat-tag {
-  display: inline-block;
-  padding: 8px 18px;
-  border: 1px solid var(--border-dark);
-  border-radius: 100px;
-  font-family: var(--font-primary);
-  font-size: 14px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--black);
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
-  background: transparent;
-}
-.treat-tag:hover,
-.treat-tag.active {
-  background: var(--black);
-  color: var(--white);
-  border-color: var(--black);
-}
-
-/* ---- CTA subtitle strip ---- */
-.treat-subtitle-strip {
-  background: var(--white);
-  border-bottom: 1px solid var(--border-color);
-  padding: 32px 0;
-}
-.treat-subtitle-strip p {
-  font-family: var(--font-primary);
-  font-size: 36px;
-  font-weight: 300;
-  color: var(--black);
-  line-height: 1.2;
-  letter-spacing: -0.5px;
-}
-
-/* ---- Treatments body: sidebar + grid ---- */
-.treatments-body {
-  background: var(--white);
-  padding: 56px 0 80px;
-}
-.treatments-layout {
-  display: grid;
-  grid-template-columns: 252px 1fr;
-  gap: 56px;
-  align-items: start;
-}
-
-/* ---- Sidebar ---- */
-.treat-sidebar {
-  position: sticky;
-  top: 24px;
-}
-.treat-sidebar-nav {
-  margin-bottom: 36px;
-}
-.treat-sidebar-item {
-  display: block;
-  font-family: var(--font-primary);
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--text-secondary);
-  padding: 10px 0;
-  cursor: pointer;
-  transition: color 0.2s, font-weight 0.15s;
-  text-decoration: none;
-  border: none;
-  background: none;
-  width: 100%;
-  text-align: left;
-  line-height: 1.3;
-}
-.treat-sidebar-item:hover {
-  color: var(--black);
-}
-.treat-sidebar-item.active {
+.t-hero-content h1 strong {
   font-weight: 700;
-  color: var(--black);
 }
-.treat-sidebar-conditions {
-  border-top: 1px solid var(--border-color);
-  padding-top: 24px;
+
+/* ---------- BODY LAYOUT: sidebar + grid ---------- */
+.t-body {
+  background: #fff;
 }
-.treat-sidebar-conditions-btn {
+.t-body-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 0;
+  align-items: start;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+/* ---------- SIDEBAR ---------- */
+.t-sidebar {
+  position: sticky;
+  top: 0;
+  border-right: 1px solid #e7e7e7;
+  padding: 0 32px 64px 0;
+  min-height: 100%;
+}
+
+/* Sort row */
+.t-sidebar-sort {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: var(--font-primary);
-  font-size: 32px;
+  padding: 28px 0 28px;
+  border-bottom: 1px solid #e7e7e7;
+  cursor: pointer;
+}
+.t-sidebar-sort-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+.t-sidebar-sort i {
+  font-size: 14px;
+  color: #717171;
+}
+
+/* Programs accordion */
+.t-sidebar-accordion {
+  border-bottom: 1px solid #e7e7e7;
+}
+.t-sidebar-accordion-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  cursor: pointer;
+}
+.t-sidebar-accordion-head-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+.t-sidebar-accordion-head i {
+  font-size: 14px;
+  color: #717171;
+}
+.t-sidebar-accordion-body {
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+.t-sidebar-accordion-body.open {
+  max-height: 600px;
+}
+.t-sidebar-accordion-body:not(.open) {
+  max-height: 0;
+}
+.t-sidebar-prog-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
   font-weight: 400;
-  color: var(--black);
+  color: #717171;
   background: none;
   border: none;
   cursor: pointer;
-  width: 100%;
-  padding: 0;
+  transition: color 0.15s;
+  line-height: 1.4;
 }
-.treat-sidebar-conditions-btn i {
-  font-size: 20px;
-  color: var(--black);
+.t-sidebar-prog-item:hover,
+.t-sidebar-prog-item.active {
+  color: #000;
+  font-weight: 600;
+}
+.t-sidebar-prog-item.active {
+  font-weight: 700;
+}
+/* close padding after last item */
+.t-sidebar-accordion-body .t-sidebar-prog-item:last-child {
+  padding-bottom: 22px;
 }
 
-/* ---- Treatment cards grid ---- */
-.treat-grid {
+/* Conditions row */
+.t-sidebar-conditions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  cursor: pointer;
+  border-bottom: 1px solid #e7e7e7;
+}
+.t-sidebar-conditions-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+.t-sidebar-conditions i {
+  font-size: 14px;
+  color: #717171;
+}
+
+/* ---------- TREATMENT GRID ---------- */
+.t-grid-wrap {
+  padding: 0 0 0 40px;
+}
+.t-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  border-left: 1px solid #e7e7e7;
+  margin-left: -1px;
 }
-.treat-card {
-  border: 1px solid var(--border-color);
-  margin: -1px 0 0 -1px; /* collapse borders */
-  background: var(--white);
+
+/* Individual treatment card */
+.t-card {
+  border: 1px solid #e7e7e7;
+  margin: -1px 0 0 -1px;
+  background: #fff;
   overflow: hidden;
-  transition: background 0.2s;
   cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  flex-direction: column;
 }
-.treat-card:hover {
-  background: var(--off-white-3);
+.t-card:hover { background: #f9f9f9; }
+
+.t-card-head {
+  position: relative;
+  padding: 20px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
 }
-.treat-card-top {
-  padding: 24px 24px 16px;
-}
-.treat-card-category {
-  font-family: var(--font-primary);
-  font-size: 14px;
+.t-card-category {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.4px;
-  color: var(--text-secondary);
-  margin-bottom: 10px;
-  line-height: 1.3;
+  letter-spacing: 0.6px;
+  color: #717171;
+  line-height: 1.35;
+  max-width: calc(100% - 40px);
 }
-.treat-card-name {
-  font-family: var(--font-primary);
-  font-size: 28px;
+.t-card-arrow {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e7e7e7;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 12px;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.t-card:hover .t-card-arrow { background: #000; color: #fff; border-color: #000; }
+.t-card-name {
+  font-family: 'Manrope', sans-serif;
+  font-size: 22px;
   font-weight: 400;
-  color: var(--black);
+  color: #000;
   line-height: 1.2;
   letter-spacing: -0.3px;
+  padding-bottom: 4px;
 }
-.treat-card-img {
+.t-card-img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
-  background: var(--off-white-2);
-  filter: grayscale(100%);
+  background: #e0e0e0;
+  filter: grayscale(10%);
 }
-.treat-card-img-placeholder {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  background: var(--light-gray-4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  font-size: 13px;
-}
-/* Invisible placeholder card for empty grid slots */
-.treat-card-empty {
-  border: 1px solid var(--border-color);
+
+/* Empty filler card */
+.t-card-empty {
+  border: 1px solid #e7e7e7;
   margin: -1px 0 0 -1px;
-  background: var(--white);
+  background: #fff;
+  aspect-ratio: 1 / 1.4;
   pointer-events: none;
 }
 
-/* ---- Two CTA cards side by side ---- */
-.treat-cta-section {
-  background: var(--white);
-  padding: 0 0 80px;
+/* Featured/CTA card inside grid */
+.t-card-featured {
+  border: 1px solid #e7e7e7;
+  margin: -1px 0 0 -1px;
+  background: #0f0f0f;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
-.treat-cta-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-top: 1px solid var(--border-color);
+.t-card-featured-img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(20%) brightness(0.7);
 }
-.treat-cta-card {
-  padding: 64px 56px;
-  border-right: 1px solid var(--border-color);
+.t-card-featured-body {
+  padding: 24px 24px 28px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  flex: 1;
 }
-.treat-cta-card:last-child {
-  border-right: none;
-}
-.treat-cta-card h2 {
-  font-family: var(--font-primary);
-  font-size: 36px;
+.t-card-featured-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 22px;
   font-weight: 600;
-  color: var(--black);
-  line-height: 1.15;
-  letter-spacing: -0.5px;
-}
-.treat-cta-card p {
-  font-family: var(--font-primary);
-  font-size: 20px;
-  font-weight: 400;
-  color: var(--text-secondary);
-  line-height: 1.4;
-}
-
-/* ---- Footer (white bg, Figma-accurate) ---- */
-.treat-footer {
-  background: var(--white);
-  border-top: 1px solid var(--border-color);
-  padding: 64px 0 0;
-}
-.treat-footer-grid {
-  display: grid;
-  grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
-  gap: 40px;
-  padding-bottom: 56px;
-  border-bottom: 1px solid var(--border-color);
-}
-.treat-footer-brand {
-  font-family: var(--font-primary);
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--black);
-  margin-bottom: 20px;
+  color: #fff;
+  line-height: 1.25;
   letter-spacing: -0.3px;
 }
-.treat-footer-social {
-  display: flex;
-  gap: 14px;
-  margin-top: 24px;
+.t-card-featured-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 22px;
+  background: #fff;
+  color: #000;
+  border-radius: 100px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  width: fit-content;
+  transition: background 0.2s;
 }
-.treat-footer-social a {
-  width: 38px;
-  height: 38px;
+.t-card-featured-btn:hover { background: #f0f0f0; }
+
+/* ---------- CTA BANNERS (2-col row) ---------- */
+.t-cta-section {
+  background: #fff;
+  border-top: 1px solid #e7e7e7;
+}
+.t-cta-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.t-cta-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px 48px;
+  color: #fff;
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+.t-cta-card:last-child { border-right: none; }
+.t-cta-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.t-cta-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.65) 100%);
+}
+.t-cta-card-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.t-cta-card-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  max-width: 320px;
+}
+.t-cta-card-sub {
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.5;
+}
+.t-cta-card-arrow {
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  border: 1px solid var(--border-dark);
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.15);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-secondary);
-  font-size: 15px;
-  transition: all 0.2s;
-  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+  transition: background 0.2s;
 }
-.treat-footer-social a:hover {
-  border-color: var(--black);
-  color: var(--black);
+.t-cta-card-arrow:hover { background: rgba(255,255,255,0.3); }
+
+/* ---------- FAQ ---------- */
+.t-faq-section {
+  background: #fff;
+  border-top: 1px solid #e7e7e7;
+  padding: 0 0 80px;
 }
-.treat-footer-col-heading {
-  font-family: var(--font-urbanist);
+.t-faq-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 64px 80px 0;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 80px;
+  align-items: start;
+}
+.t-faq-heading {
+  font-family: 'Manrope', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 40px;
+}
+.t-faq-list { border-top: 1px solid #e7e7e7; }
+.t-faq-item { border-bottom: 1px solid #e7e7e7; }
+.t-faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  gap: 16px;
+  line-height: 1.4;
+}
+.t-faq-icon {
+  font-size: 20px;
+  font-weight: 300;
+  color: #717171;
+  flex-shrink: 0;
+  line-height: 1;
+  width: 20px;
+  text-align: center;
+}
+.t-faq-a {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+.t-faq-a-inner {
+  padding: 0 0 20px;
+  font-family: 'Manrope', sans-serif;
   font-size: 14px;
-  font-weight: 600;
-  color: var(--black);
-  margin-bottom: 18px;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
+  color: #717171;
+  line-height: 1.8;
 }
-.treat-footer-col-links {
+.t-faq-item.open .t-faq-a { max-height: 400px; }
+.t-faq-item.open .t-faq-icon::before { content: "−"; }
+.t-faq-item:not(.open) .t-faq-icon::before { content: "+"; }
+.t-faq-icon { font-style: normal; }
+
+/* FAQ right: image card */
+.t-faq-img-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: #141414;
+}
+.t-faq-img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  filter: grayscale(15%);
+}
+.t-faq-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.75) 100%);
+}
+.t-faq-img-label {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  right: 28px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.t-faq-img-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+.t-faq-img-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  flex-shrink: 0;
+  backdrop-filter: blur(6px);
+}
+
+/* ---------- FOOTER ---------- */
+.t-footer {
+  background: #fff;
+  border-top: 1px solid #e7e7e7;
+  padding: 64px 0 0;
+}
+.t-footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+.t-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.3fr;
+  gap: 40px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid #e7e7e7;
+}
+.t-footer-brand {
+  font-family: 'Manrope', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 16px;
+  letter-spacing: -0.3px;
+}
+.t-footer-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  color: #717171;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.t-footer-social {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.t-footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #717171;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.t-footer-social a:hover { border-color: #000; color: #000; }
+.t-footer-address {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  color: #717171;
+  line-height: 1.6;
+}
+.t-footer-col-heading {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.t-footer-col-links {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
-.treat-footer-col-links a {
-  font-family: var(--font-urbanist);
+.t-footer-col-links a {
+  font-family: 'Urbanist', sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: var(--text-secondary);
+  color: #717171;
   text-decoration: none;
   transition: color 0.2s;
   line-height: 1.4;
 }
-.treat-footer-col-links a:hover {
-  color: var(--black);
-}
-.treat-footer-boatsy {
-  font-family: var(--font-primary);
-  font-size: 16px;
-  font-weight: 600;
-  color: var(--black);
-  margin-bottom: 14px;
-}
-.treat-footer-address {
-  font-family: var(--font-primary);
+.t-footer-col-links a:hover { color: #000; }
+.t-footer-app-label {
+  font-family: 'Manrope', sans-serif;
   font-size: 14px;
-  font-weight: 400;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-top: 24px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 12px;
 }
-.treat-footer-bottom {
+.t-footer-app-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.t-footer-app-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+.t-footer-app-btn:hover { border-color: #000; }
+.t-footer-app-btn i { font-size: 16px; }
+.t-footer-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -444,555 +723,620 @@
   flex-wrap: wrap;
   gap: 12px;
 }
-.treat-footer-bottom-left {
+.t-footer-bottom-left {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
   flex-wrap: wrap;
 }
-.treat-footer-bottom-left span {
-  font-family: var(--font-primary);
-  font-size: 13px;
+.t-footer-bottom-left span,
+.t-footer-bottom-left a {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
   font-weight: 400;
-  color: var(--text-secondary);
-}
-.treat-footer-bottom-left a {
-  font-family: var(--font-primary);
-  font-size: 13px;
-  font-weight: 400;
-  color: var(--text-secondary);
+  color: #717171;
   text-decoration: none;
   transition: color 0.2s;
 }
-.treat-footer-bottom-left a:hover { color: var(--black); }
-.treat-footer-bottom-right {
+.t-footer-bottom-left a:hover { color: #000; }
+.t-footer-bottom-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
-.treat-footer-bottom-right span {
-  font-family: var(--font-primary);
+.t-footer-bottom-right span {
+  font-family: 'Manrope', sans-serif;
   font-size: 12px;
   font-weight: 700;
-  color: var(--black);
+  color: #000;
   cursor: pointer;
+}
+.t-footer-bottom-right a {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  color: #717171;
+  text-decoration: none;
 }
 
 /* =========================================
    Responsive
    ========================================= */
 @media (max-width: 1200px) {
-  .treatments-layout {
-    grid-template-columns: 220px 1fr;
-    gap: 36px;
-  }
-  .treat-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .treat-footer-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+  .t-nav-inner,
+  .t-hero-content,
+  .t-faq-inner,
+  .t-footer-inner { padding-left: 40px; padding-right: 40px; }
+  .t-body-inner { padding: 0 40px; }
+  .t-cta-inner { padding: 0 40px; }
+  .t-grid { grid-template-columns: repeat(2, 1fr); }
+  .t-faq-inner { grid-template-columns: 1fr 340px; gap: 48px; }
+  .t-footer-grid { grid-template-columns: 1fr 1fr 1fr; }
 }
-
 @media (max-width: 1024px) {
-  .treat-hero h1 { font-size: 44px; }
-  .treat-dropdown { font-size: 24px; }
-  .treat-sidebar-conditions-btn { font-size: 24px; }
-  .treat-cta-card h2 { font-size: 28px; }
-  .treat-cta-card p { font-size: 18px; }
-  .treat-cta-card { padding: 48px 40px; }
+  .t-hero-content h1 { font-size: 44px; }
+  .t-cta-card-title { font-size: 24px; }
+  .t-faq-heading { font-size: 36px; }
+  .t-faq-inner { grid-template-columns: 1fr; }
+  .t-faq-img-card { aspect-ratio: 16/9; }
 }
-
 @media (max-width: 768px) {
-  .treat-nav-links { display: none; }
-  .treat-nav-toggle { display: flex; }
-  .treat-nav.open .treat-nav-links {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 72px;
-    left: 0; right: 0;
-    background: var(--white);
-    border-bottom: 1px solid var(--border-color);
-    padding: 24px 20px;
-    gap: 16px;
-    z-index: 200;
+  .t-nav-links { display: none; }
+  .t-nav-toggle { display: flex; }
+  .t-nav-inner { padding: 0 20px; }
+  .t-hero { height: 320px; }
+  .t-hero-content { padding: 0 20px 40px; }
+  .t-hero-content h1 { font-size: 32px; }
+  .t-body-inner {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
   }
-  .treat-hero h1 { font-size: 32px; }
-  .treat-subtitle-strip p { font-size: 24px; }
-  .treat-controls { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .treat-dropdown { font-size: 22px; }
-  .treatments-layout { grid-template-columns: 1fr; }
-  .treat-sidebar { display: none; }
-  .treat-grid { grid-template-columns: 1fr; }
-  .treat-card-empty { display: none; }
-  .treat-cta-grid { grid-template-columns: 1fr; }
-  .treat-cta-card { border-right: none; border-bottom: 1px solid var(--border-color); padding: 40px 24px; }
-  .treat-cta-card:last-child { border-bottom: none; }
-  .treat-cta-card h2 { font-size: 24px; }
-  .treat-cta-card p { font-size: 16px; }
-  .treat-footer-grid { grid-template-columns: 1fr 1fr; }
-  .treat-footer-bottom { flex-direction: column; align-items: flex-start; }
+  .t-sidebar { display: none; }
+  .t-grid-wrap { padding: 0; }
+  .t-grid { grid-template-columns: 1fr; border-left: none; }
+  .t-card-empty { display: none; }
+  .t-cta-inner { grid-template-columns: 1fr; padding: 0 20px; }
+  .t-cta-card { min-height: 220px; padding: 28px 28px; }
+  .t-cta-card:not(:last-child) { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+  .t-faq-inner { padding: 40px 20px 0; gap: 32px; }
+  .t-faq-heading { font-size: 28px; margin-bottom: 28px; }
+  .t-footer-inner { padding: 0 20px; }
+  .t-footer-grid { grid-template-columns: 1fr 1fr; }
+  .t-footer-bottom { flex-direction: column; align-items: flex-start; }
 }
-
 @media (max-width: 480px) {
-  .treat-hero h1 { font-size: 26px; }
-  .treat-subtitle-strip p { font-size: 20px; }
-  .treat-grid { grid-template-columns: 1fr; }
-  .treat-tags-row { gap: 8px; }
-  .treat-tag { font-size: 12px; padding: 6px 14px; }
-  .treat-footer-grid { grid-template-columns: 1fr; }
-  .treat-footer-bottom-left { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .t-hero-content h1 { font-size: 26px; }
+  .t-footer-grid { grid-template-columns: 1fr; }
+  .t-footer-bottom-left { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 </style>
 </head>
 <body>
 
-<!-- ===== NAVIGATION ===== -->
-<nav class="treat-nav" id="treat-nav">
-  <div class="container">
-    <a href="index.html" class="treat-nav-logo">TheLifeCo</a>
-    <div class="treat-nav-links">
-      <a href="index.html">Home</a>
+<!-- ===========================
+     NAVIGATION
+     =========================== -->
+<nav class="t-nav" id="t-nav">
+  <div class="t-nav-inner">
+    <a href="index.html" class="t-nav-logo">TheLifeCo</a>
+
+    <div class="t-nav-links">
+      <a href="index.html">Retreats</a>
       <a href="resort.html">Resorts</a>
+      <a href="#">Medical</a>
       <a href="treatments.html" class="active">Treatments</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
     </div>
-    <div class="treat-nav-right">
-      <a href="#" style="font-family:'Inter',sans-serif;font-weight:600">EN</a>
-      <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-      <a href="#">Login</a>
+
+    <div class="t-nav-right">
+      <a href="#" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600">EN</a>
+      <a href="#" style="font-size:13px"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a href="treatments.html" class="t-nav-cta">Talk to an expert</a>
     </div>
-    <button class="treat-nav-toggle" aria-label="Open menu" onclick="document.getElementById('treat-nav').classList.toggle('open')">
+
+    <button class="t-nav-toggle" aria-label="Open menu" onclick="document.getElementById('t-nav').classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<!-- ===== HERO / SEARCH AREA ===== -->
-<section class="treat-hero">
-  <div class="container">
-    <div class="treat-hero-inner">
-      <div class="treat-hero-top">
-        <h1>Find The Best Treatment Program For You</h1>
-        <div class="treat-controls">
-          <button class="treat-dropdown" id="sort-btn" aria-expanded="false">
-            Sort <i class="fa-solid fa-angle-down"></i>
-          </button>
-          <button class="treat-dropdown" id="programs-btn" aria-expanded="true">
-            Programs <i class="fa-solid fa-angle-up"></i>
-          </button>
+<!-- ===========================
+     HERO
+     =========================== -->
+<section class="t-hero">
+  <img
+    class="t-hero-img"
+    src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1440&q=80"
+    alt="Treatments hero — serene wellness landscape"
+  >
+  <div class="t-hero-overlay"></div>
+  <div class="t-hero-content">
+    <h1>Find The Best <strong>Treatment Program</strong> For You</h1>
+  </div>
+</section>
+
+<!-- ===========================
+     SIDEBAR + GRID
+     =========================== -->
+<section class="t-body">
+  <div class="t-body-inner">
+
+    <!-- LEFT SIDEBAR -->
+    <aside class="t-sidebar">
+
+      <!-- Sort -->
+      <div class="t-sidebar-sort" id="sort-row" role="button" aria-expanded="false">
+        <span class="t-sidebar-sort-label">Sort</span>
+        <i class="fa-solid fa-angle-down" id="sort-icon"></i>
+      </div>
+
+      <!-- Programs accordion (open by default) -->
+      <div class="t-sidebar-accordion">
+        <div class="t-sidebar-accordion-head" id="programs-head" role="button" aria-expanded="true">
+          <span class="t-sidebar-accordion-head-label">Programs</span>
+          <i class="fa-solid fa-angle-up" id="programs-icon"></i>
+        </div>
+        <div class="t-sidebar-accordion-body open" id="programs-body">
+          <button class="t-sidebar-prog-item active" data-cat="all">All</button>
+          <button class="t-sidebar-prog-item" data-cat="weight-loss">Weight Loss &amp; Management</button>
+          <button class="t-sidebar-prog-item" data-cat="chronic">Chronic Disease Recovery &amp; Prevention</button>
+          <button class="t-sidebar-prog-item" data-cat="aging">Healthy Aging &amp; Longevity</button>
+          <button class="t-sidebar-prog-item" data-cat="mental">Mental Health &amp; Stress Management</button>
+          <button class="t-sidebar-prog-item" data-cat="cleansing">Cleansing &amp; Detoxing</button>
         </div>
       </div>
-      <div class="treat-tags-row">
-        <button class="treat-tag active" data-filter="all">All</button>
-        <button class="treat-tag" data-filter="cleansing">Cleansing &amp; Detoxing</button>
-        <button class="treat-tag" data-filter="weight-loss">Weight Loss &amp; Management</button>
-        <button class="treat-tag" data-filter="chronic">Chronic Disease Recovery &amp; Prevention</button>
-        <button class="treat-tag" data-filter="aging">Healthy Aging &amp; Longevity</button>
-        <button class="treat-tag" data-filter="mental">Mental Health &amp; Stress Management</button>
+
+      <!-- Conditions -->
+      <div class="t-sidebar-conditions" id="conditions-row" role="button" aria-expanded="false">
+        <span class="t-sidebar-conditions-label">Conditions</span>
+        <i class="fa-solid fa-angle-down" id="conditions-icon"></i>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===== CTA SUBTITLE STRIP ===== -->
-<div class="treat-subtitle-strip">
-  <div class="container">
-    <p>Lets discover which treatments suits you best</p>
-  </div>
-</div>
+    </aside>
 
-<!-- ===== TREATMENTS: SIDEBAR + GRID ===== -->
-<section class="treatments-body">
-  <div class="container">
-    <div class="treatments-layout">
+    <!-- RIGHT: TREATMENT GRID -->
+    <div class="t-grid-wrap">
+      <div class="t-grid" id="t-grid">
 
-      <!-- LEFT SIDEBAR -->
-      <aside class="treat-sidebar">
-        <nav class="treat-sidebar-nav" aria-label="Treatment categories">
-          <button class="treat-sidebar-item active" data-cat="all">All</button>
-          <button class="treat-sidebar-item" data-cat="weight-loss">Weight Loss &amp; Management</button>
-          <button class="treat-sidebar-item" data-cat="chronic">Chronic Disease Recovery &amp; Prevention</button>
-          <button class="treat-sidebar-item" data-cat="aging">Healthy Aging &amp; Longevity</button>
-          <button class="treat-sidebar-item" data-cat="mental">Mental Health &amp; Stress Management</button>
-          <button class="treat-sidebar-item" data-cat="cleansing">Cleansing &amp; Detoxing</button>
-        </nav>
-        <div class="treat-sidebar-conditions">
-          <button class="treat-sidebar-conditions-btn" aria-expanded="false" id="conditions-btn">
-            Conditions <i class="fa-solid fa-angle-down"></i>
-          </button>
+        <!-- ---- Row 1 ---- -->
+        <!-- Card 1 -->
+        <div class="t-card" data-cat="cleansing">
+          <div class="t-card-head">
+            <span class="t-card-category">Cleansing &amp; Detoxing</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Medically Supervised<br>Water Fasting</div>
+          </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80"
+            alt="Medically Supervised Water Fasting" loading="lazy">
         </div>
-      </aside>
 
-      <!-- RIGHT: 3-COLUMN TREATMENT GRID -->
-      <div>
-        <div class="treat-grid" id="treat-grid">
-
-          <!-- Row 1 -->
-          <div class="treat-card" data-cat="chronic">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
-              <div class="treat-card-name">Digestive &amp; Gut Health</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
-              alt="Digestive and Gut Health treatment"
-              loading="lazy"
-            >
+        <!-- Card 2 -->
+        <div class="t-card" data-cat="cleansing">
+          <div class="t-card-head">
+            <span class="t-card-category">Cleansing &amp; Detoxing</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Green Juice<br>Cleanse</div>
           </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80"
+            alt="Green Juice Cleanse" loading="lazy">
+        </div>
 
-          <div class="treat-card" data-cat="cleansing">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Cleansing &amp; Detoxing</div>
-              <div class="treat-card-name">Medically Supervised Water Fasting</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80"
-              alt="Medically Supervised Water Fasting"
-              loading="lazy"
-            >
+        <!-- Card 3 -->
+        <div class="t-card" data-cat="weight-loss">
+          <div class="t-card-head">
+            <span class="t-card-category">Weight Loss &amp; Management</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Weight Loss &amp;<br>Management</div>
           </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80"
+            alt="Weight Loss and Management" loading="lazy">
+        </div>
 
-          <div class="treat-card" data-cat="mental">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Mental Health &amp; Stress Management</div>
-              <div class="treat-card-name">Mental Wellness Program</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=600&q=80"
-              alt="Mental Wellness Program"
-              loading="lazy"
-            >
+        <!-- ---- Row 2 ---- -->
+        <!-- Card 4 -->
+        <div class="t-card" data-cat="mental">
+          <div class="t-card-head">
+            <span class="t-card-category">Mental Health &amp; Stress Management</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Mental Wellness<br>Program</div>
           </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=600&q=80"
+            alt="Mental Wellness Program" loading="lazy">
+        </div>
 
-          <!-- Row 2 -->
-          <div class="treat-card" data-cat="aging">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Healthy Aging &amp; Longevity</div>
-              <div class="treat-card-name">Cancer Prevention &amp; Support</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80"
-              alt="Cancer Prevention and Support"
-              loading="lazy"
-            >
+        <!-- Featured CTA card (spans grid cell) -->
+        <div class="t-card-featured" data-cat="all">
+          <img class="t-card-featured-img"
+            src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
+            alt="Let's discover which treatments suit you" loading="lazy">
+          <div class="t-card-featured-body">
+            <div class="t-card-featured-title">Let's discover which treatments suit you best</div>
+            <a href="#" class="t-card-featured-btn">Talk To An Expert</a>
           </div>
+        </div>
 
-          <div class="treat-card" data-cat="aging">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Healthy Aging &amp; Longevity</div>
-              <div class="treat-card-name">Beauty &amp; Body Reshaping</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80"
-              alt="Beauty and Body Reshaping"
-              loading="lazy"
-            >
+        <!-- Card 6 -->
+        <div class="t-card" data-cat="aging">
+          <div class="t-card-head">
+            <span class="t-card-category">Healthy Aging &amp; Longevity</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Ultimate<br>Longevity</div>
           </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=600&q=80"
+            alt="Ultimate Longevity" loading="lazy">
+        </div>
 
-          <div class="treat-card" data-cat="chronic">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
-              <div class="treat-card-name">Liver Detox</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80"
-              alt="Liver Detox"
-              loading="lazy"
-            >
+        <!-- ---- Row 3 ---- -->
+        <!-- Card 7 -->
+        <div class="t-card" data-cat="cleansing">
+          <div class="t-card-head">
+            <span class="t-card-category">Cleansing &amp; Detoxing</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Master Detox</div>
           </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=600&q=80"
+            alt="Master Detox" loading="lazy">
+        </div>
 
-          <!-- Row 3 -->
-          <div class="treat-card" data-cat="cleansing">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Cleansing &amp; Detoxing</div>
-              <div class="treat-card-name">Green Juice Cleanse</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80"
-              alt="Green Juice Cleanse"
-              loading="lazy"
-            >
+        <!-- Card 8 -->
+        <div class="t-card" data-cat="chronic">
+          <div class="t-card-head">
+            <span class="t-card-category">Chronic Disease Recovery &amp; Prevention</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Diabetes Program</div>
           </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=80"
+            alt="Diabetes Program" loading="lazy">
+        </div>
 
-          <div class="treat-card" data-cat="aging">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Healthy Aging &amp; Longevity</div>
-              <div class="treat-card-name">Ultimate Longevity</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=600&q=80"
-              alt="Ultimate Longevity"
-              loading="lazy"
-            >
+        <!-- Card 9 -->
+        <div class="t-card" data-cat="chronic">
+          <div class="t-card-head">
+            <span class="t-card-category">Chronic Disease Recovery &amp; Prevention</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Chronic Disease Recovery &amp; Prevention</div>
           </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80"
+            alt="Chronic Disease Recovery" loading="lazy">
+        </div>
 
-          <div class="treat-card" data-cat="chronic">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
-              <div class="treat-card-name">Diabetes Program</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=80"
-              alt="Diabetes Program"
-              loading="lazy"
-            >
+        <!-- ---- Row 4 ---- -->
+        <!-- Card 10 -->
+        <div class="t-card" data-cat="aging">
+          <div class="t-card-head">
+            <span class="t-card-category">Healthy Aging &amp; Longevity</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Cancer Prevention<br>&amp; Support</div>
           </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80"
+            alt="Cancer Prevention and Support" loading="lazy">
+        </div>
 
-          <!-- Row 4 -->
-          <div class="treat-card" data-cat="weight-loss">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Weight Loss &amp; Management</div>
-              <div class="treat-card-name">Weight Loss &amp; Management</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80"
-              alt="Weight Loss and Management"
-              loading="lazy"
-            >
+        <!-- Card 11 -->
+        <div class="t-card" data-cat="chronic">
+          <div class="t-card-head">
+            <span class="t-card-category">Chronic Disease Recovery &amp; Prevention</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Liver Detox</div>
           </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80"
+            alt="Liver Detox" loading="lazy">
+        </div>
 
-          <div class="treat-card" data-cat="cleansing">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Cleansing &amp; Detoxing</div>
-              <div class="treat-card-name">Master Detox</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
-              alt="Master Detox"
-              loading="lazy"
-            >
+        <!-- Card 12 -->
+        <div class="t-card" data-cat="chronic">
+          <div class="t-card-head">
+            <span class="t-card-category">Chronic Disease Recovery &amp; Prevention</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Hormonal Longevity<br>(Women's / Men's)</div>
           </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&q=80"
+            alt="Hormonal Longevity" loading="lazy">
+        </div>
 
-          <!-- Row 4 empty slot -->
-          <div class="treat-card-empty" aria-hidden="true"></div>
-
-          <!-- Row 5 -->
-          <div class="treat-card" data-cat="aging">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Healthy Aging &amp; Longevity</div>
-              <div class="treat-card-name">Hormonal Longevity (Women's / Men's)</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&q=80"
-              alt="Hormonal Longevity"
-              loading="lazy"
-            >
+        <!-- ---- Row 5 ---- -->
+        <!-- Card 13 -->
+        <div class="t-card" data-cat="aging">
+          <div class="t-card-head">
+            <span class="t-card-category">Healthy Aging &amp; Longevity</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Beauty &amp; Body<br>Reshaping</div>
           </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80"
+            alt="Beauty and Body Reshaping" loading="lazy">
+        </div>
 
-          <div class="treat-card" data-cat="chronic">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
-              <div class="treat-card-name">Cancer Prevention &amp; Support</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80"
-              alt="Cancer Prevention and Support"
-              loading="lazy"
-            >
+        <!-- Card 14 -->
+        <div class="t-card" data-cat="chronic">
+          <div class="t-card-head">
+            <span class="t-card-category">Chronic Disease Recovery &amp; Prevention</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Cardiovascular<br>Disease Program</div>
           </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=600&q=80"
+            alt="Cardiovascular Disease Program" loading="lazy">
+        </div>
 
-          <div class="treat-card" data-cat="chronic">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
-              <div class="treat-card-name">Liver Detox</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80"
-              alt="Liver Detox"
-              loading="lazy"
-            >
+        <!-- Card 15 -->
+        <div class="t-card" data-cat="chronic">
+          <div class="t-card-head">
+            <span class="t-card-category">Chronic Disease Recovery &amp; Prevention</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Chronic Fatigue<br>Recovery</div>
           </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=600&q=80"
+            alt="Chronic Fatigue Recovery" loading="lazy">
+        </div>
 
-          <!-- Row 6 -->
-          <div class="treat-card" data-cat="aging">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Healthy Aging &amp; Longevity</div>
-              <div class="treat-card-name">Beauty &amp; Body Reshaping</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80"
-              alt="Beauty and Body Reshaping"
-              loading="lazy"
-            >
+        <!-- ---- Row 6 ---- -->
+        <!-- Card 16 -->
+        <div class="t-card" data-cat="chronic">
+          <div class="t-card-head">
+            <span class="t-card-category">Chronic Disease Recovery &amp; Prevention</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Inflammation &amp;<br>Immune Reset</div>
           </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80"
+            alt="Inflammation and Immune Reset" loading="lazy">
+        </div>
 
-          <div class="treat-card" data-cat="chronic">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
-              <div class="treat-card-name">Cardiovascular Disease Program</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=600&q=80"
-              alt="Cardiovascular Disease Program"
-              loading="lazy"
-            >
+        <!-- Card 17 -->
+        <div class="t-card" data-cat="chronic">
+          <div class="t-card-head">
+            <span class="t-card-category">Chronic Disease Recovery &amp; Prevention</span>
+            <div class="t-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+            <div class="t-card-name">Digestive &amp; Gut<br>Health</div>
           </div>
+          <img class="t-card-img"
+            src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
+            alt="Digestive and Gut Health" loading="lazy">
+        </div>
 
-          <div class="treat-card" data-cat="chronic">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
-              <div class="treat-card-name">Chronic Fatigue Recovery</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=600&q=80"
-              alt="Chronic Fatigue Recovery"
-              loading="lazy"
-            >
-          </div>
+        <!-- Empty filler to complete row -->
+        <div class="t-card-empty" aria-hidden="true"></div>
 
-          <!-- Row 7 -->
-          <div class="treat-card" data-cat="chronic">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
-              <div class="treat-card-name">Digestive &amp; Gut Health</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80"
-              alt="Digestive and Gut Health"
-              loading="lazy"
-            >
-          </div>
+      </div><!-- /t-grid -->
+    </div><!-- /t-grid-wrap -->
 
-          <div class="treat-card" data-cat="chronic">
-            <div class="treat-card-top">
-              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
-              <div class="treat-card-name">Inflammation &amp; Immune Reset</div>
-            </div>
-            <img
-              class="treat-card-img"
-              src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=600&q=80"
-              alt="Inflammation and Immune Reset"
-              loading="lazy"
-            >
-          </div>
-
-          <!-- Row 7 empty slot -->
-          <div class="treat-card-empty" aria-hidden="true"></div>
-
-        </div><!-- /treat-grid -->
-      </div><!-- /main content -->
-    </div><!-- /treatments-layout -->
-  </div>
+  </div><!-- /t-body-inner -->
 </section>
 
-<!-- ===== TWO CTA CARDS ===== -->
-<section class="treat-cta-section">
-  <div class="container">
-    <div class="treat-cta-grid">
-      <div class="treat-cta-card">
-        <h2>Let's discover which treatments suit you best.</h2>
-        <p>Talk to an expert</p>
-      </div>
-      <div class="treat-cta-card">
-        <h2>Explore this month's events.</h2>
-        <p>See the latest news and special activites</p>
+<!-- ===========================
+     CTA BANNERS
+     =========================== -->
+<section class="t-cta-section">
+  <div class="t-cta-inner">
+
+    <!-- CTA 1: Let's discover -->
+    <div class="t-cta-card">
+      <img class="t-cta-card-bg"
+        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
+        alt="Let's discover" loading="lazy">
+      <div class="t-cta-card-overlay"></div>
+      <div class="t-cta-card-content">
+        <div class="t-cta-card-title">Let's discover which treatments suit you best.</div>
+        <a href="#" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#fff;color:#000;border-radius:100px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;width:fit-content;text-decoration:none;">
+          Talk to an expert
+          <i class="fa-solid fa-arrow-right" style="font-size:12px;"></i>
+        </a>
       </div>
     </div>
+
+    <!-- CTA 2: Explore events -->
+    <div class="t-cta-card">
+      <img class="t-cta-card-bg"
+        src="https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=800&q=80"
+        alt="Explore events" loading="lazy">
+      <div class="t-cta-card-overlay"></div>
+      <div class="t-cta-card-content">
+        <div class="t-cta-card-title">Explore this month's events.</div>
+        <div class="t-cta-card-sub">See the latest news and special activities</div>
+        <div class="t-cta-card-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- ===== FOOTER (white background, Figma-accurate) ===== -->
-<footer class="treat-footer">
-  <div class="container">
-    <div class="treat-footer-grid">
+<!-- ===========================
+     FAQ
+     =========================== -->
+<section class="t-faq-section">
+  <div class="t-faq-inner">
 
-      <!-- Col 1: Brand + social -->
+    <!-- Left: accordion -->
+    <div>
+      <h2 class="t-faq-heading">Your Questions, Answered</h2>
+      <div class="t-faq-list" id="t-faq-list">
+
+        <div class="t-faq-item">
+          <button class="t-faq-q" aria-expanded="false">
+            Lorem ipsum dolor sit amet
+            <span class="t-faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="t-faq-a" role="region">
+            <div class="t-faq-a-inner">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit. Tempor elit leo tincidunt viverra by. Lorem ipsum dolor sit amet consectetur adipiscing elit. Sodales at tincidunt ullamcorper enim facilisis commodo ullamcorper.
+            </div>
+          </div>
+        </div>
+
+        <div class="t-faq-item open">
+          <button class="t-faq-q" aria-expanded="true">
+            Lorem ipsum dolor sit amet
+            <span class="t-faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="t-faq-a" role="region">
+            <div class="t-faq-a-inner">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit. Tempor elit leo tincidunt viverra by. Lorem ipsum dolor sit amet consectetur adipiscing elit. Sodales at tincidunt ullamcorper enim facilisis commodo ullamcorper.
+            </div>
+          </div>
+        </div>
+
+        <div class="t-faq-item">
+          <button class="t-faq-q" aria-expanded="false">
+            Lorem ipsum dolor sit amet
+            <span class="t-faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="t-faq-a" role="region">
+            <div class="t-faq-a-inner">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit. Tempor elit leo tincidunt viverra by. Lorem ipsum dolor sit amet consectetur adipiscing elit. Sodales at tincidunt ullamcorper enim facilisis commodo ullamcorper.
+            </div>
+          </div>
+        </div>
+
+        <div class="t-faq-item">
+          <button class="t-faq-q" aria-expanded="false">
+            Lorem ipsum dolor sit amet
+            <span class="t-faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="t-faq-a" role="region">
+            <div class="t-faq-a-inner">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit. Tempor elit leo tincidunt viverra by. Lorem ipsum dolor sit amet consectetur adipiscing elit. Sodales at tincidunt ullamcorper enim facilisis commodo ullamcorper.
+            </div>
+          </div>
+        </div>
+
+        <div class="t-faq-item">
+          <button class="t-faq-q" aria-expanded="false">
+            Lorem ipsum dolor sit amet
+            <span class="t-faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="t-faq-a" role="region">
+            <div class="t-faq-a-inner">
+              Lorem ipsum dolor sit amet consectetur adipiscing elit. Tempor elit leo tincidunt viverra by. Lorem ipsum dolor sit amet consectetur adipiscing elit. Sodales at tincidunt ullamcorper enim facilisis commodo ullamcorper.
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /faq-list -->
+    </div>
+
+    <!-- Right: image card -->
+    <div class="t-faq-img-card">
+      <img
+        src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80"
+        alt="See Popular Retreats" loading="lazy">
+      <div class="t-faq-img-overlay"></div>
+      <div class="t-faq-img-label">
+        <div class="t-faq-img-title">See Popular<br>Retreats</div>
+        <div class="t-faq-img-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===========================
+     FOOTER
+     =========================== -->
+<footer class="t-footer">
+  <div class="t-footer-inner">
+    <div class="t-footer-grid">
+
+      <!-- Col 1: Brand -->
       <div>
-        <div class="treat-footer-brand">TheLifeCo</div>
-        <div class="treat-footer-social">
+        <div class="t-footer-brand">TheLifeCo</div>
+        <div class="t-footer-social">
           <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
-        <div class="treat-footer-address">
-          Istanbul, Turkey
+        <div class="t-footer-address">
+          Mamak Mah. Büyükdere Cad. UBD Center No:<br>
+          219 Kat: 18 D: 88-89 / 34398 Sarıyer /<br>
+          Istanbul
         </div>
       </div>
 
-      <!-- Col 2: Retreatments -->
+      <!-- Col 2: Centers -->
       <div>
-        <div class="treat-footer-col-heading">Retreatments</div>
-        <div class="treat-footer-col-links">
+        <div class="t-footer-col-heading">Centers</div>
+        <div class="t-footer-col-links">
           <a href="#">Antalya</a>
           <a href="#">Bodrum</a>
           <a href="#">Phuket</a>
+          <a href="#">Sharm El Sheikh</a>
           <a href="#">St. Lucia</a>
         </div>
       </div>
 
-      <!-- Col 3: Explore -->
+      <!-- Col 3: Retreatments -->
       <div>
-        <div class="treat-footer-col-heading">Explore</div>
-        <div class="treat-footer-col-links">
-          <a href="#">Master Detox</a>
-          <a href="#">Water Fasting</a>
-          <a href="#">Longevity</a>
-          <a href="#">Mental Wellness</a>
+        <div class="t-footer-col-heading">Retreatments</div>
+        <div class="t-footer-col-links">
+          <a href="#">Diabetes Recovery Retreatment</a>
+          <a href="#">Water Fasting Retreatment</a>
+          <a href="#">Intermittent Fasting Retreatment</a>
+          <a href="#">Low Support Retreatment</a>
+          <a href="#">Get Fit &amp; Healthy Retreatment</a>
+          <a href="#">Mindfully Living Retreatment</a>
         </div>
       </div>
 
-      <!-- Col 4: Centers -->
+      <!-- Col 4: Meal Plans -->
       <div>
-        <div class="treat-footer-col-heading">Centers</div>
-        <div class="treat-footer-col-links">
+        <div class="t-footer-col-heading">Meal Plans</div>
+        <div class="t-footer-col-links">
+          <a href="#">Whole Cleanse Retreatment</a>
+          <a href="#">Green Detox Retreatment</a>
+          <a href="#">Intermittent Fasting Retreatment</a>
+          <a href="#">Low Calorie Retreatment</a>
+        </div>
+      </div>
+
+      <!-- Col 5: Explore + App -->
+      <div>
+        <div class="t-footer-col-heading">Explore</div>
+        <div class="t-footer-col-links" style="margin-bottom:24px;">
           <a href="#">About Us</a>
+          <a href="#">Corporate Projects</a>
           <a href="#">Blog</a>
-          <a href="#">Careers</a>
-          <a href="#">Contact</a>
+          <a href="#">Habit Building App</a>
+          <a href="#">Press Kit</a>
+          <a href="#">TheLifeCo Gift Voucher</a>
         </div>
-      </div>
-
-      <!-- Col 5: Meal Plans + BOATSY + Follow Us -->
-      <div>
-        <div class="treat-footer-col-heading">Meal Plans</div>
-        <div class="treat-footer-col-links" style="margin-bottom: 28px;">
-          <a href="#">Plant-Based</a>
-          <a href="#">Detox</a>
-          <a href="#">Anti-Inflammatory</a>
-        </div>
-        <div class="treat-footer-boatsy">Download BOATSY App</div>
-        <div style="margin-top: 20px;">
-          <div class="treat-footer-col-heading">Follow Us</div>
+        <div class="t-footer-app-label">Download BOATSY App</div>
+        <div class="t-footer-app-btns">
+          <a href="#" class="t-footer-app-btn">
+            <i class="fa-brands fa-apple"></i>
+            <span>App Store</span>
+          </a>
+          <a href="#" class="t-footer-app-btn">
+            <i class="fa-brands fa-google-play"></i>
+            <span>Google Play</span>
+          </a>
         </div>
       </div>
 
     </div><!-- /footer-grid -->
 
-    <!-- Footer bottom bar -->
-    <div class="treat-footer-bottom">
-      <div class="treat-footer-bottom-left">
+    <div class="t-footer-bottom">
+      <div class="t-footer-bottom-left">
         <span>&copy; 2024 Powered by LifeCo</span>
         <a href="#">Terms &amp; Conditionals</a>
         <a href="#">Sitemap</a>
         <a href="#">Privacy</a>
-        <a href="#">Cookies</a>
+        <a href="#">Cookies Policy</a>
       </div>
-      <div class="treat-footer-bottom-right">
+      <div class="t-footer-bottom-right">
         <span>EN</span>
-        <span>USD</span>
+        <a href="#"><i class="fa-brands fa-instagram" style="font-size:16px;color:#717171;"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter" style="font-size:16px;color:#717171;"></i></a>
       </div>
     </div>
 
@@ -1000,86 +1344,92 @@
 </footer>
 
 <script>
-(function() {
+(function () {
   'use strict';
 
-  /* ---- Sidebar category selection + tag sync ---- */
-  var sidebarItems = document.querySelectorAll('.treat-sidebar-item');
-  var tagBtns = document.querySelectorAll('.treat-tag');
-  var treatCards = document.querySelectorAll('.treat-card');
+  /* ---- Programs accordion ---- */
+  var programsHead = document.getElementById('programs-head');
+  var programsBody = document.getElementById('programs-body');
+  var programsIcon = document.getElementById('programs-icon');
 
-  function filterCards(cat) {
-    treatCards.forEach(function(card) {
-      if (cat === 'all' || card.dataset.cat === cat) {
-        card.style.display = '';
-      } else {
-        card.style.display = 'none';
-      }
+  if (programsHead) {
+    programsHead.addEventListener('click', function () {
+      var isOpen = programsBody.classList.contains('open');
+      programsBody.classList.toggle('open', !isOpen);
+      programsIcon.className = isOpen ? 'fa-solid fa-angle-down' : 'fa-solid fa-angle-up';
+      programsHead.setAttribute('aria-expanded', String(!isOpen));
     });
-    // Handle empty-slot visibility: only show if "all"
-    document.querySelectorAll('.treat-card-empty').forEach(function(el) {
+  }
+
+  /* ---- Sort row (visual toggle) ---- */
+  var sortRow = document.getElementById('sort-row');
+  var sortIcon = document.getElementById('sort-icon');
+  if (sortRow) {
+    sortRow.addEventListener('click', function () {
+      var expanded = sortRow.getAttribute('aria-expanded') === 'true';
+      sortRow.setAttribute('aria-expanded', String(!expanded));
+      sortIcon.className = expanded ? 'fa-solid fa-angle-down' : 'fa-solid fa-angle-up';
+    });
+  }
+
+  /* ---- Conditions row ---- */
+  var condRow = document.getElementById('conditions-row');
+  var condIcon = document.getElementById('conditions-icon');
+  if (condRow) {
+    condRow.addEventListener('click', function () {
+      var expanded = condRow.getAttribute('aria-expanded') === 'true';
+      condRow.setAttribute('aria-expanded', String(!expanded));
+      condIcon.className = expanded ? 'fa-solid fa-angle-up' : 'fa-solid fa-angle-down';
+    });
+  }
+
+  /* ---- Sidebar program filter ---- */
+  var progItems = document.querySelectorAll('.t-sidebar-prog-item');
+  var treatCards = document.querySelectorAll('#t-grid .t-card');
+  var featuredCard = document.querySelector('#t-grid .t-card-featured');
+  var emptyCards = document.querySelectorAll('#t-grid .t-card-empty');
+
+  function filterGrid(cat) {
+    treatCards.forEach(function (card) {
+      var show = cat === 'all' || card.dataset.cat === cat;
+      card.style.display = show ? '' : 'none';
+    });
+    if (featuredCard) {
+      featuredCard.style.display = cat === 'all' ? '' : 'none';
+    }
+    emptyCards.forEach(function (el) {
       el.style.display = cat === 'all' ? '' : 'none';
     });
   }
 
-  sidebarItems.forEach(function(item) {
-    item.addEventListener('click', function() {
-      sidebarItems.forEach(function(i) { i.classList.remove('active'); });
+  progItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      progItems.forEach(function (i) { i.classList.remove('active'); });
       item.classList.add('active');
-      var cat = item.dataset.cat;
-      // sync tags
-      tagBtns.forEach(function(t) {
-        t.classList.toggle('active', t.dataset.filter === cat);
-      });
-      filterCards(cat);
+      filterGrid(item.dataset.cat);
     });
   });
 
-  tagBtns.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      tagBtns.forEach(function(t) { t.classList.remove('active'); });
-      btn.classList.add('active');
-      var cat = btn.dataset.filter;
-      // sync sidebar
-      sidebarItems.forEach(function(i) {
-        i.classList.toggle('active', i.dataset.cat === cat);
+  /* ---- FAQ accordion ---- */
+  var faqItems = document.querySelectorAll('.t-faq-item');
+  faqItems.forEach(function (item) {
+    var btn = item.querySelector('.t-faq-q');
+    if (!btn) return;
+    btn.addEventListener('click', function () {
+      var isOpen = item.classList.contains('open');
+      // Close all
+      faqItems.forEach(function (fi) {
+        fi.classList.remove('open');
+        var b = fi.querySelector('.t-faq-q');
+        if (b) b.setAttribute('aria-expanded', 'false');
       });
-      filterCards(cat);
+      // Toggle current
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
     });
   });
-
-  /* ---- Sort dropdown toggle ---- */
-  var sortBtn = document.getElementById('sort-btn');
-  if (sortBtn) {
-    sortBtn.addEventListener('click', function() {
-      var icon = sortBtn.querySelector('i');
-      var expanded = sortBtn.getAttribute('aria-expanded') === 'true';
-      sortBtn.setAttribute('aria-expanded', String(!expanded));
-      icon.className = expanded ? 'fa-solid fa-angle-down' : 'fa-solid fa-angle-up';
-    });
-  }
-
-  /* ---- Programs dropdown toggle ---- */
-  var programsBtn = document.getElementById('programs-btn');
-  if (programsBtn) {
-    programsBtn.addEventListener('click', function() {
-      var icon = programsBtn.querySelector('i');
-      var expanded = programsBtn.getAttribute('aria-expanded') === 'true';
-      programsBtn.setAttribute('aria-expanded', String(!expanded));
-      icon.className = expanded ? 'fa-solid fa-angle-down' : 'fa-solid fa-angle-up';
-    });
-  }
-
-  /* ---- Conditions toggle ---- */
-  var condBtn = document.getElementById('conditions-btn');
-  if (condBtn) {
-    condBtn.addEventListener('click', function() {
-      var icon = condBtn.querySelector('i');
-      var expanded = condBtn.getAttribute('aria-expanded') === 'true';
-      condBtn.setAttribute('aria-expanded', String(!expanded));
-      icon.className = expanded ? 'fa-solid fa-angle-up' : 'fa-solid fa-angle-down';
-    });
-  }
 
 })();
 </script>
