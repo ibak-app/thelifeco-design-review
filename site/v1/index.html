@@ -7,608 +7,1593 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
-/* Page-specific hero styles */
+/* ============================================================
+   INDEX PAGE — pixel-perfect Figma Frame 01 (1440 x 9442px)
+   ============================================================ */
+
+/* ---- HERO (y=0, h=589) ---- */
 .hero{
   position:relative;
   width:100%;
   min-height:589px;
   display:flex;
   flex-direction:column;
-  justify-content:center;
-  background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.3) 50%,rgba(0,0,0,.5) 100%),
+  justify-content:space-between;
+  background:
+    linear-gradient(180deg,rgba(0,0,0,.50) 0%,rgba(0,0,0,.30) 50%,rgba(0,0,0,.55) 100%),
     url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1440&q=80') center/cover no-repeat;
   color:var(--white);
   overflow:hidden;
 }
-.hero-content{
+.hero-inner{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:120px var(--gutter) 40px;
   max-width:var(--content-width);
   margin:0 auto;
-  padding:120px var(--gutter) 60px;
   width:100%;
 }
-.hero-headline{
-  font-size:120px;
-  font-weight:400;
-  line-height:.95;
-  letter-spacing:-3px;
-  margin-bottom:24px;
+.hero-eyebrow{
+  font-size:32px;
+  font-weight:600;
+  line-height:1.25;
+  margin-bottom:20px;
+  max-width:640px;
 }
-.hero-subtitle{
+.hero-sub{
   font-size:16px;
-  color:rgba(255,255,255,.8);
-  max-width:480px;
+  font-weight:500;
   line-height:1.7;
-  margin-bottom:32px;
+  opacity:.85;
+  max-width:520px;
+  margin-bottom:36px;
 }
-.hero-ctas{display:flex;gap:16px;margin-bottom:48px}
+.hero-ctas{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.hero-btn-primary{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:15px 32px;
+  background:var(--black);
+  color:var(--white);
+  border-radius:100px;
+  font-size:14px;
+  font-weight:600;
+  font-family:var(--font-primary);
+  transition:all .2s;
+}
+.hero-btn-primary:hover{background:var(--dark-gray)}
+.hero-btn-outline{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:15px 32px;
+  background:transparent;
+  color:var(--white);
+  border:1px solid rgba(255,255,255,.45);
+  border-radius:100px;
+  font-size:14px;
+  font-weight:600;
+  font-family:var(--font-primary);
+  transition:all .2s;
+}
+.hero-btn-outline:hover{border-color:var(--white)}
 
-/* Awards ribbon */
-.awards-ribbon{
-  background:rgba(0,0,0,.3);
+/* ---- AWARD RIBBON inside hero (y=478, h=111) ---- */
+.hero-awards-bar{
+  background:rgba(0,0,0,.30);
   backdrop-filter:blur(12px);
-  padding:20px 0;
+  padding:18px 0;
 }
-.awards-ribbon .container{
+.hero-awards-bar .container{
   display:flex;
   align-items:center;
-  justify-content:center;
   gap:48px;
 }
-.award-item{
+.hero-awards-label{
+  font-size:14px;
+  font-weight:400;
+  color:rgba(255,255,255,.70);
+  white-space:nowrap;
+  padding-right:16px;
+  border-right:1px solid rgba(255,255,255,.20);
+}
+.hero-award-item{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
   color:rgba(255,255,255,.75);
   font-size:12px;
 }
-.award-item i{font-size:24px;color:rgba(255,255,255,.5)}
+.hero-award-item i{font-size:22px;color:rgba(255,255,255,.50)}
 
-/* Quick finder */
-.finder{
-  padding:48px 0;
-  border-bottom:1px solid var(--border-color);
-}
-.finder-label{
-  font-size:14px;
-  color:var(--text-secondary);
-  margin-bottom:16px;
-}
-.finder-bar{
-  display:flex;
-  align-items:center;
-  gap:16px;
+/* ---- HOLISTIC APPROACH (y=700, h=794, bg=#f7f7f7) ---- */
+.holistic{
   background:var(--off-white-3);
-  border-radius:100px;
-  padding:8px 8px 8px 24px;
+  padding:100px 0;
 }
-.finder-bar input{
-  flex:1;
-  border:none;
-  background:transparent;
-  font-size:16px;
-  outline:none;
-  font-family:var(--font-primary);
-}
-.finder-bar .btn{padding:12px 32px}
-
-/* Locations section */
-.locations{padding:80px 0}
-.locations-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:24px;
-}
-
-/* Featured content */
-.featured{padding:80px 0;background:var(--bg-section)}
-.featured-grid{
+.holistic-inner{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:24px;
+  gap:80px;
+  align-items:start;
 }
-.featured-large{
-  grid-row:span 2;
-  border-radius:24px;
-  overflow:hidden;
-  position:relative;
-  min-height:500px;
-  background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7)),
-    url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80') center/cover;
+.holistic-heading{
+  font-size:56px;
+  font-weight:400;
+  line-height:1.1;
+  letter-spacing:-1px;
+}
+.holistic-pillars{
   display:flex;
-  align-items:flex-end;
-  padding:40px;
-  color:var(--white);
+  flex-direction:column;
+  gap:0;
+  padding-top:12px;
 }
-.featured-card{
-  border-radius:24px;
-  overflow:hidden;
-  position:relative;
-  min-height:240px;
+.holistic-pillar{
   display:flex;
-  align-items:flex-end;
-  padding:32px;
-  color:var(--white);
+  align-items:flex-start;
+  gap:20px;
+  padding:24px 0;
+  border-bottom:1px solid var(--off-white-2);
 }
-.featured-card:nth-child(2){
-  background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,.6)),
-    url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80') center/cover;
+.holistic-pillar:last-child{border-bottom:none}
+.holistic-pillar-num{
+  font-size:14px;
+  font-weight:400;
+  color:var(--text-muted);
+  min-width:28px;
+  padding-top:2px;
 }
-.featured-card:nth-child(3){
-  background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,.6)),
-    url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80') center/cover;
+.holistic-pillar-text{
+  font-size:16px;
+  font-weight:400;
+  line-height:1.6;
+  color:var(--text-primary);
 }
 
-/* Press section */
-.press{padding:80px 0}
-.press-header{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:48px;
+/* ---- RETREAT CATEGORIES (y=1496, h=865, bg=#ffffff) ---- */
+.retreat-cats{
+  background:var(--white);
+  padding:100px 0;
 }
-.press-link{
+.retreat-cats-header{
+  margin-bottom:56px;
+}
+.retreat-cats-heading{
+  font-size:56px;
+  font-weight:400;
+  line-height:1.1;
+  letter-spacing:-1px;
+  margin-bottom:16px;
+}
+.retreat-cats-sub{
+  font-size:16px;
+  font-weight:400;
+  color:var(--text-secondary);
+  max-width:640px;
+  line-height:1.7;
+}
+.retreat-cats-body{
+  display:grid;
+  grid-template-columns:360px 1fr;
+  gap:80px;
+  align-items:start;
+}
+.retreat-cats-sidebar{}
+.retreat-cat-item{
+  padding:20px 0;
+  border-bottom:1px solid var(--border-color);
+  cursor:pointer;
+  transition:color .2s;
+}
+.retreat-cat-item:first-child{border-top:1px solid var(--border-color)}
+.retreat-cat-item-name{
+  font-size:22px;
+  font-weight:700;
+  letter-spacing:-0.44px;
+  line-height:1.2;
+  color:var(--text-secondary);
+  transition:color .2s;
+}
+.retreat-cat-item.active .retreat-cat-item-name,
+.retreat-cat-item:hover .retreat-cat-item-name{
+  color:var(--text-primary);
+}
+.retreat-cats-detail{}
+.retreat-cats-desc{
   font-size:14px;
+  font-weight:400;
+  color:var(--text-secondary);
+  line-height:1.8;
+  margin-bottom:40px;
+}
+.retreat-sample-heading{
+  font-size:32px;
   font-weight:600;
+  line-height:1.2;
+  margin-bottom:16px;
+}
+.retreat-sample-sub{
+  font-size:16px;
+  font-weight:400;
+  color:var(--text-secondary);
+  line-height:1.7;
+  margin-bottom:32px;
+}
+.retreat-sample-links{
+  display:flex;
+  gap:24px;
+  align-items:center;
+}
+.retreat-sample-link{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:1.2px;
+  text-transform:uppercase;
   color:var(--text-primary);
   display:flex;
   align-items:center;
   gap:8px;
+  transition:opacity .2s;
 }
-.press-grid{
+.retreat-sample-link:hover{opacity:.7}
+
+/* ---- LOCATIONS (y=2383, h=653, bg=#202020) ---- */
+.locations-dark{
+  background:var(--dark-gray);
+  padding:96px 0;
+  color:var(--white);
+}
+.locations-dark-header{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom:56px;
+}
+.locations-dark-left{}
+.locations-dark-heading{
+  font-size:56px;
+  font-weight:400;
+  letter-spacing:-1px;
+  line-height:1.1;
+  margin-bottom:16px;
+}
+.locations-dark-sub{
+  font-size:16px;
+  font-weight:400;
+  opacity:.7;
+  max-width:480px;
+  line-height:1.7;
+}
+.locations-dark-viewall{
+  font-size:14px;
+  font-weight:700;
+  color:var(--white);
+  display:flex;
+  align-items:center;
+  gap:8px;
+  white-space:nowrap;
+  opacity:.85;
+  transition:opacity .2s;
+  padding-bottom:4px;
+}
+.locations-dark-viewall:hover{opacity:1}
+.locations-grid-dark{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+.loc-card{
+  position:relative;
+  border-radius:16px;
+  overflow:hidden;
+  aspect-ratio:3/4;
+  background:var(--mid-gray-3);
+}
+.loc-card-bg{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  transition:transform .4s ease;
+}
+.loc-card:hover .loc-card-bg{transform:scale(1.04)}
+.loc-card-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(transparent 50%, rgba(0,0,0,.70) 100%);
+}
+.loc-card-body{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  padding:24px;
+  color:var(--white);
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+}
+.loc-card-name{
+  font-size:22px;
+  font-weight:700;
+  line-height:1.2;
+}
+.loc-card-arrow{
+  width:36px;height:36px;
+  border-radius:50%;
+  background:rgba(255,255,255,.20);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;
+  backdrop-filter:blur(4px);
+  flex-shrink:0;
+}
+
+/* ---- STATS BAR (y=3036, h=613, bg=#0f0f0f) ---- */
+.stats-bar{
+  background:var(--near-black-1);
+  padding:96px 0;
+  color:var(--white);
+}
+.stats-intro{
+  font-size:32px;
+  font-weight:400;
+  line-height:1.4;
+  max-width:800px;
+  margin-bottom:64px;
+  opacity:.90;
+}
+.stats-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  border-top:1px solid rgba(255,255,255,.12);
+}
+.stat-item{
+  padding:40px 0;
+  border-bottom:1px solid rgba(255,255,255,.12);
+  border-right:1px solid rgba(255,255,255,.12);
+}
+.stat-item:nth-child(even){border-right:none}
+.stat-item:last-child:nth-child(odd){border-right:none;grid-column:1/-1;}
+.stat-pct{
+  font-size:32px;
+  font-weight:400;
+  line-height:1.3;
+  margin-bottom:8px;
+  opacity:.90;
+}
+.stat-pct strong{font-weight:700}
+
+/* ---- CONDITIONS (y=3649, h=940, bg=#ffffff) ---- */
+.conditions{
+  background:var(--white);
+  padding:100px 0;
+}
+.conditions-heading{
+  font-size:56px;
+  font-weight:400;
+  letter-spacing:-1px;
+  line-height:1.1;
+  margin-bottom:48px;
+}
+.conditions-tags{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:56px;
+}
+.cond-tag{
+  padding:8px 20px;
+  border-radius:100px;
+  border:1px solid var(--border-color);
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:4.2px;
+  text-transform:uppercase;
+  color:var(--text-primary);
+  cursor:pointer;
+  transition:all .2s;
+}
+.cond-tag.active,.cond-tag:hover{
+  background:var(--black);
+  color:var(--white);
+  border-color:var(--black);
+}
+.conditions-list{}
+.cond-item{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  padding:24px 0;
+  border-bottom:1px solid var(--border-color);
+  gap:32px;
+}
+.cond-item:first-child{border-top:1px solid var(--border-color)}
+.cond-name-lg{
+  font-size:48px;
+  font-weight:400;
+  line-height:1.1;
+  color:var(--text-primary);
+}
+.cond-name-xl{
+  font-size:48px;
+  font-weight:400;
+  line-height:1.1;
+}
+.cond-name-sm{
+  font-size:40px;
+  font-weight:400;
+  line-height:1.15;
+}
+.cond-name-md{
+  font-size:24px;
+  font-weight:600;
+  line-height:1.3;
+}
+.cond-right-group{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:8px;
+  text-align:right;
+}
+.cond-arrow{
+  font-size:20px;
+  color:var(--text-muted);
+  transition:color .2s;
+  flex-shrink:0;
+}
+.cond-item:hover .cond-arrow{color:var(--text-primary)}
+
+/* ---- DIVIDER ---- */
+.divider-line{
+  height:4px;
+  background:var(--black);
+  width:100%;
+}
+
+/* ---- DUAL CTA CARDS (y=4627, h=242) ---- */
+.dual-cta{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:242px;
+}
+.dual-cta-card{
+  padding:56px 64px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:12px;
+}
+.dual-cta-card--gray{background:var(--mid-gray-1)}
+.dual-cta-card--black{background:var(--black)}
+.dual-cta-title{
+  font-size:36px;
+  font-weight:600;
+  line-height:1.2;
+  color:var(--white);
+}
+.dual-cta-sub{
+  font-size:20px;
+  font-weight:400;
+  color:rgba(255,255,255,.75);
+  line-height:1.4;
+}
+
+/* ---- TREATMENTS (y=4904, h=1087, bg=#f7f7f7) ---- */
+.treatments-sec{
+  background:var(--off-white-3);
+  padding:100px 0;
+}
+.treatments-header{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom:48px;
+}
+.treatments-heading{
+  font-size:56px;
+  font-weight:400;
+  letter-spacing:-1px;
+  line-height:1.1;
+  margin-bottom:12px;
+}
+.treatments-sub{
+  font-size:16px;
+  font-weight:400;
+  color:var(--text-secondary);
+  max-width:500px;
+  line-height:1.7;
+}
+.treatments-filters{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:40px;
+}
+.t-pill{
+  padding:10px 24px;
+  border-radius:100px;
+  border:1px solid var(--border-color);
+  font-size:16px;
+  font-weight:700;
+  color:var(--text-secondary);
+  cursor:pointer;
+  transition:all .2s;
+  background:var(--white);
+}
+.t-pill.active,.t-pill:hover{
+  background:var(--black);
+  color:var(--white);
+  border-color:var(--black);
+}
+.treatments-cards-top{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:24px;
+  margin-bottom:0;
 }
-.press-card{
-  padding:32px;
+.t-card{
   border-radius:16px;
-  border:1px solid var(--border-color);
+  overflow:hidden;
+  background:var(--white);
+  transition:transform .2s;
+}
+.t-card:hover{transform:translateY(-4px)}
+.t-card-img{
+  width:100%;
+  aspect-ratio:4/3;
+  object-fit:cover;
+  background:var(--off-white-2);
+  background-size:cover;
+  background-position:center;
+}
+.t-card-body{
+  padding:24px;
+}
+.t-card-cat{
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  color:var(--text-muted);
+  margin-bottom:8px;
+}
+.t-card-title{
+  font-size:24px;
+  font-weight:700;
+  line-height:1.2;
+}
+.treatments-explore{
+  padding:56px 0 24px;
+  border-top:1px solid var(--border-color);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:32px;
+  margin-top:32px;
+}
+.treatments-explore-link{
+  font-size:40px;
+  font-weight:400;
+  color:var(--text-primary);
+  display:flex;
+  align-items:center;
+  gap:16px;
+  transition:opacity .2s;
+  line-height:1.1;
+}
+.treatments-explore-link:hover{opacity:.7}
+.treatments-explore-desc{
+  font-size:16px;
+  font-weight:400;
+  color:var(--text-secondary);
+  max-width:380px;
+  line-height:1.7;
+  text-align:right;
+}
+
+/* ---- ADDITIONAL TREATMENT CARDS (y=5185, horizontal, bg=#ffffff) ---- */
+.treatments-list{
+  background:var(--white);
+}
+.t-row-card{
+  display:grid;
+  grid-template-columns:1fr 480px;
+  min-height:242px;
+  border-bottom:1px solid var(--border-color);
+  overflow:hidden;
+}
+.t-row-card-body{
+  padding:40px 56px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  gap:12px;
+}
+.t-row-card-cat{
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--text-muted);
+}
+.t-row-card-title{
+  font-size:32px;
+  font-weight:700;
+  line-height:1.2;
+}
+.t-row-card-link{
+  font-size:14px;
+  font-weight:600;
+  color:var(--text-primary);
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  transition:opacity .2s;
+}
+.t-row-card-link:hover{opacity:.6}
+.t-row-card-img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  background-size:cover;
+  background-position:center;
+  min-height:242px;
+}
+
+/* ---- TESTIMONIALS (y=5991, h=641, bg=#202020) ---- */
+.testimonials-dark{
+  background:var(--dark-gray);
+  padding:96px 0;
+  color:var(--white);
+}
+.testimonials-header{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom:56px;
+}
+.testimonials-heading{
+  font-size:56px;
+  font-weight:400;
+  letter-spacing:-1px;
+  line-height:1.1;
+}
+.testimonials-actions{
+  display:flex;
+  gap:32px;
+  align-items:center;
+  padding-bottom:4px;
+}
+.testimonials-action-link{
+  font-size:14px;
+  font-weight:700;
+  color:var(--white);
+  display:flex;
+  align-items:center;
+  gap:8px;
+  opacity:.85;
+  transition:opacity .2s;
+}
+.testimonials-action-link:hover{opacity:1}
+.testimonials-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.testi-card{
+  background:rgba(255,255,255,.07);
+  border-radius:16px;
+  padding:32px;
   display:flex;
   flex-direction:column;
   gap:16px;
 }
-.press-card-source{font-size:14px;font-weight:700;color:var(--text-muted)}
-.press-card-quote{font-size:16px;line-height:1.7;flex:1}
-.press-card-rating{display:flex;gap:2px;color:var(--black);font-size:14px}
-
-/* Services grid */
-.services{padding:80px 0;background:var(--bg-section)}
-.services-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
+.testi-stars{
+  display:flex;
+  gap:4px;
+  color:var(--white);
+  font-size:14px;
 }
-.service-card{
-  border-radius:16px;
-  overflow:hidden;
+.testi-text{
+  font-size:16px;
+  font-weight:400;
+  line-height:1.8;
+  color:rgba(255,255,255,.85);
+  flex:1;
+}
+.testi-author{
+  font-size:14px;
+  font-weight:600;
+  color:rgba(255,255,255,.60);
+}
+
+/* ---- PRESS SECTION (y=6671) ---- */
+.press-sec{
   background:var(--white);
-  border:1px solid var(--border-color);
-  transition:all .2s;
+  padding:80px 0 0;
 }
-.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
-.service-card-img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-  background:var(--off-white-2);
+.press-sec-heading{
+  font-size:32px;
+  font-weight:400;
+  color:var(--dark-gray);
+  margin-bottom:40px;
+  line-height:1.3;
 }
-.service-card-body{padding:24px}
-.service-card-title{font-size:20px;font-weight:700;margin-bottom:8px}
-.service-card-desc{font-size:14px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px}
-.service-card-link{
-  font-size:14px;font-weight:600;color:var(--black);
-  display:inline-flex;align-items:center;gap:6px;
-}
-
-/* Info cards row */
-.info-cards{padding:80px 0}
-.info-cards-grid{
+.press-cols{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  border-top:1px solid var(--border-color);
 }
-.info-card{
-  border-radius:16px;
-  padding:40px;
-  background:var(--off-white-3);
-  height:242px;
+.press-col{
+  padding:40px 32px;
+  border-right:1px solid var(--border-color);
   display:flex;
   flex-direction:column;
-  justify-content:flex-end;
+  gap:16px;
 }
-.info-card-label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
-.info-card-title{font-size:24px;font-weight:700;margin-bottom:8px}
-.info-card-desc{font-size:14px;color:var(--text-secondary);line-height:1.6}
+.press-col:last-child{border-right:none}
+.press-col-source{
+  font-size:14px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+  color:var(--text-muted);
+}
+.press-col-quote{
+  font-size:28px;
+  font-weight:500;
+  line-height:1.4;
+  color:var(--text-primary);
+  flex:1;
+}
+.press-col-rating-num{
+  font-size:24px;
+  font-weight:700;
+  color:var(--text-primary);
+  line-height:1.2;
+}
+.press-col-rating-stars{
+  display:flex;
+  gap:4px;
+  color:var(--text-primary);
+  font-size:16px;
+  margin-bottom:4px;
+}
+.press-col-rating-count{
+  font-size:14px;
+  color:var(--text-muted);
+}
 
-/* Newsletter */
-.newsletter{
+/* ---- BLOG (y=6942, h=956) ---- */
+.blog-sec{
+  background:var(--white);
   padding:80px 0;
+}
+.blog-header{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  margin-bottom:48px;
+}
+.blog-heading{
+  font-size:56px;
+  font-weight:400;
+  letter-spacing:-1px;
+  line-height:1.1;
+}
+.blog-viewall{
+  font-size:14px;
+  font-weight:700;
+  color:var(--text-primary);
+  display:flex;
+  align-items:center;
+  gap:8px;
+  transition:opacity .2s;
+  padding-bottom:4px;
+}
+.blog-viewall:hover{opacity:.7}
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.blog-card{
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid var(--border-color);
+  transition:transform .2s;
+}
+.blog-card:hover{transform:translateY(-4px)}
+.blog-card-img{
+  width:100%;
+  aspect-ratio:16/10;
+  object-fit:cover;
+  background-size:cover;
+  background-position:center;
+  background-color:var(--off-white-2);
+}
+.blog-card-body{
+  padding:24px;
+}
+.blog-card-cat{
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--text-muted);
+  margin-bottom:10px;
+}
+.blog-card-title{
+  font-size:20px;
+  font-weight:700;
+  line-height:1.3;
+  margin-bottom:12px;
+}
+.blog-card-date{
+  font-size:13px;
+  color:var(--text-muted);
+}
+
+/* ---- VALENTINE PROMO BANNER (y=7953, h=339) ---- */
+.valentine-banner{
+  background:#1a1a1a;
+  padding:64px 0;
+  text-align:center;
+  color:var(--white);
+  position:relative;
+  overflow:hidden;
+}
+.valentine-banner::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=1440&q=80') center/cover no-repeat;
+  opacity:.18;
+}
+.valentine-banner-inner{
+  position:relative;
+  z-index:1;
+}
+.valentine-top{
+  font-size:40px;
+  font-weight:600;
+  line-height:1.2;
+  margin-bottom:8px;
+}
+.valentine-mid{
+  font-size:32px;
+  font-weight:700;
+  letter-spacing:3.84px;
+  text-transform:uppercase;
+  line-height:1.3;
+  margin-bottom:8px;
+}
+.valentine-bot{
+  font-size:26px;
+  font-weight:400;
+  letter-spacing:3.12px;
+  opacity:.80;
+}
+
+/* ---- FINAL CTA SECTION (y=8351, h=571) ---- */
+.final-cta{
+  background:var(--off-white-3);
+  padding:100px 0;
   text-align:center;
 }
-.newsletter-form{
-  display:flex;
-  max-width:480px;
-  margin:24px auto 0;
-  gap:12px;
+.final-cta-heading{
+  font-size:56px;
+  font-weight:400;
+  letter-spacing:-1px;
+  line-height:1.1;
+  margin-bottom:24px;
 }
-.newsletter-form input{
-  flex:1;
-  padding:14px 20px;
+.final-cta-sub{
+  font-size:16px;
+  font-weight:400;
+  color:var(--text-secondary);
+  max-width:540px;
+  margin:0 auto 40px;
+  line-height:1.7;
+}
+.final-cta-btns{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.final-btn-dark{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:18px 40px;
+  background:var(--black);
+  color:var(--white);
   border-radius:100px;
-  border:1px solid var(--border-color);
-  font-size:14px;
-  outline:none;
+  font-size:16px;
+  font-weight:600;
   font-family:var(--font-primary);
+  transition:all .2s;
+}
+.final-btn-dark:hover{background:var(--dark-gray)}
+.final-btn-outline{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:18px 40px;
+  background:transparent;
+  color:var(--text-primary);
+  border:1px solid var(--border-dark);
+  border-radius:100px;
+  font-size:16px;
+  font-weight:600;
+  font-family:var(--font-primary);
+  transition:all .2s;
+}
+.final-btn-outline:hover{border-color:var(--black)}
+
+/* ============================================================
+   RESPONSIVE OVERRIDES FOR INDEX
+   ============================================================ */
+@media(max-width:1024px){
+  .holistic-heading{font-size:40px}
+  .retreat-cats-heading{font-size:40px}
+  .locations-dark-heading{font-size:40px}
+  .stats-intro{font-size:24px}
+  .stat-pct{font-size:24px}
+  .conditions-heading{font-size:40px}
+  .dual-cta-title{font-size:28px}
+  .dual-cta-sub{font-size:16px}
+  .treatments-heading{font-size:40px}
+  .treatments-explore-link{font-size:28px}
+  .testimonials-heading{font-size:40px}
+  .blog-heading{font-size:40px}
+  .final-cta-heading{font-size:40px}
+  .retreat-cats-body{grid-template-columns:280px 1fr;gap:48px}
+  .cond-name-lg{font-size:36px}
+  .cond-name-xl{font-size:36px}
+  .press-col-quote{font-size:20px}
 }
 
 @media(max-width:768px){
-  .hero{min-height:480px}
-  .hero-headline{font-size:48px;letter-spacing:-1px}
-  .hero-ctas{flex-direction:column;align-items:stretch}
-  .awards-ribbon .container{flex-wrap:wrap;gap:24px;justify-content:center}
-  .locations-grid{grid-template-columns:repeat(2,1fr)}
-  .featured-grid{grid-template-columns:1fr}
-  .featured-large{grid-row:auto;min-height:300px}
-  .press-grid{grid-template-columns:1fr}
-  .press-header{flex-direction:column;gap:16px;align-items:flex-start}
-  .services-grid{grid-template-columns:1fr}
-  .info-cards-grid{grid-template-columns:1fr}
-  .finder-bar{flex-direction:column;border-radius:16px;padding:16px}
-  .newsletter-form{flex-direction:column}
+  .hero-eyebrow{font-size:24px}
+  .hero-inner{padding-top:100px}
+  .holistic-inner{grid-template-columns:1fr;gap:40px}
+  .holistic-heading{font-size:32px}
+  .retreat-cats-heading{font-size:32px}
+  .retreat-cats-body{grid-template-columns:1fr;gap:32px}
+  .locations-dark-header{flex-direction:column;align-items:flex-start;gap:16px}
+  .locations-grid-dark{grid-template-columns:repeat(2,1fr)}
+  .stats-grid{grid-template-columns:1fr}
+  .stat-item{border-right:none}
+  .conditions-heading{font-size:32px}
+  .cond-name-lg,.cond-name-xl{font-size:28px}
+  .cond-name-sm{font-size:24px}
+  .cond-name-md{font-size:20px}
+  .dual-cta{grid-template-columns:1fr}
+  .dual-cta-card{padding:40px 32px}
+  .treatments-header{flex-direction:column;align-items:flex-start}
+  .treatments-cards-top{grid-template-columns:1fr}
+  .treatments-explore{flex-direction:column;align-items:flex-start}
+  .treatments-explore-desc{text-align:left}
+  .t-row-card{grid-template-columns:1fr}
+  .t-row-card-img{min-height:200px}
+  .testimonials-header{flex-direction:column;align-items:flex-start;gap:24px}
+  .testimonials-cards{grid-template-columns:1fr}
+  .press-cols{grid-template-columns:1fr 1fr}
+  .press-col{border-right:none;border-bottom:1px solid var(--border-color)}
+  .blog-header{flex-direction:column;align-items:flex-start;gap:16px}
+  .blog-grid{grid-template-columns:1fr}
+  .valentine-top{font-size:28px}
+  .valentine-mid{font-size:22px}
+  .valentine-bot{font-size:18px}
+  .final-cta-heading{font-size:32px}
+  .hero-awards-bar .container{gap:20px;flex-wrap:wrap}
 }
+
 @media(max-width:480px){
-  .hero-headline{font-size:36px}
-  .locations-grid{grid-template-columns:1fr}
+  .locations-grid-dark{grid-template-columns:1fr}
+  .press-cols{grid-template-columns:1fr}
+  .dual-cta-title{font-size:22px}
 }
 </style>
 </head>
 <body>
 
 <!-- ===== NAVIGATION ===== -->
-<nav class="nav">
+<nav class="nav" id="main-nav">
   <div class="container">
     <a href="index.html" class="nav-logo">TheLifeCo</a>
     <div class="nav-links">
-      <a href="#">Retreats</a>
+      <a href="#">Home</a>
       <a href="resort.html">Resorts</a>
-      <a href="#">Medical</a>
       <a href="treatments.html">Treatments</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
     </div>
     <div class="nav-right">
-      <a href="#">Login</a>
       <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a href="#">Login</a>
     </div>
-    <div class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')">
+    <div class="nav-toggle" onclick="document.getElementById('main-nav').classList.toggle('open')">
       <span></span><span></span><span></span>
     </div>
   </div>
 </nav>
 
-<!-- ===== HERO ===== -->
+<!-- ===== HERO (y=0, h=589) ===== -->
 <section class="hero">
-  <div class="hero-content">
-    <h1 class="hero-headline">Own Your<br>Future</h1>
-    <p class="hero-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <div class="hero-inner">
+    <h1 class="hero-eyebrow">If you know what you are looking for</h1>
+    <p class="hero-sub">Let's find best retreat options and therapies in most wonderful destinations based on your personal needs.</p>
     <div class="hero-ctas">
-      <a href="#" class="btn btn-primary btn-lg">Talk to an expert</a>
-      <a href="#" class="btn btn-outline btn-lg">Sign to Webinar</a>
+      <a href="#" class="hero-btn-primary">Talk to an expert</a>
+      <a href="#" class="hero-btn-outline">Explore Retreats</a>
     </div>
   </div>
-  <div class="awards-ribbon">
+  <!-- Award ribbon at bottom of hero -->
+  <div class="hero-awards-bar">
     <div class="container">
-      <div class="award-item"><i class="fa-solid fa-award"></i> 2018 LTG Award</div>
-      <div class="award-item"><i class="fa-solid fa-trophy"></i> World's Best Detox</div>
-      <div class="award-item"><i class="fa-solid fa-star"></i> Turkiye's Best Wellness</div>
-      <div class="award-item"><i class="fa-solid fa-star"></i> Turkiye's Best Wellness</div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== QUICK FINDER ===== -->
-<section class="finder">
-  <div class="container">
-    <p class="finder-label">If you know what you are looking for</p>
-    <div class="finder-bar">
-      <i class="fa-solid fa-magnifying-glass" style="color:var(--text-muted)"></i>
-      <input type="text" placeholder="Search treatments, retreats, resorts...">
-      <a href="#" class="btn btn-primary btn-sm">Search</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== LOCATIONS ===== -->
-<section class="locations">
-  <div class="container">
-    <h2 class="section-heading">Locations</h2>
-    <div class="tabs">
-      <button class="tab active">Turkey</button>
-      <button class="tab">Thailand</button>
-      <button class="tab">St. Lucia</button>
-      <button class="tab">Greece</button>
-    </div>
-    <div class="locations-grid">
-      <div class="location-card">
-        <div class="location-card-img" style="background:url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&q=80') center/cover"></div>
-        <div class="location-card-overlay">
-          <div class="location-card-name">Antalya</div>
-        </div>
-        <div class="location-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      <span class="hero-awards-label">Awards</span>
+      <div class="hero-award-item">
+        <i class="fa-solid fa-award"></i>
+        <span>2018 LTG Award<br>Best Wellness</span>
       </div>
-      <div class="location-card">
-        <div class="location-card-img" style="background:url('https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=400&q=80') center/cover"></div>
-        <div class="location-card-overlay">
-          <div class="location-card-name">Bodrum</div>
-        </div>
-        <div class="location-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      <div class="hero-award-item">
+        <i class="fa-solid fa-trophy"></i>
+        <span>World's Best Detox<br>Retreat 2022</span>
       </div>
-      <div class="location-card">
-        <div class="location-card-img" style="background:url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&q=80') center/cover"></div>
-        <div class="location-card-overlay">
-          <div class="location-card-name">Mykonos</div>
-        </div>
-        <div class="location-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      <div class="hero-award-item">
+        <i class="fa-solid fa-star"></i>
+        <span>Turkiye's Best<br>Wellness Center</span>
       </div>
-      <div class="location-card">
-        <div class="location-card-img" style="background:url('https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=400&q=80') center/cover"></div>
-        <div class="location-card-overlay">
-          <div class="location-card-name">Phuket</div>
-        </div>
-        <div class="location-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      <div class="hero-award-item">
+        <i class="fa-solid fa-medal"></i>
+        <span>Top Longevity<br>Destination 2023</span>
+      </div>
+      <div class="hero-award-item">
+        <i class="fa-solid fa-certificate"></i>
+        <span>Excellence in<br>Holistic Health</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== FEATURED CONTENT ===== -->
-<section class="featured">
+<!-- ===== HOLISTIC APPROACH (y=700, h=794, bg=#f7f7f7) ===== -->
+<section class="holistic">
   <div class="container">
-    <h2 class="section-heading">Featured</h2>
-    <div class="featured-grid">
-      <div class="featured-large">
+    <div class="holistic-inner">
+      <div>
+        <h2 class="holistic-heading">Perfectly Balanced<br>360° Holistic Approach</h2>
+      </div>
+      <div class="holistic-pillars">
+        <div class="holistic-pillar">
+          <span class="holistic-pillar-num">01</span>
+          <p class="holistic-pillar-text">Personalised Wellness Retreatments</p>
+        </div>
+        <div class="holistic-pillar">
+          <span class="holistic-pillar-num">02</span>
+          <p class="holistic-pillar-text">Relaxing Accommodation &amp; Supportive Environment</p>
+        </div>
+        <div class="holistic-pillar">
+          <span class="holistic-pillar-num">03</span>
+          <p class="holistic-pillar-text">Mental Resilience &amp; Mindfulness</p>
+        </div>
+        <div class="holistic-pillar">
+          <span class="holistic-pillar-num">04</span>
+          <p class="holistic-pillar-text">Practices &amp; Learnings to Take Home</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RETREAT CATEGORIES (y=1496, h=865, bg=#ffffff) ===== -->
+<section class="retreat-cats">
+  <div class="container">
+    <div class="retreat-cats-header">
+      <h2 class="retreat-cats-heading">Retreat Categories</h2>
+      <p class="retreat-cats-sub">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.</p>
+    </div>
+    <div class="retreat-cats-body">
+      <div class="retreat-cats-sidebar">
+        <div class="retreat-cat-item active">
+          <div class="retreat-cat-item-name">Cleansing &amp; Detoxing</div>
+        </div>
+        <div class="retreat-cat-item">
+          <div class="retreat-cat-item-name">Chronic Disease Recovery &amp; Prevention</div>
+        </div>
+        <div class="retreat-cat-item">
+          <div class="retreat-cat-item-name">Longevity &amp; Regenerative Health</div>
+        </div>
+        <div class="retreat-cat-item">
+          <div class="retreat-cat-item-name">Weight Loss &amp; Management</div>
+        </div>
+        <div class="retreat-cat-item">
+          <div class="retreat-cat-item-name">Mental Wellness</div>
+        </div>
+      </div>
+      <div class="retreat-cats-detail">
+        <p class="retreat-cats-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+        <h3 class="retreat-sample-heading">What a day may look like in TheLifeCo</h3>
+        <p class="retreat-sample-sub">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud.</p>
+        <div class="retreat-sample-links">
+          <a href="#" class="retreat-sample-link">
+            DURING A SAMPLE RETREAT DAY
+            <i class="fa-solid fa-arrow-up-right"></i>
+          </a>
+          <a href="#" class="retreat-sample-link">
+            CHECK OUT
+            <i class="fa-solid fa-arrow-up-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOCATIONS (y=2383, h=653, bg=#202020) ===== -->
+<section class="locations-dark">
+  <div class="container">
+    <div class="locations-dark-header">
+      <div class="locations-dark-left">
+        <h2 class="locations-dark-heading">Locations</h2>
+        <p class="locations-dark-sub">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+      </div>
+      <a href="#" class="locations-dark-viewall">
+        View All <i class="fa-solid fa-arrow-up-right"></i>
+      </a>
+    </div>
+    <div class="locations-grid-dark">
+      <div class="loc-card">
+        <div class="loc-card-bg" style="background-image:url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=80')"></div>
+        <div class="loc-card-overlay"></div>
+        <div class="loc-card-body">
+          <div class="loc-card-name">Bodrum</div>
+          <div class="loc-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+      <div class="loc-card">
+        <div class="loc-card-bg" style="background-image:url('https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=600&q=80')"></div>
+        <div class="loc-card-overlay"></div>
+        <div class="loc-card-body">
+          <div class="loc-card-name">Antalya</div>
+          <div class="loc-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+      <div class="loc-card">
+        <div class="loc-card-bg" style="background-image:url('https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=600&q=80')"></div>
+        <div class="loc-card-overlay"></div>
+        <div class="loc-card-body">
+          <div class="loc-card-name">Phuket</div>
+          <div class="loc-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+      <div class="loc-card">
+        <div class="loc-card-bg" style="background-image:url('https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=600&q=80')"></div>
+        <div class="loc-card-overlay"></div>
+        <div class="loc-card-body">
+          <div class="loc-card-name">Sharm El Sheikh</div>
+          <div class="loc-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS BAR (y=3036, h=613, bg=#0f0f0f) ===== -->
+<section class="stats-bar">
+  <div class="container">
+    <p class="stats-intro">A precision-guided, care-led approach serving guest-reported outcomes including:</p>
+    <div class="stats-grid">
+      <div class="stat-item" style="padding-right:48px">
+        <p class="stat-pct"><strong>%92</strong> Effective weight loss or Improved Body Composition</p>
+      </div>
+      <div class="stat-item" style="padding-left:48px">
+        <p class="stat-pct"><strong>%84</strong> Increase in Energy and Cognitive Performance</p>
+      </div>
+      <div class="stat-item" style="padding-right:48px">
+        <p class="stat-pct"><strong>%98</strong> Improved results in minimum one or more of the expected symptoms</p>
+      </div>
+      <div class="stat-item" style="padding-left:48px">
+        <p class="stat-pct"><strong>%76</strong> Improvement in Mobility and Condition</p>
+      </div>
+      <div class="stat-item" style="padding-right:48px;grid-column:1/-1;border-right:none">
+        <p class="stat-pct"><strong>%74</strong> Maintaining healthier lifestyle habits three months after their stay</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONDITIONS (y=3649, h=940, bg=#ffffff) ===== -->
+<section class="conditions">
+  <div class="container">
+    <h2 class="conditions-heading">Conditions You May Consider Us for</h2>
+    <div class="conditions-tags">
+      <button class="cond-tag active">LONGEVITY</button>
+      <button class="cond-tag">RECOVERY</button>
+      <button class="cond-tag">WEIGHTLOSS</button>
+      <button class="cond-tag">LIFESTYLE AS A MEDICINE</button>
+      <button class="cond-tag">CLEANSING &amp; DETOX</button>
+    </div>
+    <div class="conditions-list">
+      <div class="cond-item">
+        <span class="cond-name-sm">Osteoporosis / Rheumatism Prevention</span>
+        <i class="fa-solid fa-arrow-up-right cond-arrow"></i>
+      </div>
+      <div class="cond-item">
+        <span class="cond-name-xl">Colon Reset / Digestive Cleanse</span>
+        <i class="fa-solid fa-arrow-up-right cond-arrow"></i>
+      </div>
+      <div class="cond-item">
+        <span class="cond-name-xl">IBS / IBD Relief</span>
+        <i class="fa-solid fa-arrow-up-right cond-arrow"></i>
+      </div>
+      <div class="cond-item">
         <div>
-          <p style="font-size:14px;margin-bottom:8px;opacity:.8">Wellness Programs</p>
-          <h3 style="font-size:32px;font-weight:700;margin-bottom:12px">Master Detox Program</h3>
-          <p style="font-size:14px;opacity:.8;line-height:1.6;margin-bottom:16px">A comprehensive program designed to reset your body and mind through clinically proven methods.</p>
-          <a href="#" class="btn btn-outline btn-sm">Learn More <i class="fa-solid fa-arrow-up-right"></i></a>
+          <p class="cond-name-md" style="margin-bottom:4px">Irregular Menstrual Cycle</p>
         </div>
+        <i class="fa-solid fa-arrow-up-right cond-arrow"></i>
       </div>
-      <div class="featured-card">
-        <div>
-          <p style="font-size:12px;margin-bottom:6px;opacity:.8">Retreats</p>
-          <h3 style="font-size:20px;font-weight:700;margin-bottom:8px">Longevity Retreat</h3>
-          <a href="#" style="font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:6px;color:var(--white)">Explore <i class="fa-solid fa-arrow-up-right"></i></a>
+      <div class="cond-item">
+        <div class="cond-right-group">
+          <p class="cond-name-md">Constipation &amp; Gut Mobility</p>
+          <p class="cond-name-md">Headache / Migraine Relief</p>
         </div>
-      </div>
-      <div class="featured-card">
-        <div>
-          <p style="font-size:12px;margin-bottom:6px;opacity:.8">Medical</p>
-          <h3 style="font-size:20px;font-weight:700;margin-bottom:8px">Health Screening</h3>
-          <a href="#" style="font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:6px;color:var(--white)">Explore <i class="fa-solid fa-arrow-up-right"></i></a>
+        <div class="cond-right-group">
+          <p class="cond-name-md">Post-Covid Reset &amp; Regeneration</p>
+          <p class="cond-name-md">Stiffness &amp; Mobility Program</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== PRESS / SOCIAL PROOF ===== -->
-<section class="press">
+<!-- ===== DIVIDER (y=4538, h=4) ===== -->
+<div class="divider-line"></div>
+
+<!-- ===== DUAL CTA CARDS (y=4627, h=242) ===== -->
+<div class="dual-cta">
+  <div class="dual-cta-card dual-cta-card--gray">
+    <p class="dual-cta-title">Let's discover which treatments suit you best.</p>
+    <p class="dual-cta-sub">Talk to an expert</p>
+  </div>
+  <div class="dual-cta-card dual-cta-card--black">
+    <p class="dual-cta-title">Explore this month's events.</p>
+    <p class="dual-cta-sub">See the latest news and special activites</p>
+  </div>
+</div>
+
+<!-- ===== TREATMENTS (y=4904, h=1087, bg=#f7f7f7) ===== -->
+<section class="treatments-sec">
   <div class="container">
-    <div class="press-header">
-      <h2 class="section-heading" style="margin-bottom:0">Testimonials</h2>
-      <a href="#" class="press-link">Explore about us from press <i class="fa-solid fa-arrow-up-right"></i></a>
+    <div class="treatments-header">
+      <div>
+        <h2 class="treatments-heading">Treatments</h2>
+        <p class="treatments-sub">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna.</p>
+      </div>
     </div>
-    <div class="press-grid">
-      <div class="press-card">
-        <div class="press-card-source">TheGuardian</div>
-        <p class="press-card-quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. An extraordinary wellness experience that transformed my perspective."</p>
-        <div class="press-card-rating">
+    <div class="treatments-filters">
+      <button class="t-pill active">All Treatments</button>
+      <button class="t-pill">Detox</button>
+      <button class="t-pill">Weight Loss</button>
+      <button class="t-pill">Mental Wellness</button>
+      <button class="t-pill">Longevity</button>
+      <button class="t-pill">Medical</button>
+    </div>
+    <div class="treatments-cards-top">
+      <div class="t-card">
+        <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80')"></div>
+        <div class="t-card-body">
+          <p class="t-card-cat">Detox</p>
+          <h3 class="t-card-title">Master Cleanse Program</h3>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80')"></div>
+        <div class="t-card-body">
+          <p class="t-card-cat">Mental Wellness</p>
+          <h3 class="t-card-title">Mindfulness &amp; Stress Relief</h3>
+        </div>
+      </div>
+      <div class="t-card">
+        <div class="t-card-img" style="background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=600&q=80')"></div>
+        <div class="t-card-body">
+          <p class="t-card-cat">Longevity</p>
+          <h3 class="t-card-title">Longevity &amp; Regenerative Health</h3>
+        </div>
+      </div>
+    </div>
+    <div class="treatments-explore">
+      <a href="treatments.html" class="treatments-explore-link">
+        Explore All 280 Treatments <i class="fa-solid fa-arrow-up-right"></i>
+      </a>
+      <p class="treatments-explore-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ADDITIONAL TREATMENT ROW CARDS (y=5185, bg=#ffffff) ===== -->
+<section class="treatments-list">
+  <div class="t-row-card">
+    <div class="t-row-card-body">
+      <p class="t-row-card-cat">Fasting</p>
+      <h3 class="t-row-card-title">Water Fasting</h3>
+      <a href="treatments.html" class="t-row-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="t-row-card-img" style="background-image:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80')"></div>
+  </div>
+  <div class="t-row-card">
+    <div class="t-row-card-body">
+      <p class="t-row-card-cat">Weight Loss</p>
+      <h3 class="t-row-card-title">Weight Loss &amp; Management</h3>
+      <a href="treatments.html" class="t-row-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="t-row-card-img" style="background-image:url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80')"></div>
+  </div>
+  <div class="t-row-card">
+    <div class="t-row-card-body">
+      <p class="t-row-card-cat">Recovery</p>
+      <h3 class="t-row-card-title">Chronic Fatigue Recovery</h3>
+      <a href="treatments.html" class="t-row-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+    <div class="t-row-card-img" style="background-image:url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80')"></div>
+  </div>
+</section>
+
+<!-- ===== DIVIDER (y=5968, h=4) ===== -->
+<div class="divider-line"></div>
+
+<!-- ===== TESTIMONIALS (y=5991, h=641, bg=#202020) ===== -->
+<section class="testimonials-dark">
+  <div class="container">
+    <div class="testimonials-header">
+      <h2 class="testimonials-heading">Testimonials</h2>
+      <div class="testimonials-actions">
+        <a href="#" class="testimonials-action-link">Give us Feedback <i class="fa-solid fa-arrow-up-right"></i></a>
+        <a href="#" class="testimonials-action-link">See All Experiences <i class="fa-solid fa-arrow-up-right"></i></a>
+      </div>
+    </div>
+    <div class="testimonials-cards">
+      <div class="testi-card">
+        <div class="testi-stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
+        <p class="testi-text">"An extraordinary experience that transformed my perspective on health. The medical team was exceptional and the results have been life-changing. I feel completely renewed."</p>
+        <p class="testi-author">Sarah M. — London</p>
       </div>
-      <div class="press-card">
-        <div class="press-card-source">Vogue</div>
-        <p class="press-card-quote">"A life-changing detox experience that goes beyond the ordinary. The medical team was exceptional in every way."</p>
-        <div class="press-card-rating">
+      <div class="testi-card">
+        <div class="testi-stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
+        <p class="testi-text">"TheLifeCo stands apart with its holistic approach combining medical expertise with wellness traditions. I lost 8kg and gained so much clarity and energy."</p>
+        <p class="testi-author">James K. — New York</p>
       </div>
-      <div class="press-card">
-        <div class="press-card-source">Forbes</div>
-        <p class="press-card-quote">"TheLifeCo stands apart with its holistic approach combining medical expertise with wellness traditions."</p>
-        <div class="press-card-rating">
+      <div class="testi-card">
+        <div class="testi-stars">
           <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
         </div>
+        <p class="testi-text">"After my third retreat at TheLifeCo Bodrum, I can honestly say it has become a core part of my annual wellness routine. Unmatched quality and care."</p>
+        <p class="testi-author">Elena V. — Dubai</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== SERVICES GRID ===== -->
-<section class="services">
+<!-- ===== PRESS SECTION (y=6671) ===== -->
+<section class="press-sec">
   <div class="container">
-    <h2 class="section-heading">Our Programs</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-card-img" style="background:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80') center/cover"></div>
-        <div class="service-card-body">
-          <div class="card-tag">Detox</div>
-          <h3 class="service-card-title">Master Detox</h3>
-          <p class="service-card-desc">Our signature program for complete body cleansing and renewal.</p>
-          <a href="treatments.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
+    <p class="press-sec-heading">Explore about us from press</p>
+    <div class="press-cols">
+      <div class="press-col">
+        <p class="press-col-source">The Telegraph</p>
+        <p class="press-col-quote">"Kate Moss goes on a health holiday."</p>
       </div>
-      <div class="service-card">
-        <div class="service-card-img" style="background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80') center/cover"></div>
-        <div class="service-card-body">
-          <div class="card-tag">Wellness</div>
-          <h3 class="service-card-title">Mental Wellness</h3>
-          <p class="service-card-desc">Holistic approach to mental clarity and emotional balance.</p>
-          <a href="treatments.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+      <div class="press-col">
+        <p class="press-col-source">Google Reviews</p>
+        <div class="press-col-rating-stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
         </div>
+        <p class="press-col-rating-num">4.7 / 5</p>
+        <p class="press-col-rating-count">Based on 223 ratings</p>
       </div>
-      <div class="service-card">
-        <div class="service-card-img" style="background:url('https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=400&q=80') center/cover"></div>
-        <div class="service-card-body">
-          <div class="card-tag">Medical</div>
-          <h3 class="service-card-title">Longevity Program</h3>
-          <p class="service-card-desc">Advanced medical protocols for healthy aging and vitality.</p>
-          <a href="treatments.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
+      <div class="press-col">
+        <p class="press-col-source">The Sun</p>
+        <p class="press-col-quote">"It's where Kate Moss, Naomi Campbell and Elle Macpherson go to detox."</p>
       </div>
-      <div class="service-card">
-        <div class="service-card-img" style="background:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80') center/cover"></div>
-        <div class="service-card-body">
-          <div class="card-tag">Fasting</div>
-          <h3 class="service-card-title">Water Fasting</h3>
-          <p class="service-card-desc">Medically supervised water fasting for deep cellular reset.</p>
-          <a href="treatments.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-card-img" style="background:url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=400&q=80') center/cover"></div>
-        <div class="service-card-body">
-          <div class="card-tag">Beauty</div>
-          <h3 class="service-card-title">Beauty & Body Reshaping</h3>
-          <p class="service-card-desc">Combining wellness with aesthetic transformation.</p>
-          <a href="treatments.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
-      </div>
-      <div class="service-card">
-        <div class="service-card-img" style="background:url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=80') center/cover"></div>
-        <div class="service-card-body">
-          <div class="card-tag">Recovery</div>
-          <h3 class="service-card-title">Chronic Fatigue Recovery</h3>
-          <p class="service-card-desc">Restore your energy and reclaim your vitality.</p>
-          <a href="treatments.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
+      <div class="press-col">
+        <p class="press-col-source">Vogue</p>
+        <p class="press-col-quote">"Master Detox, a cleansing program that blends ancient fasting traditions with modern medical science."</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== INFO CARDS ===== -->
-<section class="info-cards">
+<!-- ===== BLOG (y=6942, h=956) ===== -->
+<section class="blog-sec">
   <div class="container">
-    <div class="info-cards-grid">
-      <div class="info-card">
-        <div class="info-card-label">Retreats</div>
-        <h3 class="info-card-title">Wellness Retreats</h3>
-        <p class="info-card-desc">Escape to our luxury resorts and experience transformative wellness programs.</p>
+    <div class="blog-header">
+      <h2 class="blog-heading">Explore Our Blog</h2>
+      <a href="#" class="blog-viewall">View All Articles <i class="fa-solid fa-arrow-up-right"></i></a>
+    </div>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=600&q=80')"></div>
+        <div class="blog-card-body">
+          <p class="blog-card-cat">Detox &amp; Cleansing</p>
+          <h3 class="blog-card-title">The Science Behind Water Fasting: What Happens to Your Body</h3>
+          <p class="blog-card-date">12 January 2024</p>
+        </div>
       </div>
-      <div class="info-card">
-        <div class="info-card-label">Medical</div>
-        <h3 class="info-card-title">Medical Programs</h3>
-        <p class="info-card-desc">Doctor-supervised programs tailored to your specific health goals.</p>
+      <div class="blog-card">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=600&q=80')"></div>
+        <div class="blog-card-body">
+          <p class="blog-card-cat">Nutrition</p>
+          <h3 class="blog-card-title">Green Detox Diet: A Complete 7-Day Meal Plan Guide</h3>
+          <p class="blog-card-date">5 February 2024</p>
+        </div>
       </div>
-      <div class="info-card">
-        <div class="info-card-label">Corporate</div>
-        <h3 class="info-card-title">Corporate Wellness</h3>
-        <p class="info-card-desc">Transform your team's well-being with our corporate wellness solutions.</p>
+      <div class="blog-card">
+        <div class="blog-card-img" style="background-image:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80')"></div>
+        <div class="blog-card-body">
+          <p class="blog-card-cat">Mental Wellness</p>
+          <h3 class="blog-card-title">Mindfulness Practices That Transform Your Daily Routine</h3>
+          <p class="blog-card-date">18 February 2024</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== NEWSLETTER CTA ===== -->
-<section class="newsletter section--gray">
+<!-- ===== VALENTINE PROMO BANNER (y=7953, h=339) ===== -->
+<section class="valentine-banner">
+  <div class="container valentine-banner-inner">
+    <p class="valentine-top">Best gift for your valentine</p>
+    <p class="valentine-mid">Earn %10 of your purchase</p>
+    <p class="valentine-bot">&amp; use it on your next trip</p>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA SECTION (y=8351, h=571) ===== -->
+<section class="final-cta">
   <div class="container">
-    <h2 class="text-36 font-700" style="margin-bottom:8px">Stay Updated</h2>
-    <p class="text-16 text-secondary">Get the latest wellness tips, retreat updates, and exclusive offers.</p>
-    <div class="newsletter-form">
-      <input type="email" placeholder="Enter your email">
-      <a href="#" class="btn btn-primary">Subscribe</a>
+    <h2 class="final-cta-heading">Start Your Wellness Journey Today</h2>
+    <p class="final-cta-sub">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Discover the transformative power of our holistic programs.</p>
+    <div class="final-cta-btns">
+      <a href="#" class="final-btn-dark">Talk to an expert</a>
+      <a href="#" class="final-btn-outline">Explore Programs</a>
     </div>
   </div>
 </section>
 
-<!-- ===== CTA BLOCK ===== -->
-<section class="cta-block">
-  <div class="container">
-    <h2 class="section-heading">Start Your Wellness<br>Journey Today</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Discover the transformative power of our programs.</p>
-    <div class="cta-buttons">
-      <a href="#" class="btn btn-primary btn-lg">Talk to an expert</a>
-      <a href="#" class="btn btn-outline-dark btn-lg">Explore Programs</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
+<!-- ===== FOOTER (y=8922, h=520, bg=#ffffff) ===== -->
 <footer class="footer">
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-top">
+
+      <!-- Brand column -->
       <div>
         <div class="footer-brand">TheLifeCo</div>
-        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2003. With resorts in Turkey, Thailand, and beyond.</p>
-        <div class="footer-social">
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-heading">Resorts</div>
-        <div class="footer-links">
-          <a href="#">Antalya</a>
-          <a href="#">Bodrum</a>
-          <a href="#">Phuket</a>
-          <a href="#">St. Lucia</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-heading">Programs</div>
-        <div class="footer-links">
-          <a href="#">Master Detox</a>
-          <a href="#">Water Fasting</a>
-          <a href="#">Longevity</a>
-          <a href="#">Mental Wellness</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-heading">Company</div>
-        <div class="footer-links">
-          <a href="#">About Us</a>
-          <a href="#">Blog</a>
-          <a href="#">Careers</a>
-          <a href="#">Contact</a>
-        </div>
-      </div>
-      <div>
-        <div class="footer-heading">BOATSY App</div>
-        <div class="footer-links">
-          <a href="#">Download on App Store</a>
-          <a href="#">Get on Google Play</a>
+        <p class="footer-address">Maslak Mah. Büyükdere Cad. USO Center No: 245 Kat: 15 İç Kapı No: 56 Maslak / Sarıyer / İstanbul</p>
+        <div style="margin-top:24px">
+          <p class="footer-app-label">Download BOATSY App</p>
+          <div class="footer-app-buttons">
+            <a href="#" class="footer-app-btn"><i class="fa-brands fa-apple"></i> App Store</a>
+            <a href="#" class="footer-app-btn"><i class="fa-brands fa-google-play"></i> Google Play</a>
+          </div>
         </div>
         <div style="margin-top:24px">
-          <div class="footer-heading">Contact</div>
-          <div class="footer-links">
-            <a href="#">info@thelifeco.com</a>
-            <a href="#">+90 242 000 00 00</a>
+          <p class="footer-social-label">Follow Us</p>
+          <div class="footer-social">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
         </div>
       </div>
+
+      <!-- Retreatments column -->
+      <div>
+        <div class="footer-col-heading">Retreatments</div>
+        <div class="footer-col-links">
+          <a href="#">Weight Loss</a>
+          <a href="#">Diabetes Recovery</a>
+          <a href="#">Water Fasting</a>
+          <a href="#">Juice Fasting</a>
+          <a href="#">Colon Cleanse</a>
+          <a href="#">Longevity</a>
+        </div>
+      </div>
+
+      <!-- Explore column -->
+      <div>
+        <div class="footer-col-heading">Explore</div>
+        <div class="footer-col-links">
+          <a href="#">About Us</a>
+          <a href="#">Corporate Projects</a>
+          <a href="#">Blog</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Careers</a>
+          <a href="#">Gift Cards</a>
+        </div>
+      </div>
+
+      <!-- Centers column -->
+      <div>
+        <div class="footer-col-heading">Centers</div>
+        <div class="footer-col-links">
+          <a href="#">Bodrum</a>
+          <a href="#">Antalya</a>
+          <a href="#">Phuket</a>
+          <a href="#">Sharm El Sheikh</a>
+          <a href="#">St Lucia</a>
+        </div>
+      </div>
+
+      <!-- Meal Plans column -->
+      <div>
+        <div class="footer-col-heading">Meal Plans</div>
+        <div class="footer-col-links">
+          <a href="#">Master Cleanse</a>
+          <a href="#">Green Detox</a>
+          <a href="#">Raw Food</a>
+          <a href="#">Mediterranean</a>
+          <a href="#">Anti-Inflammatory</a>
+        </div>
+      </div>
+
     </div>
+
+    <!-- Footer bottom -->
     <div class="footer-bottom">
-      <span>&copy; 2024 TheLifeCo. All rights reserved.</span>
-      <div class="footer-legal">
+      <div class="footer-bottom-left">
+        <span>© 2024 Powered by LifeCo</span>
+        <a href="#">Terms &amp; Conditionals</a>
+        <a href="#">Sitemap</a>
         <a href="#">Privacy Policy</a>
-        <a href="#">Terms & Conditionals</a>
-        <a href="#">Cookie Policy</a>
+        <a href="#">Cookies Policy</a>
+      </div>
+      <div class="footer-bottom-right">
+        <span class="footer-locale">EN</span>
+        <span class="footer-locale">USD</span>
       </div>
     </div>
   </div>
 </footer>
 
 <script>
-// Tab switching
-document.querySelectorAll('.tabs').forEach(tabs=>{
-  tabs.querySelectorAll('.tab').forEach(tab=>{
-    tab.addEventListener('click',()=>{
-      tabs.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-      tab.classList.add('active');
-    });
+// Category sidebar interaction
+document.querySelectorAll('.retreat-cat-item').forEach(item => {
+  item.addEventListener('click', () => {
+    document.querySelectorAll('.retreat-cat-item').forEach(i => i.classList.remove('active'));
+    item.classList.add('active');
+  });
+});
+
+// Condition tag interaction
+document.querySelectorAll('.cond-tag').forEach(tag => {
+  tag.addEventListener('click', () => {
+    document.querySelectorAll('.cond-tag').forEach(t => t.classList.remove('active'));
+    tag.classList.add('active');
+  });
+});
+
+// Treatment filter pills
+document.querySelectorAll('.t-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    document.querySelectorAll('.t-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
   });
 });
 </script>

@@ -3,644 +3,1084 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TheLifeCo — Treatment Programs</title>
+<title>TheLifeCo — Treatments</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Urbanist:wght@600&display=swap" rel="stylesheet">
 <style>
-/* Treatment hero */
-.treat-hero{
-  padding:120px 0 60px;
-  text-align:center;
-  background:var(--bg-section);
-}
-.treat-hero h1{
-  font-size:56px;
-  font-weight:700;
-  line-height:1.1;
-  letter-spacing:-1.5px;
-  margin-bottom:16px;
-  max-width:700px;
-  margin-left:auto;margin-right:auto;
-}
-.treat-hero p{
-  font-size:16px;
-  color:var(--text-secondary);
-  max-width:500px;
-  margin:0 auto 32px;
+/* =========================================
+   Treatments Page — Pixel-Perfect Figma F03
+   Frame: 1440 x 3711px
+   ========================================= */
+
+/* Override font imports to use Manrope 300-800 */
+:root {
+  --font-primary: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-urbanist: 'Urbanist', system-ui, sans-serif;
 }
 
-/* Discovery bar */
-.discovery{
-  padding:48px 0;
-  border-bottom:1px solid var(--border-color);
+/* ---- Navigation (light, on white) ---- */
+.treat-nav {
+  position: relative;
+  background: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0;
+  z-index: 100;
 }
-.discovery h3{
-  font-size:20px;
-  font-weight:700;
-  margin-bottom:8px;
+.treat-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
 }
-.discovery p{
-  font-size:14px;
-  color:var(--text-secondary);
-  margin-bottom:24px;
+.treat-nav-logo {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--black);
+  letter-spacing: -0.5px;
+  text-decoration: none;
+}
+.treat-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.treat-nav-links a {
+  font-family: var(--font-primary);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.treat-nav-links a:hover,
+.treat-nav-links a.active {
+  opacity: 1;
+}
+.treat-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.treat-nav-right a {
+  font-family: var(--font-primary);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.treat-nav-right a:hover { opacity: 1; }
+.treat-nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.treat-nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--black);
 }
 
-/* Treatment grid */
-.treatments-section{padding:80px 0}
-.treatments-filters{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:32px;
-  flex-wrap:wrap;
-  gap:16px;
+/* ---- Hero / Search area ---- */
+.treat-hero {
+  background: var(--white);
+  padding: 72px 0 0;
 }
-.treatments-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
+.treat-hero-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
-
-/* Category sidebar */
-.treatments-layout{
-  display:grid;
-  grid-template-columns:280px 1fr;
-  gap:48px;
+.treat-hero-top {
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border-color);
 }
-.category-sidebar{
-  position:sticky;
-  top:20px;
-  align-self:start;
+.treat-hero h1 {
+  font-family: var(--font-primary);
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--black);
+  margin-bottom: 40px;
+  max-width: 700px;
 }
-.category-item{
-  padding:12px 16px;
-  border-radius:12px;
-  font-size:14px;
-  font-weight:500;
-  color:var(--text-secondary);
-  cursor:pointer;
-  transition:all .2s;
-  margin-bottom:4px;
-  display:block;
+.treat-controls {
+  display: flex;
+  align-items: center;
+  gap: 32px;
 }
-.category-item:hover,.category-item.active{
-  background:var(--bg-section);
-  color:var(--text-primary);
-  font-weight:600;
+.treat-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-primary);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--black);
+  cursor: pointer;
+  user-select: none;
+  background: none;
+  border: none;
+  padding: 0;
 }
-
-/* Events */
-.events{padding:80px 0;background:var(--bg-section)}
-.events-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:24px;
-  margin-top:32px;
+.treat-dropdown i {
+  font-size: 22px;
+  color: var(--black);
 }
 
-/* Popular retreats */
-.popular{padding:80px 0}
-.popular-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  margin-top:32px;
+/* ---- Category filter tags row ---- */
+.treat-tags-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 28px 0 0;
+  flex-wrap: wrap;
 }
-.popular-card{
-  border-radius:16px;
-  overflow:hidden;
-  position:relative;
-  aspect-ratio:3/4;
-  display:flex;
-  align-items:flex-end;
-  padding:24px;
-  color:var(--white);
+.treat-tag {
+  display: inline-block;
+  padding: 8px 18px;
+  border: 1px solid var(--border-dark);
+  border-radius: 100px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--black);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  background: transparent;
 }
-.popular-card:nth-child(1){background:linear-gradient(transparent 50%,rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80') center/cover}
-.popular-card:nth-child(2){background:linear-gradient(transparent 50%,rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=400&q=80') center/cover}
-.popular-card:nth-child(3){background:linear-gradient(transparent 50%,rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80') center/cover}
-.popular-card h3{font-size:20px;font-weight:700}
-.popular-card p{font-size:14px;opacity:.8;margin-top:4px}
+.treat-tag:hover,
+.treat-tag.active {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
 
-/* FAQ */
-.faq{padding:80px 0}
-
-@media(max-width:1024px){
-  .treatments-layout{grid-template-columns:1fr}
-  .category-sidebar{display:none}
+/* ---- CTA subtitle strip ---- */
+.treat-subtitle-strip {
+  background: var(--white);
+  border-bottom: 1px solid var(--border-color);
+  padding: 32px 0;
 }
-@media(max-width:768px){
-  .treat-hero h1{font-size:32px}
-  .treatments-grid{grid-template-columns:1fr}
-  .events-grid{grid-template-columns:1fr}
-  .popular-grid{grid-template-columns:1fr}
-  .treatments-filters{flex-direction:column;align-items:stretch}
+.treat-subtitle-strip p {
+  font-family: var(--font-primary);
+  font-size: 36px;
+  font-weight: 300;
+  color: var(--black);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* ---- Treatments body: sidebar + grid ---- */
+.treatments-body {
+  background: var(--white);
+  padding: 56px 0 80px;
+}
+.treatments-layout {
+  display: grid;
+  grid-template-columns: 252px 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* ---- Sidebar ---- */
+.treat-sidebar {
+  position: sticky;
+  top: 24px;
+}
+.treat-sidebar-nav {
+  margin-bottom: 36px;
+}
+.treat-sidebar-item {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 10px 0;
+  cursor: pointer;
+  transition: color 0.2s, font-weight 0.15s;
+  text-decoration: none;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  line-height: 1.3;
+}
+.treat-sidebar-item:hover {
+  color: var(--black);
+}
+.treat-sidebar-item.active {
+  font-weight: 700;
+  color: var(--black);
+}
+.treat-sidebar-conditions {
+  border-top: 1px solid var(--border-color);
+  padding-top: 24px;
+}
+.treat-sidebar-conditions-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-primary);
+  font-size: 32px;
+  font-weight: 400;
+  color: var(--black);
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  padding: 0;
+}
+.treat-sidebar-conditions-btn i {
+  font-size: 20px;
+  color: var(--black);
+}
+
+/* ---- Treatment cards grid ---- */
+.treat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.treat-card {
+  border: 1px solid var(--border-color);
+  margin: -1px 0 0 -1px; /* collapse borders */
+  background: var(--white);
+  overflow: hidden;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.treat-card:hover {
+  background: var(--off-white-3);
+}
+.treat-card-top {
+  padding: 24px 24px 16px;
+}
+.treat-card-category {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.treat-card-name {
+  font-family: var(--font-primary);
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+.treat-card-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  background: var(--off-white-2);
+  filter: grayscale(100%);
+}
+.treat-card-img-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--light-gray-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+/* Invisible placeholder card for empty grid slots */
+.treat-card-empty {
+  border: 1px solid var(--border-color);
+  margin: -1px 0 0 -1px;
+  background: var(--white);
+  pointer-events: none;
+}
+
+/* ---- Two CTA cards side by side ---- */
+.treat-cta-section {
+  background: var(--white);
+  padding: 0 0 80px;
+}
+.treat-cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border-color);
+}
+.treat-cta-card {
+  padding: 64px 56px;
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.treat-cta-card:last-child {
+  border-right: none;
+}
+.treat-cta-card h2 {
+  font-family: var(--font-primary);
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--black);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+.treat-cta-card p {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* ---- Footer (white bg, Figma-accurate) ---- */
+.treat-footer {
+  background: var(--white);
+  border-top: 1px solid var(--border-color);
+  padding: 64px 0 0;
+}
+.treat-footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid var(--border-color);
+}
+.treat-footer-brand {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 20px;
+  letter-spacing: -0.3px;
+}
+.treat-footer-social {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+}
+.treat-footer-social a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid var(--border-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 15px;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.treat-footer-social a:hover {
+  border-color: var(--black);
+  color: var(--black);
+}
+.treat-footer-col-heading {
+  font-family: var(--font-urbanist);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.treat-footer-col-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.treat-footer-col-links a {
+  font-family: var(--font-urbanist);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.4;
+}
+.treat-footer-col-links a:hover {
+  color: var(--black);
+}
+.treat-footer-boatsy {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 14px;
+}
+.treat-footer-address {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-top: 24px;
+}
+.treat-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.treat-footer-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.treat-footer-bottom-left span {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+}
+.treat-footer-bottom-left a {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.treat-footer-bottom-left a:hover { color: var(--black); }
+.treat-footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.treat-footer-bottom-right span {
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--black);
+  cursor: pointer;
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 1200px) {
+  .treatments-layout {
+    grid-template-columns: 220px 1fr;
+    gap: 36px;
+  }
+  .treat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .treat-footer-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .treat-hero h1 { font-size: 44px; }
+  .treat-dropdown { font-size: 24px; }
+  .treat-sidebar-conditions-btn { font-size: 24px; }
+  .treat-cta-card h2 { font-size: 28px; }
+  .treat-cta-card p { font-size: 18px; }
+  .treat-cta-card { padding: 48px 40px; }
+}
+
+@media (max-width: 768px) {
+  .treat-nav-links { display: none; }
+  .treat-nav-toggle { display: flex; }
+  .treat-nav.open .treat-nav-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    left: 0; right: 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 24px 20px;
+    gap: 16px;
+    z-index: 200;
+  }
+  .treat-hero h1 { font-size: 32px; }
+  .treat-subtitle-strip p { font-size: 24px; }
+  .treat-controls { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .treat-dropdown { font-size: 22px; }
+  .treatments-layout { grid-template-columns: 1fr; }
+  .treat-sidebar { display: none; }
+  .treat-grid { grid-template-columns: 1fr; }
+  .treat-card-empty { display: none; }
+  .treat-cta-grid { grid-template-columns: 1fr; }
+  .treat-cta-card { border-right: none; border-bottom: 1px solid var(--border-color); padding: 40px 24px; }
+  .treat-cta-card:last-child { border-bottom: none; }
+  .treat-cta-card h2 { font-size: 24px; }
+  .treat-cta-card p { font-size: 16px; }
+  .treat-footer-grid { grid-template-columns: 1fr 1fr; }
+  .treat-footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .treat-hero h1 { font-size: 26px; }
+  .treat-subtitle-strip p { font-size: 20px; }
+  .treat-grid { grid-template-columns: 1fr; }
+  .treat-tags-row { gap: 8px; }
+  .treat-tag { font-size: 12px; padding: 6px 14px; }
+  .treat-footer-grid { grid-template-columns: 1fr; }
+  .treat-footer-bottom-left { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 </style>
 </head>
 <body>
 
 <!-- ===== NAVIGATION ===== -->
-<nav class="nav nav--dark">
+<nav class="treat-nav" id="treat-nav">
   <div class="container">
-    <a href="index.html" class="nav-logo">TheLifeCo</a>
-    <div class="nav-links">
-      <a href="index.html">Retreats</a>
+    <a href="index.html" class="treat-nav-logo">TheLifeCo</a>
+    <div class="treat-nav-links">
+      <a href="index.html">Home</a>
       <a href="resort.html">Resorts</a>
-      <a href="#">Medical</a>
-      <a href="treatments.html">Treatments</a>
+      <a href="treatments.html" class="active">Treatments</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
     </div>
-    <div class="nav-right">
-      <a href="#">Login</a>
+    <div class="treat-nav-right">
       <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a href="#">Login</a>
     </div>
-    <div class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')">
+    <button class="treat-nav-toggle" aria-label="Open menu" onclick="document.getElementById('treat-nav').classList.toggle('open')">
       <span></span><span></span><span></span>
-    </div>
+    </button>
   </div>
 </nav>
 
-<!-- ===== HERO ===== -->
+<!-- ===== HERO / SEARCH AREA ===== -->
 <section class="treat-hero">
   <div class="container">
-    <h1>Find The Best Treatment Program For You</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Discover the right program for your health goals.</p>
-    <a href="#" class="btn btn-primary btn-lg">Talk to an expert</a>
+    <div class="treat-hero-inner">
+      <div class="treat-hero-top">
+        <h1>Find The Best Treatment Program For You</h1>
+        <div class="treat-controls">
+          <button class="treat-dropdown" id="sort-btn" aria-expanded="false">
+            Sort <i class="fa-solid fa-angle-down"></i>
+          </button>
+          <button class="treat-dropdown" id="programs-btn" aria-expanded="true">
+            Programs <i class="fa-solid fa-angle-up"></i>
+          </button>
+        </div>
+      </div>
+      <div class="treat-tags-row">
+        <button class="treat-tag active" data-filter="all">All</button>
+        <button class="treat-tag" data-filter="cleansing">Cleansing &amp; Detoxing</button>
+        <button class="treat-tag" data-filter="weight-loss">Weight Loss &amp; Management</button>
+        <button class="treat-tag" data-filter="chronic">Chronic Disease Recovery &amp; Prevention</button>
+        <button class="treat-tag" data-filter="aging">Healthy Aging &amp; Longevity</button>
+        <button class="treat-tag" data-filter="mental">Mental Health &amp; Stress Management</button>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- ===== DISCOVERY ===== -->
-<section class="discovery">
+<!-- ===== CTA SUBTITLE STRIP ===== -->
+<div class="treat-subtitle-strip">
   <div class="container">
-    <h3>Let's discover which treatments suits you best</h3>
-    <p>Answer a few questions and we'll recommend the perfect program for your needs.</p>
-    <a href="#" class="btn btn-outline-dark btn-sm">Start Discovery <i class="fa-solid fa-arrow-right"></i></a>
+    <p>Lets discover which treatments suits you best</p>
   </div>
-</section>
+</div>
 
-<!-- ===== TREATMENTS ===== -->
-<section class="treatments-section">
+<!-- ===== TREATMENTS: SIDEBAR + GRID ===== -->
+<section class="treatments-body">
   <div class="container">
     <div class="treatments-layout">
-      <!-- Categories sidebar -->
-      <aside class="category-sidebar">
-        <h3 style="font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:16px">Categories</h3>
-        <a class="category-item active">All Programs</a>
-        <a class="category-item">Chronic Disease Recovery & Prevention</a>
-        <a class="category-item">Weight Loss & Management</a>
-        <a class="category-item">Healthy Aging & Longevity</a>
-        <a class="category-item">Mental Health & Stress Management</a>
-        <a class="category-item">Cleansing & Detoxing</a>
+
+      <!-- LEFT SIDEBAR -->
+      <aside class="treat-sidebar">
+        <nav class="treat-sidebar-nav" aria-label="Treatment categories">
+          <button class="treat-sidebar-item active" data-cat="all">All</button>
+          <button class="treat-sidebar-item" data-cat="weight-loss">Weight Loss &amp; Management</button>
+          <button class="treat-sidebar-item" data-cat="chronic">Chronic Disease Recovery &amp; Prevention</button>
+          <button class="treat-sidebar-item" data-cat="aging">Healthy Aging &amp; Longevity</button>
+          <button class="treat-sidebar-item" data-cat="mental">Mental Health &amp; Stress Management</button>
+          <button class="treat-sidebar-item" data-cat="cleansing">Cleansing &amp; Detoxing</button>
+        </nav>
+        <div class="treat-sidebar-conditions">
+          <button class="treat-sidebar-conditions-btn" aria-expanded="false" id="conditions-btn">
+            Conditions <i class="fa-solid fa-angle-down"></i>
+          </button>
+        </div>
       </aside>
 
-      <!-- Main content -->
+      <!-- RIGHT: 3-COLUMN TREATMENT GRID -->
       <div>
-        <div class="treatments-filters">
-          <div class="filter-pills">
-            <button class="pill active">All</button>
-            <button class="pill">Programs</button>
-            <button class="pill">Conditions</button>
-          </div>
-          <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-secondary)">
-            Sort by: <select style="border:1px solid var(--border-color);border-radius:8px;padding:8px 12px;font-size:14px;font-family:var(--font-primary);background:var(--white)"><option>Popular</option><option>A-Z</option><option>Newest</option></select>
-          </div>
-        </div>
+        <div class="treat-grid" id="treat-grid">
 
-        <div class="treatments-grid">
-          <!-- 15 treatment cards -->
-          <div class="treatment-card">
-            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80') center/cover"></div>
-            <div class="treatment-card-body">
-              <div class="treatment-card-category">Cleansing & Detoxing</div>
-              <h3 class="treatment-card-title">Digestive & Gut Health</h3>
-              <p class="treatment-card-desc">Restore your digestive system with our specialized gut health protocol.</p>
+          <!-- Row 1 -->
+          <div class="treat-card" data-cat="chronic">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
+              <div class="treat-card-name">Digestive &amp; Gut Health</div>
             </div>
-            <div class="treatment-card-footer">
-              <span class="text-12 text-secondary">7-14 days</span>
-              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80"
+              alt="Digestive and Gut Health treatment"
+              loading="lazy"
+            >
           </div>
 
-          <div class="treatment-card">
-            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80') center/cover"></div>
-            <div class="treatment-card-body">
-              <div class="treatment-card-category">Cleansing & Detoxing</div>
-              <h3 class="treatment-card-title">Medically Supervised Water Fasting</h3>
-              <p class="treatment-card-desc">A doctor-guided fasting protocol for deep cellular renewal.</p>
+          <div class="treat-card" data-cat="cleansing">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Cleansing &amp; Detoxing</div>
+              <div class="treat-card-name">Medically Supervised Water Fasting</div>
             </div>
-            <div class="treatment-card-footer">
-              <span class="text-12 text-secondary">7-21 days</span>
-              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80"
+              alt="Medically Supervised Water Fasting"
+              loading="lazy"
+            >
           </div>
 
-          <div class="treatment-card">
-            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=400&q=80') center/cover"></div>
-            <div class="treatment-card-body">
-              <div class="treatment-card-category">Mental Health</div>
-              <h3 class="treatment-card-title">Mental Wellness Program</h3>
-              <p class="treatment-card-desc">Holistic approach combining meditation, therapy, and nutrition.</p>
+          <div class="treat-card" data-cat="mental">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Mental Health &amp; Stress Management</div>
+              <div class="treat-card-name">Mental Wellness Program</div>
             </div>
-            <div class="treatment-card-footer">
-              <span class="text-12 text-secondary">7-14 days</span>
-              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=600&q=80"
+              alt="Mental Wellness Program"
+              loading="lazy"
+            >
           </div>
 
-          <div class="treatment-card">
-            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80') center/cover"></div>
-            <div class="treatment-card-body">
-              <div class="treatment-card-category">Chronic Disease</div>
-              <h3 class="treatment-card-title">Cancer Prevention & Support</h3>
-              <p class="treatment-card-desc">Integrative program supporting cancer prevention and recovery.</p>
+          <!-- Row 2 -->
+          <div class="treat-card" data-cat="aging">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Healthy Aging &amp; Longevity</div>
+              <div class="treat-card-name">Cancer Prevention &amp; Support</div>
             </div>
-            <div class="treatment-card-footer">
-              <span class="text-12 text-secondary">14-21 days</span>
-              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80"
+              alt="Cancer Prevention and Support"
+              loading="lazy"
+            >
           </div>
 
-          <div class="treatment-card">
-            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=400&q=80') center/cover"></div>
-            <div class="treatment-card-body">
-              <div class="treatment-card-category">Weight Loss</div>
-              <h3 class="treatment-card-title">Beauty & Body Reshaping</h3>
-              <p class="treatment-card-desc">Combine wellness treatments with body transformation.</p>
+          <div class="treat-card" data-cat="aging">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Healthy Aging &amp; Longevity</div>
+              <div class="treat-card-name">Beauty &amp; Body Reshaping</div>
             </div>
-            <div class="treatment-card-footer">
-              <span class="text-12 text-secondary">7-14 days</span>
-              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80"
+              alt="Beauty and Body Reshaping"
+              loading="lazy"
+            >
           </div>
 
-          <div class="treatment-card">
-            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=80') center/cover"></div>
-            <div class="treatment-card-body">
-              <div class="treatment-card-category">Cleansing & Detoxing</div>
-              <h3 class="treatment-card-title">Liver Detox</h3>
-              <p class="treatment-card-desc">Targeted liver cleansing for improved metabolic function.</p>
+          <div class="treat-card" data-cat="chronic">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
+              <div class="treat-card-name">Liver Detox</div>
             </div>
-            <div class="treatment-card-footer">
-              <span class="text-12 text-secondary">7-10 days</span>
-              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1559757175-5700dde675bc?w=600&q=80"
+              alt="Liver Detox"
+              loading="lazy"
+            >
           </div>
 
-          <div class="treatment-card">
-            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80') center/cover"></div>
-            <div class="treatment-card-body">
-              <div class="treatment-card-category">Cleansing & Detoxing</div>
-              <h3 class="treatment-card-title">Green Juice Cleanse</h3>
-              <p class="treatment-card-desc">Nutrient-rich juice cleanse to revitalize your body.</p>
+          <!-- Row 3 -->
+          <div class="treat-card" data-cat="cleansing">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Cleansing &amp; Detoxing</div>
+              <div class="treat-card-name">Green Juice Cleanse</div>
             </div>
-            <div class="treatment-card-footer">
-              <span class="text-12 text-secondary">5-7 days</span>
-              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=600&q=80"
+              alt="Green Juice Cleanse"
+              loading="lazy"
+            >
           </div>
 
-          <div class="treatment-card">
-            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=400&q=80') center/cover"></div>
-            <div class="treatment-card-body">
-              <div class="treatment-card-category">Longevity</div>
-              <h3 class="treatment-card-title">Ultimate Longevity</h3>
-              <p class="treatment-card-desc">Advanced protocols for healthy aging and vitality extension.</p>
+          <div class="treat-card" data-cat="aging">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Healthy Aging &amp; Longevity</div>
+              <div class="treat-card-name">Ultimate Longevity</div>
             </div>
-            <div class="treatment-card-footer">
-              <span class="text-12 text-secondary">14-21 days</span>
-              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=600&q=80"
+              alt="Ultimate Longevity"
+              loading="lazy"
+            >
           </div>
 
-          <div class="treatment-card">
-            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&q=80') center/cover"></div>
-            <div class="treatment-card-body">
-              <div class="treatment-card-category">Chronic Disease</div>
-              <h3 class="treatment-card-title">Diabetes Program</h3>
-              <p class="treatment-card-desc">Comprehensive diabetes management and reversal program.</p>
+          <div class="treat-card" data-cat="chronic">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
+              <div class="treat-card-name">Diabetes Program</div>
             </div>
-            <div class="treatment-card-footer">
-              <span class="text-12 text-secondary">14-28 days</span>
-              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=80"
+              alt="Diabetes Program"
+              loading="lazy"
+            >
           </div>
 
-          <div class="treatment-card">
-            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=400&q=80') center/cover"></div>
-            <div class="treatment-card-body">
-              <div class="treatment-card-category">Chronic Disease</div>
-              <h3 class="treatment-card-title">Cardiovascular Disease Program</h3>
-              <p class="treatment-card-desc">Heart health optimization through integrated wellness.</p>
+          <!-- Row 4 -->
+          <div class="treat-card" data-cat="weight-loss">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Weight Loss &amp; Management</div>
+              <div class="treat-card-name">Weight Loss &amp; Management</div>
             </div>
-            <div class="treatment-card-footer">
-              <span class="text-12 text-secondary">14-21 days</span>
-              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&q=80"
+              alt="Weight Loss and Management"
+              loading="lazy"
+            >
           </div>
 
-          <div class="treatment-card">
-            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&q=80') center/cover"></div>
-            <div class="treatment-card-body">
-              <div class="treatment-card-category">Chronic Disease</div>
-              <h3 class="treatment-card-title">Inflammation & Immune Reset</h3>
-              <p class="treatment-card-desc">Reset your immune system and reduce chronic inflammation.</p>
+          <div class="treat-card" data-cat="cleansing">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Cleansing &amp; Detoxing</div>
+              <div class="treat-card-name">Master Detox</div>
             </div>
-            <div class="treatment-card-footer">
-              <span class="text-12 text-secondary">10-14 days</span>
-              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80"
+              alt="Master Detox"
+              loading="lazy"
+            >
           </div>
 
-          <div class="treatment-card">
-            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80') center/cover"></div>
-            <div class="treatment-card-body">
-              <div class="treatment-card-category">Weight Loss</div>
-              <h3 class="treatment-card-title">Weight Loss & Management</h3>
-              <p class="treatment-card-desc">Sustainable weight management with medical supervision.</p>
+          <!-- Row 4 empty slot -->
+          <div class="treat-card-empty" aria-hidden="true"></div>
+
+          <!-- Row 5 -->
+          <div class="treat-card" data-cat="aging">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Healthy Aging &amp; Longevity</div>
+              <div class="treat-card-name">Hormonal Longevity (Women's / Men's)</div>
             </div>
-            <div class="treatment-card-footer">
-              <span class="text-12 text-secondary">7-21 days</span>
-              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&q=80"
+              alt="Hormonal Longevity"
+              loading="lazy"
+            >
           </div>
 
-          <div class="treatment-card">
-            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80') center/cover"></div>
-            <div class="treatment-card-body">
-              <div class="treatment-card-category">Cleansing & Detoxing</div>
-              <h3 class="treatment-card-title">Master Detox</h3>
-              <p class="treatment-card-desc">Our signature comprehensive detoxification program.</p>
+          <div class="treat-card" data-cat="chronic">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
+              <div class="treat-card-name">Cancer Prevention &amp; Support</div>
             </div>
-            <div class="treatment-card-footer">
-              <span class="text-12 text-secondary">7-21 days</span>
-              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1579154204601-01588f351e67?w=600&q=80"
+              alt="Cancer Prevention and Support"
+              loading="lazy"
+            >
           </div>
 
-          <div class="treatment-card">
-            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=400&q=80') center/cover"></div>
-            <div class="treatment-card-body">
-              <div class="treatment-card-category">Longevity</div>
-              <h3 class="treatment-card-title">Hormonal Longevity</h3>
-              <p class="treatment-card-desc">Women's & men's hormonal optimization for healthy aging.</p>
+          <div class="treat-card" data-cat="chronic">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
+              <div class="treat-card-name">Liver Detox</div>
             </div>
-            <div class="treatment-card-footer">
-              <span class="text-12 text-secondary">7-14 days</span>
-              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&q=80"
+              alt="Liver Detox"
+              loading="lazy"
+            >
           </div>
 
-          <div class="treatment-card">
-            <div class="treatment-card-img" style="background:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80') center/cover"></div>
-            <div class="treatment-card-body">
-              <div class="treatment-card-category">Mental Health</div>
-              <h3 class="treatment-card-title">Chronic Fatigue Recovery</h3>
-              <p class="treatment-card-desc">Restore your energy and overcome chronic fatigue syndrome.</p>
+          <!-- Row 6 -->
+          <div class="treat-card" data-cat="aging">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Healthy Aging &amp; Longevity</div>
+              <div class="treat-card-name">Beauty &amp; Body Reshaping</div>
             </div>
-            <div class="treatment-card-footer">
-              <span class="text-12 text-secondary">14-21 days</span>
-              <a href="#" class="treatment-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=600&q=80"
+              alt="Beauty and Body Reshaping"
+              loading="lazy"
+            >
           </div>
-        </div>
+
+          <div class="treat-card" data-cat="chronic">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
+              <div class="treat-card-name">Cardiovascular Disease Program</div>
+            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=600&q=80"
+              alt="Cardiovascular Disease Program"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treat-card" data-cat="chronic">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
+              <div class="treat-card-name">Chronic Fatigue Recovery</div>
+            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=600&q=80"
+              alt="Chronic Fatigue Recovery"
+              loading="lazy"
+            >
+          </div>
+
+          <!-- Row 7 -->
+          <div class="treat-card" data-cat="chronic">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
+              <div class="treat-card-name">Digestive &amp; Gut Health</div>
+            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80"
+              alt="Digestive and Gut Health"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="treat-card" data-cat="chronic">
+            <div class="treat-card-top">
+              <div class="treat-card-category">Chronic Diseases Recovery &amp; Prevention</div>
+              <div class="treat-card-name">Inflammation &amp; Immune Reset</div>
+            </div>
+            <img
+              class="treat-card-img"
+              src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=600&q=80"
+              alt="Inflammation and Immune Reset"
+              loading="lazy"
+            >
+          </div>
+
+          <!-- Row 7 empty slot -->
+          <div class="treat-card-empty" aria-hidden="true"></div>
+
+        </div><!-- /treat-grid -->
+      </div><!-- /main content -->
+    </div><!-- /treatments-layout -->
+  </div>
+</section>
+
+<!-- ===== TWO CTA CARDS ===== -->
+<section class="treat-cta-section">
+  <div class="container">
+    <div class="treat-cta-grid">
+      <div class="treat-cta-card">
+        <h2>Let's discover which treatments suit you best.</h2>
+        <p>Talk to an expert</p>
+      </div>
+      <div class="treat-cta-card">
+        <h2>Explore this month's events.</h2>
+        <p>See the latest news and special activites</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== CTA ===== -->
-<section class="cta-block section--gray">
+<!-- ===== FOOTER (white background, Figma-accurate) ===== -->
+<footer class="treat-footer">
   <div class="container">
-    <h2 class="section-heading">Let's discover which<br>treatments suit you best</h2>
-    <p>Take our quick assessment to find the perfect program for your health goals and lifestyle.</p>
-    <div class="cta-buttons">
-      <a href="#" class="btn btn-primary btn-lg">Talk to an expert</a>
-      <a href="#" class="btn btn-outline-dark btn-lg">Start Discovery</a>
-    </div>
-  </div>
-</section>
+    <div class="treat-footer-grid">
 
-<!-- ===== EVENTS ===== -->
-<section class="events">
-  <div class="container">
-    <h2 class="section-heading">Explore this month's events</h2>
-    <div class="events-grid">
-      <div class="event-card">
-        <div class="event-date">
-          <div class="event-day">15</div>
-          <div class="event-month">Mar</div>
-        </div>
-        <div class="event-info">
-          <h4>Wellness Webinar: Introduction to Detox</h4>
-          <p>Join our medical experts for a free online session about detoxification and its benefits.</p>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-date">
-          <div class="event-day">22</div>
-          <div class="event-month">Mar</div>
-        </div>
-        <div class="event-info">
-          <h4>Open Day: Antalya Resort Tour</h4>
-          <p>Visit our Antalya resort and experience our wellness programs firsthand.</p>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-date">
-          <div class="event-day">28</div>
-          <div class="event-month">Mar</div>
-        </div>
-        <div class="event-info">
-          <h4>Nutrition Workshop</h4>
-          <p>Learn about gut health, anti-inflammatory diets, and sustainable nutrition habits.</p>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-date">
-          <div class="event-day">05</div>
-          <div class="event-month">Apr</div>
-        </div>
-        <div class="event-info">
-          <h4>Spring Detox Retreat Launch</h4>
-          <p>Special pricing for our seasonal detox retreat program in Bodrum.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FAQ ===== -->
-<section class="faq">
-  <div class="container">
-    <h2 class="section-heading">Your Questions, Answered</h2>
-    <div>
-      <div class="faq-item active">
-        <button class="faq-question">What is a detox program?</button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">A detox program is a medically supervised protocol designed to help your body eliminate toxins and restore optimal function. Our programs combine nutrition, fasting, supplements, and holistic therapies for comprehensive cleansing.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">How long should I stay?</button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Program duration depends on your goals and health condition. Most programs range from 7-21 days. Our medical team will recommend the optimal duration during your consultation.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Is medical supervision included?</button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Yes, all our programs include full medical supervision. You'll have regular check-ups, blood work, and consultations with our medical team throughout your stay.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">Can I combine treatments?</button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">Absolutely. Many guests combine multiple programs during their stay. Our team will create a personalized protocol that addresses all your health goals.</div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question">What should I bring?</button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">We provide all wellness amenities including robes, slippers, and toiletries. Bring comfortable clothing, any prescribed medications, and your medical records for the initial consultation.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== POPULAR RETREATS ===== -->
-<section class="popular section--gray">
-  <div class="container">
-    <h2 class="section-heading" style="color:var(--text-primary)">See Popular Retreats</h2>
-    <div class="popular-grid">
-      <div class="popular-card">
-        <div>
-          <h3>Master Detox in Antalya</h3>
-          <p>7 days &middot; Turkey</p>
-        </div>
-      </div>
-      <div class="popular-card">
-        <div>
-          <h3>Longevity Retreat</h3>
-          <p>14 days &middot; Phuket</p>
-        </div>
-      </div>
-      <div class="popular-card">
-        <div>
-          <h3>Water Fasting Program</h3>
-          <p>10 days &middot; Bodrum</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
+      <!-- Col 1: Brand + social -->
       <div>
-        <div class="footer-brand">TheLifeCo</div>
-        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2003. With resorts in Turkey, Thailand, and beyond.</p>
-        <div class="footer-social">
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <div class="treat-footer-brand">TheLifeCo</div>
+        <div class="treat-footer-social">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <div class="treat-footer-address">
+          Istanbul, Turkey
         </div>
       </div>
+
+      <!-- Col 2: Retreatments -->
       <div>
-        <div class="footer-heading">Resorts</div>
-        <div class="footer-links">
+        <div class="treat-footer-col-heading">Retreatments</div>
+        <div class="treat-footer-col-links">
           <a href="#">Antalya</a>
           <a href="#">Bodrum</a>
           <a href="#">Phuket</a>
           <a href="#">St. Lucia</a>
         </div>
       </div>
+
+      <!-- Col 3: Explore -->
       <div>
-        <div class="footer-heading">Programs</div>
-        <div class="footer-links">
+        <div class="treat-footer-col-heading">Explore</div>
+        <div class="treat-footer-col-links">
           <a href="#">Master Detox</a>
           <a href="#">Water Fasting</a>
           <a href="#">Longevity</a>
           <a href="#">Mental Wellness</a>
         </div>
       </div>
+
+      <!-- Col 4: Centers -->
       <div>
-        <div class="footer-heading">Company</div>
-        <div class="footer-links">
+        <div class="treat-footer-col-heading">Centers</div>
+        <div class="treat-footer-col-links">
           <a href="#">About Us</a>
           <a href="#">Blog</a>
           <a href="#">Careers</a>
           <a href="#">Contact</a>
         </div>
       </div>
+
+      <!-- Col 5: Meal Plans + BOATSY + Follow Us -->
       <div>
-        <div class="footer-heading">BOATSY App</div>
-        <div class="footer-links">
-          <a href="#">Download on App Store</a>
-          <a href="#">Get on Google Play</a>
+        <div class="treat-footer-col-heading">Meal Plans</div>
+        <div class="treat-footer-col-links" style="margin-bottom: 28px;">
+          <a href="#">Plant-Based</a>
+          <a href="#">Detox</a>
+          <a href="#">Anti-Inflammatory</a>
         </div>
-        <div style="margin-top:24px">
-          <div class="footer-heading">Contact</div>
-          <div class="footer-links">
-            <a href="#">info@thelifeco.com</a>
-            <a href="#">+90 242 000 00 00</a>
-          </div>
+        <div class="treat-footer-boatsy">Download BOATSY App</div>
+        <div style="margin-top: 20px;">
+          <div class="treat-footer-col-heading">Follow Us</div>
         </div>
       </div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2024 TheLifeCo. All rights reserved.</span>
-      <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms & Conditionals</a>
-        <a href="#">Cookie Policy</a>
+
+    </div><!-- /footer-grid -->
+
+    <!-- Footer bottom bar -->
+    <div class="treat-footer-bottom">
+      <div class="treat-footer-bottom-left">
+        <span>&copy; 2024 Powered by LifeCo</span>
+        <a href="#">Terms &amp; Conditionals</a>
+        <a href="#">Sitemap</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookies</a>
+      </div>
+      <div class="treat-footer-bottom-right">
+        <span>EN</span>
+        <span>USD</span>
       </div>
     </div>
+
   </div>
 </footer>
 
 <script>
-// Tab switching
-document.querySelectorAll('.tabs').forEach(tabs=>{
-  tabs.querySelectorAll('.tab').forEach(tab=>{
-    tab.addEventListener('click',()=>{
-      tabs.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-      tab.classList.add('active');
+(function() {
+  'use strict';
+
+  /* ---- Sidebar category selection + tag sync ---- */
+  var sidebarItems = document.querySelectorAll('.treat-sidebar-item');
+  var tagBtns = document.querySelectorAll('.treat-tag');
+  var treatCards = document.querySelectorAll('.treat-card');
+
+  function filterCards(cat) {
+    treatCards.forEach(function(card) {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    // Handle empty-slot visibility: only show if "all"
+    document.querySelectorAll('.treat-card-empty').forEach(function(el) {
+      el.style.display = cat === 'all' ? '' : 'none';
+    });
+  }
+
+  sidebarItems.forEach(function(item) {
+    item.addEventListener('click', function() {
+      sidebarItems.forEach(function(i) { i.classList.remove('active'); });
+      item.classList.add('active');
+      var cat = item.dataset.cat;
+      // sync tags
+      tagBtns.forEach(function(t) {
+        t.classList.toggle('active', t.dataset.filter === cat);
+      });
+      filterCards(cat);
     });
   });
-});
 
-// FAQ accordion
-document.querySelectorAll('.faq-question').forEach(q=>{
-  q.addEventListener('click',()=>{
-    const item=q.parentElement;
-    const wasActive=item.classList.contains('active');
-    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('active'));
-    if(!wasActive)item.classList.add('active');
-  });
-});
-
-// Filter pills
-document.querySelectorAll('.filter-pills').forEach(pills=>{
-  pills.querySelectorAll('.pill').forEach(pill=>{
-    pill.addEventListener('click',()=>{
-      pills.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));
-      pill.classList.add('active');
+  tagBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      tagBtns.forEach(function(t) { t.classList.remove('active'); });
+      btn.classList.add('active');
+      var cat = btn.dataset.filter;
+      // sync sidebar
+      sidebarItems.forEach(function(i) {
+        i.classList.toggle('active', i.dataset.cat === cat);
+      });
+      filterCards(cat);
     });
   });
-});
 
-// Category sidebar
-document.querySelectorAll('.category-item').forEach(item=>{
-  item.addEventListener('click',()=>{
-    document.querySelectorAll('.category-item').forEach(i=>i.classList.remove('active'));
-    item.classList.add('active');
-  });
-});
+  /* ---- Sort dropdown toggle ---- */
+  var sortBtn = document.getElementById('sort-btn');
+  if (sortBtn) {
+    sortBtn.addEventListener('click', function() {
+      var icon = sortBtn.querySelector('i');
+      var expanded = sortBtn.getAttribute('aria-expanded') === 'true';
+      sortBtn.setAttribute('aria-expanded', String(!expanded));
+      icon.className = expanded ? 'fa-solid fa-angle-down' : 'fa-solid fa-angle-up';
+    });
+  }
+
+  /* ---- Programs dropdown toggle ---- */
+  var programsBtn = document.getElementById('programs-btn');
+  if (programsBtn) {
+    programsBtn.addEventListener('click', function() {
+      var icon = programsBtn.querySelector('i');
+      var expanded = programsBtn.getAttribute('aria-expanded') === 'true';
+      programsBtn.setAttribute('aria-expanded', String(!expanded));
+      icon.className = expanded ? 'fa-solid fa-angle-down' : 'fa-solid fa-angle-up';
+    });
+  }
+
+  /* ---- Conditions toggle ---- */
+  var condBtn = document.getElementById('conditions-btn');
+  if (condBtn) {
+    condBtn.addEventListener('click', function() {
+      var icon = condBtn.querySelector('i');
+      var expanded = condBtn.getAttribute('aria-expanded') === 'true';
+      condBtn.setAttribute('aria-expanded', String(!expanded));
+      icon.className = expanded ? 'fa-solid fa-angle-up' : 'fa-solid fa-angle-down';
+    });
+  }
+
+})();
 </script>
 
 </body>
