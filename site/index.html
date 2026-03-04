@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheLifeCo — Own Your Future</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* Page-specific hero styles */
+.hero{
+  position:relative;
+  width:100%;
+  min-height:589px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.3) 50%,rgba(0,0,0,.5) 100%),
+    url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1440&q=80') center/cover no-repeat;
+  color:var(--white);
+  overflow:hidden;
+}
+.hero-content{
+  max-width:var(--content-width);
+  margin:0 auto;
+  padding:120px var(--gutter) 60px;
+  width:100%;
+}
+.hero-headline{
+  font-size:120px;
+  font-weight:400;
+  line-height:.95;
+  letter-spacing:-3px;
+  margin-bottom:24px;
+}
+.hero-subtitle{
+  font-size:16px;
+  color:rgba(255,255,255,.8);
+  max-width:480px;
+  line-height:1.7;
+  margin-bottom:32px;
+}
+.hero-ctas{display:flex;gap:16px;margin-bottom:48px}
+
+/* Awards ribbon */
+.awards-ribbon{
+  background:rgba(0,0,0,.3);
+  backdrop-filter:blur(12px);
+  padding:20px 0;
+}
+.awards-ribbon .container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:48px;
+}
+.award-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:rgba(255,255,255,.75);
+  font-size:12px;
+}
+.award-item i{font-size:24px;color:rgba(255,255,255,.5)}
+
+/* Quick finder */
+.finder{
+  padding:48px 0;
+  border-bottom:1px solid var(--border-color);
+}
+.finder-label{
+  font-size:14px;
+  color:var(--text-secondary);
+  margin-bottom:16px;
+}
+.finder-bar{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  background:var(--off-white-3);
+  border-radius:100px;
+  padding:8px 8px 8px 24px;
+}
+.finder-bar input{
+  flex:1;
+  border:none;
+  background:transparent;
+  font-size:16px;
+  outline:none;
+  font-family:var(--font-primary);
+}
+.finder-bar .btn{padding:12px 32px}
+
+/* Locations section */
+.locations{padding:80px 0}
+.locations-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
+
+/* Featured content */
+.featured{padding:80px 0;background:var(--bg-section)}
+.featured-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.featured-large{
+  grid-row:span 2;
+  border-radius:24px;
+  overflow:hidden;
+  position:relative;
+  min-height:500px;
+  background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7)),
+    url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80') center/cover;
+  display:flex;
+  align-items:flex-end;
+  padding:40px;
+  color:var(--white);
+}
+.featured-card{
+  border-radius:24px;
+  overflow:hidden;
+  position:relative;
+  min-height:240px;
+  display:flex;
+  align-items:flex-end;
+  padding:32px;
+  color:var(--white);
+}
+.featured-card:nth-child(2){
+  background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,.6)),
+    url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80') center/cover;
+}
+.featured-card:nth-child(3){
+  background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,.6)),
+    url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80') center/cover;
+}
+
+/* Press section */
+.press{padding:80px 0}
+.press-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:48px;
+}
+.press-link{
+  font-size:14px;
+  font-weight:600;
+  color:var(--text-primary);
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.press-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.press-card{
+  padding:32px;
+  border-radius:16px;
+  border:1px solid var(--border-color);
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+.press-card-source{font-size:14px;font-weight:700;color:var(--text-muted)}
+.press-card-quote{font-size:16px;line-height:1.7;flex:1}
+.press-card-rating{display:flex;gap:2px;color:var(--black);font-size:14px}
+
+/* Services grid */
+.services{padding:80px 0;background:var(--bg-section)}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.service-card{
+  border-radius:16px;
+  overflow:hidden;
+  background:var(--white);
+  border:1px solid var(--border-color);
+  transition:all .2s;
+}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.service-card-img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  background:var(--off-white-2);
+}
+.service-card-body{padding:24px}
+.service-card-title{font-size:20px;font-weight:700;margin-bottom:8px}
+.service-card-desc{font-size:14px;color:var(--text-secondary);line-height:1.6;margin-bottom:16px}
+.service-card-link{
+  font-size:14px;font-weight:600;color:var(--black);
+  display:inline-flex;align-items:center;gap:6px;
+}
+
+/* Info cards row */
+.info-cards{padding:80px 0}
+.info-cards-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+.info-card{
+  border-radius:16px;
+  padding:40px;
+  background:var(--off-white-3);
+  height:242px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+.info-card-label{font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.info-card-title{font-size:24px;font-weight:700;margin-bottom:8px}
+.info-card-desc{font-size:14px;color:var(--text-secondary);line-height:1.6}
+
+/* Newsletter */
+.newsletter{
+  padding:80px 0;
+  text-align:center;
+}
+.newsletter-form{
+  display:flex;
+  max-width:480px;
+  margin:24px auto 0;
+  gap:12px;
+}
+.newsletter-form input{
+  flex:1;
+  padding:14px 20px;
+  border-radius:100px;
+  border:1px solid var(--border-color);
+  font-size:14px;
+  outline:none;
+  font-family:var(--font-primary);
+}
+
+@media(max-width:768px){
+  .hero{min-height:480px}
+  .hero-headline{font-size:48px;letter-spacing:-1px}
+  .hero-ctas{flex-direction:column;align-items:stretch}
+  .awards-ribbon .container{flex-wrap:wrap;gap:24px;justify-content:center}
+  .locations-grid{grid-template-columns:repeat(2,1fr)}
+  .featured-grid{grid-template-columns:1fr}
+  .featured-large{grid-row:auto;min-height:300px}
+  .press-grid{grid-template-columns:1fr}
+  .press-header{flex-direction:column;gap:16px;align-items:flex-start}
+  .services-grid{grid-template-columns:1fr}
+  .info-cards-grid{grid-template-columns:1fr}
+  .finder-bar{flex-direction:column;border-radius:16px;padding:16px}
+  .newsletter-form{flex-direction:column}
+}
+@media(max-width:480px){
+  .hero-headline{font-size:36px}
+  .locations-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav">
+  <div class="container">
+    <a href="index.html" class="nav-logo">TheLifeCo</a>
+    <div class="nav-links">
+      <a href="#">Retreats</a>
+      <a href="resort.html">Resorts</a>
+      <a href="#">Medical</a>
+      <a href="treatments.html">Treatments</a>
+    </div>
+    <div class="nav-right">
+      <a href="#">Login</a>
+      <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+    </div>
+    <div class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="hero-headline">Own Your<br>Future</h1>
+    <p class="hero-subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn btn-primary btn-lg">Talk to an expert</a>
+      <a href="#" class="btn btn-outline btn-lg">Sign to Webinar</a>
+    </div>
+  </div>
+  <div class="awards-ribbon">
+    <div class="container">
+      <div class="award-item"><i class="fa-solid fa-award"></i> 2018 LTG Award</div>
+      <div class="award-item"><i class="fa-solid fa-trophy"></i> World's Best Detox</div>
+      <div class="award-item"><i class="fa-solid fa-star"></i> Turkiye's Best Wellness</div>
+      <div class="award-item"><i class="fa-solid fa-star"></i> Turkiye's Best Wellness</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUICK FINDER ===== -->
+<section class="finder">
+  <div class="container">
+    <p class="finder-label">If you know what you are looking for</p>
+    <div class="finder-bar">
+      <i class="fa-solid fa-magnifying-glass" style="color:var(--text-muted)"></i>
+      <input type="text" placeholder="Search treatments, retreats, resorts...">
+      <a href="#" class="btn btn-primary btn-sm">Search</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOCATIONS ===== -->
+<section class="locations">
+  <div class="container">
+    <h2 class="section-heading">Locations</h2>
+    <div class="tabs">
+      <button class="tab active">Turkey</button>
+      <button class="tab">Thailand</button>
+      <button class="tab">St. Lucia</button>
+      <button class="tab">Greece</button>
+    </div>
+    <div class="locations-grid">
+      <div class="location-card">
+        <div class="location-card-img" style="background:url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&q=80') center/cover"></div>
+        <div class="location-card-overlay">
+          <div class="location-card-name">Antalya</div>
+        </div>
+        <div class="location-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      </div>
+      <div class="location-card">
+        <div class="location-card-img" style="background:url('https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=400&q=80') center/cover"></div>
+        <div class="location-card-overlay">
+          <div class="location-card-name">Bodrum</div>
+        </div>
+        <div class="location-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      </div>
+      <div class="location-card">
+        <div class="location-card-img" style="background:url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=400&q=80') center/cover"></div>
+        <div class="location-card-overlay">
+          <div class="location-card-name">Mykonos</div>
+        </div>
+        <div class="location-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      </div>
+      <div class="location-card">
+        <div class="location-card-img" style="background:url('https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=400&q=80') center/cover"></div>
+        <div class="location-card-overlay">
+          <div class="location-card-name">Phuket</div>
+        </div>
+        <div class="location-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURED CONTENT ===== -->
+<section class="featured">
+  <div class="container">
+    <h2 class="section-heading">Featured</h2>
+    <div class="featured-grid">
+      <div class="featured-large">
+        <div>
+          <p style="font-size:14px;margin-bottom:8px;opacity:.8">Wellness Programs</p>
+          <h3 style="font-size:32px;font-weight:700;margin-bottom:12px">Master Detox Program</h3>
+          <p style="font-size:14px;opacity:.8;line-height:1.6;margin-bottom:16px">A comprehensive program designed to reset your body and mind through clinically proven methods.</p>
+          <a href="#" class="btn btn-outline btn-sm">Learn More <i class="fa-solid fa-arrow-up-right"></i></a>
+        </div>
+      </div>
+      <div class="featured-card">
+        <div>
+          <p style="font-size:12px;margin-bottom:6px;opacity:.8">Retreats</p>
+          <h3 style="font-size:20px;font-weight:700;margin-bottom:8px">Longevity Retreat</h3>
+          <a href="#" style="font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:6px;color:var(--white)">Explore <i class="fa-solid fa-arrow-up-right"></i></a>
+        </div>
+      </div>
+      <div class="featured-card">
+        <div>
+          <p style="font-size:12px;margin-bottom:6px;opacity:.8">Medical</p>
+          <h3 style="font-size:20px;font-weight:700;margin-bottom:8px">Health Screening</h3>
+          <a href="#" style="font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:6px;color:var(--white)">Explore <i class="fa-solid fa-arrow-up-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRESS / SOCIAL PROOF ===== -->
+<section class="press">
+  <div class="container">
+    <div class="press-header">
+      <h2 class="section-heading" style="margin-bottom:0">Testimonials</h2>
+      <a href="#" class="press-link">Explore about us from press <i class="fa-solid fa-arrow-up-right"></i></a>
+    </div>
+    <div class="press-grid">
+      <div class="press-card">
+        <div class="press-card-source">TheGuardian</div>
+        <p class="press-card-quote">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. An extraordinary wellness experience that transformed my perspective."</p>
+        <div class="press-card-rating">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+      <div class="press-card">
+        <div class="press-card-source">Vogue</div>
+        <p class="press-card-quote">"A life-changing detox experience that goes beyond the ordinary. The medical team was exceptional in every way."</p>
+        <div class="press-card-rating">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+      <div class="press-card">
+        <div class="press-card-source">Forbes</div>
+        <p class="press-card-quote">"TheLifeCo stands apart with its holistic approach combining medical expertise with wellness traditions."</p>
+        <div class="press-card-rating">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES GRID ===== -->
+<section class="services">
+  <div class="container">
+    <h2 class="section-heading">Our Programs</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-card-img" style="background:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80') center/cover"></div>
+        <div class="service-card-body">
+          <div class="card-tag">Detox</div>
+          <h3 class="service-card-title">Master Detox</h3>
+          <p class="service-card-desc">Our signature program for complete body cleansing and renewal.</p>
+          <a href="treatments.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img" style="background:url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80') center/cover"></div>
+        <div class="service-card-body">
+          <div class="card-tag">Wellness</div>
+          <h3 class="service-card-title">Mental Wellness</h3>
+          <p class="service-card-desc">Holistic approach to mental clarity and emotional balance.</p>
+          <a href="treatments.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img" style="background:url('https://images.unsplash.com/photo-1540555700478-4be289fbec6d?w=400&q=80') center/cover"></div>
+        <div class="service-card-body">
+          <div class="card-tag">Medical</div>
+          <h3 class="service-card-title">Longevity Program</h3>
+          <p class="service-card-desc">Advanced medical protocols for healthy aging and vitality.</p>
+          <a href="treatments.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img" style="background:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80') center/cover"></div>
+        <div class="service-card-body">
+          <div class="card-tag">Fasting</div>
+          <h3 class="service-card-title">Water Fasting</h3>
+          <p class="service-card-desc">Medically supervised water fasting for deep cellular reset.</p>
+          <a href="treatments.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img" style="background:url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=400&q=80') center/cover"></div>
+        <div class="service-card-body">
+          <div class="card-tag">Beauty</div>
+          <h3 class="service-card-title">Beauty & Body Reshaping</h3>
+          <p class="service-card-desc">Combining wellness with aesthetic transformation.</p>
+          <a href="treatments.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-img" style="background:url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=400&q=80') center/cover"></div>
+        <div class="service-card-body">
+          <div class="card-tag">Recovery</div>
+          <h3 class="service-card-title">Chronic Fatigue Recovery</h3>
+          <p class="service-card-desc">Restore your energy and reclaim your vitality.</p>
+          <a href="treatments.html" class="service-card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INFO CARDS ===== -->
+<section class="info-cards">
+  <div class="container">
+    <div class="info-cards-grid">
+      <div class="info-card">
+        <div class="info-card-label">Retreats</div>
+        <h3 class="info-card-title">Wellness Retreats</h3>
+        <p class="info-card-desc">Escape to our luxury resorts and experience transformative wellness programs.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Medical</div>
+        <h3 class="info-card-title">Medical Programs</h3>
+        <p class="info-card-desc">Doctor-supervised programs tailored to your specific health goals.</p>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Corporate</div>
+        <h3 class="info-card-title">Corporate Wellness</h3>
+        <p class="info-card-desc">Transform your team's well-being with our corporate wellness solutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEWSLETTER CTA ===== -->
+<section class="newsletter section--gray">
+  <div class="container">
+    <h2 class="text-36 font-700" style="margin-bottom:8px">Stay Updated</h2>
+    <p class="text-16 text-secondary">Get the latest wellness tips, retreat updates, and exclusive offers.</p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Enter your email">
+      <a href="#" class="btn btn-primary">Subscribe</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BLOCK ===== -->
+<section class="cta-block">
+  <div class="container">
+    <h2 class="section-heading">Start Your Wellness<br>Journey Today</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Discover the transformative power of our programs.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn btn-primary btn-lg">Talk to an expert</a>
+      <a href="#" class="btn btn-outline-dark btn-lg">Explore Programs</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">TheLifeCo</div>
+        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2003. With resorts in Turkey, Thailand, and beyond.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Resorts</div>
+        <div class="footer-links">
+          <a href="#">Antalya</a>
+          <a href="#">Bodrum</a>
+          <a href="#">Phuket</a>
+          <a href="#">St. Lucia</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Programs</div>
+        <div class="footer-links">
+          <a href="#">Master Detox</a>
+          <a href="#">Water Fasting</a>
+          <a href="#">Longevity</a>
+          <a href="#">Mental Wellness</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">BOATSY App</div>
+        <div class="footer-links">
+          <a href="#">Download on App Store</a>
+          <a href="#">Get on Google Play</a>
+        </div>
+        <div style="margin-top:24px">
+          <div class="footer-heading">Contact</div>
+          <div class="footer-links">
+            <a href="#">info@thelifeco.com</a>
+            <a href="#">+90 242 000 00 00</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 TheLifeCo. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditionals</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Tab switching
+document.querySelectorAll('.tabs').forEach(tabs=>{
+  tabs.querySelectorAll('.tab').forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      tabs.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+});
+</script>
+
+</body>
+</html>

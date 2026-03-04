@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheLifeCo — Resorts</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+/* Resort hero CTA */
+.resort-hero{
+  padding:120px 0 80px;
+  text-align:center;
+  background:var(--bg-section);
+}
+.resort-hero h1{
+  font-size:36px;
+  font-weight:700;
+  line-height:1.2;
+  margin-bottom:16px;
+}
+.resort-hero p{
+  font-size:16px;
+  color:var(--text-secondary);
+  max-width:500px;
+  margin:0 auto 32px;
+}
+
+/* Content section */
+.resort-content{padding:80px 0}
+.resort-content-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  align-items:center;
+}
+.resort-content-img{
+  border-radius:24px;
+  overflow:hidden;
+  aspect-ratio:4/3;
+  background:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&q=80') center/cover;
+}
+
+/* Testimonials stats */
+.resort-testimonials{padding:80px 0;background:var(--bg-section)}
+.testimonial-stats{
+  display:flex;
+  align-items:center;
+  gap:48px;
+  margin-bottom:48px;
+}
+.testimonial-big-stat{
+  font-size:72px;
+  font-weight:700;
+  line-height:1;
+}
+.testimonial-big-label{
+  font-size:14px;
+  color:var(--text-secondary);
+  margin-top:4px;
+}
+.testimonials-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+/* Resort slider */
+.resort-slider{padding:80px 0}
+.resort-featured{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:0;
+  border-radius:24px;
+  overflow:hidden;
+  min-height:480px;
+  margin-top:32px;
+}
+.resort-featured-img{
+  background:url('https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=800&q=80') center/cover;
+  min-height:480px;
+}
+.resort-featured-content{
+  background:var(--near-black-2);
+  color:var(--white);
+  padding:60px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.resort-featured-content h2{
+  font-size:72px;
+  font-weight:700;
+  line-height:1;
+  margin-bottom:16px;
+}
+.resort-featured-content p{
+  font-size:16px;
+  color:var(--mid-gray-2);
+  line-height:1.7;
+  margin-bottom:32px;
+}
+
+/* Discover section */
+.discover{padding:80px 0;background:var(--bg-section)}
+.discover-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:32px;
+}
+.discover-card{
+  border-radius:16px;
+  overflow:hidden;
+  position:relative;
+  aspect-ratio:3/4;
+  display:flex;
+  align-items:flex-end;
+  padding:24px;
+  color:var(--white);
+}
+.discover-card:nth-child(1){background:linear-gradient(transparent 40%,rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=400&q=80') center/cover}
+.discover-card:nth-child(2){background:linear-gradient(transparent 40%,rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=400&q=80') center/cover}
+.discover-card:nth-child(3){background:linear-gradient(transparent 40%,rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=400&q=80') center/cover}
+.discover-card h3{font-size:24px;font-weight:700}
+.discover-card p{font-size:14px;opacity:.8;margin-top:4px}
+
+/* Valentine promo */
+.valentine{padding:80px 0}
+.valentine-banner{
+  border-radius:24px;
+  overflow:hidden;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:400px;
+  background:var(--near-black-2);
+}
+.valentine-img{
+  background:url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80') center/cover;
+}
+.valentine-content{
+  padding:60px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  color:var(--white);
+}
+.valentine-content h2{
+  font-size:40px;
+  font-weight:700;
+  line-height:1.15;
+  margin-bottom:16px;
+}
+.valentine-content p{
+  font-size:16px;
+  color:var(--mid-gray-2);
+  line-height:1.7;
+  margin-bottom:32px;
+}
+
+/* Loyalty */
+.loyalty{
+  padding:80px 0;
+  background:var(--bg-section);
+}
+.loyalty-banner{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:48px;
+  align-items:center;
+}
+.loyalty-content h2{
+  font-size:40px;
+  font-weight:700;
+  line-height:1.15;
+  margin-bottom:16px;
+}
+.loyalty-content p{
+  font-size:16px;
+  color:var(--text-secondary);
+  line-height:1.7;
+  margin-bottom:32px;
+}
+.loyalty-img{
+  border-radius:24px;
+  overflow:hidden;
+  aspect-ratio:4/3;
+  background:url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80') center/cover;
+}
+
+/* Feedback */
+.feedback-bar{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  padding:24px 0;
+  border-bottom:1px solid var(--border-color);
+}
+.feedback-bar a{
+  font-size:14px;
+  font-weight:600;
+  color:var(--text-primary);
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
+@media(max-width:768px){
+  .resort-content-grid{grid-template-columns:1fr}
+  .testimonials-grid{grid-template-columns:1fr}
+  .testimonial-stats{flex-direction:column;text-align:center}
+  .resort-featured{grid-template-columns:1fr}
+  .resort-featured-img{min-height:280px}
+  .resort-featured-content{padding:32px}
+  .resort-featured-content h2{font-size:36px}
+  .discover-grid{grid-template-columns:1fr}
+  .valentine-banner{grid-template-columns:1fr}
+  .valentine-img{min-height:240px}
+  .valentine-content{padding:32px}
+  .loyalty-banner{grid-template-columns:1fr}
+  .feedback-bar{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="nav nav--dark">
+  <div class="container">
+    <a href="index.html" class="nav-logo">TheLifeCo</a>
+    <div class="nav-links">
+      <a href="index.html">Retreats</a>
+      <a href="resort.html">Resorts</a>
+      <a href="#">Medical</a>
+      <a href="treatments.html">Treatments</a>
+    </div>
+    <div class="nav-right">
+      <a href="#">Login</a>
+      <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+    </div>
+    <div class="nav-toggle" onclick="document.querySelector('.nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO CTA ===== -->
+<section class="resort-hero">
+  <div class="container">
+    <h1>Start your health journey<br>with TheLifeCo</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Discover transformative wellness experiences.</p>
+    <div class="cta-buttons">
+      <a href="#" class="btn btn-primary btn-lg">Book Now</a>
+      <a href="#" class="btn btn-outline-dark btn-lg">Talk To An Expert</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTENT ===== -->
+<section class="resort-content">
+  <div class="container">
+    <div class="resort-content-grid">
+      <div class="resort-content-img"></div>
+      <div>
+        <h2 class="text-32 font-700" style="margin-bottom:16px">Lorem ipsum dolor sit amet</h2>
+        <p class="text-16 text-secondary" style="line-height:1.8;margin-bottom:16px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p class="text-16 text-secondary" style="line-height:1.8">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEEDBACK BAR ===== -->
+<div class="feedback-bar">
+  <a href="#">Give us Feedback <i class="fa-solid fa-arrow-up-right"></i></a>
+  <a href="#">See All Experiences <i class="fa-solid fa-arrow-up-right"></i></a>
+</div>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="resort-testimonials">
+  <div class="container">
+    <div class="testimonial-stats">
+      <div>
+        <div class="testimonial-big-stat">10,000+</div>
+        <div class="testimonial-big-label">Happy guests worldwide</div>
+      </div>
+      <div>
+        <div style="font-size:24px;letter-spacing:3px;margin-bottom:4px">★★★★★</div>
+        <div class="testimonial-big-label">Average rating from guests</div>
+      </div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"An extraordinary wellness experience. The medical team guided me through every step of my detox journey."</p>
+        <div class="testimonial-author">Sarah M.</div>
+        <div class="testimonial-source">TheGuardian</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"I came for the detox but left with a completely new perspective on health and well-being. Life-changing."</p>
+        <div class="testimonial-author">James K.</div>
+        <div class="testimonial-source">TripAdvisor</div>
+      </div>
+      <div class="testimonial">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"The combination of medical expertise and holistic wellness made this unlike any spa experience I've had."</p>
+        <div class="testimonial-author">Elena R.</div>
+        <div class="testimonial-source">Trustpilot</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESORT SLIDER ===== -->
+<section class="resort-slider">
+  <div class="container">
+    <h2 class="section-heading">Our Resorts</h2>
+    <div class="tabs">
+      <button class="tab">Turkey</button>
+      <button class="tab active">Thailand</button>
+      <button class="tab">St. Lucia</button>
+      <button class="tab">Greece</button>
+      <button class="tab">Egypt</button>
+    </div>
+    <div class="resort-featured">
+      <div class="resort-featured-img"></div>
+      <div class="resort-featured-content">
+        <h2>Phuket</h2>
+        <p>Phuket's Best Detox Center with Unique Programs. Experience world-class wellness in the heart of Thailand's most beautiful island.</p>
+        <a href="#" class="btn btn-primary" style="align-self:flex-start">Step Into The Phuket Resort <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DISCOVER ===== -->
+<section class="discover">
+  <div class="container">
+    <h2 class="section-heading">Discover The Resort<br>Best Suits You</h2>
+    <div class="discover-grid">
+      <div class="discover-card">
+        <div>
+          <h3>Antalya</h3>
+          <p>Turkey's wellness capital</p>
+        </div>
+      </div>
+      <div class="discover-card">
+        <div>
+          <h3>Bodrum</h3>
+          <p>Aegean serenity</p>
+        </div>
+      </div>
+      <div class="discover-card">
+        <div>
+          <h3>Phuket</h3>
+          <p>Tropical detox paradise</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VALENTINE PROMO ===== -->
+<section class="valentine">
+  <div class="container">
+    <div class="valentine-banner">
+      <div class="valentine-img"></div>
+      <div class="valentine-content">
+        <h2>Best gift for your valentine</h2>
+        <p>Give the gift of wellness this Valentine's Day. Treat your loved one to a transformative retreat experience.</p>
+        <a href="#" class="btn btn-primary" style="align-self:flex-start">Explore Gifts <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LOYALTY ===== -->
+<section class="loyalty">
+  <div class="container">
+    <div class="loyalty-banner">
+      <div class="loyalty-content">
+        <h2>Earn %10 of your purchase & use it on your next trip</h2>
+        <p>Join our loyalty program and earn rewards on every stay. The more you invest in your wellness, the more you save.</p>
+        <a href="#" class="btn btn-primary">Join Now <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="loyalty-img"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">TheLifeCo</div>
+        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2003. With resorts in Turkey, Thailand, and beyond.</p>
+        <div class="footer-social">
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Resorts</div>
+        <div class="footer-links">
+          <a href="#">Antalya</a>
+          <a href="#">Bodrum</a>
+          <a href="#">Phuket</a>
+          <a href="#">St. Lucia</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Programs</div>
+        <div class="footer-links">
+          <a href="#">Master Detox</a>
+          <a href="#">Water Fasting</a>
+          <a href="#">Longevity</a>
+          <a href="#">Mental Wellness</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <div class="footer-links">
+          <a href="#">About Us</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">BOATSY App</div>
+        <div class="footer-links">
+          <a href="#">Download on App Store</a>
+          <a href="#">Get on Google Play</a>
+        </div>
+        <div style="margin-top:24px">
+          <div class="footer-heading">Contact</div>
+          <div class="footer-links">
+            <a href="#">info@thelifeco.com</a>
+            <a href="#">+90 242 000 00 00</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2024 TheLifeCo. All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditionals</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.tabs').forEach(tabs=>{
+  tabs.querySelectorAll('.tab').forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      tabs.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
