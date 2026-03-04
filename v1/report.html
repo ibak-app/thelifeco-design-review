@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheLifeCo — Design Analysis Report</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap');
+:root{--bg:#09090b;--s:#131316;--s2:#1a1a1f;--b:#27272a;--t:#e4e4e7;--m:#71717a;--a:#3b82f6;--a2:#8b5cf6;--g:#22c55e;--y:#eab308;--r:#ef4444;--o:#f97316;--teal:#00BED6}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7;-webkit-font-smoothing:antialiased}
+.c{max-width:720px;margin:0 auto;padding:0 20px}
+header{padding:48px 0 32px;border-bottom:1px solid var(--b)}
+h1{font-size:clamp(24px,5vw,32px);font-weight:800;letter-spacing:-.5px;line-height:1.2}
+h1 span{background:linear-gradient(135deg,var(--a),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--m);font-size:13px;margin-top:10px}
+.sub b{color:var(--y)}
+section{padding:36px 0;border-bottom:1px solid var(--b)}
+h2{font-size:18px;font-weight:800;margin-bottom:6px}
+h2 .n{color:var(--a);font-size:13px;margin-right:6px}
+h3{font-size:15px;font-weight:700;margin:20px 0 8px}
+p.d{color:var(--m);font-size:13px;margin-bottom:16px}
+.card{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:18px;margin-bottom:10px}
+.card h4{font-size:14px;font-weight:700;margin-bottom:6px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:600px){.g2{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--b)}
+th{color:var(--m);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+ul{padding-left:18px;font-size:13px;color:#a1a1aa}
+li{margin-bottom:3px}
+.tag{display:inline-block;padding:3px 8px;border-radius:4px;font-size:11px;font-weight:600;background:var(--s2);color:var(--m);margin:2px}
+.r{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}
+.rc{background:#ef444420;color:var(--r)}.rw{background:#eab30820;color:var(--y)}.rg{background:#22c55e20;color:var(--g)}.ri{background:#3b82f620;color:var(--a)}
+.swatch-row{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 20px}
+.sw{width:48px;height:48px;border-radius:8px;border:1px solid var(--b);position:relative}
+.sw .h{position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);font-size:9px;color:var(--m);white-space:nowrap}
+.type-row{display:flex;align-items:baseline;gap:12px;padding:8px 0;border-bottom:1px solid var(--b);font-size:13px}
+.type-row .sz{color:var(--a);font-family:monospace;min-width:40px;font-size:11px}
+.type-row .ex{font-family:'Manrope',sans-serif}
+.img-frame{margin:16px 0;border-radius:10px;overflow:hidden;border:1px solid var(--b);background:var(--s)}
+.img-frame img{width:100%;height:auto;display:block}
+.img-frame .cap{padding:10px 14px;font-size:12px;color:var(--m);display:flex;justify-content:space-between}
+.hl{background:linear-gradient(135deg,#1e1b4b,#172554);border:1px solid #312e81;border-radius:10px;padding:20px;margin:14px 0}
+.hl h3{color:var(--a);margin-top:0}
+.hl p,.hl li{color:#c4c4cc;font-size:13px}
+a{color:var(--a)}
+footer{padding:32px 0;text-align:center;color:var(--m);font-size:12px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="c">
+<h1>TheLifeCo <span>Design Analysis</span></h1>
+<p class="sub">Figma file structure, design system, content inventory, and section breakdown.<br>
+<b>File:</b> TheLifeCo-Web-Project &middot; <b>Modified:</b> Feb 5, 2026 &middot; <b>Access:</b> View Only</p>
+</div>
+</header>
+
+<!-- FILE OVERVIEW -->
+<section>
+<div class="c">
+<h2><span class="n">01</span>File Overview</h2>
+<div class="g2">
+<div class="card">
+<h4>Structure</h4>
+<table>
+<tr><td>Pages</td><td>5 (1 active + 3 separators + thumbnail)</td></tr>
+<tr><td>Desktop Frames</td><td>3 &times; 1440px wide</td></tr>
+<tr><td>Mobile Frames</td><td>2 &times; 360px wide</td></tr>
+<tr><td>Components</td><td style="color:var(--y)">0 published</td></tr>
+<tr><td>Styles</td><td style="color:var(--y)">0 published</td></tr>
+</table>
+</div>
+<div class="card">
+<h4>Frames</h4>
+<table>
+<tr><th>Frame</th><th>Size</th><th>Content</th></tr>
+<tr><td><b>01</b></td><td>1440&times;9442</td><td>Homepage</td></tr>
+<tr><td><b>02</b></td><td>1440&times;3431</td><td>Resort Detail</td></tr>
+<tr><td><b>03</b></td><td>1440&times;3711</td><td>Treatments</td></tr>
+<tr><td><b>mobil&nbsp;1</b></td><td>360&times;9031</td><td>Mobile Homepage</td></tr>
+<tr><td><b>mobil&nbsp;2</b></td><td>360&times;9688</td><td>Mobile Alt</td></tr>
+</table>
+</div>
+</div>
+</div>
+</section>
+
+<!-- DESIGN SYSTEM -->
+<section>
+<div class="c">
+<h2><span class="n">02</span>Design System</h2>
+
+<h3>Color Palette — Fully Grayscale</h3>
+<div class="swatch-row">
+<div class="sw" style="background:#000"><span class="h">#000</span></div>
+<div class="sw" style="background:#0f0f0f"><span class="h">#0f0f0f</span></div>
+<div class="sw" style="background:#141414"><span class="h">#141414</span></div>
+<div class="sw" style="background:#202020"><span class="h">#202020</span></div>
+<div class="sw" style="background:#717171"><span class="h">#717171</span></div>
+<div class="sw" style="background:#848484"><span class="h">#848484</span></div>
+<div class="sw" style="background:#919191"><span class="h">#919191</span></div>
+<div class="sw" style="background:#bfbfbf"><span class="h">#bfbfbf</span></div>
+<div class="sw" style="background:#d9d9d9"><span class="h">#d9d9d9</span></div>
+<div class="sw" style="background:#e7e7e7"><span class="h">#e7e7e7</span></div>
+<div class="sw" style="background:#f7f7f7"><span class="h">#f7f7f7</span></div>
+<div class="sw" style="background:#fff;border-color:#333"><span class="h">#fff</span></div>
+</div>
+
+<p style="color:var(--r);font-size:13px;font-weight:600;margin:24px 0 12px">&#9888; No brand accent color. Current thelifeco.com uses teal <span style="display:inline-block;width:14px;height:14px;background:#00BED6;border-radius:3px;vertical-align:middle"></span> #00BED6</p>
+
+<h3>Typography</h3>
+<table>
+<tr><th>Font</th><th>Weights</th><th>Purpose</th></tr>
+<tr><td><b>Manrope</b></td><td>400–700</td><td>Primary (all headings + body)</td></tr>
+<tr><td>Inter</td><td>400, 700</td><td>Secondary (small UI)</td></tr>
+<tr><td>Urbanist</td><td>600</td><td>Accent (limited)</td></tr>
+<tr><td>Font Awesome 6 Pro</td><td>400, 900</td><td>Icons</td></tr>
+</table>
+
+<h3>Type Scale (15 distinct sizes)</h3>
+<div class="type-row"><span class="sz">120px</span><span class="ex" style="font-size:28px">Own Your Future</span></div>
+<div class="type-row"><span class="sz">72px</span><span class="ex" style="font-size:22px">Phuket</span></div>
+<div class="type-row"><span class="sz">56px</span><span class="ex" style="font-size:18px">Locations / Testimonials</span></div>
+<div class="type-row"><span class="sz">40px</span><span class="ex" style="font-size:16px">Best gift for your valentine</span></div>
+<div class="type-row"><span class="sz">36px</span><span class="ex" style="font-size:15px;font-weight:600">Start your health journey</span></div>
+<div class="type-row"><span class="sz">32px</span><span class="ex" style="font-size:14px;font-weight:600">Sub-headings</span></div>
+<div class="type-row"><span class="sz">28px</span><span class="ex" style="font-size:14px">Treatment program names</span></div>
+<div class="type-row"><span class="sz">20px</span><span class="ex" style="font-size:13px;font-weight:700">Button text / Tabs</span></div>
+<div class="type-row"><span class="sz">16px</span><span class="ex" style="font-size:13px">Body text</span></div>
+<div class="type-row"><span class="sz">14px</span><span class="ex" style="font-size:12px">Nav, labels, footer</span></div>
+<div class="type-row"><span class="sz">12px</span><span class="ex" style="font-size:11px">Captions, copyright</span></div>
+</div>
+</section>
+
+<!-- CONTENT INVENTORY -->
+<section>
+<div class="c">
+<h2><span class="n">03</span>Content Inventory</h2>
+<p class="d">All text content classified as real vs placeholder.</p>
+<table>
+<tr><th>Element</th><th>Status</th><th>Notes</th></tr>
+<tr><td>Hero headline</td><td><span class="r rw">Review</span></td><td>"Own Your Future" — generic</td></tr>
+<tr><td>Hero subtitle</td><td><span class="r rc">Placeholder</span></td><td>Lorem ipsum</td></tr>
+<tr><td>Nav labels</td><td><span class="r rg">Real</span></td><td>Retreats, Resorts, Medical, Treatments</td></tr>
+<tr><td>Awards</td><td><span class="r rg">Real</span></td><td>LTG 2018, World's Best Detox</td></tr>
+<tr><td>Locations heading</td><td><span class="r rg">Real</span></td><td>Clear and descriptive</td></tr>
+<tr><td>Locations subtitle</td><td><span class="r rc">Placeholder</span></td><td>Lorem ipsum</td></tr>
+<tr><td>Location names</td><td><span class="r rw">Partially wrong</span></td><td>Mykonos shown — not a real TLC location</td></tr>
+<tr><td>Frame 02 heading</td><td><span class="r rc">Placeholder</span></td><td>"Lorem ipsum dolor sit amet"</td></tr>
+<tr><td>Testimonials</td><td><span class="r rc">Placeholder</span></td><td>All say Lorem ipsum, sourced "TheGuardian"</td></tr>
+<tr><td>Stats</td><td><span class="r rw">Inaccurate</span></td><td>"10,000+" — real number is 30,000+</td></tr>
+<tr><td>Resort descriptions</td><td><span class="r rg">Real</span></td><td>Phuket text is authentic</td></tr>
+<tr><td>Treatment names (15)</td><td><span class="r rg">Real</span></td><td>All accurate program names</td></tr>
+<tr><td>Category names</td><td><span class="r rg">Real</span></td><td>5 categories match offerings</td></tr>
+<tr><td>FAQ</td><td><span class="r rw">Title only</span></td><td>No actual Q&As visible</td></tr>
+<tr><td>Footer links</td><td><span class="r rg">Real</span></td><td>Reference real pages</td></tr>
+<tr><td>Copyright</td><td><span class="r rw">Outdated</span></td><td>"2024" should be 2026</td></tr>
+</table>
+</div>
+</section>
+
+<!-- SECTION BREAKDOWN WITH PREVIEWS -->
+<section>
+<div class="c">
+<h2><span class="n">04</span>Section Breakdown — Frame 01 (Homepage)</h2>
+<p class="d">Desktop homepage at 1440&times;9442px with 29 child elements. High-res section previews below.</p>
+
+<h3>Hero Section (1440&times;589)</h3>
+<ul>
+<li>Full-bleed background image with overlay</li>
+<li>Nav: Retreats | Resorts | Medical | Treatments</li>
+<li>Headline: <b>"Own Your Future"</b> (Manrope 120px)</li>
+<li>Subtitle: Lorem ipsum placeholder</li>
+<li>CTAs: "Talk to an expert" | "Sign to Webinar"</li>
+<li>Awards ribbon: LTG 2018, World's Best Detox, Turkiye's Best Wellness (x2)</li>
+<li>Quick finder: "If you know what you are looking for"</li>
+</ul>
+<div class="img-frame">
+<img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/adc29792-bbbd-4e1f-a81a-8f412736d77c" alt="Hero" loading="lazy">
+<div class="cap"><span>Hero Section</span><span>1440 &times; 589</span></div>
+</div>
+
+<h3>Locations Section (1440&times;520)</h3>
+<ul>
+<li>Heading: "Locations" (56px)</li>
+<li>Country tabs: Turkey | Thailand | St. Lucia | Greece</li>
+<li>Cards: Antalya, Bodrum, Mykonos, Phuket with arrow links</li>
+</ul>
+<div class="img-frame">
+<img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4377f16e-50df-4370-800d-36ddd3591ce4" alt="Locations" loading="lazy">
+<div class="cap"><span>Locations</span><span>1440 &times; 520</span></div>
+</div>
+
+<h3>Featured Content (1440&times;1087)</h3>
+<ul>
+<li>14 child elements — rich content area</li>
+<li>Featured retreats and program cards</li>
+</ul>
+<div class="img-frame">
+<img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2f8643b4-7675-4aa5-865b-bc953d628edd" alt="Featured" loading="lazy">
+<div class="cap"><span>Featured Content</span><span>1440 &times; 1087</span></div>
+</div>
+
+<h3>Press & Social Proof (1440&times;641)</h3>
+<ul>
+<li>"Explore about us from press" link</li>
+<li>Media logos and testimonials area</li>
+</ul>
+<div class="img-frame">
+<img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/47ea1b19-83f7-48ad-a1dd-8a8042b1adad" alt="Press" loading="lazy">
+<div class="cap"><span>Press & Proof</span><span>1440 &times; 641</span></div>
+</div>
+
+<h3>Services Grid (1440&times;940)</h3>
+<div class="img-frame">
+<img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/a89802ae-5bb3-49ac-9338-c2f19f202e98" alt="Services" loading="lazy">
+<div class="cap"><span>Services</span><span>1440 &times; 940</span></div>
+</div>
+
+<h3>Footer (1440&times;865)</h3>
+<ul>
+<li>Address: Maslak, Istanbul HQ</li>
+<li>Links: Centers, Retreatments, Meal Plans, Explore</li>
+<li>"Download BOATSY App", Social, Legal</li>
+</ul>
+<div class="img-frame">
+<img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/325a4d3f-db4a-4897-b0ad-2946d112fc32" alt="Footer" loading="lazy">
+<div class="cap"><span>Footer</span><span>1440 &times; 865</span></div>
+</div>
+</div>
+</section>
+
+<!-- FRAME 02 & 03 -->
+<section>
+<div class="c">
+<h2><span class="n">05</span>Frame 02 — Resort Detail</h2>
+<ul>
+<li><b>CTA Block:</b> "Start your health journey with TheLifeCo" + Book Now | Talk To An Expert</li>
+<li><b>Testimonials:</b> "10,000+" reviews, star ratings, TheGuardian quotes (placeholder)</li>
+<li><b>Resort Slider:</b> Turkey | Thailand | St. Lucia | Greece | Egypt — Featured: Phuket</li>
+<li><b>Discover:</b> "Discover The Resort Best Suits You"</li>
+<li><b>Valentine Promo:</b> "Best gift for your valentine"</li>
+<li><b>Loyalty:</b> "Earn %10 of your purchase" (note: wrong % placement)</li>
+<li><b>Footer:</b> Full footer with address, links, social, legal</li>
+</ul>
+<div class="img-frame">
+<img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4c6979f2-b2c0-4cc4-a374-62b56dc1eaaf" alt="Frame 02" loading="lazy">
+<div class="cap"><span>Frame 02 — Resort Detail (full res)</span><span>1440 &times; 3431</span></div>
+</div>
+
+<h2 style="margin-top:32px"><span class="n">06</span>Frame 03 — Treatment Programs</h2>
+<ul>
+<li><b>Hero:</b> "Find The Best Treatment Program For You" (56px)</li>
+<li><b>15 Programs:</b></li>
+</ul>
+<div style="margin:8px 0 12px">
+<span class="tag">Digestive & Gut Health</span><span class="tag">Water Fasting</span><span class="tag">Mental Wellness</span><span class="tag">Cancer Prevention</span><span class="tag">Beauty & Body</span><span class="tag">Liver Detox</span><span class="tag">Green Juice Cleanse</span><span class="tag">Ultimate Longevity</span><span class="tag">Diabetes</span><span class="tag">Cardiovascular</span><span class="tag">Immune Reset</span><span class="tag">Weight Loss</span><span class="tag">Master Detox</span><span class="tag">Hormonal Longevity</span><span class="tag">Chronic Fatigue</span>
+</div>
+<ul>
+<li><b>5 Categories:</b> Chronic Disease, Weight Loss, Healthy Aging, Mental Health, Cleansing & Detox</li>
+<li><b>Filters:</b> Programs | Conditions | Sort</li>
+<li><b>FAQ:</b> "Your Questions, Answered" (title only)</li>
+<li><b>Events:</b> "Explore this month's events"</li>
+</ul>
+<div class="img-frame">
+<img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/d52fd8d1-7815-4baa-82cc-1de58f0e5322" alt="Frame 03" loading="lazy">
+<div class="cap"><span>Frame 03 — Treatment Programs</span><span>1440 &times; 3711</span></div>
+</div>
+</div>
+</section>
+
+<!-- FULL FRAME PREVIEWS -->
+<section>
+<div class="c">
+<h2><span class="n">07</span>Full Frame Previews</h2>
+<p class="d">All frames rendered from Figma. Click to open full-size.</p>
+
+<div class="img-frame">
+<a href="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2dfd9c07-844c-4873-837b-8724e127476f" target="_blank">
+<img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/2dfd9c07-844c-4873-837b-8724e127476f" alt="Frame 01 Full" loading="lazy">
+</a>
+<div class="cap"><span>01 — Homepage (click for full 1440px)</span><span>1440 &times; 9442</span></div>
+</div>
+
+<div class="g2" style="margin-top:12px">
+<div class="img-frame">
+<a href="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/f26855b3-0469-46dc-bc3b-91c985c6e8c7" target="_blank">
+<img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/f26855b3-0469-46dc-bc3b-91c985c6e8c7" alt="Mobile 1" loading="lazy">
+</a>
+<div class="cap"><span>Mobile 1</span><span>360 &times; 9031</span></div>
+</div>
+<div class="img-frame">
+<a href="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4daf6808-6fa5-4d31-8ccf-cc4d5c12fd36" target="_blank">
+<img src="https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/4daf6808-6fa5-4d31-8ccf-cc4d5c12fd36" alt="Mobile 2" loading="lazy">
+</a>
+<div class="cap"><span>Mobile 2</span><span>360 &times; 9688</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="c">
+<p>Generated by Claude Code + Figma API &mdash; March 4, 2026</p>
+<p style="margin-top:6px"><a href="review.html">Full Design Review &rarr;</a> &middot; <a href="https://www.figma.com/design/yezWJ0zJpAj8HwztrnQLck/TheLifeCo-Web-Project" target="_blank">Open in Figma &rarr;</a></p>
+</div>
+</footer>
+
+</body>
+</html>

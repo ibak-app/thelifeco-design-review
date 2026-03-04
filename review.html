@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheLifeCo — Comprehensive Design Review</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--bg:#09090b;--s:#131316;--s2:#1a1a1f;--b:#27272a;--t:#e4e4e7;--m:#71717a;--a:#3b82f6;--a2:#8b5cf6;--g:#22c55e;--y:#eab308;--r:#ef4444;--o:#f97316;--teal:#00BED6}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--t);line-height:1.7;-webkit-font-smoothing:antialiased}
+.c{max-width:720px;margin:0 auto;padding:0 20px}
+header{padding:48px 0 32px;border-bottom:1px solid var(--b);background:linear-gradient(180deg,#0f0f18,var(--bg))}
+h1{font-size:clamp(22px,5vw,30px);font-weight:800;letter-spacing:-.5px;line-height:1.2}
+h1 span{background:linear-gradient(135deg,var(--a),var(--a2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{color:var(--m);font-size:13px;margin-top:10px}
+section{padding:36px 0;border-bottom:1px solid var(--b)}
+h2{font-size:18px;font-weight:800;margin-bottom:6px}
+h2 .n{color:var(--a);font-size:13px;margin-right:6px}
+h3{font-size:15px;font-weight:700;margin:20px 0 8px}
+p.d{color:var(--m);font-size:13px;margin-bottom:16px}
+.card{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:18px;margin-bottom:10px}
+.card h4{font-size:14px;font-weight:700;margin-bottom:6px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:600px){.g2{grid-template-columns:1fr}}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--b)}
+th{color:var(--m);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+ul{padding-left:18px;font-size:13px;color:#a1a1aa}
+li{margin-bottom:4px}
+.r{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700}
+.rc{background:#ef444420;color:var(--r)}.rw{background:#eab30820;color:var(--y)}.rg{background:#22c55e20;color:var(--g)}.ri{background:#3b82f620;color:var(--a)}
+.issue{padding:14px 16px;background:var(--s);border-radius:8px;margin-bottom:8px;border-left:3px solid;font-size:13px}
+.issue.cr{border-color:var(--r)}.issue.wa{border-color:var(--y)}.issue.go{border-color:var(--g)}.issue.in{border-color:var(--a)}
+.issue .t{font-weight:700;font-size:14px;margin-bottom:2px}
+.issue .desc{color:#a1a1aa}
+.issue .fix{color:var(--g);margin-top:4px;font-weight:500;font-size:12px}
+.hl{background:linear-gradient(135deg,#1e1b4b,#172554);border:1px solid #312e81;border-radius:10px;padding:20px;margin:14px 0}
+.hl h3{color:var(--a);margin-top:0}.hl p,.hl li{color:#c4c4cc;font-size:13px}
+.hl ul{padding-left:18px}
+.score-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin:16px 0}
+.sc{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:14px;text-align:center}
+.sc .v{font-size:28px;font-weight:800}.sc .l{font-size:10px;color:var(--m);text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.comp-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
+.comp{background:var(--s);border:1px solid var(--b);border-radius:8px;padding:14px}
+.comp h4{font-size:13px;margin:0 0 4px}.comp .loc{font-size:11px;color:var(--m)}.comp ul{font-size:11px;margin-top:6px}
+a{color:var(--a)}
+footer{padding:32px 0;text-align:center;color:var(--m);font-size:12px}
+
+/* CEO Summary special styling */
+.ceo{background:linear-gradient(135deg,#0c1220,#111827);border:1px solid #1e3a5f;border-radius:12px;padding:24px;margin:16px 0}
+.ceo h3{color:#60a5fa;margin-top:0;font-size:16px}
+.ceo p{color:#d1d5db;font-size:14px;line-height:1.7}
+.ceo .verdict{font-size:20px;font-weight:800;margin:12px 0 8px}
+.ceo .verdict span{color:var(--y)}
+.ceo ul{color:#d1d5db;font-size:13px;padding-left:18px}
+.ceo li{margin-bottom:6px}
+.ceo .metric{display:inline-block;background:#1e293b;border-radius:6px;padding:4px 10px;font-size:12px;font-weight:700;margin:2px}
+
+.tag{display:inline-block;padding:3px 8px;border-radius:4px;font-size:11px;font-weight:600;background:var(--s2);color:var(--m);margin:2px}
+</style>
+</head>
+<body>
+
+<header>
+<div class="c">
+<h1>TheLifeCo New Website<br><span>Comprehensive Design Review</span></h1>
+<p class="sub">UI/UX audit, marketing analysis, competitive positioning, wording review, and actionable recommendations.</p>
+</div>
+</header>
+
+<!-- ===== CEO SUMMARY ===== -->
+<section>
+<div class="c">
+<h2><span class="n">00</span>Executive Summary</h2>
+<div class="ceo">
+<h3>Bottom Line</h3>
+<div class="verdict">Design readiness: <span>4.5 / 10</span></div>
+<p>The new website design shows a strong structural foundation with good layout and section organization, but has <b>critical gaps</b> that must be addressed before development or public review:</p>
+<ul style="margin:12px 0">
+<li><b>Brand identity is missing</b> — the design is fully grayscale with no trace of TheLifeCo's signature teal (#00BED6). After 20 years of brand equity, this needs to be an intentional decision, not an oversight.</li>
+<li><b>~40% of content is placeholder</b> — Lorem ipsum in hero, testimonials, and descriptions. The focus group cannot meaningfully review without real copy.</li>
+<li><b>No booking path exists</b> — no "Book Now" in navigation, no pricing, no availability. This is the #1 conversion driver for competitors.</li>
+<li><b>Only 3 of ~15 needed page templates</b> are designed (homepage, resort overview, treatment listing). Missing: individual resort pages, booking flow, about, contact, blog.</li>
+<li><b>Grammar errors in English copy</b> — "Sign to Webinar", "Terms & Conditionals", "%10", "treatments suits" — these will erode credibility with international guests.</li>
+</ul>
+
+<h3>What's Good</h3>
+<ul>
+<li>Clean, modern layout structure with clear visual hierarchy</li>
+<li>Strong treatment programs section (15 programs, 5 categories, filter UI)</li>
+<li>Both desktop (1440px) and mobile (360px) variants exist</li>
+<li>Location-based navigation concept is solid</li>
+</ul>
+
+<h3 style="margin-top:14px">Key Numbers</h3>
+<span class="metric">3 desktop frames</span>
+<span class="metric">2 mobile frames</span>
+<span class="metric">0 published styles</span>
+<span class="metric">0 components</span>
+<span class="metric">15 type sizes</span>
+<span class="metric">16 gray colors</span>
+<span class="metric">0 accent colors</span>
+<span class="metric">~40% placeholder text</span>
+<span class="metric">8+ grammar issues</span>
+<span class="metric">~15% page coverage</span>
+
+<h3 style="margin-top:14px">Recommendation</h3>
+<p>Do <b>not</b> proceed to development yet. Address P0 items (content, brand color, grammar) and have the focus group review with real copy in place. Current state is suitable for layout and structure feedback only.</p>
+</div>
+</div>
+</section>
+
+<!-- ===== SCORES ===== -->
+<section id="scores">
+<div class="c">
+<h2><span class="n">01</span>Readiness Scores</h2>
+<div class="score-grid">
+<div class="sc"><div class="v" style="color:var(--y)">5.5</div><div class="l">Visual Design</div></div>
+<div class="sc"><div class="v" style="color:var(--o)">4.0</div><div class="l">Content</div></div>
+<div class="sc"><div class="v" style="color:var(--y)">5.0</div><div class="l">UX / Nav</div></div>
+<div class="sc"><div class="v" style="color:var(--r)">3.0</div><div class="l">CTA Strategy</div></div>
+<div class="sc"><div class="v" style="color:var(--r)">2.5</div><div class="l">Brand Match</div></div>
+<div class="sc"><div class="v" style="color:var(--o)">4.0</div><div class="l">Marketing</div></div>
+<div class="sc"><div class="v" style="color:var(--r)">3.0</div><div class="l">Conversion</div></div>
+<div class="sc"><div class="v" style="color:var(--y)">6.0</div><div class="l">Layout</div></div>
+</div>
+</div>
+</section>
+
+<!-- ===== BRAND GAP ===== -->
+<section id="brand">
+<div class="c">
+<h2><span class="n">02</span>Brand Gap — Current Site vs New Design</h2>
+<table>
+<tr><th>Element</th><th>Current thelifeco.com</th><th>New Figma</th><th></th></tr>
+<tr><td>Primary Color</td><td style="color:var(--teal)">#00BED6 Teal</td><td>None — grayscale</td><td><span class="r rc">Gap</span></td></tr>
+<tr><td>Secondary Colors</td><td>Blue, Orange, Salmon, Green</td><td>16 grays</td><td><span class="r rc">Gap</span></td></tr>
+<tr><td>Primary Font</td><td>Cormorant Garamond + Montserrat</td><td>Manrope</td><td><span class="r rw">Changed</span></td></tr>
+<tr><td>Tagline</td><td>"Nourish. Revitalize. Experience."</td><td>"Own Your Future"</td><td><span class="r ri">New</span></td></tr>
+<tr><td>Trust Signals</td><td>30K+ guests, 20 years, awards, doctors</td><td>Small award ribbon, "10K+"</td><td><span class="r rw">Weaker</span></td></tr>
+<tr><td>Primary CTA</td><td>"CALL NOW", "Ask for a Spot"</td><td>"Talk to an expert"</td><td><span class="r rw">Softer</span></td></tr>
+<tr><td>Instagram (125K)</td><td>Feed integrated</td><td>Not designed</td><td><span class="r rw">Missing</span></td></tr>
+</table>
+</div>
+</section>
+
+<!-- ===== UX ===== -->
+<section id="ux">
+<div class="c">
+<h2><span class="n">03</span>UX / UI Audit</h2>
+
+<h3>Navigation</h3>
+<div class="issue wa">
+<div class="t">Only 4 nav items — missing critical links</div>
+<div class="desc">No About Us, Locations, Blog, Contact, or Booking. Current site has richer navigation. Users from Google/Instagram won't find what they expect.</div>
+<div class="fix">&#10004; Add: About, Locations, Programs, Blog, Contact. Keep Retreats/Resorts as sub-items.</div>
+</div>
+<div class="issue cr">
+<div class="t">No booking CTA in navigation</div>
+<div class="desc">Current Phuket site has "CALL NOW" in header. The new design has no persistent booking button. This is the #1 conversion killer for wellness websites.</div>
+<div class="fix">&#10004; Add sticky "Book Now" or "Get a Free Consultation" in header.</div>
+</div>
+
+<h3>Hero Section</h3>
+<div class="issue cr">
+<div class="t">"Own Your Future" — too vague for wellness</div>
+<div class="desc">Could be finance, tech, or education. Doesn't communicate wellness, healing, or transformation. Competitors: "Transformative Wellness Retreat" (Phuket site), "Haven of Life" (SHA).</div>
+<div class="fix">&#10004; Consider: "Transform Your Health. Transform Your Life." / "Where Healing Meets Luxury"</div>
+</div>
+<div class="issue cr">
+<div class="t">Lorem ipsum hero subtitle</div>
+<div class="desc">The most important paragraph on the site is placeholder text. Should convey TheLifeCo's core value prop in 1-2 sentences.</div>
+<div class="fix">&#10004; "Medically supervised wellness retreats in Turkey, Thailand, and the Caribbean. 20 years of expertise. 30,000+ guests transformed."</div>
+</div>
+
+<h3>Locations</h3>
+<div class="issue wa">
+<div class="t">Location inconsistencies</div>
+<div class="desc">Frame 01: Turkey, Thailand, St. Lucia, Greece. Frame 02 adds Egypt. Mykonos (Greece) shown but isn't a real TLC location. Sharm El Sheikh appears in footer but not in tabs.</div>
+<div class="fix">&#10004; Verify actual operating locations. Remove Mykonos if not real.</div>
+</div>
+
+<h3>Testimonials</h3>
+<div class="issue wa">
+<div class="t">Fake testimonials + wrong stats</div>
+<div class="desc">All quotes are Lorem ipsum attributed to "TheGuardian". Stat says "10,000+" — real number is 30,000+. TLC has real testimonials from guests on their existing site and Tripadvisor.</div>
+<div class="fix">&#10004; Use real quotes from thelifeco.com/testimonials and actual 30,000+ stat.</div>
+</div>
+
+<h3>Treatment Programs</h3>
+<div class="issue go">
+<div class="t">Strong treatment listing — 15 programs, 5 categories, filter UI</div>
+<div class="desc">Well-organized with Programs/Conditions/Sort filters. This is the strongest section in the design.</div>
+</div>
+<div class="issue wa">
+<div class="t">No descriptions, durations, or pricing on cards</div>
+<div class="desc">Each card only shows name + category. Users need: brief description, duration range, and starting price.</div>
+<div class="fix">&#10004; Add 1-line description + "from X days / from $X" to each card.</div>
+</div>
+</div>
+</section>
+
+<!-- ===== CTAs ===== -->
+<section id="cta">
+<div class="c">
+<h2><span class="n">04</span>CTA Analysis</h2>
+<table>
+<tr><th>CTA</th><th>Issue</th><th>Fix</th></tr>
+<tr><td><b>"Talk to an expert"</b></td><td>Passive, no urgency</td><td>"Get Free Consultation"</td></tr>
+<tr><td><b>"Sign to Webinar"</b></td><td style="color:var(--r)">Grammar error + weak</td><td>"Explore Programs"</td></tr>
+<tr><td><b>"Book Now"</b></td><td style="color:var(--g)">Strong, direct &#10004;</td><td>Make more prominent, add to nav</td></tr>
+<tr><td><b>"Book an Appointment"</b></td><td>Too clinical</td><td>"Reserve Your Spot"</td></tr>
+<tr><td><b>"Learn More"</b></td><td>Generic</td><td>"See Treatment Details"</td></tr>
+<tr><td><b>"Give us Feedback"</b></td><td>Not a conversion CTA</td><td>Move to footer or post-stay email</td></tr>
+<tr><td><b>"Let's Build a Better Future"</b></td><td>Sounds like charity</td><td>"Begin Your Transformation"</td></tr>
+<tr><td><b>"Step Into The Phuket Resort"</b></td><td style="color:var(--g)">Excellent &#10004;</td><td>Use this pattern for all locations</td></tr>
+</table>
+
+<div class="hl">
+<h3>CTA Strategy Gaps</h3>
+<ul>
+<li><b>No primary CTA hierarchy</b> — 8+ different CTAs with no clear primary action</li>
+<li><b>No urgency</b> — No "Limited spots", seasonal offers, or countdown. Phuket site uses "25% off" effectively.</li>
+<li><b>No phone number</b> — Current site has "CALL NOW" prominently. Many wellness clients prefer phone.</li>
+<li><b>No WhatsApp</b> — International travelers often prefer messaging. Consider adding.</li>
+</ul>
+</div>
+</div>
+</section>
+
+<!-- ===== MARKETING ===== -->
+<section id="marketing">
+<div class="c">
+<h2><span class="n">05</span>Marketing & Positioning</h2>
+
+<div class="g2">
+<div class="card">
+<h4>Brand Strengths NOT Used</h4>
+<ul>
+<li><b>20 years</b> — not mentioned</li>
+<li><b>30,000+ guests</b> — downgraded to 10K</li>
+<li><b>Medically supervised</b> — barely visible</li>
+<li><b>125K Instagram</b> — no integration</li>
+<li><b>World Spa Awards</b> — tiny ribbon</li>
+<li><b>Guest transformations</b> — not shown</li>
+<li><b>Doctor/team photos</b> — missing</li>
+</ul>
+</div>
+<div class="card">
+<h4>Missing Marketing Elements</h4>
+<ul>
+<li>Video hero/backgrounds</li>
+<li>Before/after results</li>
+<li>Pricing transparency</li>
+<li>Booking widget</li>
+<li>Live chat / WhatsApp</li>
+<li>Blog for SEO</li>
+<li>Newsletter capture</li>
+<li>Social feed</li>
+<li>Loyalty program details</li>
+</ul>
+</div>
+</div>
+
+<div class="issue wa" style="margin-top:16px">
+<div class="t">Design reads as tech startup, not luxury wellness</div>
+<div class="desc">Grayscale palette + Manrope sans-serif + "Own Your Future" = modern/tech. TLC's audience is affluent health-conscious travelers (40-65) expecting: warm tones, nature imagery, medical credibility. All competitors (SHA, Kamalaya, Chiva-Som) use warm, organic aesthetics.</div>
+</div>
+</div>
+</section>
+
+<!-- ===== COMPETITORS ===== -->
+<section id="comp">
+<div class="c">
+<h2><span class="n">06</span>Competitive Analysis</h2>
+<div class="comp-row">
+<div class="comp">
+<h4>SHA Wellness</h4>
+<div class="loc">Alicante, Spain</div>
+<ul><li>Warm earth tones</li><li>"Book Now" in header</li><li>Pricing visible</li><li>Doctor profiles</li><li>Video backgrounds</li></ul>
+</div>
+<div class="comp">
+<h4>Kamalaya</h4>
+<div class="loc">Koh Samui, Thailand</div>
+<ul><li>Green + gold palette</li><li>Immersive photography</li><li>"Enquire Now" sticky</li><li>Prices + durations</li><li>Guest photo testimonials</li></ul>
+</div>
+<div class="comp">
+<h4>Chiva-Som</h4>
+<div class="loc">Hua Hin, Thailand</div>
+<ul><li>Navy + cream luxury</li><li>30+ years highlighted</li><li>"Reservations" in nav</li><li>Wellness quiz</li><li>Conde Nast awards</li></ul>
+</div>
+<div class="comp" style="border-color:var(--y)">
+<h4 style="color:var(--y)">TheLifeCo (New)</h4>
+<div class="loc">Turkey, Thailand, Caribbean</div>
+<ul>
+<li style="color:var(--r)">No color palette</li>
+<li style="color:var(--r)">No booking in header</li>
+<li style="color:var(--r)">No pricing</li>
+<li style="color:var(--r)">No team section</li>
+<li style="color:var(--g)">Good treatment listing</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== WORDING ===== -->
+<section id="wording">
+<div class="c">
+<h2><span class="n">07</span>Wording & Grammar Issues</h2>
+<div class="issue cr"><div class="t">"Sign to Webinar"</div><div class="desc">Should be "Sign Up for Webinar" or "Register for Webinar"</div></div>
+<div class="issue cr"><div class="t">"Terms & Conditionals"</div><div class="desc">Should be "Terms & Conditions" — "Conditionals" is a grammar concept, not legal</div></div>
+<div class="issue wa"><div class="t">"Earn %10 of your purchase"</div><div class="desc">English: "10%" not "%10" — Turkish convention used</div></div>
+<div class="issue wa"><div class="t">"Lets discover which treatments suits you best"</div><div class="desc">Two errors: "Let's" (needs apostrophe) + "treatments suit" (subject-verb agreement)</div></div>
+<div class="issue wa"><div class="t">Inconsistent CTA capitalization</div><div class="desc">"Talk to an expert" vs "Talk To An Expert" — pick one style</div></div>
+<div class="issue wa"><div class="t">"Retreatments" in footer</div><div class="desc">Not a standard English word. If intentional portmanteau, needs introduction. If typo, fix to "Treatments".</div></div>
+<div class="issue wa"><div class="t">"&copy; 2024 Powered by LifeCo"</div><div class="desc">Year: 2026. "Powered by" implies platform. Should be "&copy; 2026 TheLifeCo Wellbeing"</div></div>
+<div class="issue go"><div class="t">Treatment program names — excellent</div><div class="desc">All 15 names are professional, descriptive, and search-friendly.</div></div>
+<div class="issue go"><div class="t">Phuket resort description — authentic and compelling</div><div class="desc">"Phuket's Best Detox Center with Unique Programs" — specific and matches brand voice.</div></div>
+</div>
+</section>
+
+<!-- ===== ACCESSIBILITY ===== -->
+<section id="a11y">
+<div class="c">
+<h2><span class="n">08</span>Accessibility</h2>
+<div class="issue cr"><div class="t">Multiple grays fail WCAG AA contrast on white</div><div class="desc">#919191 on white = 3.0:1 (fail). #848484 = 3.5:1 (fail). Need #666 or darker for body text (6.0:1).</div></div>
+<div class="issue wa"><div class="t">No focus/hover states designed</div><div class="desc">Keyboard users cannot navigate. No visible focus indicators on buttons or links.</div></div>
+<div class="issue wa"><div class="t">Icon-only links without text alternatives</div><div class="desc">arrow-up-right, angle-right/left icons have no accessible labels for screen readers.</div></div>
+</div>
+</section>
+
+<!-- ===== MISSING PAGES ===== -->
+<section id="missing">
+<div class="c">
+<h2><span class="n">09</span>Missing Page Designs</h2>
+<p class="d">The file has 3 page templates. A full wellness website needs ~15-20. Current coverage: ~15%.</p>
+
+<div class="card" style="border-left:3px solid var(--r)">
+<h4 style="color:var(--r)">Must Have (Blocking Launch)</h4>
+<ul><li>Individual resort/retreat page (gallery, programs, pricing, booking)</li><li>Treatment/program detail page</li><li>Booking flow (dates, room/program picker, checkout)</li><li>Contact page (form, phone, WhatsApp, map)</li><li>About Us (brand story, team, medical credentials)</li></ul>
+</div>
+<div class="card" style="border-left:3px solid var(--y)">
+<h4 style="color:var(--y)">Should Have</h4>
+<ul><li>Blog listing + article detail</li><li>Full FAQ page</li><li>Testimonials/reviews page</li><li>Gallery / virtual tour</li><li>Login / user dashboard</li></ul>
+</div>
+<div class="card" style="border-left:3px solid var(--a)">
+<h4 style="color:var(--a)">Nice to Have</h4>
+<ul><li>Wellness quiz / program recommender</li><li>Gift voucher purchase</li><li>Corporate wellness</li><li>Press kit / media</li><li>Events calendar</li><li>Loyalty program</li></ul>
+</div>
+</div>
+</section>
+
+<!-- ===== ACTIONS ===== -->
+<section id="actions" style="border-bottom:none">
+<div class="c">
+<h2><span class="n">10</span>Action Items</h2>
+
+<div class="card" style="border-left:3px solid var(--r)">
+<h4 style="color:var(--r)">P0 — Before Focus Group Review</h4>
+<table>
+<tr><td>1</td><td>Replace ALL Lorem ipsum with real/draft copy</td></tr>
+<tr><td>2</td><td>Decide: keep grayscale or add brand teal?</td></tr>
+<tr><td>3</td><td>Fix grammar: "Sign to Webinar", "Conditionals", "%10", "suits"</td></tr>
+<tr><td>4</td><td>Add "Book Now" / "Get Consultation" to navigation</td></tr>
+<tr><td>5</td><td>Clarify which mobile frame is canonical</td></tr>
+</table>
+</div>
+
+<div class="card" style="border-left:3px solid var(--y)">
+<h4 style="color:var(--y)">P1 — Before Development</h4>
+<table>
+<tr><td>6</td><td>Update stats to 30,000+ guests</td></tr>
+<tr><td>7</td><td>Add real testimonials with guest names</td></tr>
+<tr><td>8</td><td>Include "20 years of experience" prominently</td></tr>
+<tr><td>9</td><td>Design doctor/team section for medical credibility</td></tr>
+<tr><td>10</td><td>Verify location accuracy (Mykonos? Sharm El Sheikh?)</td></tr>
+<tr><td>11</td><td>Standardize CTA wording and casing</td></tr>
+<tr><td>12</td><td>Add pricing indicators to program/resort cards</td></tr>
+</table>
+</div>
+
+<div class="card" style="border-left:3px solid var(--a)">
+<h4 style="color:var(--a)">P2 — Plan For</h4>
+<table>
+<tr><td>13</td><td>Design missing pages (resort, booking, about, contact, blog)</td></tr>
+<tr><td>14</td><td>Add tablet breakpoint (768px)</td></tr>
+<tr><td>15</td><td>Integrate social proof (Instagram, Tripadvisor)</td></tr>
+<tr><td>16</td><td>Publish Figma styles and components</td></tr>
+<tr><td>17</td><td>Plan video content for hero</td></tr>
+</table>
+</div>
+
+<div class="hl" style="margin-top:20px">
+<h3>Focus Group Discussion Questions</h3>
+<ul>
+<li><b>Brand:</b> Does grayscale represent where TheLifeCo is heading? Or should we keep the teal identity?</li>
+<li><b>Headline:</b> "Own Your Future" — does this capture what TLC stands for?</li>
+<li><b>Trust:</b> Do you feel the medical expertise and 20-year track record come through?</li>
+<li><b>Booking:</b> As a potential guest, can you figure out how to book?</li>
+<li><b>Tone:</b> Does the writing feel like TheLifeCo?</li>
+<li><b>Competition:</b> Would you choose this over SHA or Kamalaya based on the website?</li>
+<li><b>Missing:</b> What info would a first-time visitor need that they can't find?</li>
+</ul>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="c">
+<p>Generated by Claude Code + Figma API &mdash; March 4, 2026</p>
+<p style="margin-top:6px"><a href="report.html">Design Analysis Report &rarr;</a> &middot; <a href="https://www.figma.com/design/yezWJ0zJpAj8HwztrnQLck/TheLifeCo-Web-Project" target="_blank">Figma &rarr;</a></p>
+</div>
+</footer>
+
+</body>
+</html>

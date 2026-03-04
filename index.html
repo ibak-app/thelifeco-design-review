@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TheLifeCo — Design Review Hub</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',system-ui,sans-serif;background:#09090b;color:#e4e4e7;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.hub{max-width:480px;width:100%}
+h1{font-size:24px;font-weight:800;text-align:center;margin-bottom:4px}
+h1 span{background:linear-gradient(135deg,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub{text-align:center;color:#71717a;font-size:13px;margin-bottom:28px}
+.ver-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#71717a;margin:20px 0 8px;padding-left:4px}
+.card{display:block;background:#131316;border:1px solid #27272a;border-radius:12px;padding:20px;margin-bottom:10px;text-decoration:none;color:inherit;transition:all .2s}
+.card:hover{border-color:#3b82f6;transform:translateY(-2px)}
+.card h2{font-size:15px;font-weight:700;margin-bottom:3px}
+.card p{font-size:12px;color:#71717a;line-height:1.5}
+.badge{display:inline-block;padding:2px 7px;border-radius:4px;font-size:10px;font-weight:700;margin-bottom:5px;text-transform:uppercase}
+.b1{background:#3b82f620;color:#3b82f6}.b2{background:#8b5cf620;color:#8b5cf6}.b3{background:#22c55e20;color:#22c55e}
+.card.current{border-color:#3b82f640}
+.links{text-align:center;margin-top:20px;font-size:12px;color:#71717a}
+.links a{color:#3b82f6;text-decoration:none}
+.latest{display:flex;gap:8px;margin-bottom:16px}
+.latest a{flex:1;display:block;background:linear-gradient(135deg,#1e1b4b,#172554);border:1px solid #312e81;border-radius:10px;padding:16px;text-decoration:none;color:inherit;text-align:center;transition:all .2s}
+.latest a:hover{border-color:#3b82f6;transform:translateY(-1px)}
+.latest a h3{font-size:14px;font-weight:700;color:#93c5fd}
+.latest a p{font-size:11px;color:#71717a;margin-top:2px}
+</style>
+</head>
+<body>
+<div class="hub">
+<h1>TheLifeCo <span>Design Review</span></h1>
+<p class="sub">New website design review for internal focus group</p>
+
+<!-- LATEST (always points to newest version) -->
+<div class="latest">
+<a href="report.html">
+<h3>Design Analysis</h3>
+<p>Latest version</p>
+</a>
+<a href="review.html">
+<h3>Full Review</h3>
+<p>Latest version</p>
+</a>
+</div>
+
+<!-- VERSION 1 -->
+<div class="ver-label">Version 1 &mdash; March 4, 2026</div>
+<a href="v1/report.html" class="card current">
+<span class="badge b1">V1</span>
+<h2>Design Analysis Report</h2>
+<p>File structure, frame previews, design system, content inventory, section breakdown with renders.</p>
+</a>
+<a href="v1/review.html" class="card current">
+<span class="badge b2">V1</span>
+<h2>Comprehensive Review</h2>
+<p>CEO summary, readiness scores, brand gap, UX audit, CTAs, marketing, competitors, wording, accessibility, actions.</p>
+</a>
+
+<!-- Future versions will go here -->
+<!--
+<div class="ver-label">Version 2 &mdash; TBD</div>
+<a href="v2/report.html" class="card">
+<span class="badge b3">V2</span>
+<h2>Design Analysis — Refined</h2>
+<p>With LifeCo brand colors, high-res images, and updated content.</p>
+</a>
+-->
+
+<div class="links">
+<a href="https://www.figma.com/design/yezWJ0zJpAj8HwztrnQLck/TheLifeCo-Web-Project" target="_blank">Open Figma &rarr;</a>
+</div>
+</div>
+</body>
+</html>
