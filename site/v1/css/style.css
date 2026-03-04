@@ -14,7 +14,7 @@ ul,ol{list-style:none}
 button{cursor:pointer;border:none;background:none}
 
 /* --- Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Urbanist:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Urbanist:wght@600&display=swap');
 
 /* --- Design Tokens --- */
 :root{
@@ -49,8 +49,12 @@ button{cursor:pointer;border:none;background:none}
   --border-color:#e7e7e7;
   --border-dark:#d9d9d9;
 
+  /* Accent */
+  --gold-star:#e1bf8b;
+
   /* Typography */
   --font-primary:'Manrope',system-ui,-apple-system,sans-serif;
+  --font-nav:'Inter',system-ui,sans-serif;
   --font-footer:'Urbanist',system-ui,sans-serif;
 
   /* Layout */
@@ -160,11 +164,15 @@ h1,h2,h3,h4,h5,h6{font-weight:700;line-height:1.15}
   gap:24px;
 }
 .nav-right a{
+  font-family:var(--font-nav);
   font-size:14px;
-  font-weight:500;
+  font-weight:700;
   color:var(--white);
   opacity:.85;
   transition:opacity .2s;
+}
+.nav-right .nav-lang{
+  font-weight:600;
 }
 .nav-right a:hover{opacity:1}
 

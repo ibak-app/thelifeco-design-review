@@ -35,9 +35,17 @@
   margin:0 auto;
   width:100%;
 }
+.hero-headline{
+  font-size:120px;
+  font-weight:400;
+  line-height:.95;
+  letter-spacing:-3px;
+  margin-bottom:24px;
+}
 .hero-eyebrow{
   font-size:32px;
   font-weight:600;
+  color:#dddddd;
   line-height:1.25;
   margin-bottom:20px;
   max-width:640px;
@@ -45,8 +53,8 @@
 .hero-sub{
   font-size:16px;
   font-weight:500;
+  color:#dddddd;
   line-height:1.7;
-  opacity:.85;
   max-width:520px;
   margin-bottom:36px;
 }
@@ -945,6 +953,8 @@
    RESPONSIVE OVERRIDES FOR INDEX
    ============================================================ */
 @media(max-width:1024px){
+  .hero-headline{font-size:72px;letter-spacing:-2px}
+  .stats-ribbon .container{flex-wrap:wrap;gap:16px;justify-content:center}
   .holistic-heading{font-size:40px}
   .retreat-cats-heading{font-size:40px}
   .locations-dark-heading{font-size:40px}
@@ -965,8 +975,11 @@
 }
 
 @media(max-width:768px){
+  .hero-headline{font-size:48px;letter-spacing:-1px}
   .hero-eyebrow{font-size:24px}
   .hero-inner{padding-top:100px}
+  .stats-ribbon .container{gap:12px}
+  .ribbon-stat{text-align:center;min-width:120px}
   .holistic-inner{grid-template-columns:1fr;gap:40px}
   .holistic-heading{font-size:32px}
   .retreat-cats-heading{font-size:32px}
@@ -1003,6 +1016,7 @@
 @media(max-width:480px){
   .locations-grid-dark{grid-template-columns:1fr}
   .press-cols{grid-template-columns:1fr}
+  .hero-headline{font-size:36px}
   .dual-cta-title{font-size:22px}
 }
 </style>
@@ -1021,6 +1035,7 @@
       <a href="#">Contact</a>
     </div>
     <div class="nav-right">
+      <a href="#" class="nav-lang">EN</a>
       <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
       <a href="#">Login</a>
     </div>
@@ -1033,7 +1048,8 @@
 <!-- ===== HERO (y=0, h=589) ===== -->
 <section class="hero">
   <div class="hero-inner">
-    <h1 class="hero-eyebrow">If you know what you are looking for</h1>
+    <h1 class="hero-headline">Own Your Future</h1>
+    <p class="hero-eyebrow">If you know what you are looking for</p>
     <p class="hero-sub">Let's find best retreat options and therapies in most wonderful destinations based on your personal needs.</p>
     <div class="hero-ctas">
       <a href="#" class="hero-btn-primary">Talk to an expert</a>
@@ -1068,6 +1084,17 @@
   </div>
 </section>
 
+<!-- ===== STATS RIBBON (y=589, h=111) ===== -->
+<section class="stats-ribbon">
+  <div class="container" style="display:flex;justify-content:space-between;align-items:center;padding:32px 0">
+    <div class="ribbon-stat"><span style="font-weight:700;font-size:24px">40.000+</span><br><span style="font-size:14px;color:var(--text-secondary)">Satisfied Clients</span></div>
+    <div class="ribbon-stat"><span style="font-weight:700;font-size:24px">6</span><br><span style="font-size:14px;color:var(--text-secondary)">Global Awards</span></div>
+    <div class="ribbon-stat"><span style="font-weight:700;font-size:24px">350+</span><br><span style="font-size:14px;color:var(--text-secondary)">Expert-led Team</span></div>
+    <div class="ribbon-stat"><span style="font-weight:700;font-size:24px">120+</span><br><span style="font-size:14px;color:var(--text-secondary)">Featured Media Outlets</span></div>
+    <div class="ribbon-stat"><span style="font-weight:700;font-size:24px">6</span><br><span style="font-size:14px;color:var(--text-secondary)">Global Destinations</span></div>
+  </div>
+</section>
+
 <!-- ===== HOLISTIC APPROACH (y=700, h=794, bg=#f7f7f7) ===== -->
 <section class="holistic">
   <div class="container">
@@ -1086,10 +1113,18 @@
         </div>
         <div class="holistic-pillar">
           <span class="holistic-pillar-num">03</span>
-          <p class="holistic-pillar-text">Mental Resilience &amp; Mindfulness</p>
+          <p class="holistic-pillar-text">Integrative Medicine &amp; Biohacking Therapies</p>
         </div>
         <div class="holistic-pillar">
           <span class="holistic-pillar-num">04</span>
+          <p class="holistic-pillar-text">Spa &amp; Restoration</p>
+        </div>
+        <div class="holistic-pillar">
+          <span class="holistic-pillar-num">05</span>
+          <p class="holistic-pillar-text">Mental Resilience &amp; Mindfulness</p>
+        </div>
+        <div class="holistic-pillar">
+          <span class="holistic-pillar-num">06</span>
           <p class="holistic-pillar-text">Practices &amp; Learnings to Take Home</p>
         </div>
       </div>
