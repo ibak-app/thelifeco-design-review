@@ -43,7 +43,7 @@
   position:relative;width:100%;height:589px;
   display:flex;flex-direction:column;
   background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,.35) 40%,rgba(0,0,0,.55) 100%),
-    url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1440&q=80') center/cover no-repeat;
+    url('images/hero-bg.jpg') center/cover no-repeat;
   color:#fff;overflow:hidden;
 }
 .hero-content{
@@ -119,8 +119,8 @@
   font-size:14px;font-weight:600;
 }
 .holistic-body{display:flex;align-items:center;justify-content:center;gap:0;margin-top:24px;position:relative;min-height:480px}
-.holistic-stones{width:240px;flex-shrink:0}
-.holistic-stones img{width:100%;height:auto}
+.holistic-stones{width:340px;flex-shrink:0}
+.holistic-stones img{width:100%;height:auto;max-height:500px;object-fit:contain}
 .holistic-pillars{position:absolute;width:100%;height:100%;top:0;left:0}
 .pillar{
   position:absolute;display:flex;align-items:center;gap:12px;
@@ -247,7 +247,7 @@
   position:relative;border-radius:16px;overflow:hidden;
   min-height:200px;
 }
-.cond-card img{width:100%;height:100%;object-fit:cover}
+.cond-card img{width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
 .cond-card-overlay{
   position:absolute;top:0;left:0;right:0;bottom:0;
   background:linear-gradient(180deg,rgba(255,255,255,.1) 0%,rgba(255,255,255,.85) 50%,#fff 100%);
@@ -318,23 +318,23 @@
   margin-top:16px;
 }
 
-/* ---- TESTIMONIALS ---- */
+/* ---- TESTIMONIALS (mosaic grid matching Figma) ---- */
 .testimonials{padding:48px 80px}
 .testimonials-title{font-size:48px;font-weight:400;text-align:center;margin-bottom:40px;letter-spacing:-1px;font-style:italic}
-.testimonials-grid{
-  display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:auto auto;
-  gap:12px;margin-bottom:32px;
+.testimonials-mosaic{
+  display:flex;gap:12px;margin-bottom:32px;height:402px;overflow:hidden;
 }
-.test-card{
-  position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3/4;
-}
-.test-card img{width:100%;height:100%;object-fit:cover}
+.mosaic-col{display:flex;flex-direction:column;gap:12px;flex:1}
+.mosaic-cell{position:relative;border-radius:12px;overflow:hidden;flex:1}
+.mosaic-cell.mosaic-wide{height:168px;flex:none}
+.mosaic-cell.mosaic-tall{height:100%}
+.mosaic-cell img{width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
 .test-card-info{
-  position:absolute;bottom:0;left:0;right:0;padding:16px;
+  position:absolute;bottom:0;left:0;right:0;padding:12px;
   background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;
 }
-.test-card-name{font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px}
-.test-card-loc{font-size:11px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:4px}
+.test-card-name{font-size:12px;font-weight:600;display:flex;align-items:center;gap:5px}
+.test-card-loc{font-size:10px;color:rgba(255,255,255,.7);display:flex;align-items:center;gap:4px}
 .testimonials-btns{display:flex;gap:16px;justify-content:center}
 .test-btn{
   padding:16px 40px;border-radius:100px;font-size:15px;font-weight:600;
@@ -577,31 +577,31 @@
   <div class="holistic-body">
     <div class="holistic-stones">
       <!-- Zen stones image placeholder -->
-      <img src="https://images.unsplash.com/photo-1600618528240-fb9fc964b853?w=400&q=80" alt="Zen stones" style="border-radius:0;filter:grayscale(100%)">
+      <img src="images/holistic-stones.jpg" alt="Zen stones" style="border-radius:0;filter:grayscale(100%)">
     </div>
     <div class="holistic-pillars">
       <div class="pillar pillar--tl">
-        <div class="pillar-icon"><i class="fa-light fa-spa"></i></div>
+        <div class="pillar-icon"><img src="images/icon-meditation-1.png" alt="" style="width:40px;height:40px;object-fit:contain"></div>
         <span>Personalised<br>Wellness<br>Retreatments</span>
       </div>
       <div class="pillar pillar--tr">
-        <div class="pillar-icon"><i class="fa-light fa-bed"></i></div>
+        <div class="pillar-icon"><img src="images/icon-meditation-2.png" alt="" style="width:40px;height:40px;object-fit:contain"></div>
         <span>Relaxing<br>Accommodation &amp;<br>Supportive Environment</span>
       </div>
       <div class="pillar pillar--ml">
-        <div class="pillar-icon"><i class="fa-light fa-flask"></i></div>
+        <div class="pillar-icon"><img src="images/icon-spa.png" alt="" style="width:40px;height:40px;object-fit:contain"></div>
         <span>Integrative Medicine<br>&amp; Biohacking<br>Therapies</span>
       </div>
       <div class="pillar pillar--mr">
-        <div class="pillar-icon"><i class="fa-light fa-brain"></i></div>
+        <div class="pillar-icon"><img src="images/icon-massage.png" alt="" style="width:40px;height:40px;object-fit:contain"></div>
         <span>Mental Resilience &amp;<br>Mindfulness</span>
       </div>
       <div class="pillar pillar--bl">
-        <div class="pillar-icon"><i class="fa-light fa-hot-tub-person"></i></div>
+        <div class="pillar-icon"><img src="images/icon-hydro.png" alt="" style="width:40px;height:40px;object-fit:contain"></div>
         <span>Spa &amp; Restoration</span>
       </div>
       <div class="pillar pillar--br">
-        <div class="pillar-icon"><i class="fa-light fa-book-open"></i></div>
+        <div class="pillar-icon"><img src="images/pillar-icon-1.png" alt="" style="width:40px;height:40px;object-fit:contain"></div>
         <span>Practices &amp; Learnings<br>to Take Home</span>
       </div>
     </div>
@@ -617,26 +617,26 @@
   <p class="retreat-cats-desc">Lorem ipsum dolor sit amet consectetur. Mattis blandit cum donec augue porttitor. Risus eu semper habitant consequat</p>
   <div class="retreat-cats-grid">
     <div class="retreat-cat-card">
-      <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=500&q=80" alt="Cleansing & Detoxing">
+      <img src="images/category-card-wide.jpg" alt="Cleansing & Detoxing">
       <div class="retreat-cat-overlay">
         <div class="retreat-cat-name">Cleansing &amp;<br>Detoxing</div>
         <div class="retreat-cat-desc">Lorem ipsum dolor sit amet consectetur. Mattis blandit cum donec augue porttitor.</div>
       </div>
     </div>
     <div class="retreat-cat-card">
-      <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&q=80" alt="Mental Wellness">
+      <img src="images/category-card-1.jpg" alt="Mental Wellness">
       <div class="retreat-cat-overlay"><div class="retreat-cat-name">Mental<br>Wellness</div></div>
     </div>
     <div class="retreat-cat-card">
-      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=500&q=80" alt="Weight Loss & Management">
+      <img src="images/category-card-2.jpg" alt="Weight Loss & Management">
       <div class="retreat-cat-overlay"><div class="retreat-cat-name">Weight Loss &amp;<br>Management</div></div>
     </div>
     <div class="retreat-cat-card">
-      <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&q=80" alt="Chronic Disease">
+      <img src="images/category-card-3.jpg" alt="Chronic Disease">
       <div class="retreat-cat-overlay"><div class="retreat-cat-name">Chronic<br>Disease<br>Recovery &amp;<br>Prevention</div></div>
     </div>
     <div class="retreat-cat-card">
-      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=500&q=80" alt="Longevity">
+      <img src="images/category-card-4.jpg" alt="Longevity">
       <div class="retreat-cat-overlay"><div class="retreat-cat-name">Longevity &amp;<br>Regenerative<br>Health</div></div>
     </div>
   </div>
@@ -677,7 +677,7 @@
   <p class="locations-desc">Lorem ipsum dolor sit amet consectetur. Mattis blandit cum donec augue porttitor. Risus eu semper habitant consequat semper senectus</p>
   <div class="locations-grid">
     <div class="loc-card">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&q=80" alt="Antalya">
+      <img src="images/location-antalya.jpg" alt="Antalya">
       <div class="loc-overlay">
         <div class="loc-country">Turkiye</div>
         <div class="loc-name">Antalya</div>
@@ -685,35 +685,35 @@
       <div class="loc-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
     </div>
     <div class="loc-card">
-      <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=400&q=80" alt="Bodrum">
+      <img src="images/location-bodrum.jpg" alt="Bodrum">
       <div class="loc-overlay">
         <div class="loc-country">Turkiye</div>
         <div class="loc-name">Bodrum</div>
       </div>
     </div>
     <div class="loc-card">
-      <img src="https://images.unsplash.com/photo-1601581875309-fafbf2d3ed3a?w=400&q=80" alt="Mykonos">
+      <img src="images/location-antalya.jpg" alt="Mykonos">
       <div class="loc-overlay">
         <div class="loc-country">Greece</div>
         <div class="loc-name">Mykonos</div>
       </div>
     </div>
     <div class="loc-card">
-      <img src="https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?w=400&q=80" alt="Phuket">
+      <img src="images/location-antalya.jpg" alt="Phuket">
       <div class="loc-overlay">
         <div class="loc-country">Thailand</div>
         <div class="loc-name">Phuket</div>
       </div>
     </div>
     <div class="loc-card">
-      <img src="https://images.unsplash.com/photo-1539768942893-daf53e448371?w=400&q=80" alt="Sharm El Sheikh">
+      <img src="images/location-antalya.jpg" alt="Sharm El Sheikh">
       <div class="loc-overlay">
         <div class="loc-country">Egypt</div>
         <div class="loc-name">Sharm El<br>Sheikh</div>
       </div>
     </div>
     <div class="loc-card">
-      <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&q=80" alt="St. Lucia">
+      <img src="images/location-antalya.jpg" alt="St. Lucia">
       <div class="loc-overlay">
         <div class="loc-country">Caribbean</div>
         <div class="loc-name">St. Lucia</div>
@@ -748,14 +748,14 @@
   </div>
   <div class="conditions-grid">
     <div class="cond-card">
-      <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80" alt="">
+      <img src="images/day-timeline-1.jpg" alt="">
       <div class="cond-card-overlay">
         <span class="cond-card-cat">Longevity</span>
         <div class="cond-card-name">Osteoporosis /<br>Digestive</div>
       </div>
     </div>
     <div class="cond-card">
-      <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=400&q=80" alt="">
+      <img src="images/day-timeline-2.jpg" alt="">
       <div class="cond-card-overlay">
         <span class="cond-card-cat">Longevity</span>
         <div class="cond-card-name">Rheumatism Prevention</div>
@@ -767,7 +767,7 @@
       </div>
     </div>
     <div class="cond-card">
-      <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80" alt="">
+      <img src="images/day-timeline-3.jpg" alt="">
       <div class="cond-card-overlay">
         <span class="cond-card-cat">Weightloss</span>
         <div class="cond-card-name">IBS / IBD Re…</div>
@@ -779,14 +779,14 @@
     </div>
     <div class="cond-card" style="visibility:hidden"></div>
     <div class="cond-card">
-      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&q=80" alt="">
+      <img src="images/day-timeline-1.jpg" alt="">
       <div class="cond-card-overlay">
         <span class="cond-card-cat">Weightloss</span>
         <div class="cond-card-name">Headache /<br>Migraine Relief</div>
       </div>
     </div>
     <div class="cond-card">
-      <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&q=80" alt="">
+      <img src="images/day-timeline-2.jpg" alt="">
       <div class="cond-card-overlay">
         <span class="cond-card-cat">Longevity</span>
         <div class="cond-card-name">Irregular<br>Menstrual Cycle</div>
@@ -797,14 +797,14 @@
       </div>
     </div>
     <div class="cond-card">
-      <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&q=80" alt="">
+      <img src="images/day-timeline-3.jpg" alt="">
       <div class="cond-card-overlay">
         <span class="cond-card-cat">Lifestyle as a Medicine</span>
         <div class="cond-card-name">Post-Covid Reset<br>&amp; Regeneration</div>
       </div>
     </div>
     <div class="cond-card">
-      <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80" alt="">
+      <img src="images/day-timeline-1.jpg" alt="">
       <div class="cond-card-overlay">
         <span class="cond-card-cat">Cleansing &amp; Detox</span>
         <div class="cond-card-name">Stiffness &amp;<br>Mobility Program</div>
@@ -816,7 +816,7 @@
 <!-- ============ CTA BANNERS ============ -->
 <div class="cta-banners">
   <div class="cta-banner">
-    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&q=80" alt="">
+    <img src="images/feature-large.png" alt="">
     <div class="cta-banner-overlay"></div>
     <div class="cta-banner-content">
       <div class="cta-banner-title">Let's discover<br>which treatments<br>suit you best.</div>
@@ -824,7 +824,7 @@
     <div class="cta-banner-arrow" style="position:absolute;bottom:32px;right:32px;z-index:1"><i class="fa-solid fa-arrow-up-right"></i></div>
   </div>
   <div class="cta-banner">
-    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=700&q=80" alt="">
+    <img src="images/feature-small.png" alt="">
     <div class="cta-banner-overlay"></div>
     <div class="cta-banner-content">
       <div style="font-size:20px;font-weight:400;margin-bottom:4px">Explore</div>
@@ -890,13 +890,25 @@
 <!-- ============ TESTIMONIALS ============ -->
 <section class="testimonials">
   <h2 class="testimonials-title">Testimonials</h2>
-  <div class="testimonials-grid">
-    <div class="test-card"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&q=80" alt=""><div class="test-card-info"><div class="test-card-name"><i class="fa-solid fa-user" style="font-size:10px"></i> Ceren Canlı</div><div class="test-card-loc"><i class="fa-solid fa-location-dot" style="font-size:9px"></i> Greece</div></div></div>
-    <div class="test-card"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&q=80" alt=""><div class="test-card-info"><div class="test-card-name"><i class="fa-solid fa-user" style="font-size:10px"></i> Feyyaz Şahbaz</div><div class="test-card-loc"><i class="fa-solid fa-location-dot" style="font-size:9px"></i> Phuket</div></div></div>
-    <div class="test-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&q=80" alt=""><div class="test-card-info"><div class="test-card-name"><i class="fa-solid fa-user" style="font-size:10px"></i> Ceren Canlı</div><div class="test-card-loc"><i class="fa-solid fa-location-dot" style="font-size:9px"></i> St. Lucia</div></div></div>
-    <div class="test-card"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&q=80" alt=""><div class="test-card-info"><div class="test-card-name"><i class="fa-solid fa-user" style="font-size:10px"></i> Feyyaz Şahbaz</div><div class="test-card-loc"><i class="fa-solid fa-location-dot" style="font-size:9px"></i> Phuket</div></div></div>
-    <div class="test-card"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&q=80" alt=""><div class="test-card-info"><div class="test-card-name"><i class="fa-solid fa-user" style="font-size:10px"></i> Ceren Canlı</div><div class="test-card-loc"><i class="fa-solid fa-location-dot" style="font-size:9px"></i> Antalya</div></div></div>
-    <div class="test-card"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&q=80" alt=""><div class="test-card-info"><div class="test-card-name"><i class="fa-solid fa-user" style="font-size:10px"></i> Feyyaz Şahbaz</div><div class="test-card-loc"><i class="fa-solid fa-location-dot" style="font-size:9px"></i> Phuket</div></div></div>
+  <div class="testimonials-mosaic">
+    <div class="mosaic-col">
+      <div class="mosaic-cell mosaic-wide"><img src="images/testimonial-1.jpg" alt=""><div class="test-card-info"><div class="test-card-name"><i class="fa-solid fa-user" style="font-size:10px"></i> Ceren Canlı</div><div class="test-card-loc"><i class="fa-solid fa-location-dot" style="font-size:9px"></i> Greece</div></div></div>
+      <div class="mosaic-cell mosaic-wide"><img src="images/testimonial-3.jpg" alt=""><div class="test-card-info"><div class="test-card-name"><i class="fa-solid fa-user" style="font-size:10px"></i> Ceren Canlı</div><div class="test-card-loc"><i class="fa-solid fa-location-dot" style="font-size:9px"></i> Antalya</div></div></div>
+    </div>
+    <div class="mosaic-col">
+      <div class="mosaic-cell mosaic-tall"><img src="images/testimonial-4.jpg" alt=""><div class="test-card-info"><div class="test-card-name"><i class="fa-solid fa-user" style="font-size:10px"></i> Feyyaz Şahbaz</div><div class="test-card-loc"><i class="fa-solid fa-location-dot" style="font-size:9px"></i> Phuket</div></div></div>
+    </div>
+    <div class="mosaic-col">
+      <div class="mosaic-cell mosaic-wide"><img src="images/testimonial-2.jpg" alt=""><div class="test-card-info"><div class="test-card-name"><i class="fa-solid fa-user" style="font-size:10px"></i> Ceren Canlı</div><div class="test-card-loc"><i class="fa-solid fa-location-dot" style="font-size:9px"></i> St. Lucia</div></div></div>
+      <div class="mosaic-cell mosaic-wide"><img src="images/testimonial-4.jpg" alt=""><div class="test-card-info"><div class="test-card-name"><i class="fa-solid fa-user" style="font-size:10px"></i> Ceren Canlı</div><div class="test-card-loc"><i class="fa-solid fa-location-dot" style="font-size:9px"></i> Antalya</div></div></div>
+    </div>
+    <div class="mosaic-col">
+      <div class="mosaic-cell mosaic-tall"><img src="images/testimonial-5.jpg" alt=""><div class="test-card-info"><div class="test-card-name"><i class="fa-solid fa-user" style="font-size:10px"></i> Feyyaz Şahbaz</div><div class="test-card-loc"><i class="fa-solid fa-location-dot" style="font-size:9px"></i> Phuket</div></div></div>
+    </div>
+    <div class="mosaic-col">
+      <div class="mosaic-cell mosaic-wide"><img src="images/testimonial-1.jpg" alt=""><div class="test-card-info"><div class="test-card-name"><i class="fa-solid fa-user" style="font-size:10px"></i> Ceren Canlı</div><div class="test-card-loc"><i class="fa-solid fa-location-dot" style="font-size:9px"></i> Greece</div></div></div>
+      <div class="mosaic-cell mosaic-wide"><img src="images/testimonial-2.jpg" alt=""><div class="test-card-info"><div class="test-card-name"><i class="fa-solid fa-user" style="font-size:10px"></i> Feyyaz Şahbaz</div><div class="test-card-loc"><i class="fa-solid fa-location-dot" style="font-size:9px"></i> Phuket</div></div></div>
+    </div>
   </div>
   <div class="testimonials-btns">
     <a href="#" class="test-btn test-btn--filled">See All Experiences</a>
@@ -935,7 +947,7 @@
   <h2 class="blog-title">Explore Our Blog</h2>
   <div class="blog-grid">
     <div class="blog-card">
-      <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80" alt="">
+      <img src="images/blog-large.jpg" alt="">
       <div class="blog-card-content">
         <div class="blog-card-title">Lorem ipsum dolor</div>
         <div class="blog-card-desc">Lorem ipsum dolor sit amet consectetur. Nunc sed viverra amet netun ultricies sed posurre at eros. Phasellus vel nunc morbni non amet sollicitudin lorem. Rutrum proin adipiscing turpis amet sed quis venenatis massa.</div>
@@ -951,7 +963,7 @@
         <a href="#" class="blog-side-link" style="color:#000">Learn More</a>
       </div>
       <div class="blog-side-card blog-side-card--dark">
-        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&q=80" alt="">
+        <img src="images/blog-small.jpg" alt="">
         <div style="position:relative;z-index:1">
           <div class="blog-side-title" style="color:#fff">See all blogs</div>
         </div>
@@ -965,7 +977,7 @@
 <div class="bottom-ctas">
   <div class="bottom-cta-grid">
     <div class="bottom-cta-card">
-      <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&q=80" alt="">
+      <img src="images/feature-large.png" alt="">
       <div class="bottom-cta-card-overlay"></div>
       <div class="bottom-cta-content">
         <div style="font-size:14px;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:6px;margin-bottom:8px"><span style="width:6px;height:6px;border-radius:50%;background:#fff;display:inline-block"></span><span style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);display:inline-block"></span><span style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);display:inline-block"></span><span style="width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.3);display:inline-block"></span></div>
@@ -977,7 +989,7 @@
       </div>
     </div>
     <div class="bottom-cta-card">
-      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=700&q=80" alt="">
+      <img src="images/treatment-card-small.png" alt="">
       <div class="bottom-cta-card-overlay"></div>
       <div class="bottom-cta-content">
         <div class="bottom-cta-title">See all blogs</div>
@@ -990,7 +1002,7 @@
 <!-- ============ PROMO BANNERS ============ -->
 <div class="promo-row">
   <div class="promo-card promo-card--light">
-    <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=700&q=80" alt="" style="opacity:.15">
+    <img src="images/blog-featured.jpg" alt="" style="opacity:.15">
     <div class="promo-card-content">
       <div class="promo-card-title">Best gift<br>for your<br>valentine</div>
       <div class="promo-card-btns">
@@ -1037,7 +1049,7 @@
   </div>
   <div class="faq-right">
     <div class="faq-side-card">
-      <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&q=80" alt="">
+      <img src="images/cta-banner.jpg" alt="">
       <div class="faq-side-card-overlay"></div>
       <div class="faq-side-content">
         <span class="faq-side-title">See Popular<br>Retreats</span>
