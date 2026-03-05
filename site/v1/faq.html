@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — TheLifeCo Wellness Retreats</title>
+<meta name="description" content="Find answers to your most common questions about TheLifeCo wellness retreats, programs, accommodations, and booking.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Urbanist:wght@600&display=swap" rel="stylesheet">
+<style>
+/* =========================================
+   FAQ Page — TheLifeCo Design System
+   ========================================= */
+
+/* ---------- NAV (white bg, dark text — matches t-nav) ---------- */
+.f-nav {
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #e7e7e7;
+  z-index: 100;
+}
+.f-nav-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.f-nav-logo {
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.f-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.f-nav-links a {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.f-nav-links a:hover,
+.f-nav-links a.active { opacity: 1; }
+.f-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.f-nav-right a {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.f-nav-right a:hover { opacity: 1; }
+.f-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.f-nav-cta:hover { background: #000; color: #fff; }
+.f-nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.f-nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #000;
+}
+
+/* ---------- PAGE HERO (white bg heading section) ---------- */
+.f-hero {
+  background: #fff;
+  padding: 56px 80px 48px;
+  max-width: 1440px;
+  margin: 0 auto;
+  border-bottom: 1px solid #e7e7e7;
+}
+.f-hero-eyebrow {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #919191;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.f-hero h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 56px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  max-width: 700px;
+  margin-bottom: 20px;
+}
+.f-hero h1 strong {
+  font-weight: 700;
+}
+.f-hero-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  color: #717171;
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+/* ---------- FAQ TABS ---------- */
+.f-tabs-bar {
+  background: #fff;
+  border-bottom: 1px solid #e7e7e7;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.f-tabs-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.f-tabs-inner::-webkit-scrollbar { display: none; }
+.f-tab {
+  display: inline-flex;
+  align-items: center;
+  padding: 20px 24px 18px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #717171;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+  margin-bottom: -1px;
+}
+.f-tab:hover { color: #000; }
+.f-tab.active {
+  color: #000;
+  font-weight: 700;
+  border-bottom-color: #000;
+}
+
+/* ---------- FAQ MAIN LAYOUT ---------- */
+.f-main {
+  background: #fff;
+}
+.f-main-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 56px 80px 80px;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ---------- FAQ ACCORDION COLUMN ---------- */
+.f-category {
+  display: none;
+}
+.f-category.active {
+  display: block;
+}
+.f-category-heading {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #919191;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.f-faq-list {
+  border-top: 1px solid #e7e7e7;
+  margin-bottom: 48px;
+}
+.f-faq-item {
+  border-bottom: 1px solid #e7e7e7;
+}
+.f-faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  gap: 16px;
+  line-height: 1.4;
+}
+.f-faq-icon {
+  font-style: normal;
+  font-size: 20px;
+  font-weight: 300;
+  color: #717171;
+  flex-shrink: 0;
+  line-height: 1;
+  width: 20px;
+  text-align: center;
+}
+.f-faq-item:not(.open) .f-faq-icon::before { content: "+"; }
+.f-faq-item.open .f-faq-icon::before { content: "−"; }
+.f-faq-a {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease;
+}
+.f-faq-item.open .f-faq-a { max-height: 600px; }
+.f-faq-a-inner {
+  padding: 0 0 24px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  color: #717171;
+  line-height: 1.8;
+}
+.f-faq-a-inner p + p {
+  margin-top: 12px;
+}
+
+/* ---------- FAQ RIGHT: IMAGE CARD ---------- */
+.f-sidebar {
+  position: sticky;
+  top: 72px;
+}
+.f-img-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  background: #141414;
+  margin-bottom: 24px;
+}
+.f-img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  filter: grayscale(15%);
+}
+.f-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.75) 100%);
+}
+.f-img-label {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  right: 28px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.f-img-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+}
+.f-img-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  flex-shrink: 0;
+  backdrop-filter: blur(6px);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.f-img-arrow:hover { background: rgba(255,255,255,0.35); }
+
+/* Contact CTA card */
+.f-contact-card {
+  background: #f7f7f7;
+  border-radius: 16px;
+  padding: 28px;
+}
+.f-contact-card-heading {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 8px;
+}
+.f-contact-card-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  color: #717171;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+.f-contact-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: #000;
+  color: #fff;
+  border-radius: 100px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.f-contact-card-link:hover { background: #202020; }
+
+/* ---------- CTA BANNER ---------- */
+.f-cta-section {
+  background: #f7f7f7;
+  padding: 0;
+}
+.f-cta-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.f-cta-card {
+  position: relative;
+  min-height: 280px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+.f-cta-card:not(:last-child) {
+  border-right: 1px solid rgba(255,255,255,0.15);
+}
+.f-cta-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.f-cta-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%);
+}
+.f-cta-card-content {
+  position: relative;
+  z-index: 1;
+}
+.f-cta-card-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  max-width: 340px;
+  margin-bottom: 16px;
+}
+.f-cta-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+}
+.f-cta-card-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+  backdrop-filter: blur(4px);
+}
+
+/* ---------- FOOTER ---------- */
+.f-footer {
+  background: #fff;
+  border-top: 1px solid #e7e7e7;
+  padding: 48px 0 0;
+}
+.f-footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+.f-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.3fr;
+  gap: 40px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid #e7e7e7;
+}
+.f-footer-brand {
+  font-family: 'Manrope', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 16px;
+  letter-spacing: -0.3px;
+}
+.f-footer-social {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.f-footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #717171;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.f-footer-social a:hover { border-color: #000; color: #000; }
+.f-footer-address {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  color: #717171;
+  line-height: 1.6;
+}
+.f-footer-col-heading {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.f-footer-col-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.f-footer-col-links a {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #717171;
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.4;
+}
+.f-footer-col-links a:hover { color: #000; }
+.f-footer-app-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 12px;
+}
+.f-footer-app-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.f-footer-app-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+.f-footer-app-btn:hover { border-color: #000; }
+.f-footer-app-btn i { font-size: 16px; }
+.f-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.f-footer-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.f-footer-bottom-left span,
+.f-footer-bottom-left a {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #717171;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.f-footer-bottom-left a:hover { color: #000; }
+.f-footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.f-footer-bottom-right span {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #000;
+  cursor: pointer;
+}
+.f-footer-bottom-right a {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  color: #717171;
+  text-decoration: none;
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 1200px) {
+  .f-nav-inner,
+  .f-hero,
+  .f-tabs-inner,
+  .f-main-inner,
+  .f-cta-inner,
+  .f-footer-inner { padding-left: 40px; padding-right: 40px; }
+  .f-main-inner { grid-template-columns: 1fr 340px; gap: 48px; }
+  .f-footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (max-width: 1024px) {
+  .f-hero h1 { font-size: 44px; }
+  .f-main-inner { grid-template-columns: 1fr; }
+  .f-sidebar { position: relative; top: 0; }
+  .f-img-card { aspect-ratio: 16/9; }
+}
+@media (max-width: 768px) {
+  .f-nav-links { display: none; }
+  .f-nav-toggle { display: flex; }
+  .f-nav-inner { padding: 0 20px; }
+  .f-hero { padding: 40px 20px 36px; }
+  .f-hero h1 { font-size: 34px; }
+  .f-tabs-inner { padding: 0 20px; }
+  .f-main-inner { padding: 40px 20px 56px; }
+  .f-cta-inner { grid-template-columns: 1fr; padding: 0 20px; }
+  .f-cta-card:not(:last-child) { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.15); }
+  .f-footer-inner { padding: 0 20px; }
+  .f-footer-grid { grid-template-columns: 1fr 1fr; }
+  .f-footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .f-hero h1 { font-size: 28px; }
+  .f-footer-grid { grid-template-columns: 1fr; }
+  .f-footer-bottom-left { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===========================
+     NAVIGATION
+     =========================== -->
+<nav class="f-nav" id="f-nav">
+  <div class="f-nav-inner">
+    <a href="index.html" class="f-nav-logo">TheLifeCo</a>
+
+    <div class="f-nav-links">
+      <a href="index.html">Retreats</a>
+      <a href="resort.html">Resorts</a>
+      <a href="#">Medical</a>
+      <a href="treatments.html">Treatments</a>
+    </div>
+
+    <div class="f-nav-right">
+      <a href="#" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600">EN</a>
+      <a href="#" style="font-size:13px"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a href="booking.html" class="f-nav-cta">Talk to an expert</a>
+    </div>
+
+    <button class="f-nav-toggle" aria-label="Open menu" onclick="document.getElementById('f-nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===========================
+     PAGE HERO
+     =========================== -->
+<div class="f-hero">
+  <div class="f-hero-eyebrow">Support</div>
+  <h1>Your Questions, <strong>Answered</strong></h1>
+  <p class="f-hero-desc">Everything you need to know about our programs, resorts, and how to prepare for your wellness journey.</p>
+</div>
+
+<!-- ===========================
+     CATEGORY TABS
+     =========================== -->
+<div class="f-tabs-bar">
+  <div class="f-tabs-inner">
+    <button class="f-tab active" data-target="general" onclick="switchTab(this,'general')">General Questions</button>
+    <button class="f-tab" data-target="programs" onclick="switchTab(this,'programs')">Programs &amp; Treatments</button>
+    <button class="f-tab" data-target="accommodation" onclick="switchTab(this,'accommodation')">Accommodation &amp; Facilities</button>
+    <button class="f-tab" data-target="booking" onclick="switchTab(this,'booking')">Booking &amp; Pricing</button>
+  </div>
+</div>
+
+<!-- ===========================
+     FAQ MAIN LAYOUT
+     =========================== -->
+<section class="f-main">
+  <div class="f-main-inner">
+
+    <!-- LEFT: FAQ ACCORDION -->
+    <div class="f-accordion-col">
+
+      <!-- CATEGORY 1: General Questions -->
+      <div class="f-category active" id="cat-general">
+        <div class="f-faq-list">
+
+          <div class="f-faq-item open">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="true">
+              What is TheLifeCo?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>TheLifeCo was founded in 2005 with a simple but powerful mission: to help people reclaim their health through science-based, medically supervised wellness retreats. Over the past two decades, we have welcomed guests from more than 60 countries across our resort centers in Turkey (Bodrum and Antalya), Thailand (Phuket), Egypt (Sharm El Sheikh), and the Caribbean (St. Lucia).</p>
+                <p>We combine integrative medicine, functional nutrition, detox protocols, and holistic therapies to create personalized programs that address the root causes of health challenges — not just symptoms.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What makes TheLifeCo different from other wellness retreats?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>Unlike spa resorts or lifestyle retreats, TheLifeCo operates under full medical supervision. Every guest completes a comprehensive health assessment upon arrival, and their program is overseen by a team of doctors, nutritionists, and wellness specialists. Our protocols are grounded in clinical research — particularly around fasting, detoxification, and metabolic health — and we maintain strict safety standards at every location.</p>
+                <p>Our 20-year track record and consistent 5-star guest reviews reflect a commitment to genuine, measurable health outcomes.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Which resort should I choose?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>Each resort offers a unique setting and atmosphere while delivering the same high standard of care. <strong>Bodrum</strong> sits above the Aegean sea with a sophisticated, modern facility — ideal for guests seeking a coastal European feel. <strong>Antalya</strong> offers a lush Mediterranean garden environment perfect for deeper immersion. <strong>Phuket</strong> is our tropical Asian flagship, combining jungle tranquility with world-class facilities. <strong>Sharm El Sheikh</strong> blends Red Sea views with warm Egyptian hospitality. <strong>St. Lucia</strong> is a boutique Caribbean experience surrounded by rainforest.</p>
+                <p>We recommend speaking to one of our wellness consultants to match the right destination to your program goals and travel preferences.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Is TheLifeCo suitable for first-time wellness retreat guests?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>Absolutely. Many of our guests come to TheLifeCo with no prior retreat experience. Our medical team conducts a thorough pre-program assessment to ensure the program selected is appropriate for your current health status, fitness level, and goals. Beginners often start with our 7-day Gentle Detox or Green Juice Cleanse, which provide a powerful yet manageable introduction to the TheLifeCo experience.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What languages are spoken at TheLifeCo resorts?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>English is spoken fluently by all medical staff and most wellness team members across all locations. In Turkey, Turkish and German are also widely spoken. In Phuket, Thai is supported alongside English. Our international guest base means we frequently have multilingual staff available, and we can arrange interpretation services where needed.</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /faq-list -->
+      </div>
+
+      <!-- CATEGORY 2: Programs & Treatments -->
+      <div class="f-category" id="cat-programs">
+        <div class="f-faq-list">
+
+          <div class="f-faq-item open">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="true">
+              What types of programs do you offer?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>We offer a comprehensive range of programs organized across five core categories: <strong>Cleansing &amp; Detox</strong> (including medically supervised water fasting, green juice cleanse, and master detox), <strong>Weight Loss &amp; Management</strong>, <strong>Chronic Disease Recovery &amp; Prevention</strong> (diabetes, cardiovascular, inflammation, liver detox, gut health), <strong>Healthy Aging &amp; Longevity</strong> (cancer prevention support, hormonal longevity, beauty and body reshaping), and <strong>Mental Health &amp; Stress Management</strong>.</p>
+                <p>Every program is customized for the individual guest following a detailed medical intake consultation.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Are your programs medically supervised?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>Yes. All programs at TheLifeCo are designed and overseen by qualified medical doctors, clinical nutritionists, and wellness specialists. Guests receive a health assessment on arrival including blood work, body composition analysis, and a one-on-one consultation with a physician. During your stay, you will have regular check-ins with the medical team, and any existing medications or health conditions are actively managed throughout your program.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              How long are the programs?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>Programs range from 4 days to 21 days, with the most popular durations being 7, 10, and 14 days. We recommend a minimum of 7 days to experience meaningful physiological changes. For chronic conditions or deeper transformation goals, 14 or 21-day programs allow the body sufficient time to complete a thorough detox cycle, stabilize metabolic markers, and build new habits under supported conditions.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What happens during water fasting?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>Our medically supervised water fasting program is one of our most powerful offerings. Guests consume only water, herbal teas, and specific supplements during the fast period, while the medical team monitors vital signs, blood glucose, electrolytes, and overall wellbeing through daily check-ups.</p>
+                <p>The body enters a state of ketosis and initiates autophagy — cellular repair processes that have significant benefits for inflammation, metabolic health, and longevity. Most guests report clarity of mind, reduced joint inflammation, and significant weight loss during fasting programs. The re-feeding phase is carefully managed to ensure a safe and effective transition back to solid foods.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Can I customize my program?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>Yes — customization is at the heart of how TheLifeCo works. After your medical intake, your program is tailored to your specific health status, goals, and preferences. You can add optional supplementary therapies (hyperbaric oxygen, infrared sauna, colon hydrotherapy, specialized massages, yoga, or meditation sessions) to complement your core program. Our team will advise which additions are most appropriate for your goals.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Is it safe for people with chronic conditions or on medications?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>In most cases, yes — but it depends on the specific condition and medication. Our medical team evaluates each guest thoroughly before beginning any program. Conditions such as type 2 diabetes, hypertension, hypothyroidism, and fatty liver disease are commonly treated at TheLifeCo with excellent outcomes. For more complex cases, our doctors work closely with your home physician to ensure safe and effective program design. Some intensive protocols (like extended water fasting) may not be appropriate for all guests, and our team will recommend the most suitable alternative.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Do I need to prepare before arriving?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>Yes — proper preparation significantly enhances your results. After booking, you will receive a pre-arrival preparation guide from our team. This typically includes a gradual reduction in caffeine, alcohol, sugar, and processed foods in the 7–14 days before arrival, as well as any dietary changes specific to your program type. A pre-program consultation call with our wellness team is included in all bookings to discuss your health history, goals, and what to expect.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CATEGORY 3: Accommodation & Facilities -->
+      <div class="f-category" id="cat-accommodation">
+        <div class="f-faq-list">
+
+          <div class="f-faq-item open">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="true">
+              What is included in the program price?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>All programs include full accommodation in your chosen room category, all program meals and juices (or water, in fasting programs), daily medical consultations, blood work analysis, body composition testing, scheduled treatment sessions (massage, therapy, etc.), group wellness classes (yoga, breathwork, guided meditation), and access to all resort facilities including pools, saunas, and fitness areas.</p>
+                <p>Optional add-on treatments, excursions, and premium room upgrades are available at an additional cost.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What types of rooms and accommodation are available?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>Room options vary by location but typically include Standard Rooms, Deluxe Rooms with garden or sea views, Junior Suites, and Premium Suites. All rooms are designed for rest and recovery — minimal distractions, quality beds, blackout curtains, and a calm natural aesthetic. Each location has a slightly different architecture, from the Aegean-inspired villas of Bodrum to the tropical garden bungalows of Phuket.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Are the facilities suitable for solo travelers?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>Absolutely. The majority of our guests travel solo, and our resorts are designed with this in mind. All single rooms are sold at a reasonable single-occupancy supplement, and you will share group wellness classes, dining areas, and common spaces with fellow guests. Many guests form meaningful connections during their stay. Our team also provides companionship and support throughout your program so you never feel alone in your journey.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What fitness and wellness facilities are on-site?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>Facilities vary by resort but all locations include: heated indoor and outdoor pools, a fully equipped gym, yoga and meditation studios, a full-service spa with a range of treatment rooms, infrared saunas, steam rooms, hydrotherapy areas, and a dedicated medical wellness center. Specific locations also offer beach access, sea kayaking, guided nature walks, and cooking workshops.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Is Wi-Fi available? Can I bring my phone?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>Yes, Wi-Fi is available throughout all resorts. You are welcome to bring your phone, laptop, and any personal devices. That said, we encourage guests to limit screen time during their stay, particularly in the first few days. Disconnecting from digital stress is an important part of the mental wellness benefit of your program, and many guests find a "digital detox" to be one of the most restorative aspects of their visit.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- CATEGORY 4: Booking & Pricing -->
+      <div class="f-category" id="cat-booking">
+        <div class="f-faq-list">
+
+          <div class="f-faq-item open">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="true">
+              How do I book a program?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>You can submit a booking request through our online <a href="booking.html" style="color:#000;font-weight:600;">Booking page</a> or speak directly with one of our wellness consultants by phone or email. We recommend booking at least 4–6 weeks in advance to secure your preferred dates and room type, especially during peak seasons (June–August and January–March).</p>
+                <p>After your booking request is received, our team will contact you within 24 hours to confirm availability, discuss your health goals, and finalize your program.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What is your cancellation and refund policy?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>We understand that life circumstances can change. Our flexible cancellation policy allows full refunds for cancellations made more than 30 days before the arrival date. Cancellations between 15–29 days prior receive a 50% refund or full credit toward a future booking. Cancellations within 14 days of arrival are non-refundable but may be converted to a future booking credit at our discretion. We strongly recommend purchasing travel insurance to cover unforeseen cancellations.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              What is the cost of programs?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>Pricing varies by resort location, room category, program type, and duration. As a general guide, a 7-day program in a standard room begins at approximately €1,900 per person at our Turkey locations and from €2,400 at our international locations. All-inclusive 14-day programs in premium suites can range up to €8,000+. We offer early booking discounts, seasonal promotions, and corporate rates for group bookings. Contact our team for a personalized quote.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Do you offer payment plans or installment options?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>Yes. We offer a deposit-based booking structure where a 30% deposit secures your reservation, with the balance payable 14 days before arrival. For longer programs, we can discuss installment arrangements on a case-by-case basis. Please contact our reservations team to discuss payment options that work for you.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="f-faq-item">
+            <button class="f-faq-q" onclick="toggleFaq(this)" aria-expanded="false">
+              Are airport transfers included?
+              <span class="f-faq-icon" aria-hidden="true"></span>
+            </button>
+            <div class="f-faq-a" role="region">
+              <div class="f-faq-a-inner">
+                <p>Airport transfers are not included in the standard program price but can be arranged at an additional cost. We work with trusted local transfer partners at each location and can coordinate private vehicle transfers, shared shuttles, or business-class options depending on your preference. Transfer details and pricing will be shared with you after booking confirmation.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- /accordion-col -->
+
+    <!-- RIGHT: STICKY SIDEBAR -->
+    <aside class="f-sidebar">
+      <!-- Image card -->
+      <a href="resort.html" class="f-img-card" aria-label="See Popular Retreats">
+        <img
+          src="images/feature-large.png"
+          alt="See Popular Retreats at TheLifeCo" loading="lazy">
+        <div class="f-img-overlay"></div>
+        <div class="f-img-label">
+          <div class="f-img-title">See Popular<br>Retreats</div>
+          <div class="f-img-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </div>
+      </a>
+
+      <!-- Contact CTA -->
+      <div class="f-contact-card">
+        <div class="f-contact-card-heading">Still have questions?</div>
+        <div class="f-contact-card-desc">Our wellness consultants are available seven days a week to answer any questions and help design the right program for you.</div>
+        <a href="booking.html" class="f-contact-card-link">
+          Talk to an expert
+          <i class="fa-solid fa-arrow-right" style="font-size:12px;"></i>
+        </a>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<!-- ===========================
+     CTA BANNERS
+     =========================== -->
+<section class="f-cta-section">
+  <div class="f-cta-inner">
+
+    <div class="f-cta-card">
+      <img class="f-cta-card-bg"
+        src="images/cta-banner.jpg"
+        alt="Book your wellness journey" loading="lazy">
+      <div class="f-cta-card-overlay"></div>
+      <div class="f-cta-card-content">
+        <div class="f-cta-card-title">Ready to start your wellness journey?</div>
+        <a href="booking.html" class="f-cta-card-btn">
+          Book a program
+          <div class="f-cta-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+        </a>
+      </div>
+    </div>
+
+    <div class="f-cta-card">
+      <img class="f-cta-card-bg"
+        src="images/resort-hero.jpg"
+        alt="Explore our resorts" loading="lazy">
+      <div class="f-cta-card-overlay"></div>
+      <div class="f-cta-card-content">
+        <div class="f-cta-card-title">Explore our resort locations.</div>
+        <a href="resort.html" class="f-cta-card-btn">
+          View resorts
+          <div class="f-cta-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===========================
+     FOOTER
+     =========================== -->
+<footer class="f-footer">
+  <div class="f-footer-inner">
+    <div class="f-footer-grid">
+
+      <!-- Col 1: Brand -->
+      <div>
+        <div class="f-footer-brand">TheLifeCo</div>
+        <div class="f-footer-social">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="f-footer-address">
+          Mamak Mah. Büyükdere Cad. UBD Center No:<br>
+          219 Kat: 18 D: 88-89 / 34398 Sarıyer /<br>
+          Istanbul
+        </div>
+      </div>
+
+      <!-- Col 2: Centers -->
+      <div>
+        <div class="f-footer-col-heading">Centers</div>
+        <div class="f-footer-col-links">
+          <a href="#">Antalya</a>
+          <a href="#">Bodrum</a>
+          <a href="#">Phuket</a>
+          <a href="#">Sharm El Sheikh</a>
+          <a href="#">St. Lucia</a>
+        </div>
+      </div>
+
+      <!-- Col 3: Retreatments -->
+      <div>
+        <div class="f-footer-col-heading">Retreatments</div>
+        <div class="f-footer-col-links">
+          <a href="#">Diabetes Recovery Retreatment</a>
+          <a href="#">Water Fasting Retreatment</a>
+          <a href="#">Intermittent Fasting Retreatment</a>
+          <a href="#">Low Support Retreatment</a>
+          <a href="#">Get Fit &amp; Healthy Retreatment</a>
+          <a href="#">Mindfully Living Retreatment</a>
+        </div>
+      </div>
+
+      <!-- Col 4: Meal Plans -->
+      <div>
+        <div class="f-footer-col-heading">Meal Plans</div>
+        <div class="f-footer-col-links">
+          <a href="#">Whole Cleanse Retreatment</a>
+          <a href="#">Green Detox Retreatment</a>
+          <a href="#">Intermittent Fasting Retreatment</a>
+          <a href="#">Low Calorie Retreatment</a>
+        </div>
+      </div>
+
+      <!-- Col 5: Explore + App -->
+      <div>
+        <div class="f-footer-col-heading">Explore</div>
+        <div class="f-footer-col-links" style="margin-bottom:24px;">
+          <a href="#">About Us</a>
+          <a href="#">Corporate Projects</a>
+          <a href="#">Blog</a>
+          <a href="#">Habit Building App</a>
+          <a href="#">Press Kit</a>
+          <a href="#">TheLifeCo Gift Voucher</a>
+        </div>
+        <div class="f-footer-app-label">Download BOATSY App</div>
+        <div class="f-footer-app-btns">
+          <a href="#" class="f-footer-app-btn">
+            <i class="fa-brands fa-apple"></i>
+            <span>App Store</span>
+          </a>
+          <a href="#" class="f-footer-app-btn">
+            <i class="fa-brands fa-google-play"></i>
+            <span>Google Play</span>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /footer-grid -->
+
+    <div class="f-footer-bottom">
+      <div class="f-footer-bottom-left">
+        <span>&copy; 2024 Powered by LifeCo</span>
+        <a href="#">Terms &amp; Conditionals</a>
+        <a href="#">Sitemap</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookies Policy</a>
+      </div>
+      <div class="f-footer-bottom-right">
+        <span>EN</span>
+        <a href="#"><i class="fa-brands fa-instagram" style="font-size:16px;color:#717171;"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter" style="font-size:16px;color:#717171;"></i></a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  /* FAQ accordion toggle */
+  function toggleFaq(btn) {
+    var item = btn.closest('.f-faq-item');
+    var isOpen = item.classList.contains('open');
+    // Close all siblings in the same list
+    var list = item.closest('.f-faq-list');
+    list.querySelectorAll('.f-faq-item.open').forEach(function(el) {
+      el.classList.remove('open');
+      el.querySelector('.f-faq-q').setAttribute('aria-expanded', 'false');
+    });
+    // Open clicked if it was closed
+    if (!isOpen) {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+    }
+  }
+
+  /* Tab switching */
+  function switchTab(tabEl, categoryId) {
+    // Update tab active states
+    document.querySelectorAll('.f-tab').forEach(function(t) { t.classList.remove('active'); });
+    tabEl.classList.add('active');
+    // Show correct category
+    document.querySelectorAll('.f-category').forEach(function(c) { c.classList.remove('active'); });
+    document.getElementById('cat-' + categoryId).classList.add('active');
+  }
+</script>
+</body>
+</html>

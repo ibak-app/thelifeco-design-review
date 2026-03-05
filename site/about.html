@@ -3,47 +3,205 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TheLifeCo — About Us | 20 Years of Wellness Excellence</title>
-<meta name="description" content="Since 2005, TheLifeCo has been transforming lives through science-backed wellness programs at 5 luxury resort destinations across Turkey, Thailand, Egypt, and the Caribbean.">
-<meta name="keywords" content="TheLifeCo, about, wellness retreat, detox, holistic health, Bodrum, Phuket, Ersin Pamuksüzer">
-<meta property="og:title" content="TheLifeCo — About Us | 20 Years of Wellness Excellence">
-<meta property="og:description" content="Since 2005, TheLifeCo has been transforming lives through science-backed wellness programs at 5 luxury resort destinations worldwide.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://thelifeco.com/about.html">
-<meta property="og:image" content="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Bodrum-Outdoor-Environment-.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="TheLifeCo — About Us">
-<meta name="twitter:description" content="20 years of transforming lives through science-backed wellness programs at luxury destinations worldwide.">
+<title>TheLifeCo — About Us</title>
+<meta name="description" content="Since 2005, TheLifeCo has pioneered medically supervised wellness retreats. 40,000+ guests served across 6 destinations in Turkey, Thailand, Egypt, and St. Lucia.">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-/* --- Page hero (light bg) --- */
-.about-hero {
-  padding: 140px 0 80px;
-  background: var(--bg-section);
-  text-align: center;
+
+/* =========================================
+   About Page — TheLifeCo Design System
+   ========================================= */
+
+/* ---------- NAV (white bg, dark text — matches t-nav) ---------- */
+.t-nav {
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #E3EDF3;
+  z-index: 100;
 }
-.about-hero .accent-line {
-  margin: 0 auto 24px;
-}
-.about-hero h1 {
-  font-size: 72px;
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -2px;
-  margin-bottom: 24px;
-  color: var(--text-primary);
-}
-.about-hero p {
-  font-size: 20px;
-  color: var(--text-secondary);
-  max-width: 600px;
+.t-nav-inner {
+  max-width: 1440px;
   margin: 0 auto;
-  line-height: 1.7;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.t-nav-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #141827;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.t-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.t-nav-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #141827;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.t-nav-links a:hover,
+.t-nav-links a.active { opacity: 1; }
+.t-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.t-nav-right a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #141827;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.t-nav-right a:hover { opacity: 1; }
+.t-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid #141827;
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #141827;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.t-nav-cta:hover { background: #00609C; color: #fff; }
+.t-nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.t-nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #141827;
 }
 
-/* --- Story section --- */
-.story-grid {
+/* ---------- HERO ---------- */
+.about-hero {
+  background: #F4F8FB;
+  padding: 80px 0 72px;
+}
+.about-hero-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-hero-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #5B7E96;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+.about-hero h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: #141827;
+  margin-bottom: 24px;
+}
+.about-hero h1 strong {
+  font-weight: 700;
+}
+.about-hero-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #5B7E96;
+  line-height: 1.7;
+  max-width: 460px;
+}
+.about-hero-img {
+  border-radius: 24px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: #E3EDF3;
+}
+.about-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- STATS BAR ---------- */
+.stats-bar {
+  background: #141827;
+  padding: 0;
+}
+.stats-bar-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.stat-item {
+  padding: 48px 40px;
+  border-right: 1px solid rgba(255,255,255,0.1);
+  text-align: center;
+}
+.stat-item:last-child { border-right: none; }
+.stat-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+}
+
+/* ---------- STORY SECTION ---------- */
+.story-section {
+  padding: 100px 0;
+  background: #fff;
+}
+.story-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 80px;
@@ -53,567 +211,1158 @@
   border-radius: 24px;
   overflow: hidden;
   aspect-ratio: 4/3;
+  background: #E3EDF3;
 }
 .story-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.story-eyebrow {
+.story-content {
+  max-width: 520px;
+}
+.section-eyebrow {
+  font-family: 'Montserrat', sans-serif;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
+  color: #5B7E96;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--brand-teal);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
-.story-heading {
+.story-content h2 {
+  font-family: 'Montserrat', sans-serif;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.1;
   letter-spacing: -1.5px;
-  margin-bottom: 24px;
-  color: var(--text-primary);
+  color: #141827;
+  margin-bottom: 28px;
 }
-.story-body {
+.story-content h2 strong { font-weight: 700; }
+.story-content p {
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
-  color: var(--text-secondary);
+  font-weight: 400;
+  color: #5B7E96;
   line-height: 1.8;
   margin-bottom: 20px;
 }
-.story-founder {
+.story-content p:last-of-type { margin-bottom: 0; }
+.story-milestones {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 32px;
-  padding: 24px;
-  background: var(--bg-section);
-  border-radius: 16px;
+  gap: 40px;
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid #E3EDF3;
 }
-.story-founder-avatar {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: var(--brand-navy);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-size: 22px;
+.milestone {
+  flex: 1;
+}
+.milestone-year {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
   font-weight: 700;
-  flex-shrink: 0;
-}
-.story-founder-name {
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-.story-founder-title {
-  font-size: 13px;
-  color: var(--text-secondary);
-  margin-top: 2px;
-}
-
-/* --- Pillars section --- */
-.pillar-card {
-  background: var(--white);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 36px 32px;
-  transition: all 0.2s;
-}
-.pillar-card:hover {
-  border-color: var(--brand-teal);
-  transform: translateY(-4px);
-  box-shadow: 0 16px 48px rgba(0, 190, 214, 0.1);
-}
-.pillar-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: rgba(0, 190, 214, 0.1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--brand-teal);
-  font-size: 22px;
-  margin-bottom: 20px;
-}
-.pillar-title {
-  font-size: 20px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 12px;
-}
-.pillar-desc {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.7;
-}
-
-/* --- Stats bar --- */
-.stats-bar {
-  background: var(--brand-dark);
-  padding: 60px 0;
-}
-.stats-bar-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 24px;
-  text-align: center;
-}
-.stats-bar-number {
-  font-size: 48px;
-  font-weight: 700;
-  color: var(--brand-teal);
+  color: #141827;
   line-height: 1;
   margin-bottom: 8px;
 }
-.stats-bar-label {
+.milestone-text {
+  font-family: 'Montserrat', sans-serif;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-.stats-divider {
-  width: 1px;
-  background: rgba(255, 255, 255, 0.1);
-  align-self: stretch;
-  display: none;
+  color: #5B7E96;
+  line-height: 1.5;
 }
 
-/* --- Awards section --- */
-.award-card {
-  background: var(--white);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 32px;
-  text-align: center;
-  transition: all 0.2s;
+/* ---------- APPROACH SECTION ---------- */
+.approach-section {
+  padding: 100px 0;
+  background: #F4F8FB;
 }
-.award-card:hover {
-  border-color: var(--brand-orange);
+.approach-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+.approach-head {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 64px;
+}
+.approach-head h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: #141827;
+}
+.approach-head h2 strong { font-weight: 700; }
+.approach-head-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #5B7E96;
+  line-height: 1.8;
+  max-width: 480px;
+}
+.approach-pillars {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+.pillar-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  border: 1px solid #E3EDF3;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.pillar-card:hover {
+  border-color: #00609C;
   transform: translateY(-4px);
 }
-.award-card-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: rgba(246, 163, 88, 0.1);
+.pillar-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #F4F8FB;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--brand-orange);
-  font-size: 26px;
-  margin: 0 auto 20px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #141827;
 }
-.award-card-title {
+.pillar-title {
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 6px;
+  color: #141827;
+  margin-bottom: 10px;
+  line-height: 1.3;
 }
-.award-card-org {
+.pillar-desc {
+  font-family: 'Montserrat', sans-serif;
   font-size: 13px;
-  color: var(--text-secondary);
-}
-.award-card-year {
-  display: inline-block;
-  margin-top: 12px;
-  padding: 4px 12px;
-  background: var(--bg-section);
-  border-radius: 100px;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-muted);
-}
-
-/* --- Locations overview --- */
-.location-overview-card {
-  border-radius: 24px;
-  overflow: hidden;
-  position: relative;
-  min-height: 320px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  background: var(--off-white-2);
-}
-.location-overview-card-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.location-overview-card-overlay {
-  position: relative;
-  z-index: 1;
-  padding: 28px;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.72));
-  color: var(--white);
-}
-.location-overview-card-flag {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  opacity: 0.7;
-  margin-bottom: 6px;
-}
-.location-overview-card-name {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-.location-overview-card-desc {
-  font-size: 13px;
-  opacity: 0.75;
+  color: #5B7E96;
   line-height: 1.6;
-  margin-bottom: 16px;
-}
-.location-overview-card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  padding: 8px 16px;
-  border-radius: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  transition: background 0.2s;
-}
-.location-overview-card-link:hover {
-  background: rgba(255, 255, 255, 0.25);
 }
 
-/* --- CTA section --- */
-.about-cta {
-  text-align: center;
+/* ---------- VALUES SECTION ---------- */
+.values-section {
   padding: 100px 0;
-  background: var(--bg-section);
+  background: #fff;
 }
-.about-cta h2 {
-  font-size: 56px;
-  font-weight: 700;
+.values-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+.values-head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 64px;
+}
+.values-head h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
   line-height: 1.1;
   letter-spacing: -1.5px;
-  margin-bottom: 20px;
-  color: var(--text-primary);
+  color: #141827;
+  margin-bottom: 16px;
 }
-.about-cta p {
-  font-size: 18px;
-  color: var(--text-secondary);
-  max-width: 560px;
-  margin: 0 auto 36px;
+.values-head h2 strong { font-weight: 700; }
+.values-head p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #5B7E96;
+  line-height: 1.7;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  background: #E3EDF3;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.value-block {
+  background: #fff;
+  padding: 48px 40px;
+  transition: background 0.2s;
+}
+.value-block:hover { background: #F4F8FB; }
+
+.value-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #5B7E96;
+  margin-bottom: 20px;
+}
+.value-block h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #141827;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.value-block p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #5B7E96;
   line-height: 1.7;
 }
 
-/* Responsive */
+/* ---------- TEAM SECTION ---------- */
+.team-section {
+  padding: 100px 0;
+  background: #F4F8FB;
+}
+.team-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+.team-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+.team-head h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: #141827;
+}
+.team-head h2 strong { font-weight: 700; }
+.team-head-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: #5B7E96;
+  max-width: 380px;
+  line-height: 1.6;
+  text-align: right;
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.team-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #E3EDF3;
+}
+.team-card-img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: #E3EDF3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5B7E96;
+  font-size: 48px;
+}
+.team-card-body {
+  padding: 20px 24px;
+}
+.team-card-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #141827;
+  margin-bottom: 4px;
+}
+.team-card-role {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #5B7E96;
+  line-height: 1.4;
+}
+
+/* ---------- DESTINATIONS SECTION ---------- */
+.destinations-section {
+  padding: 100px 0;
+  background: #fff;
+}
+.destinations-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+.destinations-head {
+  margin-bottom: 48px;
+}
+.destinations-head h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: #141827;
+  margin-bottom: 12px;
+}
+.destinations-head h2 strong { font-weight: 700; }
+.destinations-head p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #5B7E96;
+}
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.dest-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: #E3EDF3;
+}
+.dest-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.dest-card:hover .dest-card-img { transform: scale(1.04); }
+.dest-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.1) 50%, transparent 100%);
+}
+.dest-card-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 28px 24px;
+  color: #fff;
+}
+.dest-card-country {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 6px;
+}
+.dest-card-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.dest-card-arrow {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+.dest-card:hover .dest-card-arrow { background: rgba(255,255,255,0.25); }
+
+/* ---------- CTA SECTION ---------- */
+.about-cta {
+  padding: 80px 0;
+  background: #141827;
+}
+.about-cta-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+.about-cta h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: #fff;
+}
+.about-cta h2 strong { font-weight: 700; }
+.about-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.cta-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: #fff;
+  color: #141827;
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.cta-btn-primary:hover { background: #F4F8FB; }
+.cta-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color 0.2s;
+}
+.cta-btn-outline:hover { border-color: rgba(255,255,255,0.7); }
+
+/* ---------- FOOTER ---------- */
+.t-footer {
+  background: #fff;
+  border-top: 1px solid #E3EDF3;
+}
+.t-footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 64px 80px 0;
+}
+.t-footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid #E3EDF3;
+}
+.t-footer-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #141827;
+  margin-bottom: 16px;
+}
+.t-footer-social {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.t-footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #E3EDF3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5B7E96;
+  font-size: 14px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.t-footer-social a:hover { border-color: #00609C; color: #00609C; }
+.t-footer-address {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5B7E96;
+  line-height: 1.7;
+}
+.t-footer-col-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #141827;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.t-footer-col-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.t-footer-col-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5B7E96;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.t-footer-col-links a:hover { color: #00609C; }
+.t-footer-app-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #141827;
+  margin-bottom: 12px;
+}
+.t-footer-app-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.t-footer-app-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid #E3EDF3;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #141827;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+.t-footer-app-btn:hover { border-color: #00609C; }
+.t-footer-app-btn i { font-size: 16px; }
+.t-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.t-footer-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.t-footer-bottom-left span,
+.t-footer-bottom-left a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #5B7E96;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.t-footer-bottom-left a:hover { color: #00609C; }
+.t-footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.t-footer-bottom-right span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #141827;
+  cursor: pointer;
+}
+.t-footer-bottom-right a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #5B7E96;
+  text-decoration: none;
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 1200px) {
+  .t-nav-inner,
+  .about-hero-inner,
+  .stats-bar-inner,
+  .story-inner,
+  .approach-inner,
+  .values-inner,
+  .team-inner,
+  .destinations-inner,
+  .about-cta-inner,
+  .t-footer-inner { padding-left: 40px; padding-right: 40px; }
+  .approach-pillars { grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 1024px) {
-  .about-hero h1 { font-size: 52px; }
-  .story-heading { font-size: 36px; }
-  .stats-bar-grid { grid-template-columns: repeat(3, 1fr); }
-  .story-grid { gap: 48px; }
+  .about-hero h1 { font-size: 48px; }
+  .approach-pillars { grid-template-columns: repeat(2, 1fr); }
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .t-footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .destinations-grid { grid-template-columns: 1fr 1fr; }
+  .about-cta-inner { grid-template-columns: 1fr; }
+  .about-cta-actions { justify-content: flex-start; }
 }
 @media (max-width: 768px) {
-  .about-hero { padding: 120px 0 60px; }
-  .about-hero h1 { font-size: 40px; letter-spacing: -1px; }
-  .about-hero p { font-size: 16px; }
-  .story-grid { grid-template-columns: 1fr; gap: 32px; }
-  .story-heading { font-size: 32px; }
-  .stats-bar-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
-  .stats-bar-number { font-size: 36px; }
-  .about-cta h2 { font-size: 36px; }
+  .t-nav-links { display: none; }
+  .t-nav-toggle { display: flex; }
+  .t-nav-inner { padding: 0 20px; }
+  .about-hero-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 40px; }
+  .about-hero h1 { font-size: 36px; letter-spacing: -1px; }
+  .stats-bar-inner { grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
+  .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.1); }
+  .story-inner { grid-template-columns: 1fr; padding: 0 20px; gap: 40px; }
+  .story-content { max-width: 100%; }
+  .story-content h2 { font-size: 32px; }
+  .story-milestones { gap: 20px; }
+  .approach-inner { padding: 0 20px; }
+  .approach-head { grid-template-columns: 1fr; gap: 20px; }
+  .approach-head h2 { font-size: 32px; }
+  .approach-pillars { grid-template-columns: 1fr; }
+  .values-inner { padding: 0 20px; }
+  .values-head h2 { font-size: 32px; }
+  .values-grid { grid-template-columns: 1fr; }
+  .team-inner { padding: 0 20px; }
+  .team-head { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .team-head h2 { font-size: 32px; }
+  .team-head-desc { text-align: left; }
+  .team-grid { grid-template-columns: 1fr 1fr; }
+  .destinations-inner { padding: 0 20px; }
+  .destinations-head h2 { font-size: 32px; }
+  .destinations-grid { grid-template-columns: 1fr; }
+  .about-cta-inner { padding: 0 20px; }
+  .about-cta h2 { font-size: 32px; }
+  .t-footer-inner { padding: 40px 20px 0; }
+  .t-footer-grid { grid-template-columns: 1fr 1fr; }
+  .t-footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 480px) {
-  .about-hero h1 { font-size: 32px; }
-  .stats-bar-grid { grid-template-columns: 1fr 1fr; }
-  .about-cta h2 { font-size: 28px; }
+  .about-hero h1 { font-size: 28px; }
+  .stats-bar-inner { grid-template-columns: 1fr 1fr; }
+  .stat-number { font-size: 36px; }
+  .team-grid { grid-template-columns: 1fr; }
+  .t-footer-grid { grid-template-columns: 1fr; }
+  .t-footer-bottom-left { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 </style>
 </head>
 <body>
 
-<!-- ===== NAVIGATION ===== -->
-<nav class="nav nav--dark">
-  <div class="container">
-    <a href="index.html" class="nav-logo">TheLifeCo</a>
-    <div class="nav-links">
-      <a href="about.html">About</a>
-      <div class="nav-dropdown">
-        <a href="resort.html">Resorts &#9662;</a>
-        <div class="nav-dropdown-menu">
-          <a href="resorts/bodrum.html">Bodrum</a>
-          <a href="resorts/antalya.html">Antalya</a>
-          <a href="resorts/phuket.html">Phuket</a>
-          <a href="resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
-          <a href="resorts/st-lucia.html">St. Lucia</a>
-        </div>
-      </div>
-      <a href="treatments.html">Programs</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
+<!-- ===========================
+     NAVIGATION
+     =========================== -->
+<nav class="t-nav" id="t-nav">
+  <div class="t-nav-inner">
+    <a href="index.html" class="t-nav-logo">TheLifeCo</a>
+
+    <div class="t-nav-links">
+      <a href="index.html">Retreats</a>
+      <a href="resort.html">Resorts</a>
+      <a href="#">Medical</a>
+      <a href="treatments.html">Treatments</a>
     </div>
-    <div class="nav-right">
-      <a href="booking.html" class="nav-cta">Book Now</a>
+
+    <div class="t-nav-right">
+      <a href="#" style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600">EN</a>
+      <a href="#" style="font-size:13px"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a href="contact.html" class="t-nav-cta">Talk to an expert</a>
     </div>
-    <div class="nav-toggle"><span></span><span></span><span></span></div>
+
+    <button class="t-nav-toggle" aria-label="Open menu" onclick="document.getElementById('t-nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
-<!-- ===== HERO ===== -->
+<!-- ===========================
+     HERO
+     =========================== -->
 <section class="about-hero">
-  <div class="container">
-    <div class="accent-line"></div>
-    <h1>Our Story</h1>
-    <p>Two decades of transforming lives through science-backed wellness programs at five of the world's most breathtaking destinations.</p>
+  <div class="about-hero-inner">
+    <div>
+      <div class="about-hero-eyebrow">About TheLifeCo</div>
+      <h1>Transforming Lives<br>Through <strong>Wellness</strong></h1>
+      <p class="about-hero-tagline">
+        Pioneering medically supervised wellness since 2005 — where scientific precision meets the healing power of nature.
+      </p>
+    </div>
+    <div class="about-hero-img">
+      <img
+        src="images/feature-large.png"
+        alt="TheLifeCo wellness retreat — outdoor natural environment"
+        loading="eager">
+    </div>
   </div>
 </section>
 
-<!-- ===== STORY / FOUNDER ===== -->
-<section class="section">
-  <div class="container">
-    <div class="story-grid">
-      <div class="story-img">
-        <img src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Bodrum-Outdoor-Environment-.png" alt="TheLifeCo Bodrum outdoor wellness environment" loading="lazy">
-      </div>
-      <div>
-        <div class="story-eyebrow">Founded 2005</div>
-        <h2 class="story-heading">A Vision to Heal the World</h2>
-        <p class="story-body">In 2005, Ersin Pamuksüzer founded TheLifeCo with a singular vision: to create spaces where science and nature converge to restore human health and happiness. What started as a pioneering wellness center nestled in the hills above Bodrum, Turkey has grown into a global network of five luxury resort destinations, each unique in setting yet unified in philosophy.</p>
-        <p class="story-body">Our approach was radical for its time — integrating naturopathic medicine, cellular-level detoxification, and raw-vegan nutrition under one roof, supported by a team of physicians, nutritionists, and wellness coaches. Today, after welcoming over 30,000 guests from 80 countries, the mission has only deepened.</p>
-        <div class="story-founder">
-          <div class="story-founder-avatar">EP</div>
-          <div>
-            <div class="story-founder-name">Ersin Pamuksüzer</div>
-            <div class="story-founder-title">Founder &amp; CEO, TheLifeCo Wellbeing</div>
-          </div>
+<!-- ===========================
+     STATS BAR
+     =========================== -->
+<section class="stats-bar" aria-label="Key statistics">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-number">40,000+</div>
+      <div class="stat-label">Guests served<br>worldwide</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">6</div>
+      <div class="stat-label">Resort<br>destinations</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">350+</div>
+      <div class="stat-label">Expert team<br>members</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">19+</div>
+      <div class="stat-label">Years of<br>experience</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     OUR STORY
+     =========================== -->
+<section class="story-section">
+  <div class="story-inner">
+
+    <div class="story-img">
+      <img
+        src="images/holistic-stones.jpg"
+        alt="TheLifeCo — founding story, mindful wellness in nature"
+        loading="lazy">
+    </div>
+
+    <div class="story-content">
+      <div class="section-eyebrow">Our Story</div>
+      <h2>Founded on a<br><strong>Vision of Healing</strong></h2>
+      <p>
+        In 2005, Ali Yilmaz founded TheLifeCo with a bold belief: that lasting health transformation requires a medically supervised, holistic approach — not quick fixes. Starting from a single center in Turkey, the vision was to create retreats where science and nature work in unison.
+      </p>
+      <p>
+        Two decades later, TheLifeCo has grown into a global wellness leader operating 6 destinations across Turkey, Thailand, Egypt, and St. Lucia. Each center is built on the same founding principles — clinical expertise, personalised care, and a genuine commitment to long-term wellbeing.
+      </p>
+      <p>
+        To date, more than 40,000 guests from around the world have experienced lasting transformation at TheLifeCo, from professional athletes and executives to individuals seeking recovery and renewal.
+      </p>
+
+      <div class="story-milestones">
+        <div class="milestone">
+          <div class="milestone-year">2005</div>
+          <div class="milestone-text">Founded by<br>Ali Yilmaz in Turkey</div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-year">2012</div>
+          <div class="milestone-text">Expanded to<br>Thailand &amp; Egypt</div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-year">2019</div>
+          <div class="milestone-text">St. Lucia<br>resort opened</div>
+        </div>
+        <div class="milestone">
+          <div class="milestone-year">2024</div>
+          <div class="milestone-text">40,000+ guests<br>worldwide</div>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-<!-- ===== FOUR PILLARS ===== -->
-<section class="section section--gray">
-  <div class="container">
-    <div style="text-align:center;max-width:560px;margin:0 auto 56px">
-      <div class="accent-line" style="margin:0 auto 20px"></div>
-      <h2 class="text-40 font-700" style="margin-bottom:16px">The Four Pillars of Wellbeing</h2>
-      <p class="text-16 text-secondary">Every TheLifeCo program is built on four interconnected pillars that address the whole person — body, mind, and spirit.</p>
+<!-- ===========================
+     OUR APPROACH
+     =========================== -->
+<section class="approach-section">
+  <div class="approach-inner">
+
+    <div class="approach-head">
+      <div>
+        <div class="section-eyebrow">Our Approach</div>
+        <h2>The <strong>360° Holistic</strong><br>Method</h2>
+      </div>
+      <p class="approach-head-desc">
+        Our programmes combine medical supervision, precision nutrition, physical fitness, mental wellness, and restorative spa therapies — five pillars working together for transformational results.
+      </p>
     </div>
-    <div class="grid grid-4">
+
+    <div class="approach-pillars">
+
       <div class="pillar-card">
-        <div class="pillar-icon"><i class="fa-solid fa-leaf"></i></div>
-        <div class="pillar-title">Nutrition</div>
-        <p class="pillar-desc">Raw-vegan cuisine, cold-pressed juices, and personalized meal plans crafted by our in-house nutritionists to nourish at the cellular level.</p>
+        <div class="pillar-icon">
+          <i class="fa-solid fa-stethoscope"></i>
+        </div>
+        <div class="pillar-title">Medical Supervision</div>
+        <p class="pillar-desc">Board-certified physicians oversee every programme with clinical precision and evidence-based protocols.</p>
       </div>
+
       <div class="pillar-card">
-        <div class="pillar-icon" style="background:rgba(0,96,156,0.1);color:var(--brand-navy)"><i class="fa-solid fa-person-running"></i></div>
-        <div class="pillar-title">Physical Activity</div>
-        <p class="pillar-desc">Yoga, Pilates, swimming, coastal hiking, and personalized fitness plans tailored to your current health status and goals.</p>
+        <div class="pillar-icon">
+          <i class="fa-solid fa-leaf"></i>
+        </div>
+        <div class="pillar-title">Precision Nutrition</div>
+        <p class="pillar-desc">Plant-based, therapeutic nutrition plans crafted by specialist dietitians to accelerate detox and restore vitality.</p>
       </div>
+
       <div class="pillar-card">
-        <div class="pillar-icon" style="background:rgba(246,163,88,0.1);color:var(--brand-orange)"><i class="fa-solid fa-brain"></i></div>
+        <div class="pillar-icon">
+          <i class="fa-solid fa-dumbbell"></i>
+        </div>
+        <div class="pillar-title">Physical Fitness</div>
+        <p class="pillar-desc">Personalised movement therapies — yoga, pilates, aqua fitness, and functional training — designed for every level.</p>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <i class="fa-solid fa-brain"></i>
+        </div>
         <div class="pillar-title">Mental Wellness</div>
-        <p class="pillar-desc">Guided meditation, breathwork, one-on-one counseling, and structured stress management protocols for lasting mental clarity.</p>
+        <p class="pillar-desc">Mindfulness practices, guided meditation, and psychological support to build resilience and emotional clarity.</p>
       </div>
+
       <div class="pillar-card">
-        <div class="pillar-icon" style="background:rgba(20,24,39,0.08);color:var(--brand-dark)"><i class="fa-solid fa-spa"></i></div>
-        <div class="pillar-title">Inner Peace</div>
-        <p class="pillar-desc">Mindfulness practices, spiritual workshops, sound healing, and deep nature immersion to restore harmony and purpose.</p>
+        <div class="pillar-icon">
+          <i class="fa-solid fa-spa"></i>
+        </div>
+        <div class="pillar-title">Spa Therapies</div>
+        <p class="pillar-desc">Ancient healing modalities and modern therapeutic treatments to restore the body and calm the nervous system.</p>
       </div>
+
     </div>
+
   </div>
 </section>
 
-<!-- ===== STATS BAR ===== -->
-<section class="stats-bar">
-  <div class="container">
-    <div class="stats-bar-grid">
-      <div>
-        <div class="stats-bar-number">30,000+</div>
-        <div class="stats-bar-label">Guests Transformed</div>
-      </div>
-      <div>
-        <div class="stats-bar-number">80+</div>
-        <div class="stats-bar-label">Countries Represented</div>
-      </div>
-      <div>
-        <div class="stats-bar-number">5</div>
-        <div class="stats-bar-label">Resort Locations</div>
-      </div>
-      <div>
-        <div class="stats-bar-number">20+</div>
-        <div class="stats-bar-label">Wellness Programs</div>
-      </div>
-      <div>
-        <div class="stats-bar-number">2005</div>
-        <div class="stats-bar-label">Year Founded</div>
-      </div>
+<!-- ===========================
+     VALUES
+     =========================== -->
+<section class="values-section">
+  <div class="values-inner">
+
+    <div class="values-head">
+      <div class="section-eyebrow">Our Values</div>
+      <h2>Four <strong>Core Pillars</strong><br>We Stand By</h2>
+      <p>Every programme, every interaction, every result is guided by these founding commitments.</p>
     </div>
+
+    <div class="values-grid">
+
+      <div class="value-block">
+        <div class="value-number">01</div>
+        <h3>Medical Excellence</h3>
+        <p>We hold ourselves to the highest clinical standards. Every programme is designed and supervised by board-certified physicians and specialist practitioners.</p>
+      </div>
+
+      <div class="value-block">
+        <div class="value-number">02</div>
+        <h3>Personalised Programs</h3>
+        <p>No two guests are alike. We build every retreat around your unique health profile, goals, and lifestyle — ensuring outcomes that last well beyond your stay.</p>
+      </div>
+
+      <div class="value-block">
+        <div class="value-number">03</div>
+        <h3>Natural Healing</h3>
+        <p>We harness the regenerative power of nature — through plant-based nutrition, thermal therapies, and environments that allow the body to heal itself.</p>
+      </div>
+
+      <div class="value-block">
+        <div class="value-number">04</div>
+        <h3>Scientific Approach</h3>
+        <p>Every protocol is grounded in peer-reviewed research and continuously updated as wellness science evolves. We combine ancient wisdom with modern evidence.</p>
+      </div>
+
+    </div>
+
   </div>
 </section>
 
-<!-- ===== SECOND STORY IMAGE ===== -->
-<section class="section">
-  <div class="container">
-    <div class="story-grid" style="direction:rtl">
-      <div class="story-img">
-        <img src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Pool-Outdoor.png" alt="TheLifeCo Phuket outdoor pool and tropical wellness setting" loading="lazy" style="direction:ltr">
+<!-- ===========================
+     TEAM PLACEHOLDER
+     =========================== -->
+<section class="team-section">
+  <div class="team-inner">
+
+    <div class="team-head">
+      <div>
+        <div class="section-eyebrow">Our Team</div>
+        <h2>350+ <strong>Dedicated</strong><br>Experts</h2>
       </div>
-      <div style="direction:ltr">
-        <div class="story-eyebrow">Global Expansion</div>
-        <h2 class="story-heading">From Bodrum to the World</h2>
-        <p class="story-body">After establishing TheLifeCo as Turkey's most celebrated wellness destination, the brand expanded internationally — bringing its signature blend of medical expertise and holistic living to Phuket's tropical shores, the Egyptian Red Sea coast, and the lush rainforests of St. Lucia.</p>
-        <p class="story-body">Each new location is chosen for its natural healing energy. Whether you are gazing at the Aegean from a Bodrum terrace or breathing in the salt air of the Caribbean, the environment itself becomes part of your treatment.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:32px">
-          <span class="card-tag" style="font-size:13px">Turkey</span>
-          <span class="card-tag" style="font-size:13px">Thailand</span>
-          <span class="card-tag" style="font-size:13px">Egypt</span>
-          <span class="card-tag" style="font-size:13px">Caribbean</span>
+      <p class="team-head-desc">
+        From physicians and nutritionists to yoga instructors and psychologists — our team brings decades of experience in integrative wellness.
+      </p>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-card-img">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-name">Ali Yilmaz</div>
+          <div class="team-card-role">Founder &amp; Chief Wellness Officer</div>
         </div>
       </div>
+
+      <div class="team-card">
+        <div class="team-card-img">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-name">Dr. Ayse Kaya</div>
+          <div class="team-card-role">Medical Director, Internal Medicine</div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-img">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-name">Dr. Mehmet Demir</div>
+          <div class="team-card-role">Head of Nutritional Medicine</div>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-img">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="team-card-body">
+          <div class="team-card-name">Selin Yildiz</div>
+          <div class="team-card-role">Director of Mindfulness &amp; Wellbeing</div>
+        </div>
+      </div>
+
     </div>
+
   </div>
 </section>
 
-<!-- ===== AWARDS ===== -->
-<section class="section section--gray">
-  <div class="container">
-    <div style="text-align:center;max-width:520px;margin:0 auto 56px">
-      <div class="accent-line" style="margin:0 auto 20px"></div>
-      <h2 class="text-40 font-700" style="margin-bottom:16px">Recognized Worldwide</h2>
-      <p class="text-16 text-secondary">Our commitment to excellence has earned recognition from the world's most prestigious wellness and travel organizations.</p>
+<!-- ===========================
+     DESTINATIONS
+     =========================== -->
+<section class="destinations-section">
+  <div class="destinations-inner">
+
+    <div class="destinations-head">
+      <div class="section-eyebrow">Where We Are</div>
+      <h2>6 <strong>Destinations</strong>,<br>One Philosophy</h2>
+      <p>Each resort is a sanctuary — chosen for its natural beauty, therapeutic climate, and ability to facilitate deep healing.</p>
     </div>
-    <div class="grid grid-3">
-      <div class="award-card">
-        <div class="award-card-icon"><i class="fa-solid fa-trophy"></i></div>
-        <div class="award-card-title">World's Best Detox Retreat</div>
-        <div class="award-card-org">World Spa Awards</div>
-        <span class="award-card-year">2018 Winner</span>
+
+    <div class="destinations-grid">
+
+      <div class="dest-card">
+        <img class="dest-card-img" src="images/location-bodrum.jpg" alt="TheLifeCo Bodrum, Turkey" loading="lazy">
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-label">
+          <div class="dest-card-country">Turkey</div>
+          <div class="dest-card-name">Bodrum</div>
+        </div>
+        <div class="dest-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
       </div>
-      <div class="award-card">
-        <div class="award-card-icon" style="background:rgba(0,96,156,0.08);color:var(--brand-navy)"><i class="fa-solid fa-medal"></i></div>
-        <div class="award-card-title">BID International Quality Award</div>
-        <div class="award-card-org">Business Initiative Directions</div>
-        <span class="award-card-year">Excellence Award</span>
+
+      <div class="dest-card">
+        <img class="dest-card-img" src="images/location-antalya.jpg" alt="TheLifeCo Antalya, Turkey" loading="lazy">
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-label">
+          <div class="dest-card-country">Turkey</div>
+          <div class="dest-card-name">Antalya</div>
+        </div>
+        <div class="dest-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
       </div>
-      <div class="award-card">
-        <div class="award-card-icon" style="background:rgba(20,24,39,0.08);color:var(--brand-dark)"><i class="fa-solid fa-star"></i></div>
-        <div class="award-card-title">LTG Award — Best Wellness Hotel</div>
-        <div class="award-card-org">Luxury Travel Guide</div>
-        <span class="award-card-year">2018 &amp; 2019</span>
+
+      <div class="dest-card">
+        <img class="dest-card-img" src="images/resort-featured-phuket.jpg" alt="TheLifeCo Phuket, Thailand" loading="lazy">
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-label">
+          <div class="dest-card-country">Thailand</div>
+          <div class="dest-card-name">Phuket</div>
+        </div>
+        <div class="dest-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
       </div>
+
+      <div class="dest-card">
+        <img class="dest-card-img" src="images/resort-hero.jpg" alt="TheLifeCo Sharm El Sheikh, Egypt" loading="lazy">
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-label">
+          <div class="dest-card-country">Egypt</div>
+          <div class="dest-card-name">Sharm El Sheikh</div>
+        </div>
+        <div class="dest-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      </div>
+
+      <div class="dest-card">
+        <img class="dest-card-img" src="images/cta-banner.jpg" alt="TheLifeCo St. Lucia" loading="lazy">
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-label">
+          <div class="dest-card-country">Caribbean</div>
+          <div class="dest-card-name">St. Lucia</div>
+        </div>
+        <div class="dest-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      </div>
+
+      <div class="dest-card">
+        <img class="dest-card-img" src="images/feature-large.png" alt="TheLifeCo Istanbul, Turkey" loading="lazy">
+        <div class="dest-card-overlay"></div>
+        <div class="dest-card-label">
+          <div class="dest-card-country">Turkey</div>
+          <div class="dest-card-name">Istanbul</div>
+        </div>
+        <div class="dest-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+      </div>
+
     </div>
+
   </div>
 </section>
 
-<!-- ===== LOCATIONS OVERVIEW ===== -->
-<section class="section">
-  <div class="container">
-    <div style="margin-bottom:48px">
-      <div class="accent-line"></div>
-      <h2 class="text-40 font-700" style="margin-bottom:12px">Our Destinations</h2>
-      <p class="text-16 text-secondary" style="max-width:500px">Five extraordinary locations, each offering the full TheLifeCo experience within its own unique natural and cultural landscape.</p>
-    </div>
-    <div class="grid grid-3" style="grid-template-columns:repeat(3,1fr);gap:20px">
-      <div class="location-overview-card" style="background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1570939274717-7eda259b50ed?w=600&q=80') center/cover">
-        <div class="location-overview-card-overlay">
-          <div class="location-overview-card-flag">Turkey</div>
-          <div class="location-overview-card-name">Bodrum</div>
-          <div class="location-overview-card-desc">Our flagship retreat overlooking Göltürkbükü Bay, where it all began in 2005.</div>
-          <a href="resorts/bodrum.html" class="location-overview-card-link">Explore <i class="fa-solid fa-arrow-up-right"></i></a>
-        </div>
-      </div>
-      <div class="location-overview-card" style="background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?w=600&q=80') center/cover">
-        <div class="location-overview-card-overlay">
-          <div class="location-overview-card-flag">Turkey</div>
-          <div class="location-overview-card-name">Antalya</div>
-          <div class="location-overview-card-desc">Mediterranean wellness at the iconic Akra Hotel, nestled between cliffs and sea.</div>
-          <a href="resorts/antalya.html" class="location-overview-card-link">Explore <i class="fa-solid fa-arrow-up-right"></i></a>
-        </div>
-      </div>
-      <div class="location-overview-card" style="background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1504214208698-ea1916a2195a?w=600&q=80') center/cover">
-        <div class="location-overview-card-overlay">
-          <div class="location-overview-card-flag">Thailand</div>
-          <div class="location-overview-card-name">Phuket</div>
-          <div class="location-overview-card-desc">Tropical healing on Nai Thon Beach with ancient Thai wellness traditions.</div>
-          <a href="resorts/phuket.html" class="location-overview-card-link">Explore <i class="fa-solid fa-arrow-up-right"></i></a>
-        </div>
-      </div>
-      <div class="location-overview-card" style="background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?w=600&q=80') center/cover">
-        <div class="location-overview-card-overlay">
-          <div class="location-overview-card-flag">Egypt</div>
-          <div class="location-overview-card-name">Sharm El Sheikh</div>
-          <div class="location-overview-card-desc">Desert serenity meets Red Sea diving at Nabq Bay, Egypt.</div>
-          <a href="resorts/sharm-el-sheikh.html" class="location-overview-card-link">Explore <i class="fa-solid fa-arrow-up-right"></i></a>
-        </div>
-      </div>
-      <div class="location-overview-card" style="background:linear-gradient(180deg,transparent 40%,rgba(0,0,0,.7)),url('https://images.unsplash.com/photo-1559494007-9f5847c49d94?w=600&q=80') center/cover">
-        <div class="location-overview-card-overlay">
-          <div class="location-overview-card-flag">St. Lucia, Caribbean</div>
-          <div class="location-overview-card-name">St. Lucia</div>
-          <div class="location-overview-card-desc">Caribbean rainforest and volcanic springs at Mount Pimard, Gros-Islet.</div>
-          <a href="resorts/st-lucia.html" class="location-overview-card-link">Explore <i class="fa-solid fa-arrow-up-right"></i></a>
-        </div>
-      </div>
-      <div class="location-overview-card" style="background:var(--brand-dark);min-height:320px;justify-content:center;align-items:center;display:flex;text-align:center">
-        <div style="padding:40px">
-          <i class="fa-solid fa-globe" style="font-size:36px;color:var(--brand-teal);margin-bottom:20px"></i>
-          <div style="font-size:18px;font-weight:700;color:var(--white);margin-bottom:10px">More Coming Soon</div>
-          <p style="font-size:14px;color:rgba(255,255,255,0.6);line-height:1.6">We are always searching for the world's most transformative wellness settings.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA ===== -->
+<!-- ===========================
+     CTA
+     =========================== -->
 <section class="about-cta">
-  <div class="container">
-    <div class="accent-line" style="margin:0 auto 24px"></div>
-    <h2>Begin Your Transformation</h2>
-    <p>Join over 30,000 guests who have experienced the profound change that comes from committing to your health at a TheLifeCo resort.</p>
-    <div class="cta-buttons">
-      <a href="booking.html" class="btn btn-primary btn-lg">Book a Retreat</a>
-      <a href="contact.html" class="btn btn-outline-dark btn-lg">Talk to an Expert</a>
+  <div class="about-cta-inner">
+    <h2>Start Your<br><strong>Wellness Journey</strong></h2>
+    <div class="about-cta-actions">
+      <a href="contact.html" class="cta-btn-primary">Talk to an expert <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="treatments.html" class="cta-btn-outline">Explore programmes</a>
     </div>
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
+<!-- ===========================
+     FOOTER
+     =========================== -->
+<footer class="t-footer">
+  <div class="t-footer-inner">
+    <div class="t-footer-grid">
+
+      <!-- Col 1: Brand -->
       <div>
-        <div class="footer-brand">TheLifeCo</div>
-        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2005. With luxury resorts across Turkey, Thailand, Egypt, and the Caribbean.</p>
-        <div class="footer-social">
-          <a href="https://instagram.com/thelifeco"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://facebook.com/thelifeco"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://youtube.com/thelifeco"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <div class="t-footer-brand">TheLifeCo</div>
+        <div class="t-footer-social">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="t-footer-address">
+          Maslak Mah. Büyükdere Cad. USO Center No: 245<br>
+          Kat: 15 İç Kapı No: 56 Maslak /<br>
+          Sarıyer / İstanbul
         </div>
       </div>
-      <div><div class="footer-heading">Resorts</div><div class="footer-links"><a href="resorts/bodrum.html">Bodrum</a><a href="resorts/antalya.html">Antalya</a><a href="resorts/phuket.html">Phuket</a><a href="resorts/sharm-el-sheikh.html">Sharm El Sheikh</a><a href="resorts/st-lucia.html">St. Lucia</a></div></div>
-      <div><div class="footer-heading">Programs</div><div class="footer-links"><a href="programs/master-detox.html">Master Detox</a><a href="programs/water-fasting.html">Water Fasting</a><a href="programs/green-detox.html">Green Detox</a><a href="programs/longevity-reset.html">Longevity Reset</a><a href="programs/mental-wellness.html">Mental Wellness</a></div></div>
-      <div><div class="footer-heading">Company</div><div class="footer-links"><a href="about.html">About Us</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></div>
-      <div><div class="footer-heading">Contact</div><div class="footer-links"><a href="mailto:info@thelifeco.com">info@thelifeco.com</a><a href="tel:+902524134410">+90 252 413 44 10</a><a href="https://wa.me/905325554410">WhatsApp</a></div><div style="margin-top:24px"><div class="footer-heading">Booking</div><div class="footer-links"><a href="booking.html">Book a Retreat</a><a href="contact.html">Talk to an Expert</a></div></div></div>
+
+      <!-- Col 2: Centers -->
+      <div>
+        <div class="t-footer-col-heading">Centers</div>
+        <div class="t-footer-col-links">
+          <a href="#">Antalya</a>
+          <a href="#">Bodrum</a>
+          <a href="#">Phuket</a>
+          <a href="#">Sharm El Sheikh</a>
+          <a href="#">St. Lucia</a>
+        </div>
+      </div>
+
+      <!-- Col 3: Retreatments -->
+      <div>
+        <div class="t-footer-col-heading">Retreatments</div>
+        <div class="t-footer-col-links">
+          <a href="#">Diabetes Recovery</a>
+          <a href="#">Water Fasting</a>
+          <a href="#">Intermittent Fasting</a>
+          <a href="#">Low Support</a>
+          <a href="#">Get Fit &amp; Healthy</a>
+          <a href="#">Mindfully Living</a>
+        </div>
+      </div>
+
+      <!-- Col 4: Meal Plans -->
+      <div>
+        <div class="t-footer-col-heading">Meal Plans</div>
+        <div class="t-footer-col-links">
+          <a href="#">Whole Cleanse</a>
+          <a href="#">Green Detox</a>
+          <a href="#">Intermittent Fasting</a>
+          <a href="#">Low Calorie</a>
+        </div>
+      </div>
+
+      <!-- Col 5: Explore + App -->
+      <div>
+        <div class="t-footer-col-heading">Explore</div>
+        <div class="t-footer-col-links" style="margin-bottom:24px;">
+          <a href="about.html">About Us</a>
+          <a href="#">Corporate Projects</a>
+          <a href="#">Blog</a>
+          <a href="#">Habit Building App</a>
+          <a href="#">Press Kit</a>
+          <a href="#">TheLifeCo Gift Voucher</a>
+        </div>
+        <div class="t-footer-app-label">Download BOATSY App</div>
+        <div class="t-footer-app-btns">
+          <a href="#" class="t-footer-app-btn">
+            <i class="fa-brands fa-apple"></i>
+            <span>App Store</span>
+          </a>
+          <a href="#" class="t-footer-app-btn">
+            <i class="fa-brands fa-google-play"></i>
+            <span>Google Play</span>
+          </a>
+        </div>
+      </div>
+
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2025 TheLifeCo Wellbeing. All rights reserved.</span>
-      <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a><a href="#">Cookie Policy</a></div>
+
+    <div class="t-footer-bottom">
+      <div class="t-footer-bottom-left">
+        <span>&copy; 2024 Powered by LifeCo</span>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Sitemap</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookies Policy</a>
+      </div>
+      <div class="t-footer-bottom-right">
+        <span>EN</span>
+        <a href="#"><i class="fa-brands fa-instagram" style="font-size:16px;color:#5B7E96;"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter" style="font-size:16px;color:#5B7E96;"></i></a>
+      </div>
     </div>
+
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script>
+(function () {
+  'use strict';
+  /* Mobile nav toggle */
+  var nav = document.getElementById('t-nav');
+  if (nav) {
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('.t-nav-toggle')) {
+        nav.classList.toggle('open');
+      }
+    });
+  }
+  /* Mobile nav open styles */
+  var style = document.createElement('style');
+  style.textContent = '.t-nav.open .t-nav-links{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#fff;padding:24px 20px;gap:16px;border-bottom:1px solid #E3EDF3;z-index:99;}';
+  document.head.appendChild(style);
+}());
+</script>
+
 </body>
 </html>

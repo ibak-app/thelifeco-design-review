@@ -3,783 +3,1171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TheLifeCo — Wellness Journal | Expert Insights &amp; Health Articles</title>
-<meta name="description" content="Read expert articles on detox, nutrition, mental health, fitness, raw-food recipes, and wellness travel from TheLifeCo's medical team. Evidence-based insights since 2005.">
-<meta name="keywords" content="wellness blog, detox guide, nutrition articles, mental health tips, raw vegan recipes, wellness retreat blog, TheLifeCo journal">
-<meta property="og:title" content="TheLifeCo — Wellness Journal">
-<meta property="og:description" content="Expert wellness insights on detox, nutrition, mental health, fitness, and healthy living from our medical team.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCO-Bodrum-raw-food-sushi.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="TheLifeCo — Wellness Journal">
-<meta name="twitter:description" content="Expert wellness insights from TheLifeCo's medical and nutrition team.">
-<link rel="canonical" href="https://thelifeco.com/blog.html">
-<link rel="stylesheet" href="css/style.css">
+<title>TheLifeCo — Blog</title>
+<link rel="stylesheet" href="v1/css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
 <style>
+/* =========================================
+   Blog Listing Page — TheLifeCo
+   ========================================= */
 
-/* ── Blog Hero ─────────────────────────────────────────── */
-.blog-hero {
-  padding: 160px 0 80px;
-  background: var(--bg-section);
-  border-bottom: 1px solid var(--border-color);
-  text-align: center;
+/* ---------- NAV (white bg, dark text — t-nav pattern) ---------- */
+.b-nav {
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #E3EDF3;
+  z-index: 100;
 }
-.blog-hero .accent-line {
-  margin: 0 auto 24px;
-}
-.blog-hero h1 {
-  font-size: 72px;
-  font-weight: 700;
-  line-height: 1.0;
-  letter-spacing: -2px;
-  color: var(--brand-dark);
-  margin-bottom: 20px;
-}
-.blog-hero p {
-  font-size: 18px;
-  color: var(--text-secondary);
-  max-width: 560px;
-  margin: 0 auto 40px;
-  line-height: 1.75;
-}
-.blog-hero-stats {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 48px;
-  padding-top: 40px;
-  border-top: 1px solid var(--border-color);
-  margin-top: 40px;
-}
-.blog-hero-stat strong {
-  display: block;
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--brand-navy);
-  line-height: 1;
-}
-.blog-hero-stat span {
-  font-size: 13px;
-  color: var(--text-muted);
-  margin-top: 4px;
-  display: block;
-}
-
-/* ── Category bar ──────────────────────────────────────── */
-.blog-category-bar {
-  padding: 28px 0;
-  border-bottom: 1px solid var(--border-color);
-  background: var(--white);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  box-shadow: 0 2px 12px rgba(0,0,0,.04);
-}
-.blog-category-inner {
+.b-nav-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
+  height: 72px;
 }
-.blog-search {
+.b-nav-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #141827;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.b-nav-links {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background: var(--off-white-3);
-  border-radius: 100px;
-  padding: 10px 20px;
-  min-width: 220px;
+  gap: 36px;
 }
-.blog-search input {
-  border: none;
-  background: transparent;
-  font-family: var(--font-primary);
+.b-nav-links a {
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
-  color: var(--text-primary);
-  outline: none;
-  width: 160px;
-}
-.blog-search i { color: var(--text-muted); font-size: 14px; }
-
-/* ── Featured Article ──────────────────────────────────── */
-.blog-featured-section {
-  padding: 72px 0 48px;
-}
-.featured-article {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 1px solid var(--border-color);
-  background: var(--white);
+  font-weight: 500;
+  color: #141827;
   text-decoration: none;
-  color: inherit;
-  transition: box-shadow .25s, transform .25s;
+  opacity: 0.75;
+  transition: opacity 0.2s;
 }
-.featured-article:hover {
-  box-shadow: 0 20px 60px rgba(0,0,0,.1);
-  transform: translateY(-3px);
-}
-.featured-article-img {
-  width: 100%;
-  height: 100%;
-  min-height: 460px;
-  object-fit: cover;
-  display: block;
-}
-.featured-article-body {
-  padding: 56px 48px;
+.b-nav-links a:hover,
+.b-nav-links a.active { opacity: 1; }
+.b-nav-right {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  gap: 24px;
 }
-.featured-label {
+.b-nav-right a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #141827;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.b-nav-right a:hover { opacity: 1; }
+.b-nav-cta {
   display: inline-flex;
   align-items: center;
+  padding: 10px 20px;
+  border: 1px solid #00609C;
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #00609C;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.b-nav-cta:hover { background: #00609C; color: #fff; }
+.b-nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.b-nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #141827;
+}
+
+/* ---------- HERO (dark bg) ---------- */
+.b-hero {
+  background: #141827;
+  padding: 80px 80px 64px;
+}
+.b-hero-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.b-hero-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #5B7E96;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+.b-hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 72px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  max-width: 820px;
+  margin-bottom: 32px;
+}
+.b-hero-title strong { font-weight: 700; }
+.b-hero-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #5B7E96;
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+/* ---------- FILTER PILLS ---------- */
+.b-filters {
+  background: #fff;
+  border-bottom: 1px solid #E3EDF3;
+}
+.b-filters-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
   gap: 8px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.b-filters-inner::-webkit-scrollbar { display: none; }
+.b-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 20px;
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid #E3EDF3;
+  color: #5B7E96;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: all 0.2s;
+  background: #fff;
+}
+.b-pill.active,
+.b-pill:hover {
+  background: #00609C;
+  color: #fff;
+  border-color: #00609C;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.b-content {
+  background: #fff;
+  padding: 64px 80px 80px;
+}
+.b-content-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* ---------- FEATURED POST (2-col asymmetric) ---------- */
+.b-featured {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 48px;
+  margin-bottom: 64px;
+  align-items: start;
+}
+.b-featured-image-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 16/10;
+  background: #E3EDF3;
+  display: block;
+  text-decoration: none;
+}
+.b-featured-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.b-featured-image-wrap:hover img { transform: scale(1.03); }
+.b-featured-tags {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  gap: 8px;
+}
+.b-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
   font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--brand-teal);
-  margin-bottom: 20px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
 }
-.featured-label::before {
-  content: '';
-  width: 24px;
-  height: 2px;
-  background: var(--brand-teal);
-  border-radius: 2px;
+.b-tag--dark {
+  background: rgba(20,24,39,0.78);
+  color: #fff;
+  backdrop-filter: blur(4px);
 }
-.featured-article-title {
-  font-size: 36px;
+.b-tag--outline {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(4px);
+}
+.b-featured-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 72px 28px 28px;
+  background: linear-gradient(transparent, rgba(20,24,39,0.78));
+}
+.b-featured-overlay-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 26px;
   font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: -.5px;
-  color: var(--brand-dark);
-  margin-bottom: 18px;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
 }
-.featured-article-desc {
-  font-size: 16px;
-  color: var(--text-secondary);
-  line-height: 1.75;
-  margin-bottom: 32px;
+.b-featured-overlay-meta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
 }
-.featured-article-footer {
+
+/* Sidebar recent posts */
+.b-featured-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+.b-featured-sidebar-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #5B7E96;
+  margin-bottom: 0;
+}
+.b-sidebar-post {
+  display: flex;
+  gap: 14px;
+  padding: 18px 0;
+  border-bottom: 1px solid #E3EDF3;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  align-items: flex-start;
+}
+.b-sidebar-post:first-of-type { border-top: 1px solid #E3EDF3; margin-top: 18px; }
+.b-sidebar-post:hover { opacity: 0.72; }
+.b-sidebar-thumb {
+  width: 80px;
+  height: 62px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #E3EDF3;
+  flex-shrink: 0;
+}
+.b-sidebar-post-info { flex: 1; min-width: 0; }
+.b-sidebar-post-cat {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #5B7E96;
+  margin-bottom: 5px;
+}
+.b-sidebar-post-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #141827;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.b-sidebar-post-date {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: #5B7E96;
+}
+
+/* ---------- SECTION HEADING ---------- */
+.b-section-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
+  margin-bottom: 32px;
 }
-.featured-author {
+.b-section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #141827;
+  letter-spacing: -0.5px;
+}
+.b-see-all {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #00609C;
+  text-decoration: none;
   display: flex;
   align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+}
+.b-see-all:hover { gap: 10px; }
+
+/* ---------- BLOG CARD GRID (3 columns) ---------- */
+.b-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 28px;
+  margin-bottom: 64px;
+}
+.b-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #E3EDF3;
+  transition: transform 0.25s, box-shadow 0.25s;
+  background: #fff;
+}
+.b-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,96,156,0.08);
+}
+.b-card-img-wrap {
+  position: relative;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #E3EDF3;
+}
+.b-card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.b-card:hover .b-card-img-wrap img { transform: scale(1.04); }
+.b-card-body {
+  padding: 22px 22px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.b-card-cat {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #00BED6;
+  margin-bottom: 10px;
+}
+.b-card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #141827;
+  line-height: 1.35;
+  letter-spacing: -0.3px;
+  margin-bottom: 10px;
+}
+.b-card-excerpt {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5B7E96;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  flex: 1;
+}
+.b-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #E3EDF3;
+}
+.b-card-date {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: #5B7E96;
+}
+.b-card-read {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #00609C;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.b-card-read i { font-size: 10px; transition: transform 0.2s; }
+.b-card:hover .b-card-read i { transform: translateX(3px); }
+
+/* ---------- NEWSLETTER ---------- */
+.b-newsletter {
+  background: #141827;
+  border-radius: 20px;
+  padding: 56px 64px;
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.b-newsletter-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+  margin-bottom: 10px;
+}
+.b-newsletter-desc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5B7E96;
+  line-height: 1.7;
+}
+.b-newsletter-form {
+  display: flex;
   gap: 12px;
 }
-.author-avatar {
+.b-newsletter-input {
+  flex: 1;
+  height: 48px;
+  padding: 0 18px;
+  border-radius: 100px;
+  border: 1px solid #2a3050;
+  background: #1a1f33;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.b-newsletter-input::placeholder { color: #5B7E96; }
+.b-newsletter-input:focus { border-color: #00BED6; }
+.b-newsletter-btn {
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 100px;
+  background: #F6A358;
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.b-newsletter-btn:hover { background: #E8944A; }
+.b-newsletter-note {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: #5B7E96;
+  margin-top: 10px;
+}
+
+/* ---------- PAGINATION ---------- */
+.b-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 80px;
+}
+.b-page-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--brand-navy), var(--brand-teal));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--white);
-  font-size: 13px;
-  font-weight: 700;
-  flex-shrink: 0;
-}
-.author-info strong {
-  display: block;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-primary);
-}
-.author-info span {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-.read-more-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: var(--brand-navy);
-  transition: gap .2s, color .2s;
+  border: 1px solid #E3EDF3;
+  color: #5B7E96;
+  text-decoration: none;
+  transition: all 0.2s;
+  background: #fff;
 }
-.read-more-link:hover {
-  gap: 10px;
-  color: var(--brand-teal);
+.b-page-btn.active,
+.b-page-btn:hover {
+  background: #00609C;
+  color: #fff;
+  border-color: #00609C;
 }
-
-/* ── Blog Articles grid ────────────────────────────────── */
-.blog-articles-section {
-  padding: 0 0 88px;
-  background: var(--white);
-}
-.blog-section-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 40px;
-  gap: 16px;
-}
-.blog-section-header h2 {
-  font-size: 36px;
-  font-weight: 700;
-  letter-spacing: -.5px;
-  color: var(--brand-navy);
-}
-.blog-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-/* blog-card class from style.css is used, plus these additions */
-.blog-card-read-time {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-left: auto;
-}
-.blog-card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 14px;
-  border-top: 1px solid var(--border-color);
-  margin-top: auto;
-}
-.blog-card-footer-date {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-.blog-card-body-inner {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.blog-card-meta {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
-}
-
-/* ── Newsletter ────────────────────────────────────────── */
-.blog-newsletter {
-  background: var(--brand-dark);
-  padding: 88px 0;
-  color: var(--white);
-}
-.blog-newsletter-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
-  align-items: center;
-}
-.blog-newsletter-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(0,190,214,.15);
+.b-page-btn--wide {
+  width: auto;
+  padding: 0 16px;
   border-radius: 100px;
-  padding: 6px 16px;
+}
+
+/* ---------- FOOTER ---------- */
+.b-footer {
+  background: #fff;
+  border-top: 1px solid #E3EDF3;
+}
+.b-footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 56px 80px 0;
+}
+.b-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid #E3EDF3;
+}
+.b-footer-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #141827;
+  margin-bottom: 16px;
+}
+.b-footer-social {
+  display: flex;
+  gap: 10px;
   margin-bottom: 20px;
 }
-.blog-newsletter-badge i { color: var(--brand-teal); font-size: 12px; }
-.blog-newsletter-badge span {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--brand-teal);
-  letter-spacing: .5px;
-  text-transform: uppercase;
-}
-.blog-newsletter h2 {
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -.5px;
-  margin-bottom: 12px;
-}
-.blog-newsletter h2, .blog-newsletter h3 { color: var(--white); }
-.blog-newsletter > .container > .blog-newsletter-inner > div > p {
-  font-size: 16px;
-  color: rgba(255,255,255,.7);
-  line-height: 1.7;
-}
-.newsletter-perks {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 32px;
-}
-.newsletter-perk {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-}
-.perk-icon {
+.b-footer-social a {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: rgba(0,190,214,.2);
+  border: 1px solid #E3EDF3;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--brand-teal);
+  color: #5B7E96;
   font-size: 14px;
-  flex-shrink: 0;
-  margin-top: 2px;
+  text-decoration: none;
+  transition: all 0.2s;
 }
-.newsletter-perk strong {
-  display: block;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 2px;
-}
-.newsletter-perk span {
+.b-footer-social a:hover { border-color: #00609C; color: #00609C; }
+.b-footer-address {
+  font-family: 'Montserrat', sans-serif;
   font-size: 13px;
-  color: rgba(255,255,255,.55);
-  line-height: 1.5;
-}
-.newsletter-form-block {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.newsletter-input-row {
-  display: flex;
-  gap: 12px;
-}
-.newsletter-input-row input {
-  flex: 1;
-  padding: 15px 22px;
-  border-radius: 100px;
-  border: 1px solid rgba(255,255,255,.2);
-  background: rgba(255,255,255,.08);
-  font-family: var(--font-primary);
-  font-size: 15px;
-  color: var(--white);
-  outline: none;
-  transition: border-color .2s;
-}
-.newsletter-input-row input::placeholder { color: rgba(255,255,255,.4); }
-.newsletter-input-row input:focus { border-color: var(--brand-teal); }
-.newsletter-consent {
-  font-size: 12px;
-  color: rgba(255,255,255,.4);
+  color: #5B7E96;
   line-height: 1.6;
 }
-.newsletter-consent a { color: rgba(255,255,255,.6); text-decoration: underline; }
+.b-footer-col-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #141827;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.b-footer-col-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.b-footer-col-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5B7E96;
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.4;
+}
+.b-footer-col-links a:hover { color: #00609C; }
+.b-footer-app-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #141827;
+  margin-bottom: 12px;
+}
+.b-footer-app-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.b-footer-app-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid #E3EDF3;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #141827;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+.b-footer-app-btn:hover { border-color: #00609C; }
+.b-footer-app-btn i { font-size: 16px; }
+.b-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.b-footer-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.b-footer-bottom-left span,
+.b-footer-bottom-left a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #5B7E96;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.b-footer-bottom-left a:hover { color: #00609C; }
+.b-footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.b-footer-bottom-right span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #141827;
+  cursor: pointer;
+}
+.b-footer-bottom-right a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #5B7E96;
+  text-decoration: none;
+}
 
-/* ── Responsive ────────────────────────────────────────── */
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 1200px) {
+  .b-nav-inner { padding-left: 40px; padding-right: 40px; }
+  .b-hero { padding: 64px 40px 48px; }
+  .b-hero-title { font-size: 56px; }
+  .b-filters-inner { padding-left: 40px; padding-right: 40px; }
+  .b-content { padding: 48px 40px 64px; }
+  .b-featured { grid-template-columns: 1fr 360px; gap: 32px; }
+  .b-footer-inner { padding: 48px 40px 0; }
+  .b-footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
 @media (max-width: 1024px) {
-  .blog-hero h1 { font-size: 52px; }
-  .blog-cards-grid { grid-template-columns: repeat(2, 1fr); }
-  .featured-article { grid-template-columns: 1fr; }
-  .featured-article-img { min-height: 320px; height: 320px; }
-  .featured-article-body { padding: 40px 36px; }
-  .featured-article-title { font-size: 28px; }
-  .blog-newsletter-inner { grid-template-columns: 1fr; gap: 40px; }
+  .b-grid { grid-template-columns: repeat(2, 1fr); }
+  .b-featured { grid-template-columns: 1fr; }
+  .b-featured-sidebar { display: none; }
+  .b-newsletter { grid-template-columns: 1fr; }
+  .b-newsletter-form { flex-direction: column; }
 }
 @media (max-width: 768px) {
-  .blog-hero { padding: 120px 0 56px; }
-  .blog-hero h1 { font-size: 38px; letter-spacing: -1px; }
-  .blog-hero p { font-size: 16px; }
-  .blog-hero-stats { gap: 28px; flex-wrap: wrap; }
-  .blog-hero-stat strong { font-size: 28px; }
-  .blog-category-inner { flex-direction: column; align-items: flex-start; }
-  .blog-search { min-width: 100%; }
-  .blog-cards-grid { grid-template-columns: 1fr; }
-  .featured-article-body { padding: 32px 24px; }
-  .blog-newsletter h2 { font-size: 30px; }
-  .newsletter-input-row { flex-direction: column; }
-  .blog-section-header h2 { font-size: 28px; }
+  .b-nav-links { display: none; }
+  .b-nav-toggle { display: flex; }
+  .b-nav-inner { padding: 0 20px; }
+  .b-hero { padding: 48px 20px 36px; }
+  .b-hero-title { font-size: 40px; letter-spacing: -1px; }
+  .b-filters-inner { padding-left: 20px; padding-right: 20px; }
+  .b-content { padding: 40px 20px 56px; }
+  .b-grid { grid-template-columns: 1fr; gap: 24px; }
+  .b-newsletter { padding: 36px 28px; }
+  .b-footer-inner { padding: 40px 20px 0; }
+  .b-footer-grid { grid-template-columns: 1fr 1fr; }
+  .b-footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 480px) {
-  .blog-hero h1 { font-size: 30px; letter-spacing: -.5px; }
-  .featured-article-title { font-size: 22px; }
+  .b-hero-title { font-size: 32px; }
+  .b-footer-grid { grid-template-columns: 1fr; }
+  .b-footer-bottom-left { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 </style>
 </head>
 <body>
 
-<!-- ===== NAVIGATION ===== -->
-<nav class="nav nav--dark">
-  <div class="container">
-    <a href="index.html" class="nav-logo">TheLifeCo</a>
-    <div class="nav-links">
-      <a href="about.html">About</a>
-      <div class="nav-dropdown">
-        <a href="resort.html">Resorts &#9662;</a>
-        <div class="nav-dropdown-menu">
-          <a href="resorts/bodrum.html">Bodrum</a>
-          <a href="resorts/antalya.html">Antalya</a>
-          <a href="resorts/phuket.html">Phuket</a>
-          <a href="resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
-          <a href="resorts/st-lucia.html">St. Lucia</a>
-        </div>
-      </div>
-      <a href="treatments.html">Programs</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
+<!-- ===========================
+     NAVIGATION
+     =========================== -->
+<nav class="b-nav" id="b-nav">
+  <div class="b-nav-inner">
+    <a href="v1/index.html" class="b-nav-logo">TheLifeCo</a>
+
+    <div class="b-nav-links">
+      <a href="v1/index.html">Retreats</a>
+      <a href="v1/resort.html">Resorts</a>
+      <a href="#">Medical</a>
+      <a href="v1/treatments.html">Treatments</a>
+      <a href="blog.html" class="active">Blog</a>
     </div>
-    <div class="nav-right">
-      <a href="booking.html" class="nav-cta">Book Now</a>
+
+    <div class="b-nav-right">
+      <a href="#" style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;">EN</a>
+      <a href="#" style="font-size:13px;"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a href="#" class="b-nav-cta">Talk to an expert</a>
     </div>
-    <div class="nav-toggle"><span></span><span></span><span></span></div>
+
+    <button class="b-nav-toggle" aria-label="Open menu" onclick="document.getElementById('b-nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
-<!-- ===== HERO ===== -->
-<section class="blog-hero">
-  <div class="container">
-    <div class="accent-line"></div>
-    <h1>Wellness Journal</h1>
-    <p>Insights, guidance, and inspiration from TheLifeCo's medical team and wellness specialists — grounded in science, written for real life.</p>
-    <div class="blog-hero-stats">
-      <div class="blog-hero-stat">
-        <strong>120+</strong>
-        <span>Expert Articles</span>
-      </div>
-      <div class="blog-hero-stat">
-        <strong>6</strong>
-        <span>Categories</span>
-      </div>
-      <div class="blog-hero-stat">
-        <strong>20+</strong>
-        <span>Medical Authors</span>
-      </div>
-    </div>
+<!-- ===========================
+     HERO
+     =========================== -->
+<header class="b-hero">
+  <div class="b-hero-inner">
+    <div class="b-hero-label">TheLifeCo Journal</div>
+    <h1 class="b-hero-title">Explore Our <strong>Blog</strong></h1>
+    <p class="b-hero-desc">Expert insights on fasting, detox, holistic wellness, and the science behind transformative health programs.</p>
   </div>
-</section>
+</header>
 
-<!-- ===== CATEGORY BAR ===== -->
-<div class="blog-category-bar">
-  <div class="container">
-    <div class="blog-category-inner">
-      <div class="filter-pills" style="margin-bottom:0">
-        <button class="pill active">All</button>
-        <button class="pill">Nutrition</button>
-        <button class="pill">Detox</button>
-        <button class="pill">Mental Health</button>
-        <button class="pill">Fitness</button>
-        <button class="pill">Recipes</button>
-        <button class="pill">Travel</button>
-      </div>
-      <div class="blog-search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" placeholder="Search articles...">
-      </div>
-    </div>
+<!-- ===========================
+     CATEGORY FILTERS
+     =========================== -->
+<div class="b-filters">
+  <div class="b-filters-inner">
+    <a href="#" class="b-pill active">All</a>
+    <a href="#" class="b-pill">Fasting &amp; Detox</a>
+    <a href="#" class="b-pill">Nutrition</a>
+    <a href="#" class="b-pill">Mental Wellness</a>
+    <a href="#" class="b-pill">Medical Insights</a>
+    <a href="#" class="b-pill">Gut Health</a>
+    <a href="#" class="b-pill">Weight Loss</a>
+    <a href="#" class="b-pill">Longevity</a>
+    <a href="#" class="b-pill">Resort Life</a>
   </div>
 </div>
 
-<!-- ===== FEATURED ARTICLE ===== -->
-<section class="blog-featured-section">
-  <div class="container">
-    <a href="#" class="featured-article">
-      <img
-        class="featured-article-img"
-        src="https://destinationdeluxe.com/wp-content/uploads/2025/04/Thelifeco-bodrum-green-juice.png"
-        alt="The science of water fasting at TheLifeCo"
-        loading="eager"
-      >
-      <div class="featured-article-body">
-        <span class="featured-label">Featured — Detox</span>
-        <h2 class="featured-article-title">The Science Behind Water Fasting: How 7 Days Can Reset Your Body</h2>
-        <p class="featured-article-desc">Our medical director explains the cellular mechanisms behind therapeutic fasting and why it has become one of our most transformative programs. From autophagy activation to mitochondrial renewal, discover what really happens inside your body during a medically supervised water fast.</p>
-        <div class="featured-article-footer">
-          <div class="featured-author">
-            <div class="author-avatar">MD</div>
-            <div class="author-info">
-              <strong>Dr. Mehmet Doğan</strong>
-              <span>Medical Director &middot; 12 min read</span>
-            </div>
-          </div>
-          <span class="read-more-link">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+<!-- ===========================
+     MAIN CONTENT
+     =========================== -->
+<main class="b-content">
+  <div class="b-content-inner">
+
+    <!-- FEATURED LAYOUT: large card + sidebar -->
+    <div class="b-featured">
+
+      <!-- Large featured image card -->
+      <a href="#" class="b-featured-image-wrap">
+        <img
+          src="images/blog-featured.jpg"
+          alt="The Science Behind Water Fasting: What Research Shows"
+          loading="lazy">
+        <div class="b-featured-tags">
+          <span class="b-tag b-tag--dark">Blog</span>
+          <span class="b-tag b-tag--outline">12.12.2026</span>
         </div>
+        <div class="b-featured-overlay">
+          <div class="b-featured-overlay-title">The Science Behind Water Fasting: What Research Shows</div>
+          <div class="b-featured-overlay-meta">Fasting &amp; Detox &nbsp;&middot;&nbsp; 8 min read</div>
+        </div>
+      </a>
+
+      <!-- Right sidebar: recent posts list -->
+      <div class="b-featured-sidebar">
+        <div class="b-featured-sidebar-heading">Recent Posts</div>
+
+        <a href="#" class="b-sidebar-post">
+          <img
+            class="b-sidebar-thumb"
+            src="images/blog-small.jpg"
+            alt="5 Signs Your Body Needs a Detox"
+            loading="lazy">
+          <div class="b-sidebar-post-info">
+            <div class="b-sidebar-post-cat">Detox</div>
+            <div class="b-sidebar-post-title">5 Signs Your Body Needs a Detox</div>
+            <div class="b-sidebar-post-date">10.12.2026</div>
+          </div>
+        </a>
+
+        <a href="#" class="b-sidebar-post">
+          <img
+            class="b-sidebar-thumb"
+            src="images/holistic-stones.jpg"
+            alt="How Meditation Transforms Your Immune System"
+            loading="lazy">
+          <div class="b-sidebar-post-info">
+            <div class="b-sidebar-post-cat">Mental Wellness</div>
+            <div class="b-sidebar-post-title">How Meditation Transforms Your Immune System</div>
+            <div class="b-sidebar-post-date">08.12.2026</div>
+          </div>
+        </a>
+
+        <a href="#" class="b-sidebar-post">
+          <img
+            class="b-sidebar-thumb"
+            src="images/category-card-1.jpg"
+            alt="Gut Health: The Foundation of Overall Wellness"
+            loading="lazy">
+          <div class="b-sidebar-post-info">
+            <div class="b-sidebar-post-cat">Gut Health</div>
+            <div class="b-sidebar-post-title">Gut Health: The Foundation of Overall Wellness</div>
+            <div class="b-sidebar-post-date">05.12.2026</div>
+          </div>
+        </a>
+
+        <a href="#" class="b-sidebar-post">
+          <img
+            class="b-sidebar-thumb"
+            src="images/category-card-2.jpg"
+            alt="Why Medical Supervision Matters in Wellness Programs"
+            loading="lazy">
+          <div class="b-sidebar-post-info">
+            <div class="b-sidebar-post-cat">Medical Insights</div>
+            <div class="b-sidebar-post-title">Why Medical Supervision Matters in Wellness Programs</div>
+            <div class="b-sidebar-post-date">02.12.2026</div>
+          </div>
+        </a>
+
+        <a href="#" class="b-sidebar-post">
+          <img
+            class="b-sidebar-thumb"
+            src="images/blog-large.jpg"
+            alt="The Benefits of Green Juice Cleansing"
+            loading="lazy">
+          <div class="b-sidebar-post-info">
+            <div class="b-sidebar-post-cat">Nutrition</div>
+            <div class="b-sidebar-post-title">The Benefits of Green Juice Cleansing</div>
+            <div class="b-sidebar-post-date">29.11.2026</div>
+          </div>
+        </a>
+
       </div>
-    </a>
+    </div>
+
+    <!-- LATEST ARTICLES heading -->
+    <div class="b-section-head">
+      <h2 class="b-section-title">Latest Articles</h2>
+      <a href="#" class="b-see-all">View all <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <!-- BLOG CARD GRID -->
+    <div class="b-grid">
+
+      <a href="#" class="b-card">
+        <div class="b-card-img-wrap">
+          <img src="images/blog-small.jpg" alt="5 Signs Your Body Needs a Detox" loading="lazy">
+        </div>
+        <div class="b-card-body">
+          <div class="b-card-cat">Fasting &amp; Detox</div>
+          <h3 class="b-card-title">5 Signs Your Body Needs a Detox</h3>
+          <p class="b-card-excerpt">Fatigue, brain fog, skin breakouts — discover the key signals your body sends when it's time to reset and cleanse from the inside out.</p>
+          <div class="b-card-footer">
+            <span class="b-card-date">10.12.2026</span>
+            <span class="b-card-read">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="b-card">
+        <div class="b-card-img-wrap">
+          <img src="images/holistic-stones.jpg" alt="How Meditation Transforms Your Immune System" loading="lazy">
+        </div>
+        <div class="b-card-body">
+          <div class="b-card-cat">Mental Wellness</div>
+          <h3 class="b-card-title">How Meditation Transforms Your Immune System</h3>
+          <p class="b-card-excerpt">New research confirms that daily mindfulness practice measurably reduces cortisol and strengthens your body's natural defences.</p>
+          <div class="b-card-footer">
+            <span class="b-card-date">08.12.2026</span>
+            <span class="b-card-read">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="b-card">
+        <div class="b-card-img-wrap">
+          <img src="images/category-card-1.jpg" alt="Gut Health: The Foundation of Overall Wellness" loading="lazy">
+        </div>
+        <div class="b-card-body">
+          <div class="b-card-cat">Gut Health</div>
+          <h3 class="b-card-title">Gut Health: The Foundation of Overall Wellness</h3>
+          <p class="b-card-excerpt">Your gut microbiome influences everything from mood to metabolism. Learn how to restore balance and build a resilient digestive foundation.</p>
+          <div class="b-card-footer">
+            <span class="b-card-date">05.12.2026</span>
+            <span class="b-card-read">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="b-card">
+        <div class="b-card-img-wrap">
+          <img src="images/category-card-2.jpg" alt="Why Medical Supervision Matters in Wellness Programs" loading="lazy">
+        </div>
+        <div class="b-card-body">
+          <div class="b-card-cat">Medical Insights</div>
+          <h3 class="b-card-title">Why Medical Supervision Matters in Wellness Programs</h3>
+          <p class="b-card-excerpt">Not all detox retreats are equal. Understanding the difference between supervised medical programs and unsupervised wellness getaways could be vital.</p>
+          <div class="b-card-footer">
+            <span class="b-card-date">02.12.2026</span>
+            <span class="b-card-read">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="b-card">
+        <div class="b-card-img-wrap">
+          <img src="images/blog-large.jpg" alt="The Benefits of Green Juice Cleansing" loading="lazy">
+        </div>
+        <div class="b-card-body">
+          <div class="b-card-cat">Nutrition</div>
+          <h3 class="b-card-title">The Benefits of Green Juice Cleansing</h3>
+          <p class="b-card-excerpt">Cold-pressed greens packed with chlorophyll, enzymes, and micronutrients can accelerate detoxification and restore cellular energy levels rapidly.</p>
+          <div class="b-card-footer">
+            <span class="b-card-date">29.11.2026</span>
+            <span class="b-card-read">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="b-card">
+        <div class="b-card-img-wrap">
+          <img src="images/category-card-3.jpg" alt="Longevity Secrets: What Science Says About Living to 100" loading="lazy">
+        </div>
+        <div class="b-card-body">
+          <div class="b-card-cat">Longevity</div>
+          <h3 class="b-card-title">Longevity Secrets: What Science Says About Living to 100</h3>
+          <p class="b-card-excerpt">Blue zone populations share striking patterns — intermittent fasting, low-stress living, community, and whole-food plant-rich diets top the list.</p>
+          <div class="b-card-footer">
+            <span class="b-card-date">26.11.2026</span>
+            <span class="b-card-read">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="b-card">
+        <div class="b-card-img-wrap">
+          <img src="images/category-card-4.jpg" alt="Breaking a Fast: The Right Way to Reintroduce Food" loading="lazy">
+        </div>
+        <div class="b-card-body">
+          <div class="b-card-cat">Fasting &amp; Detox</div>
+          <h3 class="b-card-title">Breaking a Fast: The Right Way to Reintroduce Food</h3>
+          <p class="b-card-excerpt">The way you end a fasting period is as critical as the fast itself. Follow these medically-guided steps to protect your gut and preserve the benefits.</p>
+          <div class="b-card-footer">
+            <span class="b-card-date">22.11.2026</span>
+            <span class="b-card-read">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="b-card">
+        <div class="b-card-img-wrap">
+          <img src="images/day-timeline-1.jpg" alt="Stress and Weight Gain: Understanding the Cortisol Connection" loading="lazy">
+        </div>
+        <div class="b-card-body">
+          <div class="b-card-cat">Weight Loss</div>
+          <h3 class="b-card-title">Stress and Weight Gain: Understanding the Cortisol Connection</h3>
+          <p class="b-card-excerpt">Chronic stress triggers hormonal imbalances that make it nearly impossible to lose weight through diet alone. Here's what to address first.</p>
+          <div class="b-card-footer">
+            <span class="b-card-date">18.11.2026</span>
+            <span class="b-card-read">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="b-card">
+        <div class="b-card-img-wrap">
+          <img src="images/day-timeline-2.jpg" alt="A Week at TheLifeCo: What Your Daily Schedule Really Looks Like" loading="lazy">
+        </div>
+        <div class="b-card-body">
+          <div class="b-card-cat">Resort Life</div>
+          <h3 class="b-card-title">A Week at TheLifeCo: What Your Daily Schedule Really Looks Like</h3>
+          <p class="b-card-excerpt">From dawn yoga and morning consultations to afternoon hydrotherapy and evening lectures — an honest look inside a transformative week at our Antalya resort.</p>
+          <div class="b-card-footer">
+            <span class="b-card-date">14.11.2026</span>
+            <span class="b-card-read">Read More <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="b-newsletter">
+      <div>
+        <div class="b-newsletter-title">Get wellness insights<br>delivered weekly.</div>
+        <p class="b-newsletter-desc">Join 40,000+ subscribers receiving expert-written articles on fasting, nutrition, and holistic health — no spam, ever.</p>
+      </div>
+      <div>
+        <form class="b-newsletter-form" onsubmit="return false;">
+          <input
+            type="email"
+            class="b-newsletter-input"
+            placeholder="Your email address"
+            aria-label="Email address">
+          <button type="submit" class="b-newsletter-btn">Subscribe</button>
+        </form>
+        <p class="b-newsletter-note">By subscribing you agree to our Privacy Policy. Unsubscribe anytime.</p>
+      </div>
+    </div>
+
+    <!-- PAGINATION -->
+    <nav class="b-pagination" aria-label="Blog pagination">
+      <a href="#" class="b-page-btn b-page-btn--wide" aria-label="Previous page"><i class="fa-solid fa-chevron-left"></i></a>
+      <a href="#" class="b-page-btn active" aria-current="page">1</a>
+      <a href="#" class="b-page-btn">2</a>
+      <a href="#" class="b-page-btn">3</a>
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;color:#5B7E96;font-family:'Montserrat',sans-serif;">…</span>
+      <a href="#" class="b-page-btn">12</a>
+      <a href="#" class="b-page-btn b-page-btn--wide" aria-label="Next page"><i class="fa-solid fa-chevron-right"></i></a>
+    </nav>
+
   </div>
-</section>
+</main>
 
-<!-- ===== ARTICLES GRID ===== -->
-<section class="blog-articles-section">
-  <div class="container">
-    <div class="blog-section-header">
-      <h2>Recent Articles</h2>
-      <a href="#" class="read-more-link">View all <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-    <div class="blog-cards-grid">
+<!-- ===========================
+     FOOTER
+     =========================== -->
+<footer class="b-footer">
+  <div class="b-footer-inner">
+    <div class="b-footer-grid">
 
-      <!-- Card 1: Detox -->
-      <a href="#" class="blog-card" style="display:flex;flex-direction:column;text-decoration:none;color:inherit">
-        <img
-          class="blog-card-img"
-          src="https://destinationdeluxe.com/wp-content/uploads/2025/04/Thelifeco-Phuket-Green-Juice-Serving.png"
-          alt="5 signs your body needs a detox"
-          loading="lazy"
-        >
-        <div class="blog-card-body" style="display:flex;flex-direction:column;flex:1">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Detox</span>
-            <span class="blog-card-read-time"><i class="fa-regular fa-clock"></i> 6 min</span>
-          </div>
-          <h3 class="blog-card-title">5 Signs Your Body Needs a Detox</h3>
-          <p class="blog-card-excerpt" style="flex:1">Persistent fatigue, brain fog, skin breakouts, and digestive sluggishness are your body's signals asking for a reset. Learn to read them.</p>
-          <div class="blog-card-footer">
-            <span class="blog-card-footer-date">March 2, 2025</span>
-            <span class="read-more-link" style="font-size:13px">Read <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 2: Nutrition -->
-      <a href="#" class="blog-card" style="display:flex;flex-direction:column;text-decoration:none;color:inherit">
-        <img
-          class="blog-card-img"
-          src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCO-Bodrum-raw-food-sushi.png"
-          alt="Raw vegan nutrition guide for beginners"
-          loading="lazy"
-        >
-        <div class="blog-card-body" style="display:flex;flex-direction:column;flex:1">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag">Nutrition</span>
-            <span class="blog-card-read-time"><i class="fa-regular fa-clock"></i> 9 min</span>
-          </div>
-          <h3 class="blog-card-title">Raw Vegan Nutrition Guide: Where to Start</h3>
-          <p class="blog-card-excerpt" style="flex:1">Transitioning to a raw-vegan diet can feel daunting. Our nutritionists break down exactly what to eat, how to plan, and what to expect.</p>
-          <div class="blog-card-footer">
-            <span class="blog-card-footer-date">February 18, 2025</span>
-            <span class="read-more-link" style="font-size:13px">Read <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 3: Mental Health -->
-      <a href="#" class="blog-card" style="display:flex;flex-direction:column;text-decoration:none;color:inherit">
-        <img
-          class="blog-card-img"
-          src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeco-Phuket-Yoga.png"
-          alt="How meditation changes your brain structure"
-          loading="lazy"
-        >
-        <div class="blog-card-body" style="display:flex;flex-direction:column;flex:1">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag" style="background:rgba(150,80,200,.1);color:#5a1a8c">Mental Health</span>
-            <span class="blog-card-read-time"><i class="fa-regular fa-clock"></i> 8 min</span>
-          </div>
-          <h3 class="blog-card-title">How Meditation Changes Your Brain</h3>
-          <p class="blog-card-excerpt" style="flex:1">Neuroscience now confirms what meditators have known for centuries. Discover how a regular practice rewires neural pathways and reduces cortisol.</p>
-          <div class="blog-card-footer">
-            <span class="blog-card-footer-date">February 5, 2025</span>
-            <span class="read-more-link" style="font-size:13px">Read <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 4: Travel -->
-      <a href="#" class="blog-card" style="display:flex;flex-direction:column;text-decoration:none;color:inherit">
-        <img
-          class="blog-card-img"
-          src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Pool-Outdoor.png"
-          alt="Best time to do a wellness retreat"
-          loading="lazy"
-        >
-        <div class="blog-card-body" style="display:flex;flex-direction:column;flex:1">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag" style="background:rgba(80,200,120,.1);color:#1a7a3c">Travel</span>
-            <span class="blog-card-read-time"><i class="fa-regular fa-clock"></i> 5 min</span>
-          </div>
-          <h3 class="blog-card-title">Best Time to Do a Wellness Retreat</h3>
-          <p class="blog-card-excerpt" style="flex:1">Seasons, personal readiness, and program timing all influence outcomes. Our retreat advisors share the factors that make a retreat truly land.</p>
-          <div class="blog-card-footer">
-            <span class="blog-card-footer-date">January 22, 2025</span>
-            <span class="read-more-link" style="font-size:13px">Read <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 5: Recipes -->
-      <a href="#" class="blog-card" style="display:flex;flex-direction:column;text-decoration:none;color:inherit">
-        <img
-          class="blog-card-img"
-          src="https://destinationdeluxe.com/wp-content/uploads/2025/04/raw-food-at-lifeco-wellness.png"
-          alt="Raw vegan recipes from TheLifeCo kitchen"
-          loading="lazy"
-        >
-        <div class="blog-card-body" style="display:flex;flex-direction:column;flex:1">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag" style="background:rgba(246,163,88,.12);color:#b06b1a">Recipes</span>
-            <span class="blog-card-read-time"><i class="fa-regular fa-clock"></i> 7 min</span>
-          </div>
-          <h3 class="blog-card-title">TheLifeCo Kitchen: 4 Signature Raw Recipes</h3>
-          <p class="blog-card-excerpt" style="flex:1">Recreate four of our most-requested dishes at home — from walnut taco boats to zucchini pasta with basil cream sauce. Vibrant, nourishing, and effortless.</p>
-          <div class="blog-card-footer">
-            <span class="blog-card-footer-date">January 10, 2025</span>
-            <span class="read-more-link" style="font-size:13px">Read <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Card 6: Travel / Photo Tour -->
-      <a href="#" class="blog-card" style="display:flex;flex-direction:column;text-decoration:none;color:inherit">
-        <img
-          class="blog-card-img"
-          src="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Mandala-Painting-Session-.png"
-          alt="Inside TheLifeCo Bodrum photo tour"
-          loading="lazy"
-        >
-        <div class="blog-card-body" style="display:flex;flex-direction:column;flex:1">
-          <div class="blog-card-meta">
-            <span class="blog-card-tag" style="background:rgba(80,200,120,.1);color:#1a7a3c">Travel</span>
-            <span class="blog-card-read-time"><i class="fa-regular fa-clock"></i> 4 min</span>
-          </div>
-          <h3 class="blog-card-title">Inside TheLifeCo Bodrum: A Photo Tour</h3>
-          <p class="blog-card-excerpt" style="flex:1">Step inside our Aegean flagship — from infinity pools overlooking the harbour to treatment rooms and organic kitchen. A visual journey through daily resort life.</p>
-          <div class="blog-card-footer">
-            <span class="blog-card-footer-date">December 18, 2024</span>
-            <span class="read-more-link" style="font-size:13px">Read <i class="fa-solid fa-arrow-right"></i></span>
-          </div>
-        </div>
-      </a>
-
-    </div>
-
-    <div style="text-align:center;margin-top:56px">
-      <a href="#" class="btn btn-outline-dark btn-lg">Load More Articles</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== NEWSLETTER ===== -->
-<section class="blog-newsletter">
-  <div class="container">
-    <div class="blog-newsletter-inner">
       <div>
-        <div class="blog-newsletter-badge">
-          <i class="fa-solid fa-envelope"></i>
-          <span>Newsletter</span>
+        <div class="b-footer-brand">TheLifeCo</div>
+        <div class="b-footer-social">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
-        <h2>Stay in<br>the Loop</h2>
-        <p>Join 12,000+ wellness enthusiasts receiving our bi-weekly digest — expert tips, new research, retreat updates, and subscriber-only offers, delivered with care.</p>
-      </div>
-      <div>
-        <div class="newsletter-perks">
-          <div class="newsletter-perk">
-            <div class="perk-icon"><i class="fa-solid fa-flask"></i></div>
-            <div>
-              <strong>Science-backed articles</strong>
-              <span>Every piece reviewed by our medical team before publication.</span>
-            </div>
-          </div>
-          <div class="newsletter-perk">
-            <div class="perk-icon"><i class="fa-solid fa-tag"></i></div>
-            <div>
-              <strong>Subscriber-only offers</strong>
-              <span>Early access to retreat openings and exclusive program discounts.</span>
-            </div>
-          </div>
-          <div class="newsletter-perk">
-            <div class="perk-icon"><i class="fa-solid fa-ban"></i></div>
-            <div>
-              <strong>No spam, ever</strong>
-              <span>Bi-weekly only. Unsubscribe with one click at any time.</span>
-            </div>
-          </div>
-        </div>
-        <div class="newsletter-form-block">
-          <div class="newsletter-input-row">
-            <input type="email" placeholder="Your email address">
-            <a href="#" class="btn btn-primary">Subscribe Free</a>
-          </div>
-          <p class="newsletter-consent">By subscribing you agree to our <a href="#">Privacy Policy</a>. We respect your inbox and will never share your data.</p>
+        <div class="b-footer-address">
+          Mamak Mah. Büyükdere Cad. UBD Center No:<br>
+          219 Kat: 18 D: 88-89 / 34398 Sarıyer /<br>
+          Istanbul
         </div>
       </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
       <div>
-        <div class="footer-brand">TheLifeCo</div>
-        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2005. With luxury resorts across Turkey, Thailand, Egypt, and the Caribbean.</p>
-        <div class="footer-social">
-          <a href="https://instagram.com/thelifeco" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://facebook.com/thelifeco" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://youtube.com/thelifeco" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <div class="b-footer-col-heading">Centers</div>
+        <div class="b-footer-col-links">
+          <a href="#">Antalya</a>
+          <a href="#">Bodrum</a>
+          <a href="#">Phuket</a>
+          <a href="#">Sharm El Sheikh</a>
+          <a href="#">St. Lucia</a>
         </div>
       </div>
+
       <div>
-        <div class="footer-heading">Resorts</div>
-        <div class="footer-links">
-          <a href="resorts/bodrum.html">Bodrum</a>
-          <a href="resorts/antalya.html">Antalya</a>
-          <a href="resorts/phuket.html">Phuket</a>
-          <a href="resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
-          <a href="resorts/st-lucia.html">St. Lucia</a>
+        <div class="b-footer-col-heading">Retreatments</div>
+        <div class="b-footer-col-links">
+          <a href="#">Diabetes Recovery Retreatment</a>
+          <a href="#">Water Fasting Retreatment</a>
+          <a href="#">Intermittent Fasting Retreatment</a>
+          <a href="#">Low Support Retreatment</a>
+          <a href="#">Get Fit &amp; Healthy Retreatment</a>
+          <a href="#">Mindfully Living Retreatment</a>
         </div>
       </div>
+
       <div>
-        <div class="footer-heading">Programs</div>
-        <div class="footer-links">
-          <a href="programs/master-detox.html">Master Detox</a>
-          <a href="programs/water-fasting.html">Water Fasting</a>
-          <a href="programs/green-detox.html">Green Detox</a>
-          <a href="programs/longevity-reset.html">Longevity Reset</a>
-          <a href="programs/mental-wellness.html">Mental Wellness</a>
+        <div class="b-footer-col-heading">Meal Plans</div>
+        <div class="b-footer-col-links">
+          <a href="#">Whole Cleanse Retreatment</a>
+          <a href="#">Green Detox Retreatment</a>
+          <a href="#">Intermittent Fasting Retreatment</a>
+          <a href="#">Low Calorie Retreatment</a>
         </div>
       </div>
+
       <div>
-        <div class="footer-heading">Company</div>
-        <div class="footer-links">
-          <a href="about.html">About Us</a>
+        <div class="b-footer-col-heading">Explore</div>
+        <div class="b-footer-col-links" style="margin-bottom:24px;">
+          <a href="#">About Us</a>
+          <a href="#">Corporate Projects</a>
           <a href="blog.html">Blog</a>
-          <a href="testimonials.html">Testimonials</a>
-          <a href="faq.html">FAQ</a>
-          <a href="contact.html">Contact</a>
+          <a href="#">Habit Building App</a>
+          <a href="#">Press Kit</a>
+          <a href="#">TheLifeCo Gift Voucher</a>
+        </div>
+        <div class="b-footer-app-label">Download BOATSY App</div>
+        <div class="b-footer-app-btns">
+          <a href="#" class="b-footer-app-btn">
+            <i class="fa-brands fa-apple"></i>
+            <span>App Store</span>
+          </a>
+          <a href="#" class="b-footer-app-btn">
+            <i class="fa-brands fa-google-play"></i>
+            <span>Google Play</span>
+          </a>
         </div>
       </div>
-      <div>
-        <div class="footer-heading">Contact</div>
-        <div class="footer-links">
-          <a href="mailto:info@thelifeco.com">info@thelifeco.com</a>
-          <a href="tel:+902524134410">+90 252 413 44 10</a>
-          <a href="https://wa.me/905325554410">WhatsApp</a>
-        </div>
-        <div style="margin-top:24px">
-          <div class="footer-heading">Booking</div>
-          <div class="footer-links">
-            <a href="booking.html">Book a Retreat</a>
-            <a href="contact.html">Talk to an Expert</a>
-          </div>
-        </div>
-      </div>
+
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2025 TheLifeCo Wellbeing. All rights reserved.</span>
-      <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
+
+    <div class="b-footer-bottom">
+      <div class="b-footer-bottom-left">
+        <span>&copy; 2026 Powered by LifeCo</span>
         <a href="#">Terms &amp; Conditions</a>
-        <a href="#">Cookie Policy</a>
+        <a href="#">Sitemap</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookies Policy</a>
+      </div>
+      <div class="b-footer-bottom-right">
+        <span>EN</span>
+        <a href="#"><i class="fa-brands fa-instagram" style="font-size:16px;color:#5B7E96;"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter" style="font-size:16px;color:#5B7E96;"></i></a>
       </div>
     </div>
+
   </div>
 </footer>
 
-<script src="js/main.js"></script>
 </body>
 </html>

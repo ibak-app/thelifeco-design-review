@@ -4,576 +4,1185 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TheLifeCo — Contact Us</title>
-<meta name="description" content="Get in touch with TheLifeCo. Reach our wellness experts to plan your retreat at one of our five luxury resort destinations across Turkey, Thailand, Egypt, and the Caribbean.">
-<meta name="keywords" content="TheLifeCo contact, wellness retreat enquiry, book wellness program, TheLifeCo Bodrum, Phuket wellness">
-<meta property="og:title" content="TheLifeCo — Contact Us">
-<meta property="og:description" content="Reach our wellness experts to plan your personalized retreat across our five luxury resort destinations worldwide.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://thelifeco.com/contact.html">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TheLifeCo — Contact Us">
-<meta name="twitter:description" content="Reach our wellness experts to plan your personalized retreat worldwide.">
+<meta name="description" content="Get in touch with TheLifeCo. Speak to our wellness experts and plan your retreat at one of 6 luxury destinations across Turkey, Thailand, Egypt, and St. Lucia.">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
 <style>
-/* --- Hero --- */
-.contact-hero {
-  padding: 140px 0 72px;
-  background: var(--bg-section);
-  text-align: center;
+
+/* =========================================
+   Contact Page — TheLifeCo Design System
+   ========================================= */
+
+/* ---------- NAV (white bg, dark text — matches t-nav) ---------- */
+.t-nav {
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #E3EDF3;
+  z-index: 100;
 }
-.contact-hero .accent-line { margin: 0 auto 24px; }
-.contact-hero h1 {
-  font-size: 64px;
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -2px;
-  color: var(--text-primary);
-  margin-bottom: 20px;
-}
-.contact-hero p {
-  font-size: 18px;
-  color: var(--text-secondary);
-  max-width: 520px;
+.t-nav-inner {
+  max-width: 1440px;
   margin: 0 auto;
-  line-height: 1.7;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.t-nav-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #141827;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.t-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.t-nav-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #141827;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.t-nav-links a:hover,
+.t-nav-links a.active { opacity: 1; }
+.t-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.t-nav-right a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #141827;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.t-nav-right a:hover { opacity: 1; }
+.t-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid #141827;
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #141827;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.t-nav-cta:hover { background: #141827; color: #fff; }
+.t-nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.t-nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #141827;
 }
 
-/* --- Main layout --- */
-.contact-layout {
+/* ---------- PAGE HEADER ---------- */
+.contact-header {
+  background: #F4F8FB;
+  padding: 72px 0 64px;
+  border-bottom: 1px solid #E3EDF3;
+}
+.contact-header-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+.contact-header-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #8AABC0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+.contact-header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: #141827;
+  margin-bottom: 20px;
+}
+.contact-header h1 strong { font-weight: 700; }
+.contact-header-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  color: #5B7E96;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+/* ---------- MAIN LAYOUT ---------- */
+.contact-main {
+  padding: 80px 0 100px;
+  background: #fff;
+}
+.contact-main-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
   display: grid;
   grid-template-columns: 1fr 420px;
-  gap: 48px;
+  gap: 56px;
   align-items: start;
 }
 
-/* --- Form card --- */
+/* ---------- FORM CARD ---------- */
 .contact-form-card {
-  background: var(--white);
-  border: 1px solid var(--border-color);
+  background: #fff;
+  border: 1px solid #E3EDF3;
   border-radius: 24px;
   padding: 48px;
 }
 .contact-form-card h2 {
+  font-family: 'Montserrat', sans-serif;
   font-size: 28px;
   font-weight: 700;
-  color: var(--text-primary);
+  color: #141827;
   margin-bottom: 8px;
 }
 .contact-form-card .form-subtitle {
-  font-size: 14px;
-  color: var(--text-secondary);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: #5B7E96;
   margin-bottom: 36px;
   line-height: 1.6;
 }
 
-/* --- Form fields --- */
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.form-group { margin-bottom: 20px; }
-.form-group label {
-  display: block;
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.form-label {
+  font-family: 'Montserrat', sans-serif;
   font-size: 13px;
   font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
+  color: #141827;
+  letter-spacing: 0.2px;
 }
-.form-group input,
-.form-group select,
-.form-group textarea {
+.form-input,
+.form-select,
+.form-textarea {
   width: 100%;
   padding: 14px 18px;
-  border: 1px solid var(--border-color);
+  border: 1px solid #E3EDF3;
   border-radius: 12px;
-  font-family: var(--font-primary);
+  font-family: 'Montserrat', sans-serif;
   font-size: 15px;
-  color: var(--text-primary);
-  background: var(--white);
-  outline: none;
+  font-weight: 400;
+  color: #141827;
+  background: #fff;
   transition: border-color 0.2s, box-shadow 0.2s;
-  -webkit-appearance: none;
+  outline: none;
   appearance: none;
 }
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  border-color: var(--brand-navy);
-  box-shadow: 0 0 0 3px rgba(0, 96, 156, 0.08);
+.form-input::placeholder,
+.form-textarea::placeholder { color: #B8CDD9; }
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: #141827;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
 }
-.form-group select {
+.form-select {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23919191' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 16px center;
-  padding-right: 44px;
+  padding-right: 40px;
   cursor: pointer;
 }
-.form-group textarea {
-  height: 120px;
+.form-textarea {
   resize: vertical;
+  min-height: 140px;
   line-height: 1.6;
 }
-.form-submit-note {
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 32px;
+  background: #141827;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+.form-submit:hover { background: #202020; }
+.form-submit:disabled {
+  background: #2d7a4f;
+  cursor: default;
+}
+.form-privacy {
+  font-family: 'Montserrat', sans-serif;
   font-size: 12px;
-  color: var(--text-muted);
-  margin-top: 12px;
+  color: #8AABC0;
   text-align: center;
+  margin-top: 16px;
+  line-height: 1.6;
+}
+.form-privacy a {
+  color: #141827;
+  text-decoration: underline;
 }
 
-/* --- Info sidebar --- */
-.contact-info-stack { display: flex; flex-direction: column; gap: 20px; }
+/* ---------- SIDEBAR ---------- */
+.contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
 
+/* Info card */
 .contact-info-card {
-  background: var(--white);
-  border: 1px solid var(--border-color);
+  background: #F4F8FB;
   border-radius: 20px;
-  padding: 28px;
-  transition: border-color 0.2s;
+  padding: 36px 32px;
 }
-.contact-info-card:hover { border-color: var(--brand-teal); }
-.contact-info-card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(0, 190, 214, 0.1);
+.contact-info-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #141827;
+  margin-bottom: 24px;
+}
+.contact-info-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+.contact-info-item:last-child { margin-bottom: 0; }
+.contact-info-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: #fff;
+  border: 1px solid #E3EDF3;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--brand-teal);
-  font-size: 18px;
-  margin-bottom: 16px;
-}
-.contact-info-card-label {
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--text-muted);
-  margin-bottom: 6px;
-}
-.contact-info-card-value {
+  flex-shrink: 0;
   font-size: 16px;
+  color: #141827;
+}
+.contact-info-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
   font-weight: 600;
-  color: var(--text-primary);
+  color: #8AABC0;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
   margin-bottom: 4px;
 }
-.contact-info-card-note {
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-.contact-info-card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--brand-navy);
-  margin-top: 10px;
-}
-
-/* WhatsApp card */
-.contact-whatsapp-card {
-  background: #25D366;
-  border: 1px solid #1fb457;
-  border-radius: 20px;
-  padding: 28px;
-  color: var(--white);
-}
-.contact-whatsapp-card .contact-info-card-icon {
-  background: rgba(255,255,255,0.2);
-  color: var(--white);
-}
-.contact-whatsapp-card .contact-info-card-label { color: rgba(255,255,255,0.7); }
-.contact-whatsapp-card .contact-info-card-value { color: var(--white); }
-.contact-whatsapp-card .contact-info-card-note { color: rgba(255,255,255,0.8); }
-.contact-whatsapp-card .contact-info-card-link { color: var(--white); }
-
-/* --- Locations grid --- */
-.location-address-card {
-  background: var(--white);
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  padding: 28px;
-  transition: all 0.2s;
-}
-.location-address-card:hover {
-  border-color: var(--brand-navy);
-  transform: translateY(-2px);
-}
-.location-flag-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 12px;
-  background: rgba(0, 96, 156, 0.08);
-  border-radius: 100px;
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--brand-navy);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 14px;
-}
-.location-address-name {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 8px;
-}
-.location-address-detail {
+.contact-info-value {
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.7;
+  font-weight: 500;
+  color: #141827;
+  line-height: 1.5;
 }
-.location-address-link {
-  display: inline-flex;
+.contact-info-value a {
+  color: #141827;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.contact-info-value a:hover { opacity: 0.65; }
+
+/* Map placeholder */
+.contact-map {
+  border-radius: 20px;
+  overflow: hidden;
+  height: 200px;
+  background: #E3EDF3;
+  border: 1px solid #E3EDF3;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
+  gap: 10px;
+  color: #8AABC0;
+  background: linear-gradient(135deg, #E3EDF3 0%, #f0f0f0 100%);
+}
+.contact-map i { font-size: 28px; color: #B8CDD9; }
+.contact-map span {
+  font-family: 'Montserrat', sans-serif;
   font-size: 13px;
-  font-weight: 600;
-  color: var(--brand-navy);
-  margin-top: 12px;
+  color: #8AABC0;
 }
 
-/* --- Social row --- */
-.contact-social-row {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+/* Locations list */
+.locations-card {
+  background: #fff;
+  border: 1px solid #E3EDF3;
+  border-radius: 20px;
+  padding: 32px;
 }
-.contact-social-btn {
+.locations-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #141827;
+  margin-bottom: 20px;
+}
+.location-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.location-item:first-of-type { padding-top: 0; }
+.location-item:last-child { border-bottom: none; padding-bottom: 0; }
+.location-flag {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #F4F8FB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 18px;
+  line-height: 1;
+}
+.location-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #141827;
+  margin-bottom: 3px;
+}
+.location-address {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: #8AABC0;
+  line-height: 1.5;
+}
+
+/* ---------- RESPONSE PROMISE ---------- */
+.response-section {
+  padding: 80px 0;
+  background: #F4F8FB;
+  border-top: 1px solid #E3EDF3;
+}
+.response-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: #E3EDF3;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.response-item {
+  background: #F4F8FB;
+  padding: 48px 40px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  transition: background 0.2s;
+}
+.response-item:hover { background: #efefef; }
+.response-item-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid #E3EDF3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 20px;
+  color: #141827;
+}
+.response-item-body h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #141827;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.response-item-body p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #5B7E96;
+  line-height: 1.6;
+}
+
+/* ---------- CTA SECTION ---------- */
+.contact-cta {
+  padding: 80px 0;
+  background: #141827;
+}
+.contact-cta-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+}
+.contact-cta h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  color: #fff;
+}
+.contact-cta h2 strong { font-weight: 700; }
+.contact-cta-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.cta-btn-primary {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 20px;
-  border: 1px solid var(--border-color);
+  padding: 16px 32px;
+  background: #fff;
+  color: #141827;
   border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.cta-btn-primary:hover { background: #E3EDF3; }
+.cta-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color 0.2s;
+}
+.cta-btn-outline:hover { border-color: rgba(255,255,255,0.7); }
+
+/* ---------- FOOTER ---------- */
+.t-footer {
+  background: #fff;
+  border-top: 1px solid #E3EDF3;
+}
+.t-footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 64px 80px 0;
+}
+.t-footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid #E3EDF3;
+}
+.t-footer-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #141827;
+  margin-bottom: 16px;
+}
+.t-footer-social {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.t-footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #E3EDF3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5B7E96;
+  font-size: 14px;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.t-footer-social a:hover { border-color: #141827; color: #141827; }
+.t-footer-address {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #5B7E96;
+  line-height: 1.7;
+}
+.t-footer-col-heading {
+  font-family: 'Montserrat', sans-serif;
   font-size: 13px;
   font-weight: 600;
-  color: var(--text-primary);
-  transition: all 0.2s;
+  color: #141827;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
 }
-.contact-social-btn:hover {
-  background: var(--text-primary);
-  color: var(--white);
-  border-color: var(--text-primary);
+.t-footer-col-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.contact-social-btn i { font-size: 15px; }
-
-/* --- Booking CTA strip --- */
-.contact-cta-strip {
-  background: var(--brand-dark);
-  border-radius: 24px;
-  padding: 48px;
+.t-footer-col-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #5B7E96;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.t-footer-col-links a:hover { color: #141827; }
+.t-footer-app-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #141827;
+  margin-bottom: 12px;
+}
+.t-footer-app-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.t-footer-app-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid #DAE7EF;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #141827;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+.t-footer-app-btn:hover { border-color: #141827; }
+.t-footer-app-btn i { font-size: 16px; }
+.t-footer-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
-  margin-top: 60px;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  gap: 12px;
 }
-.contact-cta-strip h3 {
-  font-size: 28px;
+.t-footer-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.t-footer-bottom-left span,
+.t-footer-bottom-left a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #5B7E96;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.t-footer-bottom-left a:hover { color: #141827; }
+.t-footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.t-footer-bottom-right span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
   font-weight: 700;
-  color: var(--white);
-  margin-bottom: 8px;
+  color: #141827;
+  cursor: pointer;
 }
-.contact-cta-strip p {
-  font-size: 15px;
-  color: rgba(255,255,255,0.65);
-  max-width: 420px;
+.t-footer-bottom-right a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #5B7E96;
+  text-decoration: none;
 }
 
-/* Responsive */
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 1200px) {
+  .t-nav-inner,
+  .contact-header-inner,
+  .contact-main-inner,
+  .response-inner,
+  .contact-cta-inner,
+  .t-footer-inner { padding-left: 40px; padding-right: 40px; }
+}
 @media (max-width: 1024px) {
-  .contact-layout { grid-template-columns: 1fr; }
-  .contact-hero h1 { font-size: 48px; }
+  .contact-header h1 { font-size: 48px; }
+  .contact-main-inner { grid-template-columns: 1fr; }
+  .contact-sidebar { display: grid; grid-template-columns: 1fr 1fr; }
+  .locations-card { grid-column: 1 / -1; }
+  .response-inner { grid-template-columns: 1fr; }
+  .contact-cta-inner { grid-template-columns: 1fr; }
+  .contact-cta-actions { justify-content: flex-start; }
+  .t-footer-grid { grid-template-columns: 1fr 1fr 1fr; }
 }
 @media (max-width: 768px) {
-  .contact-hero { padding: 120px 0 56px; }
-  .contact-hero h1 { font-size: 36px; letter-spacing: -1px; }
-  .contact-hero p { font-size: 16px; }
-  .contact-form-card { padding: 28px 20px; }
+  .t-nav-links { display: none; }
+  .t-nav-toggle { display: flex; }
+  .t-nav-inner { padding: 0 20px; }
+  .contact-header-inner { padding: 0 20px; }
+  .contact-header h1 { font-size: 36px; letter-spacing: -1px; }
+  .contact-main-inner { padding: 0 20px; }
+  .contact-form-card { padding: 28px 24px; }
   .form-row { grid-template-columns: 1fr; }
-  .contact-cta-strip { flex-direction: column; text-align: center; }
-  .contact-cta-strip h3 { font-size: 22px; }
+  .contact-sidebar { grid-template-columns: 1fr; }
+  .response-inner { border-radius: 16px; padding: 0 20px; }
+  .response-item { padding: 32px 0; }
+  .contact-cta-inner { padding: 0 20px; }
+  .contact-cta h2 { font-size: 32px; }
+  .contact-cta-actions { flex-direction: column; align-items: stretch; }
+  .t-footer-inner { padding: 40px 20px 0; }
+  .t-footer-grid { grid-template-columns: 1fr 1fr; }
+  .t-footer-bottom { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 480px) {
-  .contact-hero h1 { font-size: 28px; }
+  .contact-header h1 { font-size: 28px; }
+  .t-footer-grid { grid-template-columns: 1fr; }
+  .t-footer-bottom-left { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 </style>
 </head>
 <body>
 
-<!-- ===== NAVIGATION ===== -->
-<nav class="nav nav--dark">
-  <div class="container">
-    <a href="index.html" class="nav-logo">TheLifeCo</a>
-    <div class="nav-links">
-      <a href="about.html">About</a>
-      <div class="nav-dropdown">
-        <a href="resort.html">Resorts &#9662;</a>
-        <div class="nav-dropdown-menu">
-          <a href="resorts/bodrum.html">Bodrum</a>
-          <a href="resorts/antalya.html">Antalya</a>
-          <a href="resorts/phuket.html">Phuket</a>
-          <a href="resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
-          <a href="resorts/st-lucia.html">St. Lucia</a>
-        </div>
-      </div>
-      <a href="treatments.html">Programs</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
+<!-- ===========================
+     NAVIGATION
+     =========================== -->
+<nav class="t-nav" id="t-nav">
+  <div class="t-nav-inner">
+    <a href="index.html" class="t-nav-logo">TheLifeCo</a>
+
+    <div class="t-nav-links">
+      <a href="index.html">Retreats</a>
+      <a href="resort.html">Resorts</a>
+      <a href="#">Medical</a>
+      <a href="treatments.html">Treatments</a>
     </div>
-    <div class="nav-right">
-      <a href="booking.html" class="nav-cta">Book Now</a>
+
+    <div class="t-nav-right">
+      <a href="#" style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600">EN</a>
+      <a href="#" style="font-size:13px"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a href="contact.html" class="t-nav-cta active">Talk to an expert</a>
     </div>
-    <div class="nav-toggle"><span></span><span></span><span></span></div>
+
+    <button class="t-nav-toggle" aria-label="Open menu" onclick="document.getElementById('t-nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
-<!-- ===== HERO ===== -->
-<section class="contact-hero">
-  <div class="container">
-    <div class="accent-line"></div>
-    <h1>Get in Touch</h1>
-    <p>Our wellness consultants are here to help you find the perfect program and destination for your transformation.</p>
+<!-- ===========================
+     PAGE HEADER
+     =========================== -->
+<header class="contact-header">
+  <div class="contact-header-inner">
+    <div class="contact-header-eyebrow">Contact</div>
+    <h1>Get <strong>In Touch</strong></h1>
+    <p class="contact-header-sub">
+      Our wellness advisors are here to help you find the right programme and destination. Reach us any time — we typically respond within 24 hours.
+    </p>
   </div>
-</section>
+</header>
 
-<!-- ===== CONTACT MAIN ===== -->
-<section class="section">
-  <div class="container">
-    <div class="contact-layout">
+<!-- ===========================
+     MAIN: FORM + SIDEBAR
+     =========================== -->
+<main class="contact-main">
+  <div class="contact-main-inner">
 
-      <!-- Form -->
+    <!-- FORM -->
+    <section aria-label="Contact form">
       <div class="contact-form-card">
         <h2>Send Us a Message</h2>
-        <p class="form-subtitle">Fill in the form below and one of our wellness consultants will respond within 24 hours.</p>
-        <form action="#" method="post" novalidate>
+        <p class="form-subtitle">Tell us about your wellness goals and we will match you with the perfect programme.</p>
+
+        <form id="contact-form" action="#" method="post" novalidate>
+
           <div class="form-row">
             <div class="form-group">
-              <label for="contact-name">Full Name</label>
-              <input type="text" id="contact-name" name="name" placeholder="Jane Smith" required autocomplete="name">
+              <label class="form-label" for="first-name">First Name</label>
+              <input
+                class="form-input"
+                type="text"
+                id="first-name"
+                name="first_name"
+                placeholder="Your first name"
+                autocomplete="given-name"
+                required>
             </div>
             <div class="form-group">
-              <label for="contact-email">Email Address</label>
-              <input type="email" id="contact-email" name="email" placeholder="jane@example.com" required autocomplete="email">
+              <label class="form-label" for="last-name">Last Name</label>
+              <input
+                class="form-input"
+                type="text"
+                id="last-name"
+                name="last_name"
+                placeholder="Your last name"
+                autocomplete="family-name"
+                required>
             </div>
           </div>
-          <div class="form-group">
-            <label for="contact-phone">Phone Number</label>
-            <input type="tel" id="contact-phone" name="phone" placeholder="+1 555 000 0000" autocomplete="tel">
-          </div>
+
           <div class="form-row">
             <div class="form-group">
-              <label for="contact-resort">Preferred Resort</label>
-              <select id="contact-resort" name="resort">
-                <option value="">Any Location</option>
+              <label class="form-label" for="email">Email Address</label>
+              <input
+                class="form-input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                autocomplete="email"
+                required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number</label>
+              <input
+                class="form-input"
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+1 (000) 000-0000"
+                autocomplete="tel">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="interest">Area of Interest</label>
+              <select class="form-select" id="interest" name="interest">
+                <option value="" disabled selected>Select a programme</option>
+                <option value="weight-loss">Weight Loss &amp; Management</option>
+                <option value="detox">Cleansing &amp; Detox</option>
+                <option value="longevity">Healthy Aging &amp; Longevity</option>
+                <option value="mental">Mental Health &amp; Stress</option>
+                <option value="chronic">Chronic Disease Recovery</option>
+                <option value="other">Other / Not sure yet</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="destination">Preferred Destination</label>
+              <select class="form-select" id="destination" name="destination">
+                <option value="" disabled selected>Select a location</option>
                 <option value="bodrum">Bodrum, Turkey</option>
                 <option value="antalya">Antalya, Turkey</option>
                 <option value="phuket">Phuket, Thailand</option>
                 <option value="sharm">Sharm El Sheikh, Egypt</option>
-                <option value="st-lucia">St. Lucia, Caribbean</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="contact-program">Program of Interest</label>
-              <select id="contact-program" name="program">
-                <option value="">Select a Program</option>
-                <option value="master-detox">Master Detox</option>
-                <option value="water-fasting">Water Fasting</option>
-                <option value="green-detox">Green Detox</option>
-                <option value="juice-cleanse">Juice Cleanse</option>
-                <option value="diabetes-recovery">Diabetes Recovery</option>
-                <option value="weight-loss">Weight Loss</option>
-                <option value="mental-wellness">Mental Wellness</option>
-                <option value="longevity-reset">Longevity Reset</option>
-                <option value="beauty-glow">Beauty &amp; Glow</option>
-                <option value="spa-retreat">Spa Retreat</option>
+                <option value="st-lucia">St. Lucia</option>
+                <option value="istanbul">Istanbul, Turkey</option>
+                <option value="flexible">Flexible / Unsure</option>
               </select>
             </div>
           </div>
+
           <div class="form-group">
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" placeholder="Tell us about your wellness goals, preferred dates, or any questions you have..."></textarea>
+            <label class="form-label" for="message">Message</label>
+            <textarea
+              class="form-textarea"
+              id="message"
+              name="message"
+              placeholder="Tell us about your health goals, availability, and any questions you have..."
+              required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
-            Send Message <i class="fa-solid fa-arrow-right"></i>
+
+          <button type="submit" class="form-submit" id="form-submit-btn">
+            <span id="form-submit-label">Send Message</span>
+            <i class="fa-solid fa-arrow-right" id="form-submit-icon"></i>
           </button>
-          <p class="form-submit-note">By submitting this form, you agree to our Privacy Policy. We will never share your details with third parties.</p>
+
+          <p class="form-privacy">
+            By submitting this form you agree to our <a href="#">Privacy Policy</a>. We will never share your information with third parties.
+          </p>
+
         </form>
       </div>
+    </section>
 
-      <!-- Info Sidebar -->
-      <div class="contact-info-stack">
-        <div class="contact-info-card">
-          <div class="contact-info-card-icon"><i class="fa-solid fa-envelope"></i></div>
-          <div class="contact-info-card-label">Email</div>
-          <div class="contact-info-card-value">info@thelifeco.com</div>
-          <div class="contact-info-card-note">We respond within 24 hours on business days.</div>
-          <a href="mailto:info@thelifeco.com" class="contact-info-card-link">Write to us <i class="fa-solid fa-arrow-up-right"></i></a>
+    <!-- SIDEBAR -->
+    <aside class="contact-sidebar" aria-label="Contact information">
+
+      <!-- Contact info -->
+      <div class="contact-info-card">
+        <h3>Contact Information</h3>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <div class="contact-info-body">
+            <div class="contact-info-label">Phone</div>
+            <div class="contact-info-value">
+              <a href="tel:+902129990000">+90 212 999 0000</a>
+            </div>
+          </div>
         </div>
 
-        <div class="contact-info-card">
-          <div class="contact-info-card-icon" style="background:rgba(0,96,156,0.1);color:var(--brand-navy)"><i class="fa-solid fa-phone"></i></div>
-          <div class="contact-info-card-label">Phone</div>
-          <div class="contact-info-card-value">+90 252 413 44 10</div>
-          <div class="contact-info-card-note">Monday – Saturday, 9am – 6pm (Turkey Time, GMT+3).</div>
-          <a href="tel:+902524134410" class="contact-info-card-link">Call us <i class="fa-solid fa-arrow-up-right"></i></a>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="contact-info-body">
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-value">
+              <a href="mailto:info@thelifeco.com">info@thelifeco.com</a>
+            </div>
+          </div>
         </div>
 
-        <div class="contact-whatsapp-card">
-          <div class="contact-info-card-icon"><i class="fa-brands fa-whatsapp"></i></div>
-          <div class="contact-info-card-label">WhatsApp</div>
-          <div class="contact-info-card-value">+90 532 555 44 10</div>
-          <div class="contact-info-card-note">Chat with our team any time for quick questions or booking help.</div>
-          <a href="https://wa.me/905325554410" class="contact-info-card-link" target="_blank" rel="noopener">Start a chat <i class="fa-solid fa-arrow-up-right"></i></a>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <i class="fa-solid fa-building"></i>
+          </div>
+          <div class="contact-info-body">
+            <div class="contact-info-label">Headquarters</div>
+            <div class="contact-info-value">
+              Maslak Mah. Büyükdere Cad.<br>
+              USO Center No: 245 Kat: 15<br>
+              &#304;ç Kap&#305; No: 56 Maslak /<br>
+              Sar&#305;yer / &#304;stanbul
+            </div>
+          </div>
         </div>
 
-        <div class="contact-info-card" style="border-color:var(--border-color)">
-          <div class="contact-info-card-icon" style="background:rgba(246,163,88,0.1);color:var(--brand-orange)"><i class="fa-solid fa-clock"></i></div>
-          <div class="contact-info-card-label">Office Hours</div>
-          <div class="contact-info-card-value">Mon – Sat, 9:00am – 6:00pm</div>
-          <div class="contact-info-card-note">GMT+3 (Turkey Time). Emergency support available 24/7 for active guests.</div>
+        <div class="contact-info-item">
+          <div class="contact-info-icon">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <div class="contact-info-body">
+            <div class="contact-info-label">Office Hours</div>
+            <div class="contact-info-value">
+              Mon – Fri: 09:00 – 18:00 (UTC+3)<br>
+              Weekends: 10:00 – 16:00
+            </div>
+          </div>
         </div>
+
       </div>
 
+      <!-- Map placeholder -->
+      <div class="contact-map" role="img" aria-label="Map showing TheLifeCo headquarters in Maslak, Istanbul">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <span>Maslak / Sar&#305;yer / &#304;stanbul</span>
+      </div>
+
+      <!-- Locations list -->
+      <div class="locations-card">
+        <h3>Our Resort Locations</h3>
+
+        <div class="location-item">
+          <div class="location-flag" aria-hidden="true">&#127481;&#127479;</div>
+          <div>
+            <div class="location-name">TheLifeCo Bodrum</div>
+            <div class="location-address">Yahsi Mah. Atatürk Cad. No: 21, Bodrum / Mugla, Turkey</div>
+          </div>
+        </div>
+
+        <div class="location-item">
+          <div class="location-flag" aria-hidden="true">&#127481;&#127479;</div>
+          <div>
+            <div class="location-name">TheLifeCo Antalya</div>
+            <div class="location-address">Sirinyali Mah. Lara Cad. No: 136, Muratpasa / Antalya, Turkey</div>
+          </div>
+        </div>
+
+        <div class="location-item">
+          <div class="location-flag" aria-hidden="true">&#127481;&#127469;</div>
+          <div>
+            <div class="location-name">TheLifeCo Phuket</div>
+            <div class="location-address">57/26 Moo 6, Kamala Beach, Kathu, Phuket 83150, Thailand</div>
+          </div>
+        </div>
+
+        <div class="location-item">
+          <div class="location-flag" aria-hidden="true">&#127466;&#127468;</div>
+          <div>
+            <div class="location-name">TheLifeCo Sharm El Sheikh</div>
+            <div class="location-address">Hadaba District, Peace Road, Sharm El Sheikh, Egypt</div>
+          </div>
+        </div>
+
+        <div class="location-item">
+          <div class="location-flag" aria-hidden="true">&#127473;&#127464;</div>
+          <div>
+            <div class="location-name">TheLifeCo St. Lucia</div>
+            <div class="location-address">Cap Estate, Gros Islet, St. Lucia, Caribbean</div>
+          </div>
+        </div>
+
+        <div class="location-item">
+          <div class="location-flag" aria-hidden="true">&#127481;&#127479;</div>
+          <div>
+            <div class="location-name">TheLifeCo Istanbul</div>
+            <div class="location-address">Maslak Mah. Büyükdere Cad. USO Center No: 245, Sariyer / Istanbul</div>
+          </div>
+        </div>
+
+      </div>
+
+    </aside>
+
+  </div>
+</main>
+
+<!-- ===========================
+     RESPONSE PROMISE
+     =========================== -->
+<section class="response-section" aria-label="How we respond">
+  <div class="response-inner">
+
+    <div class="response-item">
+      <div class="response-item-icon">
+        <i class="fa-solid fa-bolt"></i>
+      </div>
+      <div class="response-item-body">
+        <h4>Fast Response</h4>
+        <p>Our team responds to all enquiries within 24 hours — usually much sooner during business hours.</p>
+      </div>
+    </div>
+
+    <div class="response-item">
+      <div class="response-item-icon">
+        <i class="fa-solid fa-user-doctor"></i>
+      </div>
+      <div class="response-item-body">
+        <h4>Expert Guidance</h4>
+        <p>You will be connected directly with a wellness advisor who specialises in your area of interest.</p>
+      </div>
+    </div>
+
+    <div class="response-item">
+      <div class="response-item-icon">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <div class="response-item-body">
+        <h4>Confidential &amp; Safe</h4>
+        <p>All personal information is handled with the strictest confidentiality and never shared with third parties.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===========================
+     CTA
+     =========================== -->
+<section class="contact-cta">
+  <div class="contact-cta-inner">
+    <h2>Not ready to enquire?<br><strong>Explore our programmes</strong></h2>
+    <div class="contact-cta-actions">
+      <a href="treatments.html" class="cta-btn-primary">View all treatments <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="about.html" class="cta-btn-outline">About TheLifeCo</a>
     </div>
   </div>
 </section>
 
-<!-- ===== LOCATIONS ===== -->
-<section class="section section--gray">
-  <div class="container">
-    <div style="margin-bottom:48px">
-      <div class="accent-line"></div>
-      <h2 class="text-40 font-700" style="margin-bottom:12px">Find a Resort</h2>
-      <p class="text-16 text-secondary" style="max-width:480px">Visit us at one of our five destinations or get in touch with the local team directly.</p>
-    </div>
-    <div class="grid grid-3" style="gap:20px">
-      <div class="location-address-card">
-        <div class="location-flag-badge"><i class="fa-solid fa-location-dot"></i> Turkey</div>
-        <div class="location-address-name">TheLifeCo Bodrum</div>
-        <div class="location-address-detail">
-          Göltürkbükü Mah.<br>
-          Bodrum, Muğla 48400<br>
-          Turkey
-        </div>
-        <a href="resorts/bodrum.html" class="location-address-link">View resort <i class="fa-solid fa-arrow-up-right"></i></a>
-      </div>
-      <div class="location-address-card">
-        <div class="location-flag-badge"><i class="fa-solid fa-location-dot"></i> Turkey</div>
-        <div class="location-address-name">TheLifeCo Antalya</div>
-        <div class="location-address-detail">
-          Akra Hotel<br>
-          Antalya 07050<br>
-          Turkey
-        </div>
-        <a href="resorts/antalya.html" class="location-address-link">View resort <i class="fa-solid fa-arrow-up-right"></i></a>
-      </div>
-      <div class="location-address-card">
-        <div class="location-flag-badge"><i class="fa-solid fa-location-dot"></i> Thailand</div>
-        <div class="location-address-name">TheLifeCo Phuket</div>
-        <div class="location-address-detail">
-          Nai Thon Beach<br>
-          Phuket 83110<br>
-          Thailand
-        </div>
-        <a href="resorts/phuket.html" class="location-address-link">View resort <i class="fa-solid fa-arrow-up-right"></i></a>
-      </div>
-      <div class="location-address-card">
-        <div class="location-flag-badge"><i class="fa-solid fa-location-dot"></i> Egypt</div>
-        <div class="location-address-name">TheLifeCo Sharm El Sheikh</div>
-        <div class="location-address-detail">
-          Nabq Bay<br>
-          Sharm El Sheikh<br>
-          Egypt
-        </div>
-        <a href="resorts/sharm-el-sheikh.html" class="location-address-link">View resort <i class="fa-solid fa-arrow-up-right"></i></a>
-      </div>
-      <div class="location-address-card">
-        <div class="location-flag-badge"><i class="fa-solid fa-location-dot"></i> Caribbean</div>
-        <div class="location-address-name">TheLifeCo St. Lucia</div>
-        <div class="location-address-detail">
-          Mount Pimard<br>
-          Gros-Islet, St. Lucia<br>
-          Caribbean
-        </div>
-        <a href="resorts/st-lucia.html" class="location-address-link">View resort <i class="fa-solid fa-arrow-up-right"></i></a>
-      </div>
-      <div class="location-address-card" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:16px">
-        <i class="fa-brands fa-whatsapp" style="font-size:32px;color:#25D366"></i>
-        <div>
-          <div class="location-address-name" style="margin-bottom:6px">Prefer to chat?</div>
-          <p style="font-size:14px;color:var(--text-secondary);line-height:1.6">Our global team is on WhatsApp to answer any location-specific questions.</p>
-        </div>
-        <a href="https://wa.me/905325554410" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener">Open WhatsApp</a>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ===========================
+     FOOTER
+     =========================== -->
+<footer class="t-footer">
+  <div class="t-footer-inner">
+    <div class="t-footer-grid">
 
-<!-- ===== SOCIAL ROW ===== -->
-<section class="section">
-  <div class="container" style="text-align:center">
-    <h2 class="text-32 font-700" style="margin-bottom:12px">Follow Our Journey</h2>
-    <p class="text-16 text-secondary" style="margin-bottom:36px">Stay connected for wellness tips, retreat updates, and community stories.</p>
-    <div class="contact-social-row" style="justify-content:center">
-      <a href="https://instagram.com/thelifeco" class="contact-social-btn" target="_blank" rel="noopener">
-        <i class="fa-brands fa-instagram"></i> Instagram
-      </a>
-      <a href="https://facebook.com/thelifeco" class="contact-social-btn" target="_blank" rel="noopener">
-        <i class="fa-brands fa-facebook-f"></i> Facebook
-      </a>
-      <a href="https://youtube.com/thelifeco" class="contact-social-btn" target="_blank" rel="noopener">
-        <i class="fa-brands fa-youtube"></i> YouTube
-      </a>
-      <a href="#" class="contact-social-btn">
-        <i class="fa-brands fa-x-twitter"></i> Twitter / X
-      </a>
-      <a href="#" class="contact-social-btn">
-        <i class="fa-brands fa-linkedin-in"></i> LinkedIn
-      </a>
-    </div>
-
-    <!-- Booking CTA strip -->
-    <div class="contact-cta-strip">
-      <div style="text-align:left">
-        <h3>Prefer to book directly?</h3>
-        <p>Skip the form and go straight to our booking page to select your resort, program, and preferred dates.</p>
-      </div>
-      <a href="booking.html" class="btn btn-primary btn-lg" style="flex-shrink:0">Book a Retreat <i class="fa-solid fa-arrow-right"></i></a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
+      <!-- Col 1: Brand -->
       <div>
-        <div class="footer-brand">TheLifeCo</div>
-        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2005. With luxury resorts across Turkey, Thailand, Egypt, and the Caribbean.</p>
-        <div class="footer-social">
-          <a href="https://instagram.com/thelifeco"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://facebook.com/thelifeco"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://youtube.com/thelifeco"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+        <div class="t-footer-brand">TheLifeCo</div>
+        <div class="t-footer-social">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="t-footer-address">
+          Maslak Mah. Büyükdere Cad. USO Center No: 245<br>
+          Kat: 15 &#304;ç Kap&#305; No: 56 Maslak /<br>
+          Sar&#305;yer / &#304;stanbul
         </div>
       </div>
-      <div><div class="footer-heading">Resorts</div><div class="footer-links"><a href="resorts/bodrum.html">Bodrum</a><a href="resorts/antalya.html">Antalya</a><a href="resorts/phuket.html">Phuket</a><a href="resorts/sharm-el-sheikh.html">Sharm El Sheikh</a><a href="resorts/st-lucia.html">St. Lucia</a></div></div>
-      <div><div class="footer-heading">Programs</div><div class="footer-links"><a href="programs/master-detox.html">Master Detox</a><a href="programs/water-fasting.html">Water Fasting</a><a href="programs/green-detox.html">Green Detox</a><a href="programs/longevity-reset.html">Longevity Reset</a><a href="programs/mental-wellness.html">Mental Wellness</a></div></div>
-      <div><div class="footer-heading">Company</div><div class="footer-links"><a href="about.html">About Us</a><a href="blog.html">Blog</a><a href="testimonials.html">Testimonials</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div></div>
-      <div><div class="footer-heading">Contact</div><div class="footer-links"><a href="mailto:info@thelifeco.com">info@thelifeco.com</a><a href="tel:+902524134410">+90 252 413 44 10</a><a href="https://wa.me/905325554410">WhatsApp</a></div><div style="margin-top:24px"><div class="footer-heading">Booking</div><div class="footer-links"><a href="booking.html">Book a Retreat</a><a href="contact.html">Talk to an Expert</a></div></div></div>
+
+      <!-- Col 2: Centers -->
+      <div>
+        <div class="t-footer-col-heading">Centers</div>
+        <div class="t-footer-col-links">
+          <a href="#">Antalya</a>
+          <a href="#">Bodrum</a>
+          <a href="#">Phuket</a>
+          <a href="#">Sharm El Sheikh</a>
+          <a href="#">St. Lucia</a>
+        </div>
+      </div>
+
+      <!-- Col 3: Retreatments -->
+      <div>
+        <div class="t-footer-col-heading">Retreatments</div>
+        <div class="t-footer-col-links">
+          <a href="#">Diabetes Recovery</a>
+          <a href="#">Water Fasting</a>
+          <a href="#">Intermittent Fasting</a>
+          <a href="#">Low Support</a>
+          <a href="#">Get Fit &amp; Healthy</a>
+          <a href="#">Mindfully Living</a>
+        </div>
+      </div>
+
+      <!-- Col 4: Meal Plans -->
+      <div>
+        <div class="t-footer-col-heading">Meal Plans</div>
+        <div class="t-footer-col-links">
+          <a href="#">Whole Cleanse</a>
+          <a href="#">Green Detox</a>
+          <a href="#">Intermittent Fasting</a>
+          <a href="#">Low Calorie</a>
+        </div>
+      </div>
+
+      <!-- Col 5: Explore + App -->
+      <div>
+        <div class="t-footer-col-heading">Explore</div>
+        <div class="t-footer-col-links" style="margin-bottom:24px;">
+          <a href="about.html">About Us</a>
+          <a href="#">Corporate Projects</a>
+          <a href="#">Blog</a>
+          <a href="#">Habit Building App</a>
+          <a href="#">Press Kit</a>
+          <a href="#">TheLifeCo Gift Voucher</a>
+        </div>
+        <div class="t-footer-app-label">Download BOATSY App</div>
+        <div class="t-footer-app-btns">
+          <a href="#" class="t-footer-app-btn">
+            <i class="fa-brands fa-apple"></i>
+            <span>App Store</span>
+          </a>
+          <a href="#" class="t-footer-app-btn">
+            <i class="fa-brands fa-google-play"></i>
+            <span>Google Play</span>
+          </a>
+        </div>
+      </div>
+
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2025 TheLifeCo Wellbeing. All rights reserved.</span>
-      <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a><a href="#">Cookie Policy</a></div>
+
+    <div class="t-footer-bottom">
+      <div class="t-footer-bottom-left">
+        <span>&copy; 2024 Powered by LifeCo</span>
+        <a href="#">Terms &amp; Conditions</a>
+        <a href="#">Sitemap</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookies Policy</a>
+      </div>
+      <div class="t-footer-bottom-right">
+        <span>EN</span>
+        <a href="#"><i class="fa-brands fa-instagram" style="font-size:16px;color:#5B7E96;"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter" style="font-size:16px;color:#5B7E96;"></i></a>
+      </div>
     </div>
+
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* Mobile nav — inject open state styles */
+  var mobileStyle = document.createElement('style');
+  mobileStyle.textContent = '.t-nav.open .t-nav-links{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#fff;padding:24px 20px;gap:16px;border-bottom:1px solid #E3EDF3;z-index:99;}';
+  document.head.appendChild(mobileStyle);
+
+  /* Contact form — success feedback using textContent (no innerHTML) */
+  var form = document.getElementById('contact-form');
+  var submitBtn = document.getElementById('form-submit-btn');
+  var submitLabel = document.getElementById('form-submit-label');
+  var submitIcon = document.getElementById('form-submit-icon');
+
+  if (form && submitBtn && submitLabel && submitIcon) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var originalLabel = submitLabel.textContent;
+      var originalIconClass = submitIcon.className;
+
+      submitLabel.textContent = 'Message sent!';
+      submitIcon.className = 'fa-solid fa-circle-check';
+      submitBtn.disabled = true;
+      submitBtn.style.background = '#2d7a4f';
+
+      setTimeout(function () {
+        submitLabel.textContent = originalLabel;
+        submitIcon.className = originalIconClass;
+        submitBtn.disabled = false;
+        submitBtn.style.background = '';
+        form.reset();
+      }, 4000);
+    });
+  }
+}());
+</script>
+
 </body>
 </html>

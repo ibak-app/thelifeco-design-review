@@ -3,668 +3,1139 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TheLifeCo — Guest Testimonials &amp; Success Stories | 30,000+ Lives Transformed</title>
-<meta name="description" content="Read real transformation stories from TheLifeCo guests. 30,000+ guests from 80+ countries have experienced life-changing detox, weight loss, diabetes recovery, and mental wellness results.">
-<meta name="keywords" content="TheLifeCo testimonials, wellness retreat reviews, detox success stories, weight loss retreat reviews, diabetes recovery results, TheLifeCo guest reviews">
-<meta property="og:title" content="TheLifeCo — Guest Testimonials &amp; Success Stories">
-<meta property="og:description" content="30,000+ guests from 80+ countries have transformed their health at TheLifeCo. Read their stories.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Pool-Outdoor.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="TheLifeCo — Guest Testimonials">
-<meta name="twitter:description" content="Real transformation stories from 30,000+ TheLifeCo guests worldwide.">
-<link rel="canonical" href="https://thelifeco.com/testimonials.html">
-<link rel="stylesheet" href="css/style.css">
+<title>TheLifeCo — Testimonials</title>
+<link rel="stylesheet" href="v1/css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
 <style>
+/* =========================================
+   Testimonials Page — TheLifeCo
+   ========================================= */
 
-/* ── Hero ──────────────────────────────────────────────── */
-.testimonials-hero {
-  padding: 160px 0 80px;
-  background: var(--off-white-3);
-  border-bottom: 1px solid var(--border-color);
-  text-align: center;
+/* ---------- NAV overlay (dark/transparent on hero) ---------- */
+.tm-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
-.testimonials-hero .accent-line {
-  margin: 0 auto 24px;
-}
-.testimonials-hero h1 {
-  font-size: 64px;
-  font-weight: 700;
-  letter-spacing: -2px;
-  color: var(--brand-dark);
-  margin-bottom: 20px;
-  line-height: 1.05;
-}
-.testimonials-hero p {
-  font-size: 18px;
-  color: var(--text-secondary);
-  max-width: 540px;
-  margin: 0 auto 56px;
-  line-height: 1.75;
-}
-
-/* Hero stats */
-.hero-stats-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  max-width: 720px;
+.tm-nav-inner {
+  max-width: 1440px;
   margin: 0 auto;
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  background: var(--white);
-  overflow: hidden;
-  box-shadow: 0 4px 24px rgba(0,0,0,.06);
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
 }
-.hero-stat-item {
-  flex: 1;
-  padding: 32px 24px;
-  text-align: center;
-  border-right: 1px solid var(--border-color);
-}
-.hero-stat-item:last-child { border-right: none; }
-.hero-stat-number {
-  font-size: 44px;
+.tm-nav-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
   font-weight: 700;
-  color: var(--brand-navy);
-  line-height: 1;
-  margin-bottom: 6px;
+  color: #fff;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+  white-space: nowrap;
 }
-.hero-stat-label {
+.tm-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.tm-nav-links a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.tm-nav-links a:hover,
+.tm-nav-links a.active { opacity: 1; }
+.tm-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.tm-nav-right a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+.tm-nav-right a:hover { opacity: 1; }
+.tm-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 100px;
+  font-family: 'Montserrat', sans-serif;
   font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.4;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s;
 }
-.hero-stat-stars {
+.tm-nav-cta:hover { background: rgba(255,255,255,0.15); border-color: #fff; }
+.tm-nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.tm-nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+}
+
+/* ---------- HERO (full-bleed image with overlay) ---------- */
+.tm-hero {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  overflow: hidden;
+  background: #141827;
+}
+.tm-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  filter: grayscale(20%);
+}
+.tm-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(20,24,39,0.35) 0%,
+    rgba(20,24,39,0.55) 100%
+  );
+}
+.tm-hero-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+.tm-hero-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.65);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.tm-hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 80px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.0;
+  letter-spacing: -3px;
+  margin-bottom: 28px;
+}
+.tm-hero-title strong { font-weight: 700; }
+
+/* ---------- STATS BAR ---------- */
+.tm-stats-bar {
+  background: #fff;
+  border-bottom: 1px solid #E3EDF3;
+}
+.tm-stats-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.tm-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 32px 56px 32px 0;
+  margin-right: 56px;
+  border-right: 1px solid #E3EDF3;
+}
+.tm-stat:last-child { border-right: none; }
+.tm-stat-number {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  color: #141827;
+  line-height: 1;
+  letter-spacing: -1.5px;
+}
+.tm-stat-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #5B7E96;
+  margin-top: 6px;
+}
+.tm-stat-stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 6px;
+}
+.tm-stat-stars i {
+  font-size: 14px;
+  color: #F6A358;
+}
+
+/* ---------- PHOTO CARD GRID (2 rows x 5 cols) ---------- */
+.tm-photo-section {
+  background: #fff;
+  padding: 64px 80px;
+}
+.tm-photo-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.tm-section-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  color: #141827;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 36px;
+}
+.tm-section-heading strong { font-weight: 700; }
+.tm-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+.tm-photo-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  background: #E3EDF3;
+  cursor: pointer;
+}
+.tm-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.tm-photo-card:hover img { transform: scale(1.05); }
+.tm-photo-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 48px 16px 16px;
+  background: linear-gradient(transparent, rgba(20,24,39,0.72));
+}
+.tm-photo-card-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+.tm-photo-card-location {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.7);
+  margin-top: 2px;
+}
+
+/* ---------- WRITTEN TESTIMONIALS ---------- */
+.tm-reviews-section {
+  background: #F4F8FB;
+  padding: 80px 80px;
+}
+.tm-reviews-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.tm-reviews-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+.tm-reviews-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+  color: #141827;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  max-width: 560px;
+}
+.tm-reviews-heading strong { font-weight: 700; }
+.tm-reviews-meta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #5B7E96;
+  text-align: right;
+}
+.tm-reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.tm-review-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px;
+  border: 1px solid #E3EDF3;
+  transition: box-shadow 0.25s;
+}
+.tm-review-card:hover { box-shadow: 0 8px 32px rgba(0,96,156,0.06); }
+.tm-review-stars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-bottom: 16px;
+}
+.tm-review-stars i { font-size: 14px; color: #F6A358; }
+.tm-review-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #141827;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+.tm-review-footer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 20px;
+  border-top: 1px solid #E3EDF3;
+}
+.tm-review-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #E3EDF3;
+  flex-shrink: 0;
+}
+.tm-review-author-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #141827;
+}
+.tm-review-author-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #5B7E96;
+  margin-top: 2px;
+}
+.tm-review-program-badge {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 12px;
+  border-radius: 100px;
+  background: #F4F8FB;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #5B7E96;
+  white-space: nowrap;
+}
+
+/* ---------- CTA BUTTONS ---------- */
+.tm-cta-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3px;
-  color: var(--brand-orange);
-  font-size: 18px;
-  margin-bottom: 6px;
+  gap: 16px;
+  padding: 0 0 0 0;
 }
+.tm-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 32px;
+  border-radius: 100px;
+  background: #00609C;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.tm-btn-primary:hover { background: #004a7a; }
+.tm-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 32px;
+  border-radius: 100px;
+  background: transparent;
+  color: #141827;
+  border: 1px solid #E3EDF3;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+.tm-btn-outline:hover { border-color: #00609C; }
 
-/* ── Press logos ───────────────────────────────────────── */
-.press-logos-section {
-  padding: 56px 0;
-  border-bottom: 1px solid var(--border-color);
-  background: var(--white);
+/* ---------- PRESS LOGOS ---------- */
+.tm-press-section {
+  background: #fff;
+  padding: 64px 80px;
+  border-top: 1px solid #E3EDF3;
 }
-.press-logos-label {
-  text-align: center;
+.tm-press-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.tm-press-label {
+  font-family: 'Montserrat', sans-serif;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 600;
+  color: #5B7E96;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--text-muted);
-  margin-bottom: 32px;
+  letter-spacing: 1.5px;
+  text-align: center;
+  margin-bottom: 36px;
 }
-.press-logos-row {
+.tm-press-logos {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 56px;
   flex-wrap: wrap;
 }
-.press-logo-item {
-  font-size: 18px;
+.tm-press-logo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #B8CDD9;
+  letter-spacing: -0.5px;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.tm-press-logo:hover { color: #5B7E96; }
+.tm-press-logo--serif {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
   font-weight: 700;
-  color: var(--text-muted);
-  letter-spacing: .5px;
-  opacity: .55;
-  white-space: nowrap;
-  transition: opacity .2s;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.press-logo-item:hover { opacity: .85; }
-.press-logo-item i { font-size: 16px; }
-
-/* ── Filter + Grid ─────────────────────────────────────── */
-.testimonials-section {
-  padding: 72px 0 88px;
-  background: var(--white);
-}
-.testimonials-filter {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 48px;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.testimonials-count {
-  font-size: 14px;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-/* ── Testimonial card ──────────────────────────────────── */
-/* Extends .testimonial base class from style.css */
-.testimonial {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-.testimonial-quote-icon {
-  font-size: 36px;
-  color: var(--brand-teal);
-  opacity: .25;
-  line-height: 1;
-  margin-bottom: 4px;
-  font-family: Georgia, serif;
-}
-.testimonial-text {
-  font-size: 15px;
-  line-height: 1.8;
-  color: var(--text-primary);
-  margin-bottom: 20px;
-  flex: 1;
   font-style: italic;
 }
-.testimonial-author-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-top: 16px;
-  border-top: 1px solid var(--border-color);
-  margin-top: auto;
+
+/* ---------- FOOTER ---------- */
+.tm-footer {
+  background: #fff;
+  border-top: 1px solid #E3EDF3;
 }
-.testimonial-avatar {
-  width: 40px;
-  height: 40px;
+.tm-footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 56px 80px 0;
+}
+.tm-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid #E3EDF3;
+}
+.tm-footer-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #141827;
+  margin-bottom: 16px;
+}
+.tm-footer-social {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.tm-footer-social a {
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
+  border: 1px solid #E3EDF3;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--white);
-  flex-shrink: 0;
+  color: #5B7E96;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s;
 }
-.avatar-navy { background: linear-gradient(135deg, var(--brand-navy), #004a7a); }
-.avatar-teal { background: linear-gradient(135deg, var(--brand-teal), #00a0b8); }
-.avatar-orange { background: linear-gradient(135deg, var(--brand-orange), #d4852e); }
-.avatar-dark { background: linear-gradient(135deg, var(--brand-dark), #2a2f46); }
-.avatar-green { background: linear-gradient(135deg, var(--brand-green), #3a9d5e); }
-
-.testimonial-author {
+.tm-footer-social a:hover { border-color: #00609C; color: #00609C; }
+.tm-footer-address {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #5B7E96;
+  line-height: 1.6;
+}
+.tm-footer-col-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #141827;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.tm-footer-col-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tm-footer-col-links a {
+  font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 600;
-  color: var(--brand-navy);
-  margin-bottom: 2px;
+  color: #5B7E96;
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.4;
 }
-.testimonial-meta {
-  font-size: 12px;
-  color: var(--text-muted);
+.tm-footer-col-links a:hover { color: #00609C; }
+.tm-footer-app-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #141827;
+  margin-bottom: 12px;
 }
-.testimonial-badge {
-  margin-left: auto;
+.tm-footer-app-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.tm-footer-app-btn {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  font-size: 11px;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid #E3EDF3;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
   font-weight: 600;
-  padding: 4px 10px;
-  border-radius: 100px;
-  white-space: nowrap;
-  flex-shrink: 0;
+  color: #141827;
+  text-decoration: none;
+  transition: border-color 0.2s;
 }
-.badge-detox { background: rgba(0,190,214,.1); color: #007a8c; }
-.badge-weight { background: rgba(246,163,88,.15); color: #b06b1a; }
-.badge-medical { background: rgba(0,96,156,.1); color: var(--brand-navy); }
-.badge-wellness { background: rgba(108,202,152,.15); color: #2d8a5e; }
-
-/* Press card variant */
-.testimonial--press {
-  background: var(--brand-dark);
-  border-color: transparent;
+.tm-footer-app-btn:hover { border-color: #00609C; }
+.tm-footer-app-btn i { font-size: 16px; }
+.tm-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  gap: 12px;
 }
-.testimonial--press .testimonial-quote-icon { color: var(--brand-teal); opacity: .4; }
-.testimonial--press .testimonial-text { color: rgba(255,255,255,.88); }
-.testimonial--press .testimonial-author-row { border-top-color: rgba(255,255,255,.12); }
-.testimonial--press .testimonial-author { color: var(--brand-teal); }
-.testimonial--press .testimonial-meta { color: rgba(255,255,255,.45); }
-.testimonial--press .testimonial-stars { color: var(--brand-orange); }
-
-/* ── CTA ───────────────────────────────────────────────── */
-.testimonials-cta {
-  background:
-    linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.4) 50%, rgba(0,0,0,.6) 100%),
-    url('https://destinationdeluxe.com/wp-content/uploads/2025/04/TheLifeCo-Phuket-Pool-Outdoor.png') center/cover no-repeat;
-  padding: 120px 0;
-  text-align: center;
-  color: var(--white);
+.tm-footer-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
-.testimonials-cta h2 {
-  font-size: 52px;
+.tm-footer-bottom-left span,
+.tm-footer-bottom-left a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #5B7E96;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.tm-footer-bottom-left a:hover { color: #00609C; }
+.tm-footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.tm-footer-bottom-right span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: -1.5px;
-  color: var(--white);
-  margin-bottom: 16px;
-  line-height: 1.1;
+  color: #141827;
+  cursor: pointer;
 }
-.testimonials-cta p {
-  font-size: 18px;
-  color: rgba(255,255,255,.8);
-  max-width: 520px;
-  margin: 0 auto 40px;
-  line-height: 1.7;
+.tm-footer-bottom-right a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #5B7E96;
+  text-decoration: none;
 }
 
-/* ── Responsive ────────────────────────────────────────── */
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 1200px) {
+  .tm-nav-inner { padding-left: 40px; padding-right: 40px; }
+  .tm-stats-inner { padding-left: 40px; padding-right: 40px; }
+  .tm-photo-section { padding: 56px 40px; }
+  .tm-reviews-section { padding: 64px 40px; }
+  .tm-press-section { padding: 56px 40px; }
+  .tm-footer-inner { padding: 48px 40px 0; }
+  .tm-footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+  .tm-photo-grid { grid-template-columns: repeat(3, 1fr); }
+}
 @media (max-width: 1024px) {
-  .testimonials-hero h1 { font-size: 48px; }
-  .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
-  .testimonials-cta h2 { font-size: 40px; }
-  .press-logos-row { gap: 36px; }
+  .tm-hero-title { font-size: 60px; letter-spacing: -2px; }
+  .tm-reviews-grid { grid-template-columns: 1fr; }
+  .tm-reviews-head { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .tm-reviews-meta { text-align: left; }
+  .tm-section-heading { font-size: 32px; }
+  .tm-reviews-heading { font-size: 36px; }
 }
 @media (max-width: 768px) {
-  .testimonials-hero { padding: 120px 0 56px; }
-  .testimonials-hero h1 { font-size: 36px; letter-spacing: -1px; }
-  .testimonials-hero p { font-size: 16px; }
-  .hero-stats-row { flex-direction: column; border-radius: 16px; }
-  .hero-stat-item { border-right: none; border-bottom: 1px solid var(--border-color); }
-  .hero-stat-item:last-child { border-bottom: none; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .testimonials-cta h2 { font-size: 30px; letter-spacing: -.5px; }
-  .testimonials-cta p { font-size: 16px; }
-  .testimonials-cta { padding: 80px 0; }
-  .press-logos-row { gap: 24px; }
-  .testimonials-filter { flex-direction: column; align-items: flex-start; }
+  .tm-nav-links { display: none; }
+  .tm-nav-toggle { display: flex; }
+  .tm-nav-inner { padding: 0 20px; }
+  .tm-hero { height: 380px; }
+  .tm-hero-title { font-size: 44px; letter-spacing: -1.5px; }
+  .tm-stats-inner {
+    padding: 0 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  .tm-stat {
+    padding: 20px 0;
+    margin-right: 0;
+    border-right: none;
+    border-bottom: 1px solid #E3EDF3;
+    width: 100%;
+  }
+  .tm-stat:last-child { border-bottom: none; }
+  .tm-photo-section { padding: 40px 20px; }
+  .tm-photo-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .tm-reviews-section { padding: 48px 20px; }
+  .tm-press-section { padding: 48px 20px; }
+  .tm-press-logos { gap: 32px; }
+  .tm-footer-inner { padding: 40px 20px 0; }
+  .tm-footer-grid { grid-template-columns: 1fr 1fr; }
+  .tm-footer-bottom { flex-direction: column; align-items: flex-start; }
+  .tm-cta-row { flex-direction: column; align-items: stretch; }
 }
 @media (max-width: 480px) {
-  .testimonials-hero h1 { font-size: 28px; }
-  .hero-stat-number { font-size: 36px; }
+  .tm-hero-title { font-size: 36px; letter-spacing: -1px; }
+  .tm-photo-grid { grid-template-columns: 1fr 1fr; }
+  .tm-footer-grid { grid-template-columns: 1fr; }
+  .tm-footer-bottom-left { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 </style>
 </head>
 <body>
 
-<!-- ===== NAVIGATION ===== -->
-<nav class="nav nav--dark">
-  <div class="container">
-    <a href="index.html" class="nav-logo">TheLifeCo</a>
-    <div class="nav-links">
-      <a href="about.html">About</a>
-      <div class="nav-dropdown">
-        <a href="resort.html">Resorts &#9662;</a>
-        <div class="nav-dropdown-menu">
-          <a href="resorts/bodrum.html">Bodrum</a>
-          <a href="resorts/antalya.html">Antalya</a>
-          <a href="resorts/phuket.html">Phuket</a>
-          <a href="resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
-          <a href="resorts/st-lucia.html">St. Lucia</a>
-        </div>
-      </div>
-      <a href="treatments.html">Programs</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
+<!-- ===========================
+     NAVIGATION (overlay on hero)
+     =========================== -->
+<nav class="tm-nav" id="tm-nav">
+  <div class="tm-nav-inner">
+    <a href="v1/index.html" class="tm-nav-logo">TheLifeCo</a>
+
+    <div class="tm-nav-links">
+      <a href="v1/index.html">Retreats</a>
+      <a href="v1/resort.html">Resorts</a>
+      <a href="#">Medical</a>
+      <a href="v1/treatments.html">Treatments</a>
+      <a href="testimonials.html" class="active">Testimonials</a>
     </div>
-    <div class="nav-right">
-      <a href="booking.html" class="nav-cta">Book Now</a>
+
+    <div class="tm-nav-right">
+      <a href="#" style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;">EN</a>
+      <a href="#" style="font-size:13px;"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a href="#" class="tm-nav-cta">Talk to an expert</a>
     </div>
-    <div class="nav-toggle"><span></span><span></span><span></span></div>
+
+    <button class="tm-nav-toggle" aria-label="Open menu" onclick="document.getElementById('tm-nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
-<!-- ===== HERO ===== -->
-<section class="testimonials-hero">
-  <div class="container">
-    <div class="accent-line"></div>
-    <h1>Stories That<br>Inspire</h1>
-    <p>Over 30,000 guests from 80+ countries have transformed their health at TheLifeCo. Here are some of their stories.</p>
+<!-- ===========================
+     HERO
+     =========================== -->
+<header class="tm-hero">
+  <img
+    class="tm-hero-img"
+    src="images/resort-hero.jpg"
+    alt="Guests at TheLifeCo wellness resort"
+    loading="eager">
+  <div class="tm-hero-overlay"></div>
+  <div class="tm-hero-content">
+    <div class="tm-hero-label">Guest Experiences</div>
+    <h1 class="tm-hero-title"><strong>Testimonials</strong></h1>
+  </div>
+</header>
 
-    <div class="hero-stats-row">
-      <div class="hero-stat-item">
-        <div class="hero-stat-number">30,000+</div>
-        <div class="hero-stat-label">Guests Transformed</div>
+<!-- ===========================
+     STATS BAR
+     =========================== -->
+<div class="tm-stats-bar">
+  <div class="tm-stats-inner">
+
+    <div class="tm-stat">
+      <div class="tm-stat-number">10,000+</div>
+      <div class="tm-stat-label">Verified Reviews</div>
+    </div>
+
+    <div class="tm-stat">
+      <div class="tm-stat-number">4.7 / 5</div>
+      <div class="tm-stat-stars">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star-half-stroke"></i>
+        <span style="font-family:'Montserrat',sans-serif;font-size:12px;color:#5B7E96;margin-left:6px;font-weight:500;">Google Rating</span>
       </div>
-      <div class="hero-stat-item">
-        <div class="hero-stat-number">80+</div>
-        <div class="hero-stat-label">Countries Represented</div>
+    </div>
+
+    <div class="tm-stat">
+      <div class="tm-stat-number">98%</div>
+      <div class="tm-stat-label">Would recommend to a friend</div>
+    </div>
+
+    <div class="tm-stat">
+      <div class="tm-stat-number">50+</div>
+      <div class="tm-stat-label">Countries represented</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===========================
+     PHOTO CARD GRID (2 rows x 5)
+     =========================== -->
+<section class="tm-photo-section">
+  <div class="tm-photo-inner">
+    <h2 class="tm-section-heading">Real Guests, <strong>Real Transformations</strong></h2>
+
+    <div class="tm-photo-grid">
+
+      <!-- Row 1 -->
+      <div class="tm-photo-card">
+        <img src="images/testimonial-1.jpg" alt="Sarah M. — United Kingdom" loading="lazy">
+        <div class="tm-photo-card-overlay">
+          <div class="tm-photo-card-name">Sarah M.</div>
+          <div class="tm-photo-card-location">United Kingdom</div>
+        </div>
       </div>
-      <div class="hero-stat-item">
-        <div class="hero-stat-stars">
+
+      <div class="tm-photo-card">
+        <img src="images/testimonial-2.jpg" alt="James R. — United States" loading="lazy">
+        <div class="tm-photo-card-overlay">
+          <div class="tm-photo-card-name">James R.</div>
+          <div class="tm-photo-card-location">United States</div>
+        </div>
+      </div>
+
+      <div class="tm-photo-card">
+        <img src="images/testimonial-3.jpg" alt="Leila K. — Germany" loading="lazy">
+        <div class="tm-photo-card-overlay">
+          <div class="tm-photo-card-name">Leila K.</div>
+          <div class="tm-photo-card-location">Germany</div>
+        </div>
+      </div>
+
+      <div class="tm-photo-card">
+        <img src="images/testimonial-4.jpg" alt="Marco T. — Italy" loading="lazy">
+        <div class="tm-photo-card-overlay">
+          <div class="tm-photo-card-name">Marco T.</div>
+          <div class="tm-photo-card-location">Italy</div>
+        </div>
+      </div>
+
+      <div class="tm-photo-card">
+        <img src="images/testimonial-5.jpg" alt="Aisha N. — UAE" loading="lazy">
+        <div class="tm-photo-card-overlay">
+          <div class="tm-photo-card-name">Aisha N.</div>
+          <div class="tm-photo-card-location">UAE</div>
+        </div>
+      </div>
+
+      <!-- Row 2 (reuse images with different guests) -->
+      <div class="tm-photo-card">
+        <img src="images/testimonial-3.jpg" alt="Chen W. — Singapore" loading="lazy">
+        <div class="tm-photo-card-overlay">
+          <div class="tm-photo-card-name">Chen W.</div>
+          <div class="tm-photo-card-location">Singapore</div>
+        </div>
+      </div>
+
+      <div class="tm-photo-card">
+        <img src="images/testimonial-5.jpg" alt="Fatima A. — Saudi Arabia" loading="lazy">
+        <div class="tm-photo-card-overlay">
+          <div class="tm-photo-card-name">Fatima A.</div>
+          <div class="tm-photo-card-location">Saudi Arabia</div>
+        </div>
+      </div>
+
+      <div class="tm-photo-card">
+        <img src="images/testimonial-1.jpg" alt="David H. — Australia" loading="lazy">
+        <div class="tm-photo-card-overlay">
+          <div class="tm-photo-card-name">David H.</div>
+          <div class="tm-photo-card-location">Australia</div>
+        </div>
+      </div>
+
+      <div class="tm-photo-card">
+        <img src="images/testimonial-2.jpg" alt="Sophie L. — France" loading="lazy">
+        <div class="tm-photo-card-overlay">
+          <div class="tm-photo-card-name">Sophie L.</div>
+          <div class="tm-photo-card-location">France</div>
+        </div>
+      </div>
+
+      <div class="tm-photo-card">
+        <img src="images/testimonial-4.jpg" alt="Omar R. — Egypt" loading="lazy">
+        <div class="tm-photo-card-overlay">
+          <div class="tm-photo-card-name">Omar R.</div>
+          <div class="tm-photo-card-location">Egypt</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     WRITTEN TESTIMONIALS
+     =========================== -->
+<section class="tm-reviews-section">
+  <div class="tm-reviews-inner">
+
+    <div class="tm-reviews-head">
+      <h2 class="tm-reviews-heading">What Our Guests <strong>Say About Us</strong></h2>
+      <div class="tm-reviews-meta">
+        Showing 6 of 10,247 reviews<br>
+        <span style="font-size:12px;">Sorted by: Most recent</span>
+      </div>
+    </div>
+
+    <div class="tm-reviews-grid">
+
+      <!-- Review 1 -->
+      <div class="tm-review-card">
+        <div class="tm-review-stars">
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
           <i class="fa-solid fa-star"></i>
         </div>
-        <div class="hero-stat-label">5-Star Average Rating</div>
+        <p class="tm-review-text">"I came to TheLifeCo in Antalya after years of struggling with my weight and chronic fatigue. The 14-day water fasting program under Dr. Ayhan's supervision was the most challenging and rewarding thing I have ever done. I lost 9 kg, but more importantly I left feeling genuinely clear-headed for the first time in a decade. The medical team checks on you multiple times daily — you never feel alone in the process. I cannot recommend this place highly enough."</p>
+        <div class="tm-review-footer">
+          <img
+            class="tm-review-avatar"
+            src="images/testimonial-1.jpg"
+            alt="Sarah M."
+            loading="lazy">
+          <div>
+            <div class="tm-review-author-name">Sarah M.</div>
+            <div class="tm-review-author-sub">London, United Kingdom &nbsp;&middot;&nbsp; November 2026</div>
+          </div>
+          <span class="tm-review-program-badge">Water Fasting</span>
+        </div>
       </div>
+
+      <!-- Review 2 -->
+      <div class="tm-review-card">
+        <div class="tm-review-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p class="tm-review-text">"As someone diagnosed with Type 2 diabetes, I was sceptical that a retreat could make any lasting difference. After three weeks on the Diabetes Recovery program, my blood sugar levels normalised to the point where my doctor reduced my medication by half. The nutritionists, doctors, and therapists work as one coordinated team. The Bodrum location is also absolutely stunning — waking up to the sea every morning made the whole experience feel transformative on every level."</p>
+        <div class="tm-review-footer">
+          <img
+            class="tm-review-avatar"
+            src="images/testimonial-2.jpg"
+            alt="James R."
+            loading="lazy">
+          <div>
+            <div class="tm-review-author-name">James R.</div>
+            <div class="tm-review-author-sub">New York, USA &nbsp;&middot;&nbsp; October 2026</div>
+          </div>
+          <span class="tm-review-program-badge">Diabetes Recovery</span>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="tm-review-card">
+        <div class="tm-review-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star-half-stroke"></i>
+        </div>
+        <p class="tm-review-text">"The Green Juice Cleanse at Phuket was my fourth visit to TheLifeCo — I now come every year as a kind of annual reset. My skin, my energy levels, and my mental clarity improve noticeably every single time. The staff remember returning guests and that personal touch means everything. The yoga sessions with Selin overlooking the bay at sunrise are something I think about all year long. If you are on the fence, just book it."</p>
+        <div class="tm-review-footer">
+          <img
+            class="tm-review-avatar"
+            src="images/testimonial-3.jpg"
+            alt="Leila K."
+            loading="lazy">
+          <div>
+            <div class="tm-review-author-name">Leila K.</div>
+            <div class="tm-review-author-sub">Berlin, Germany &nbsp;&middot;&nbsp; September 2026</div>
+          </div>
+          <span class="tm-review-program-badge">Green Juice Cleanse</span>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="tm-review-card">
+        <div class="tm-review-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p class="tm-review-text">"I booked the Mental Wellness program during a particularly difficult period of burnout. What I experienced was not a holiday — it was a genuine clinical intervention, but delivered with warmth and human care. The combination of nutritional therapy, meditation, breathwork, and one-on-one psychology sessions rebuilt something in me I thought was permanently broken. I returned to work after three weeks feeling like myself again for the first time in two years."</p>
+        <div class="tm-review-footer">
+          <img
+            class="tm-review-avatar"
+            src="images/testimonial-4.jpg"
+            alt="Marco T."
+            loading="lazy">
+          <div>
+            <div class="tm-review-author-name">Marco T.</div>
+            <div class="tm-review-author-sub">Milan, Italy &nbsp;&middot;&nbsp; August 2026</div>
+          </div>
+          <span class="tm-review-program-badge">Mental Wellness</span>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="tm-review-card">
+        <div class="tm-review-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p class="tm-review-text">"The Master Detox program at Sharm El Sheikh completely changed my relationship with food. The team never made me feel judged — they met me exactly where I was. The daily colon hydrotherapy sessions were new territory for me, but the nurse walked me through everything with professionalism and compassion. By day ten I had lost 6 kg and my chronic joint pain had reduced dramatically. The Red Sea setting is indescribably beautiful. Worth every penny."</p>
+        <div class="tm-review-footer">
+          <img
+            class="tm-review-avatar"
+            src="images/testimonial-5.jpg"
+            alt="Aisha N."
+            loading="lazy">
+          <div>
+            <div class="tm-review-author-name">Aisha N.</div>
+            <div class="tm-review-author-sub">Dubai, UAE &nbsp;&middot;&nbsp; July 2026</div>
+          </div>
+          <span class="tm-review-program-badge">Master Detox</span>
+        </div>
+      </div>
+
+      <!-- Review 6 -->
+      <div class="tm-review-card">
+        <div class="tm-review-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p class="tm-review-text">"My husband and I attended together for the Ultimate Longevity program. The comprehensive health screening at the start was genuinely eye-opening — they identified issues we had no idea about. The personalised approach means no two guests follow exactly the same schedule. We left with a clear roadmap for our health for the next decade. The level of medical expertise combined with the serenity of the resort environment is something you simply cannot replicate at any ordinary spa."</p>
+        <div class="tm-review-footer">
+          <img
+            class="tm-review-avatar"
+            src="images/testimonial-3.jpg"
+            alt="Sophie L."
+            loading="lazy">
+          <div>
+            <div class="tm-review-author-name">Sophie L.</div>
+            <div class="tm-review-author-sub">Paris, France &nbsp;&middot;&nbsp; June 2026</div>
+          </div>
+          <span class="tm-review-program-badge">Ultimate Longevity</span>
+        </div>
+      </div>
+
     </div>
+
+    <!-- CTA BUTTONS -->
+    <div class="tm-cta-row">
+      <a href="#" class="tm-btn-primary">See All Experiences <i class="fa-solid fa-arrow-right" style="margin-left:8px;font-size:12px;"></i></a>
+      <a href="#" class="tm-btn-outline">Give Us Feedback</a>
+    </div>
+
   </div>
 </section>
 
-<!-- ===== PRESS LOGOS ===== -->
-<section class="press-logos-section">
-  <div class="container">
-    <p class="press-logos-label">As featured in</p>
-    <div class="press-logos-row">
-      <div class="press-logo-item">
-        <i class="fa-solid fa-trophy"></i>
-        World Spa Awards
-      </div>
-      <div class="press-logo-item">
-        <i class="fa-regular fa-newspaper"></i>
-        Tatler
-      </div>
-      <div class="press-logo-item">
-        <i class="fa-solid fa-globe"></i>
-        Cond&eacute; Nast Traveller
-      </div>
-      <div class="press-logo-item">
-        <i class="fa-brands fa-font-awesome"></i>
-        Forbes
-      </div>
-      <div class="press-logo-item">
-        <i class="fa-solid fa-gem"></i>
+<!-- ===========================
+     PRESS LOGOS
+     =========================== -->
+<section class="tm-press-section">
+  <div class="tm-press-inner">
+    <div class="tm-press-label">As featured in</div>
+    <div class="tm-press-logos">
+
+      <a href="#" class="tm-press-logo" aria-label="Google">
+        <span style="color:#B8CDD9;">G</span><span style="color:#B8CDD9;">o</span><span style="color:#B8CDD9;">o</span><span style="color:#B8CDD9;">g</span><span style="color:#B8CDD9;">l</span><span style="color:#B8CDD9;">e</span>
+      </a>
+
+      <a href="#" class="tm-press-logo tm-press-logo--serif" aria-label="The Telegraph">
+        The Telegraph
+      </a>
+
+      <a href="#" class="tm-press-logo" aria-label="The Sun">
+        THE SUN
+      </a>
+
+      <a href="#" class="tm-press-logo tm-press-logo--serif" aria-label="Vogue" style="font-style:italic;font-size:26px;letter-spacing:2px;">
         Vogue
-      </div>
+      </a>
+
+      <a href="#" class="tm-press-logo" aria-label="Forbes">
+        FORBES
+      </a>
+
+      <a href="#" class="tm-press-logo tm-press-logo--serif" aria-label="The Guardian">
+        The Guardian
+      </a>
+
     </div>
   </div>
 </section>
 
-<!-- ===== TESTIMONIALS GRID ===== -->
-<section class="testimonials-section">
-  <div class="container">
+<!-- ===========================
+     FOOTER
+     =========================== -->
+<footer class="tm-footer">
+  <div class="tm-footer-inner">
+    <div class="tm-footer-grid">
 
-    <div class="testimonials-filter">
-      <div class="filter-pills" style="margin-bottom:0">
-        <button class="pill active">All</button>
-        <button class="pill">Detox</button>
-        <button class="pill">Weight Loss</button>
-        <button class="pill">Medical</button>
-        <button class="pill">Wellness</button>
-      </div>
-      <span class="testimonials-count">Showing 12 of 240+ reviews</span>
-    </div>
-
-    <div class="testimonials-grid">
-
-      <!-- 1: Detox -->
-      <div class="testimonial">
-        <div class="testimonial-quote-icon">&ldquo;</div>
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">I arrived exhausted, bloated, and running on caffeine and willpower. By day five of the Master Detox I felt genuinely alive for the first time in years. My digestion, sleep, and energy all shifted in ways I could not have imagined. I left Bodrum a completely different person.</p>
-        <div class="testimonial-author-row">
-          <div class="testimonial-avatar avatar-navy">SC</div>
-          <div>
-            <div class="testimonial-author">Sarah C.</div>
-            <div class="testimonial-meta">London, UK &middot; 14-day Master Detox, Bodrum</div>
-          </div>
-          <span class="testimonial-badge badge-detox">Detox</span>
-        </div>
-      </div>
-
-      <!-- 2: Weight Loss -->
-      <div class="testimonial">
-        <div class="testimonial-quote-icon">&ldquo;</div>
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">In 21 days at Antalya I lost 11 kilograms — but more importantly I learned exactly why my weight had been creeping up for a decade. The medical team identified hormonal imbalances and gave me a clear protocol to follow at home. Eight months later I have maintained every kilogram of that loss.</p>
-        <div class="testimonial-author-row">
-          <div class="testimonial-avatar avatar-teal">MR</div>
-          <div>
-            <div class="testimonial-author">Marco R.</div>
-            <div class="testimonial-meta">Milan, Italy &middot; 21-day Weight Management, Antalya</div>
-          </div>
-          <span class="testimonial-badge badge-weight">Weight Loss</span>
-        </div>
-      </div>
-
-      <!-- 3: Medical / Diabetes -->
-      <div class="testimonial">
-        <div class="testimonial-quote-icon">&ldquo;</div>
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">My HbA1c dropped from 9.2% to 6.1% in three weeks. My endocrinologist back home is genuinely stunned. I came to TheLifeCo sceptical — my diabetes had been managed for six years but was getting worse. What the doctors here achieved through nutrition and lifestyle intervention is extraordinary.</p>
-        <div class="testimonial-author-row">
-          <div class="testimonial-avatar avatar-orange">JA</div>
-          <div>
-            <div class="testimonial-author">James A.</div>
-            <div class="testimonial-meta">Toronto, Canada &middot; 21-day Diabetes Recovery, Antalya</div>
-          </div>
-          <span class="testimonial-badge badge-medical">Medical</span>
-        </div>
-      </div>
-
-      <!-- 4: Press — Tatler -->
-      <div class="testimonial testimonial--press">
-        <div class="testimonial-quote-icon">&ldquo;</div>
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">A life-changing detox experience combining cutting-edge medical science with ancient healing traditions. TheLifeCo sets the standard against which all wellness retreats should be judged. The medical rigour here is genuinely exceptional.</p>
-        <div class="testimonial-author-row">
-          <div class="testimonial-avatar avatar-teal" style="font-size:10px">TAT</div>
-          <div>
-            <div class="testimonial-author">Tatler Magazine</div>
-            <div class="testimonial-meta">Press Feature &middot; TheLifeCo Bodrum Review</div>
-          </div>
-          <span class="testimonial-badge" style="background:rgba(0,190,214,.2);color:var(--brand-teal)">Press</span>
-        </div>
-      </div>
-
-      <!-- 5: Wellness / Mental Health -->
-      <div class="testimonial">
-        <div class="testimonial-quote-icon">&ldquo;</div>
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">I came for the physical detox but what shifted most profoundly was my mental state. After years of anxiety and chronic stress, two weeks in Phuket — with daily meditation, breathwork sessions, and conversations with the wellness coaches — gave me tools I still use every single day.</p>
-        <div class="testimonial-author-row">
-          <div class="testimonial-avatar avatar-green">LN</div>
-          <div>
-            <div class="testimonial-author">Laura N.</div>
-            <div class="testimonial-meta">Stockholm, Sweden &middot; 14-day Mental Wellness, Phuket</div>
-          </div>
-          <span class="testimonial-badge badge-wellness">Wellness</span>
-        </div>
-      </div>
-
-      <!-- 6: Detox / Water Fasting -->
-      <div class="testimonial">
-        <div class="testimonial-quote-icon">&ldquo;</div>
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">Seven days of water fasting under medical supervision was the most challenging and rewarding thing I have ever done. By day four the mental clarity was extraordinary — a sharpness I had not felt since my twenties. The doctors monitored everything meticulously. I felt completely safe throughout.</p>
-        <div class="testimonial-author-row">
-          <div class="testimonial-avatar avatar-dark">DK</div>
-          <div>
-            <div class="testimonial-author">David K.</div>
-            <div class="testimonial-meta">Dubai, UAE &middot; 7-day Water Fasting, Bodrum</div>
-          </div>
-          <span class="testimonial-badge badge-detox">Detox</span>
-        </div>
-      </div>
-
-      <!-- 7: Press — Conde Nast -->
-      <div class="testimonial testimonial--press">
-        <div class="testimonial-quote-icon">&ldquo;</div>
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">TheLifeCo stands apart with its Four Pillars approach — nutrition, physical activity, mental wellness, and inner peace. The results guests achieve here are not temporary; they are the foundation of a genuinely different life. One of the world's most credible wellness destinations, without qualification.</p>
-        <div class="testimonial-author-row">
-          <div class="testimonial-avatar avatar-orange" style="font-size:10px">CNT</div>
-          <div>
-            <div class="testimonial-author">Cond&eacute; Nast Traveller</div>
-            <div class="testimonial-meta">Press Feature &middot; World's Best Wellness Retreats</div>
-          </div>
-          <span class="testimonial-badge" style="background:rgba(0,190,214,.2);color:var(--brand-teal)">Press</span>
-        </div>
-      </div>
-
-      <!-- 8: Weight Loss -->
-      <div class="testimonial">
-        <div class="testimonial-quote-icon">&ldquo;</div>
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">I have tried every diet programme imaginable over fifteen years. Nothing has come close to what happened at TheLifeCo. In 14 days my relationship with food completely changed. I stopped craving sugar entirely — something I thought was impossible. The raw food is genuinely delicious and deeply satisfying.</p>
-        <div class="testimonial-author-row">
-          <div class="testimonial-avatar avatar-navy">AM</div>
-          <div>
-            <div class="testimonial-author">Aisha M.</div>
-            <div class="testimonial-meta">Riyadh, Saudi Arabia &middot; 14-day Weight Management, Bodrum</div>
-          </div>
-          <span class="testimonial-badge badge-weight">Weight Loss</span>
-        </div>
-      </div>
-
-      <!-- 9: Medical / Cardiovascular -->
-      <div class="testimonial">
-        <div class="testimonial-quote-icon">&ldquo;</div>
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">My cardiologist had been warning me about cholesterol and blood pressure for three years. After 21 days at Antalya my LDL dropped by 38% and my blood pressure normalised without medication. The team built a protocol addressing my cardiovascular health systematically, not superficially. I am genuinely grateful.</p>
-        <div class="testimonial-author-row">
-          <div class="testimonial-avatar avatar-teal">RH</div>
-          <div>
-            <div class="testimonial-author">Richard H.</div>
-            <div class="testimonial-meta">New York, USA &middot; 21-day Cardiovascular Program, Antalya</div>
-          </div>
-          <span class="testimonial-badge badge-medical">Medical</span>
-        </div>
-      </div>
-
-      <!-- 10: Wellness / Longevity -->
-      <div class="testimonial">
-        <div class="testimonial-quote-icon">&ldquo;</div>
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">At 58 I felt old. After two weeks on the Longevity Reset in Phuket I feel more vital than I did at 45. The combination of personalised supplementation, anti-inflammatory nutrition, and daily movement therapy made a difference I can feel in my joints, my sleep, and my cognitive sharpness.</p>
-        <div class="testimonial-author-row">
-          <div class="testimonial-avatar avatar-orange">FW</div>
-          <div>
-            <div class="testimonial-author">Francesca W.</div>
-            <div class="testimonial-meta">Sydney, Australia &middot; 14-day Longevity Reset, Phuket</div>
-          </div>
-          <span class="testimonial-badge badge-wellness">Wellness</span>
-        </div>
-      </div>
-
-      <!-- 11: Press — Forbes -->
-      <div class="testimonial testimonial--press">
-        <div class="testimonial-quote-icon">&ldquo;</div>
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">TheLifeCo's Master Detox programme is one of the most comprehensive and clinically credible wellness experiences available anywhere in the world. The combination of medical oversight, personalised nutrition, and immersive environment produces results that self-managed approaches simply cannot replicate.</p>
-        <div class="testimonial-author-row">
-          <div class="testimonial-avatar avatar-dark" style="font-size:11px">FBS</div>
-          <div>
-            <div class="testimonial-author">Forbes</div>
-            <div class="testimonial-meta">Press Feature &middot; Best Wellness Destinations 2024</div>
-          </div>
-          <span class="testimonial-badge" style="background:rgba(0,190,214,.2);color:var(--brand-teal)">Press</span>
-        </div>
-      </div>
-
-      <!-- 12: Detox / First-Timer -->
-      <div class="testimonial">
-        <div class="testimonial-quote-icon">&ldquo;</div>
-        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">I was nervous as a first-timer — I had never done anything like this. The team immediately put me at ease. Every day I had a doctor who knew my name, my numbers, and my goals. By day three I stopped missing coffee. By day seven I cried with gratitude. This changed how I live my life.</p>
-        <div class="testimonial-author-row">
-          <div class="testimonial-avatar avatar-green">YT</div>
-          <div>
-            <div class="testimonial-author">Yuki T.</div>
-            <div class="testimonial-meta">Tokyo, Japan &middot; 10-day Green Detox, Bodrum</div>
-          </div>
-          <span class="testimonial-badge badge-detox">Detox</span>
-        </div>
-      </div>
-
-    </div>
-
-    <div style="text-align:center;margin-top:56px">
-      <a href="booking.html" class="btn btn-outline-dark btn-lg">Read More Stories</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CTA ===== -->
-<section class="testimonials-cta">
-  <div class="container">
-    <h2>Ready to Write<br>Your Own Story?</h2>
-    <p>Join 30,000+ guests who have transformed their health at TheLifeCo. Your journey starts with a single conversation.</p>
-    <div class="cta-buttons">
-      <a href="contact.html" class="btn btn-primary btn-lg">Talk to an Expert</a>
-      <a href="booking.html" class="btn btn-outline btn-lg">Book Your Retreat</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
       <div>
-        <div class="footer-brand">TheLifeCo</div>
-        <p class="footer-desc">TheLifeCo is a world-renowned wellness destination offering transformative health programs since 2005. With luxury resorts across Turkey, Thailand, Egypt, and the Caribbean.</p>
-        <div class="footer-social">
-          <a href="https://instagram.com/thelifeco" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="https://facebook.com/thelifeco" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://youtube.com/thelifeco" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-          <a href="#" aria-label="X / Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        <div class="tm-footer-brand">TheLifeCo</div>
+        <div class="tm-footer-social">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="tm-footer-address">
+          Mamak Mah. Büyükdere Cad. UBD Center No:<br>
+          219 Kat: 18 D: 88-89 / 34398 Sarıyer /<br>
+          Istanbul
         </div>
       </div>
+
       <div>
-        <div class="footer-heading">Resorts</div>
-        <div class="footer-links">
-          <a href="resorts/bodrum.html">Bodrum</a>
-          <a href="resorts/antalya.html">Antalya</a>
-          <a href="resorts/phuket.html">Phuket</a>
-          <a href="resorts/sharm-el-sheikh.html">Sharm El Sheikh</a>
-          <a href="resorts/st-lucia.html">St. Lucia</a>
+        <div class="tm-footer-col-heading">Centers</div>
+        <div class="tm-footer-col-links">
+          <a href="#">Antalya</a>
+          <a href="#">Bodrum</a>
+          <a href="#">Phuket</a>
+          <a href="#">Sharm El Sheikh</a>
+          <a href="#">St. Lucia</a>
         </div>
       </div>
+
       <div>
-        <div class="footer-heading">Programs</div>
-        <div class="footer-links">
-          <a href="programs/master-detox.html">Master Detox</a>
-          <a href="programs/water-fasting.html">Water Fasting</a>
-          <a href="programs/green-detox.html">Green Detox</a>
-          <a href="programs/longevity-reset.html">Longevity Reset</a>
-          <a href="programs/mental-wellness.html">Mental Wellness</a>
+        <div class="tm-footer-col-heading">Retreatments</div>
+        <div class="tm-footer-col-links">
+          <a href="#">Diabetes Recovery Retreatment</a>
+          <a href="#">Water Fasting Retreatment</a>
+          <a href="#">Intermittent Fasting Retreatment</a>
+          <a href="#">Low Support Retreatment</a>
+          <a href="#">Get Fit &amp; Healthy Retreatment</a>
+          <a href="#">Mindfully Living Retreatment</a>
         </div>
       </div>
+
       <div>
-        <div class="footer-heading">Company</div>
-        <div class="footer-links">
-          <a href="about.html">About Us</a>
+        <div class="tm-footer-col-heading">Meal Plans</div>
+        <div class="tm-footer-col-links">
+          <a href="#">Whole Cleanse Retreatment</a>
+          <a href="#">Green Detox Retreatment</a>
+          <a href="#">Intermittent Fasting Retreatment</a>
+          <a href="#">Low Calorie Retreatment</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="tm-footer-col-heading">Explore</div>
+        <div class="tm-footer-col-links" style="margin-bottom:24px;">
+          <a href="#">About Us</a>
+          <a href="#">Corporate Projects</a>
           <a href="blog.html">Blog</a>
-          <a href="testimonials.html">Testimonials</a>
-          <a href="faq.html">FAQ</a>
-          <a href="contact.html">Contact</a>
+          <a href="#">Habit Building App</a>
+          <a href="#">Press Kit</a>
+          <a href="#">TheLifeCo Gift Voucher</a>
+        </div>
+        <div class="tm-footer-app-label">Download BOATSY App</div>
+        <div class="tm-footer-app-btns">
+          <a href="#" class="tm-footer-app-btn">
+            <i class="fa-brands fa-apple"></i>
+            <span>App Store</span>
+          </a>
+          <a href="#" class="tm-footer-app-btn">
+            <i class="fa-brands fa-google-play"></i>
+            <span>Google Play</span>
+          </a>
         </div>
       </div>
-      <div>
-        <div class="footer-heading">Contact</div>
-        <div class="footer-links">
-          <a href="mailto:info@thelifeco.com">info@thelifeco.com</a>
-          <a href="tel:+902524134410">+90 252 413 44 10</a>
-          <a href="https://wa.me/905325554410">WhatsApp</a>
-        </div>
-        <div style="margin-top:24px">
-          <div class="footer-heading">Booking</div>
-          <div class="footer-links">
-            <a href="booking.html">Book a Retreat</a>
-            <a href="contact.html">Talk to an Expert</a>
-          </div>
-        </div>
-      </div>
+
     </div>
-    <div class="footer-bottom">
-      <span>&copy; 2025 TheLifeCo Wellbeing. All rights reserved.</span>
-      <div class="footer-legal">
-        <a href="#">Privacy Policy</a>
+
+    <div class="tm-footer-bottom">
+      <div class="tm-footer-bottom-left">
+        <span>&copy; 2026 Powered by LifeCo</span>
         <a href="#">Terms &amp; Conditions</a>
-        <a href="#">Cookie Policy</a>
+        <a href="#">Sitemap</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookies Policy</a>
+      </div>
+      <div class="tm-footer-bottom-right">
+        <span>EN</span>
+        <a href="#"><i class="fa-brands fa-instagram" style="font-size:16px;color:#5B7E96;"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter" style="font-size:16px;color:#5B7E96;"></i></a>
       </div>
     </div>
+
   </div>
 </footer>
 
-<script src="js/main.js"></script>
 </body>
 </html>

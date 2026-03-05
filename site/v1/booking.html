@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Your Stay — TheLifeCo Wellness Retreats</title>
+<meta name="description" content="Book your personalized wellness program at TheLifeCo. Choose from Bodrum, Antalya, Phuket, Sharm El Sheikh, and St. Lucia.">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700;800&family=Urbanist:wght@600&display=swap" rel="stylesheet">
+<style>
+/* =========================================
+   Booking Page — TheLifeCo Design System
+   ========================================= */
+
+/* ---------- NAV (white bg, dark text) ---------- */
+.b-nav {
+  position: relative;
+  background: #fff;
+  border-bottom: 1px solid #e7e7e7;
+  z-index: 100;
+}
+.b-nav-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+}
+.b-nav-logo {
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.b-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.b-nav-links a {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.b-nav-links a:hover,
+.b-nav-links a.active { opacity: 1; }
+.b-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.b-nav-right a {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity 0.2s;
+}
+.b-nav-right a:hover { opacity: 1; }
+.b-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 100px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.b-nav-cta:hover { background: #000; color: #fff; }
+.b-nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+.b-nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #000;
+}
+
+/* ---------- PAGE HERO ---------- */
+.b-hero {
+  background: #fff;
+  padding: 56px 80px 48px;
+  max-width: 1440px;
+  margin: 0 auto;
+  border-bottom: 1px solid #e7e7e7;
+}
+.b-hero-eyebrow {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #919191;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+.b-hero h1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 56px;
+  font-weight: 400;
+  color: #000;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  max-width: 720px;
+  margin-bottom: 20px;
+}
+.b-hero h1 strong {
+  font-weight: 700;
+}
+.b-hero-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  color: #717171;
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+/* ---------- MAIN BOOKING LAYOUT ---------- */
+.b-main {
+  background: #f7f7f7;
+  padding: 56px 0 80px;
+}
+.b-main-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ---------- BOOKING FORM ---------- */
+.b-form-card {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #e7e7e7;
+  padding: 48px;
+}
+.b-form-section-heading {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #919191;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  margin-top: 36px;
+  padding-top: 36px;
+  border-top: 1px solid #e7e7e7;
+}
+.b-form-section-heading:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+.b-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.b-form-row.full {
+  grid-template-columns: 1fr;
+}
+.b-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.b-form-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+}
+.b-form-label .b-required {
+  color: #919191;
+  font-weight: 400;
+}
+.b-form-input,
+.b-form-select,
+.b-form-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.b-form-input::placeholder,
+.b-form-textarea::placeholder {
+  color: #bfbfbf;
+}
+.b-form-input:focus,
+.b-form-select:focus,
+.b-form-textarea:focus {
+  border-color: #000;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.06);
+}
+.b-form-select-wrap {
+  position: relative;
+}
+.b-form-select-wrap::after {
+  content: '';
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid #717171;
+  pointer-events: none;
+}
+.b-form-select {
+  padding-right: 40px;
+  cursor: pointer;
+}
+.b-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+/* Phone input with country code */
+.b-phone-wrap {
+  display: flex;
+  gap: 8px;
+}
+.b-phone-country {
+  width: 90px;
+  flex-shrink: 0;
+}
+.b-phone-number {
+  flex: 1;
+}
+
+/* Guest counter */
+.b-guest-counter {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 44px;
+}
+.b-guest-btn {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  font-size: 18px;
+  font-weight: 400;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.b-guest-btn:hover { background: #f7f7f7; }
+.b-guest-val {
+  flex: 1;
+  text-align: center;
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+  border-left: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Consent checkbox */
+.b-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 4px;
+}
+.b-consent input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  accent-color: #000;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.b-consent-text {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  color: #717171;
+  line-height: 1.6;
+}
+.b-consent-text a {
+  color: #000;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Submit button */
+.b-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 32px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 100px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 28px;
+}
+.b-submit:hover { background: #202020; }
+.b-submit-note {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  color: #919191;
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* ---------- RIGHT SIDEBAR ---------- */
+.b-sidebar {
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Why Book card */
+.b-why-card {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #e7e7e7;
+  padding: 32px;
+}
+.b-why-heading {
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: -0.3px;
+  margin-bottom: 8px;
+}
+.b-why-subtext {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  color: #717171;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+.b-why-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.b-why-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.b-why-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  color: #000;
+  flex-shrink: 0;
+}
+.b-why-item-text {}
+.b-why-item-title {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 2px;
+}
+.b-why-item-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  color: #717171;
+  line-height: 1.5;
+}
+
+/* Divider in sidebar */
+.b-why-divider {
+  border: none;
+  border-top: 1px solid #e7e7e7;
+  margin: 20px 0;
+}
+
+/* Contact card */
+.b-contact-card {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #e7e7e7;
+  padding: 32px;
+}
+.b-contact-heading {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 6px;
+}
+.b-contact-subtext {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  color: #717171;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.b-contact-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-top: 1px solid #e7e7e7;
+  text-decoration: none;
+}
+.b-contact-row:first-of-type { border-top: none; padding-top: 0; }
+.b-contact-icon-wrap {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #717171;
+  font-size: 14px;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+.b-contact-row:hover .b-contact-icon-wrap {
+  border-color: #000;
+  color: #000;
+}
+.b-contact-info {}
+.b-contact-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  color: #919191;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.b-contact-value {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* Testimonial snippet */
+.b-testimonial-card {
+  background: #f7f7f7;
+  border-radius: 16px;
+  padding: 24px;
+}
+.b-testimonial-stars {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 12px;
+}
+.b-testimonial-stars i {
+  font-size: 13px;
+  color: #e1bf8b;
+}
+.b-testimonial-text {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  color: #000;
+  line-height: 1.7;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+.b-testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.b-testimonial-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #d9d9d9;
+  flex-shrink: 0;
+}
+.b-testimonial-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.b-testimonial-name {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #000;
+}
+.b-testimonial-meta {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  color: #717171;
+}
+
+/* ---------- SUCCESS STATE ---------- */
+.b-success {
+  display: none;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #e7e7e7;
+  padding: 64px 48px;
+  text-align: center;
+}
+.b-success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  font-size: 28px;
+  color: #000;
+}
+.b-success-heading {
+  font-family: 'Manrope', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 12px;
+}
+.b-success-desc {
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  color: #717171;
+  line-height: 1.7;
+  max-width: 400px;
+  margin: 0 auto 28px;
+}
+.b-success-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  background: #000;
+  color: #fff;
+  border-radius: 100px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.b-success-btn:hover { background: #202020; }
+
+/* ---------- FOOTER ---------- */
+.b-footer {
+  background: #fff;
+  border-top: 1px solid #e7e7e7;
+  padding: 48px 0 0;
+}
+.b-footer-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+}
+.b-footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.3fr;
+  gap: 40px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid #e7e7e7;
+}
+.b-footer-brand {
+  font-family: 'Manrope', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 16px;
+  letter-spacing: -0.3px;
+}
+.b-footer-social {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.b-footer-social a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #717171;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.b-footer-social a:hover { border-color: #000; color: #000; }
+.b-footer-address {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  color: #717171;
+  line-height: 1.6;
+}
+.b-footer-col-heading {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+.b-footer-col-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.b-footer-col-links a {
+  font-family: 'Urbanist', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #717171;
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.4;
+}
+.b-footer-col-links a:hover { color: #000; }
+.b-footer-app-label {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 12px;
+}
+.b-footer-app-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.b-footer-app-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #000;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+.b-footer-app-btn:hover { border-color: #000; }
+.b-footer-app-btn i { font-size: 16px; }
+.b-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.b-footer-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.b-footer-bottom-left span,
+.b-footer-bottom-left a {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #717171;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.b-footer-bottom-left a:hover { color: #000; }
+.b-footer-bottom-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.b-footer-bottom-right span {
+  font-family: 'Manrope', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #000;
+  cursor: pointer;
+}
+.b-footer-bottom-right a {
+  font-family: 'Manrope', sans-serif;
+  font-size: 13px;
+  color: #717171;
+  text-decoration: none;
+}
+
+/* =========================================
+   Responsive
+   ========================================= */
+@media (max-width: 1200px) {
+  .b-nav-inner,
+  .b-hero,
+  .b-main-inner,
+  .b-footer-inner { padding-left: 40px; padding-right: 40px; }
+  .b-main-inner { grid-template-columns: 1fr 360px; gap: 32px; }
+  .b-footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (max-width: 1024px) {
+  .b-hero h1 { font-size: 44px; }
+  .b-main-inner { grid-template-columns: 1fr; }
+  .b-sidebar { position: relative; top: 0; }
+  .b-footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .b-nav-links { display: none; }
+  .b-nav-toggle { display: flex; }
+  .b-nav-inner { padding: 0 20px; }
+  .b-hero { padding: 40px 20px 36px; }
+  .b-hero h1 { font-size: 34px; }
+  .b-main { padding: 32px 0 56px; }
+  .b-main-inner { padding: 0 20px; gap: 24px; }
+  .b-form-card { padding: 28px 24px; }
+  .b-form-row { grid-template-columns: 1fr; }
+  .b-footer-inner { padding: 0 20px; }
+  .b-footer-grid { grid-template-columns: 1fr 1fr; }
+  .b-footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+@media (max-width: 480px) {
+  .b-hero h1 { font-size: 28px; }
+  .b-footer-grid { grid-template-columns: 1fr; }
+  .b-footer-bottom-left { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===========================
+     NAVIGATION
+     =========================== -->
+<nav class="b-nav" id="b-nav">
+  <div class="b-nav-inner">
+    <a href="index.html" class="b-nav-logo">TheLifeCo</a>
+
+    <div class="b-nav-links">
+      <a href="index.html">Retreats</a>
+      <a href="resort.html">Resorts</a>
+      <a href="#">Medical</a>
+      <a href="treatments.html">Treatments</a>
+    </div>
+
+    <div class="b-nav-right">
+      <a href="#" style="font-family:'Inter',sans-serif;font-size:13px;font-weight:600">EN</a>
+      <a href="#" style="font-size:13px"><i class="fa-solid fa-magnifying-glass"></i></a>
+      <a href="booking.html" class="b-nav-cta active" style="opacity:1;background:#000;color:#fff;">Book Now</a>
+    </div>
+
+    <button class="b-nav-toggle" aria-label="Open menu" onclick="document.getElementById('b-nav').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===========================
+     PAGE HERO
+     =========================== -->
+<div class="b-hero">
+  <div class="b-hero-eyebrow">Reservations</div>
+  <h1>Book Your <strong>Wellness Journey</strong></h1>
+  <p class="b-hero-desc">Complete the form below and one of our wellness consultants will contact you within 24 hours to confirm your program and dates.</p>
+</div>
+
+<!-- ===========================
+     MAIN BOOKING SECTION
+     =========================== -->
+<section class="b-main">
+  <div class="b-main-inner">
+
+    <!-- LEFT: BOOKING FORM -->
+    <div>
+      <!-- Form card -->
+      <div class="b-form-card" id="b-form-card">
+        <form id="b-booking-form" novalidate onsubmit="submitBooking(event)">
+
+          <!-- SECTION: Choose Your Destination -->
+          <div class="b-form-section-heading">Choose Your Destination</div>
+
+          <div class="b-form-row">
+            <div class="b-form-group">
+              <label class="b-form-label" for="resort">Resort Location <span class="b-required">*</span></label>
+              <div class="b-form-select-wrap">
+                <select class="b-form-select" id="resort" name="resort" required>
+                  <option value="" disabled selected>Select a resort</option>
+                  <option value="bodrum">Bodrum, Turkey</option>
+                  <option value="antalya">Antalya, Turkey</option>
+                  <option value="phuket">Phuket, Thailand</option>
+                  <option value="sharm">Sharm El Sheikh, Egypt</option>
+                  <option value="st-lucia">St. Lucia, Caribbean</option>
+                </select>
+              </div>
+            </div>
+            <div class="b-form-group">
+              <label class="b-form-label" for="program">Program Category <span class="b-required">*</span></label>
+              <div class="b-form-select-wrap">
+                <select class="b-form-select" id="program" name="program" required>
+                  <option value="" disabled selected>Select a program</option>
+                  <optgroup label="Cleansing &amp; Detox">
+                    <option value="water-fasting">Medically Supervised Water Fasting</option>
+                    <option value="juice-cleanse">Green Juice Cleanse</option>
+                    <option value="master-detox">Master Detox</option>
+                  </optgroup>
+                  <optgroup label="Weight Loss &amp; Management">
+                    <option value="weight-loss">Weight Loss &amp; Management</option>
+                  </optgroup>
+                  <optgroup label="Chronic Disease Recovery">
+                    <option value="diabetes">Diabetes Program</option>
+                    <option value="cardiovascular">Cardiovascular Disease Program</option>
+                    <option value="gut-health">Digestive &amp; Gut Health</option>
+                    <option value="liver-detox">Liver Detox</option>
+                    <option value="inflammation">Inflammation &amp; Immune Reset</option>
+                    <option value="chronic-fatigue">Chronic Fatigue Recovery</option>
+                  </optgroup>
+                  <optgroup label="Healthy Aging &amp; Longevity">
+                    <option value="longevity">Ultimate Longevity</option>
+                    <option value="cancer-prevention">Cancer Prevention &amp; Support</option>
+                    <option value="hormonal">Hormonal Longevity</option>
+                    <option value="beauty">Beauty &amp; Body Reshaping</option>
+                  </optgroup>
+                  <optgroup label="Mental Health &amp; Wellness">
+                    <option value="mental-wellness">Mental Wellness Program</option>
+                  </optgroup>
+                  <option value="not-sure">I'm not sure — need guidance</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="b-form-row">
+            <div class="b-form-group">
+              <label class="b-form-label" for="duration">Program Duration <span class="b-required">*</span></label>
+              <div class="b-form-select-wrap">
+                <select class="b-form-select" id="duration" name="duration" required>
+                  <option value="" disabled selected>Select duration</option>
+                  <option value="4">4 days</option>
+                  <option value="7">7 days</option>
+                  <option value="10">10 days</option>
+                  <option value="14">14 days</option>
+                  <option value="21">21 days</option>
+                  <option value="custom">Custom — I'll discuss with your team</option>
+                </select>
+              </div>
+            </div>
+            <div class="b-form-group">
+              <label class="b-form-label" for="room-type">Room Type</label>
+              <div class="b-form-select-wrap">
+                <select class="b-form-select" id="room-type" name="room-type">
+                  <option value="" disabled selected>Select room type</option>
+                  <option value="standard">Standard Room</option>
+                  <option value="deluxe">Deluxe Room</option>
+                  <option value="junior-suite">Junior Suite</option>
+                  <option value="premium-suite">Premium Suite</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION: Select Your Dates -->
+          <div class="b-form-section-heading">Select Your Dates</div>
+
+          <div class="b-form-row">
+            <div class="b-form-group">
+              <label class="b-form-label" for="checkin">Check-in Date <span class="b-required">*</span></label>
+              <input
+                class="b-form-input"
+                type="date"
+                id="checkin"
+                name="checkin"
+                required
+                min=""
+              >
+            </div>
+            <div class="b-form-group">
+              <label class="b-form-label" for="checkout">Check-out Date <span class="b-required">*</span></label>
+              <input
+                class="b-form-input"
+                type="date"
+                id="checkout"
+                name="checkout"
+                required
+                min=""
+              >
+            </div>
+          </div>
+
+          <div class="b-form-row">
+            <div class="b-form-group">
+              <label class="b-form-label" for="guests">Number of Guests</label>
+              <div class="b-guest-counter" role="group" aria-label="Number of guests">
+                <button type="button" class="b-guest-btn" aria-label="Decrease guests" onclick="changeGuests(-1)">−</button>
+                <div class="b-guest-val" id="guest-val" aria-live="polite">1</div>
+                <button type="button" class="b-guest-btn" aria-label="Increase guests" onclick="changeGuests(1)">+</button>
+              </div>
+              <input type="hidden" id="guests" name="guests" value="1">
+            </div>
+            <div class="b-form-group">
+              <label class="b-form-label" for="flexibility">Date Flexibility</label>
+              <div class="b-form-select-wrap">
+                <select class="b-form-select" id="flexibility" name="flexibility">
+                  <option value="exact">Exact dates</option>
+                  <option value="1-2">± 1–2 days</option>
+                  <option value="1-week">± 1 week</option>
+                  <option value="flexible">Fully flexible</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION: Your Contact Information -->
+          <div class="b-form-section-heading">Your Contact Information</div>
+
+          <div class="b-form-row">
+            <div class="b-form-group">
+              <label class="b-form-label" for="firstname">First Name <span class="b-required">*</span></label>
+              <input class="b-form-input" type="text" id="firstname" name="firstname" placeholder="e.g. Sarah" required autocomplete="given-name">
+            </div>
+            <div class="b-form-group">
+              <label class="b-form-label" for="lastname">Last Name <span class="b-required">*</span></label>
+              <input class="b-form-input" type="text" id="lastname" name="lastname" placeholder="e.g. Johnson" required autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="b-form-row full">
+            <div class="b-form-group">
+              <label class="b-form-label" for="email">Email Address <span class="b-required">*</span></label>
+              <input class="b-form-input" type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+            </div>
+          </div>
+
+          <div class="b-form-row full">
+            <div class="b-form-group">
+              <label class="b-form-label" for="phone">Phone Number</label>
+              <div class="b-phone-wrap">
+                <div class="b-form-select-wrap b-phone-country">
+                  <select class="b-form-select" id="phone-country" name="phone-country" aria-label="Country code">
+                    <option value="+1">+1</option>
+                    <option value="+44">+44</option>
+                    <option value="+49">+49</option>
+                    <option value="+33">+33</option>
+                    <option value="+90" selected>+90</option>
+                    <option value="+66">+66</option>
+                    <option value="+7">+7</option>
+                    <option value="+971">+971</option>
+                    <option value="+61">+61</option>
+                  </select>
+                </div>
+                <input class="b-form-input b-phone-number" type="tel" id="phone" name="phone" placeholder="555 000 0000" autocomplete="tel">
+              </div>
+            </div>
+          </div>
+
+          <div class="b-form-row full">
+            <div class="b-form-group">
+              <label class="b-form-label" for="nationality">Nationality</label>
+              <div class="b-form-select-wrap">
+                <select class="b-form-select" id="nationality" name="nationality">
+                  <option value="" disabled selected>Select your country</option>
+                  <option value="de">Germany</option>
+                  <option value="gb">United Kingdom</option>
+                  <option value="us">United States</option>
+                  <option value="ru">Russia</option>
+                  <option value="ae">United Arab Emirates</option>
+                  <option value="tr">Turkey</option>
+                  <option value="th">Thailand</option>
+                  <option value="fr">France</option>
+                  <option value="nl">Netherlands</option>
+                  <option value="se">Sweden</option>
+                  <option value="ch">Switzerland</option>
+                  <option value="au">Australia</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- SECTION: Health & Special Requirements -->
+          <div class="b-form-section-heading">Health &amp; Special Requirements</div>
+
+          <div class="b-form-row full">
+            <div class="b-form-group">
+              <label class="b-form-label" for="health-notes">Health Conditions or Medications</label>
+              <textarea
+                class="b-form-textarea"
+                id="health-notes"
+                name="health-notes"
+                placeholder="Please share any relevant health conditions, ongoing medications, allergies, or dietary restrictions. This helps our medical team prepare your personalized program."
+                rows="4"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="b-form-row full">
+            <div class="b-form-group">
+              <label class="b-form-label" for="goals">Your Wellness Goals</label>
+              <textarea
+                class="b-form-textarea"
+                id="goals"
+                name="goals"
+                placeholder="What would you like to achieve during your stay? (e.g. weight loss, stress relief, detox, better sleep, managing a specific condition...)"
+                rows="3"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="b-form-row full">
+            <div class="b-form-group">
+              <label class="b-form-label" for="special-requests">Special Requests</label>
+              <textarea
+                class="b-form-textarea"
+                id="special-requests"
+                name="special-requests"
+                placeholder="Any other requests or questions for our team?"
+                rows="2"
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="b-form-row full" style="margin-top:4px;">
+            <div class="b-form-group">
+              <label class="b-form-label">How did you hear about us?</label>
+              <div class="b-form-select-wrap">
+                <select class="b-form-select" id="referral" name="referral">
+                  <option value="" disabled selected>Select an option</option>
+                  <option value="google">Google Search</option>
+                  <option value="instagram">Instagram</option>
+                  <option value="facebook">Facebook</option>
+                  <option value="friend">Friend or Family</option>
+                  <option value="doctor">Doctor or Health Professional</option>
+                  <option value="press">Press or Magazine</option>
+                  <option value="returning">Returning Guest</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Consent -->
+          <div style="margin-top: 28px;">
+            <label class="b-consent">
+              <input type="checkbox" id="consent" name="consent" required>
+              <span class="b-consent-text">
+                I agree to TheLifeCo's <a href="#">Privacy Policy</a> and <a href="#">Terms &amp; Conditions</a>. I understand that submitting this form is a booking request and does not constitute a confirmed reservation.
+              </span>
+            </label>
+          </div>
+
+          <button type="submit" class="b-submit">
+            Request a Booking
+            <i class="fa-solid fa-arrow-right" style="font-size:14px;"></i>
+          </button>
+          <p class="b-submit-note">No payment required at this stage. Our team will contact you within 24 hours.</p>
+
+        </form>
+      </div>
+
+      <!-- Success state (hidden until form submitted) -->
+      <div class="b-success" id="b-success">
+        <div class="b-success-icon"><i class="fa-solid fa-check"></i></div>
+        <div class="b-success-heading">Booking Request Received</div>
+        <p class="b-success-desc">Thank you for reaching out. One of our wellness consultants will be in touch within 24 hours to discuss your program and confirm your dates.</p>
+        <a href="index.html" class="b-success-btn">
+          Return to homepage
+          <i class="fa-solid fa-arrow-right" style="font-size:12px;"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT: SIDEBAR -->
+    <aside class="b-sidebar">
+
+      <!-- Why Book With Us -->
+      <div class="b-why-card">
+        <div class="b-why-heading">Why Book With Us?</div>
+        <div class="b-why-subtext">Everything is designed to make your wellness journey as seamless and effective as possible.</div>
+        <div class="b-why-list">
+
+          <div class="b-why-item">
+            <div class="b-why-icon"><i class="fa-solid fa-stethoscope"></i></div>
+            <div class="b-why-item-text">
+              <div class="b-why-item-title">Free Consultation Included</div>
+              <div class="b-why-item-desc">Every booking includes a pre-arrival consultation call with our medical team — no extra charge.</div>
+            </div>
+          </div>
+
+          <div class="b-why-item">
+            <div class="b-why-icon"><i class="fa-solid fa-calendar-xmark"></i></div>
+            <div class="b-why-item-text">
+              <div class="b-why-item-title">Flexible Cancellation</div>
+              <div class="b-why-item-desc">Cancel or reschedule up to 30 days before arrival for a full refund. Life happens — we understand.</div>
+            </div>
+          </div>
+
+          <div class="b-why-item">
+            <div class="b-why-icon"><i class="fa-solid fa-sliders"></i></div>
+            <div class="b-why-item-text">
+              <div class="b-why-item-title">Personalized Program Design</div>
+              <div class="b-why-item-desc">Your program is tailored to your specific health status, goals, and preferences after your arrival assessment.</div>
+            </div>
+          </div>
+
+          <div class="b-why-item">
+            <div class="b-why-icon"><i class="fa-solid fa-headset"></i></div>
+            <div class="b-why-item-text">
+              <div class="b-why-item-title">24/7 Guest Support</div>
+              <div class="b-why-item-desc">Our team is available around the clock during your stay and accessible before and after your program.</div>
+            </div>
+          </div>
+
+          <div class="b-why-item">
+            <div class="b-why-icon"><i class="fa-solid fa-star"></i></div>
+            <div class="b-why-item-text">
+              <div class="b-why-item-title">20 Years of Proven Results</div>
+              <div class="b-why-item-desc">Since 2005, over 50,000 guests have trusted TheLifeCo with their health transformation.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Direct Contact -->
+      <div class="b-contact-card">
+        <div class="b-contact-heading">Prefer to speak with someone?</div>
+        <div class="b-contact-subtext">Our reservations team is available Monday–Sunday, 9am–8pm (GMT+3).</div>
+
+        <a href="tel:+902121234567" class="b-contact-row">
+          <div class="b-contact-icon-wrap"><i class="fa-solid fa-phone"></i></div>
+          <div class="b-contact-info">
+            <div class="b-contact-label">Phone</div>
+            <div class="b-contact-value">+90 212 123 45 67</div>
+          </div>
+        </a>
+
+        <a href="mailto:reservations@thelifeco.com" class="b-contact-row">
+          <div class="b-contact-icon-wrap"><i class="fa-solid fa-envelope"></i></div>
+          <div class="b-contact-info">
+            <div class="b-contact-label">Email</div>
+            <div class="b-contact-value">reservations@thelifeco.com</div>
+          </div>
+        </a>
+
+        <a href="#" class="b-contact-row">
+          <div class="b-contact-icon-wrap"><i class="fa-brands fa-whatsapp"></i></div>
+          <div class="b-contact-info">
+            <div class="b-contact-label">WhatsApp</div>
+            <div class="b-contact-value">+90 533 123 45 67</div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Testimonial -->
+      <div class="b-testimonial-card">
+        <div class="b-testimonial-stars">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+        <p class="b-testimonial-text">"I arrived with a chronic fatigue condition and left feeling completely renewed. The medical team was incredible — they monitored everything and adjusted my program daily. The booking process was simple and the pre-arrival support made all the difference."</p>
+        <div class="b-testimonial-author">
+          <div class="b-testimonial-avatar">
+            <img src="images/testimonial-1.jpg" alt="Guest testimonial" loading="lazy">
+          </div>
+          <div>
+            <div class="b-testimonial-name">Katharina M.</div>
+            <div class="b-testimonial-meta">Bodrum, 14-day program</div>
+          </div>
+        </div>
+      </div>
+
+    </aside>
+
+  </div>
+</section>
+
+<!-- ===========================
+     FOOTER
+     =========================== -->
+<footer class="b-footer">
+  <div class="b-footer-inner">
+    <div class="b-footer-grid">
+
+      <!-- Col 1: Brand -->
+      <div>
+        <div class="b-footer-brand">TheLifeCo</div>
+        <div class="b-footer-social">
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <div class="b-footer-address">
+          Mamak Mah. Büyükdere Cad. UBD Center No:<br>
+          219 Kat: 18 D: 88-89 / 34398 Sarıyer /<br>
+          Istanbul
+        </div>
+      </div>
+
+      <!-- Col 2: Centers -->
+      <div>
+        <div class="b-footer-col-heading">Centers</div>
+        <div class="b-footer-col-links">
+          <a href="#">Antalya</a>
+          <a href="#">Bodrum</a>
+          <a href="#">Phuket</a>
+          <a href="#">Sharm El Sheikh</a>
+          <a href="#">St. Lucia</a>
+        </div>
+      </div>
+
+      <!-- Col 3: Retreatments -->
+      <div>
+        <div class="b-footer-col-heading">Retreatments</div>
+        <div class="b-footer-col-links">
+          <a href="#">Diabetes Recovery Retreatment</a>
+          <a href="#">Water Fasting Retreatment</a>
+          <a href="#">Intermittent Fasting Retreatment</a>
+          <a href="#">Low Support Retreatment</a>
+          <a href="#">Get Fit &amp; Healthy Retreatment</a>
+          <a href="#">Mindfully Living Retreatment</a>
+        </div>
+      </div>
+
+      <!-- Col 4: Meal Plans -->
+      <div>
+        <div class="b-footer-col-heading">Meal Plans</div>
+        <div class="b-footer-col-links">
+          <a href="#">Whole Cleanse Retreatment</a>
+          <a href="#">Green Detox Retreatment</a>
+          <a href="#">Intermittent Fasting Retreatment</a>
+          <a href="#">Low Calorie Retreatment</a>
+        </div>
+      </div>
+
+      <!-- Col 5: Explore + App -->
+      <div>
+        <div class="b-footer-col-heading">Explore</div>
+        <div class="b-footer-col-links" style="margin-bottom:24px;">
+          <a href="#">About Us</a>
+          <a href="#">Corporate Projects</a>
+          <a href="#">Blog</a>
+          <a href="#">Habit Building App</a>
+          <a href="#">Press Kit</a>
+          <a href="#">TheLifeCo Gift Voucher</a>
+        </div>
+        <div class="b-footer-app-label">Download BOATSY App</div>
+        <div class="b-footer-app-btns">
+          <a href="#" class="b-footer-app-btn">
+            <i class="fa-brands fa-apple"></i>
+            <span>App Store</span>
+          </a>
+          <a href="#" class="b-footer-app-btn">
+            <i class="fa-brands fa-google-play"></i>
+            <span>Google Play</span>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /footer-grid -->
+
+    <div class="b-footer-bottom">
+      <div class="b-footer-bottom-left">
+        <span>&copy; 2024 Powered by LifeCo</span>
+        <a href="#">Terms &amp; Conditionals</a>
+        <a href="#">Sitemap</a>
+        <a href="#">Privacy</a>
+        <a href="#">Cookies Policy</a>
+      </div>
+      <div class="b-footer-bottom-right">
+        <span>EN</span>
+        <a href="#"><i class="fa-brands fa-instagram" style="font-size:16px;color:#717171;"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter" style="font-size:16px;color:#717171;"></i></a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+  /* Guest counter */
+  var guestCount = 1;
+  function changeGuests(delta) {
+    guestCount = Math.max(1, Math.min(10, guestCount + delta));
+    document.getElementById('guest-val').textContent = guestCount;
+    document.getElementById('guests').value = guestCount;
+  }
+
+  /* Set min dates to today */
+  (function() {
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementById('checkin').min = today;
+    document.getElementById('checkout').min = today;
+
+    document.getElementById('checkin').addEventListener('change', function() {
+      document.getElementById('checkout').min = this.value;
+    });
+  })();
+
+  /* Form submission */
+  function submitBooking(e) {
+    e.preventDefault();
+    var form = document.getElementById('b-booking-form');
+
+    // Basic validation
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    // Show success state
+    document.getElementById('b-form-card').style.display = 'none';
+    var success = document.getElementById('b-success');
+    success.style.display = 'block';
+
+    // Scroll to success
+    success.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+</body>
+</html>
