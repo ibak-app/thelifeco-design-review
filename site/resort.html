@@ -212,7 +212,7 @@
   position:absolute;
   top:0;left:0;right:0;bottom:0;
   background:
-    linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.15) 40%,rgba(0,0,0,.72) 100%),
+    linear-gradient(to top,rgba(20,24,39,0.85) 0%,rgba(20,24,39,0.4) 40%,transparent 70%),
     url('images/resort-hero.jpg') center/cover no-repeat;
   transition:opacity .3s ease;
 }
@@ -504,6 +504,19 @@
   object-fit:cover;
   background:#333;
   border-radius:8px;
+  filter:contrast(1.05) brightness(1.02);
+}
+/* Gradient overlay to mask Unsplash watermarks */
+.testimonials-mosaic{position:relative}
+.testimonials-mosaic::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:40%;
+  background:linear-gradient(to top,rgba(32,32,32,0.85) 0%,rgba(32,32,32,0.4) 50%,transparent 100%);
+  border-radius:0 0 12px 12px;
+  pointer-events:none;
+  z-index:1;
 }
 .mosaic-img--tall{
   grid-row:span 2;
@@ -546,13 +559,13 @@
   margin-bottom:8px;
 }
 .t-review-stars{
-  display:flex;gap:3px;color:#F6A358;font-size:13px;
-  margin-bottom:10px;
+  display:flex;gap:4px;color:#F6A358;font-size:15px;
+  margin-bottom:12px;
 }
 .t-review-text{
   font-family:var(--font-primary);
   font-size:14px;font-weight:400;
-  line-height:1.7;color:rgba(255,255,255,.65);
+  line-height:1.8;color:rgba(255,255,255,.78);
 }
 .t-review-see-more{
   color:rgba(255,255,255,.45);
@@ -1191,7 +1204,7 @@
 
     <!-- Wallet / loyalty card -->
     <div class="promo-card-wallet">
-      <div class="promo-wallet-earn">EARN %10 OF YOUR<br>PURCHASE</div>
+      <div class="promo-wallet-earn">EARN 10% OF YOUR<br>PURCHASE</div>
       <div class="promo-wallet-use">&amp; USE IT ON YOUR NEXT TRIP</div>
       <div class="promo-wallet-script">wallet</div>
     </div>
@@ -1242,16 +1255,16 @@
         </div>
       </div>
 
-      <!-- Column 3: Retreatments -->
+      <!-- Column 3: Retreat Programs -->
       <div>
-        <div class="footer-v2-col-heading">Retreatments</div>
+        <div class="footer-v2-col-heading">Retreat Programs</div>
         <div class="footer-v2-links">
-          <a href="#">Weight Loss Retreatment</a>
-          <a href="#">Diabetes Recovery Retreatment</a>
-          <a href="#">Water Fasting Retreatment</a>
+          <a href="#">Weight Loss Retreat</a>
+          <a href="#">Diabetes Recovery Retreat</a>
+          <a href="#">Water Fasting Retreat</a>
           <a href="#">Liver Support Protocol</a>
-          <a href="#">Get Fit &amp; Healthy Retreatment</a>
-          <a href="#">Mindful Living Retreatment</a>
+          <a href="#">Get Fit &amp; Healthy Retreat</a>
+          <a href="#">Mindful Living Retreat</a>
         </div>
       </div>
 
@@ -1259,11 +1272,11 @@
       <div>
         <div class="footer-v2-col-heading">Meal Plans</div>
         <div class="footer-v2-links">
-          <a href="#">Master Cleanse Retreatment</a>
-          <a href="#">Green Detox Retreatment</a>
-          <a href="#">Intermittent Fasting Retreatment</a>
-          <a href="#">Ketogenic Retreatment</a>
-          <a href="#">Low Calorie Retreatment</a>
+          <a href="#">Master Cleanse Retreat</a>
+          <a href="#">Green Detox Retreat</a>
+          <a href="#">Intermittent Fasting Retreat</a>
+          <a href="#">Ketogenic Retreat</a>
+          <a href="#">Low Calorie Retreat</a>
         </div>
       </div>
 

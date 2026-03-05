@@ -93,8 +93,16 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  border-bottom: 2px solid transparent;
 }
 .faq-tabs-bar .tab i { font-size: 13px; }
+.faq-tabs-bar .tab.active,
+.faq-tabs-bar .tab:hover {
+  background: var(--brand-navy);
+  color: var(--white);
+  border-color: var(--brand-navy);
+  border-bottom-color: var(--brand-navy);
+}
 
 /* ── FAQ Panels ────────────────────────────────────────── */
 .faq-panel {
@@ -153,10 +161,31 @@
 /* Uses .faq-item, .faq-question, .faq-answer, .faq-answer-inner from style.css */
 .faq-list {
   margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.faq-list .faq-item {
+  border-bottom: 1px solid var(--border-color);
+  border-left: 3px solid transparent;
+  padding-left: 16px;
+  transition: border-color 0.2s;
+}
+.faq-list .faq-item.active {
+  border-left-color: var(--brand-teal);
 }
 .faq-question:hover { color: var(--brand-navy); }
 .faq-item.active .faq-question { color: var(--brand-navy); }
 .faq-item.active .faq-answer { max-height: 600px; }
+/* Accordion +/- icons in brand teal */
+.faq-list .faq-question::after {
+  color: var(--brand-teal);
+}
+/* Answer text styling */
+.faq-list .faq-answer-inner {
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
 .faq-answer-inner strong {
   color: var(--text-primary);
   font-weight: 600;
@@ -633,7 +662,7 @@
     <h2>Still Have Questions?</h2>
     <p>Our wellness consultants are available to answer any remaining questions and help you choose the right program, location, and duration for your goals.</p>
     <div class="cta-buttons">
-      <a href="contact.html" class="btn btn-primary btn-lg">Talk to Our Team</a>
+      <a href="contact.html" class="btn btn-lg" style="background:#F6A358;color:#fff;border-color:#F6A358">Talk to Our Team</a>
       <a href="booking.html" class="btn btn-outline btn-lg">Book Your Retreat</a>
     </div>
     <div class="faq-cta-channels">

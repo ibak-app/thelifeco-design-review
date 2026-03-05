@@ -171,17 +171,21 @@
   min-height: 100%;
 }
 
-/* Sort row — black bg pill */
+/* Sort row — navy bg pill */
 .t-sidebar-sort {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 24px;
-  background: #141827;
+  background: #00609C;
   border-radius: 12px;
   cursor: pointer;
   margin-top: 0;
   margin-bottom: 12px;
+  transition: background 0.2s;
+}
+.t-sidebar-sort:hover {
+  background: #004f82;
 }
 .t-sidebar-sort-label {
   font-family: 'Montserrat', sans-serif;
@@ -194,7 +198,7 @@
   color: #fff;
 }
 
-/* Programs accordion — black bg pill header */
+/* Programs accordion — navy bg pill header */
 .t-sidebar-accordion {
   border-bottom: none;
 }
@@ -203,10 +207,14 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 24px;
-  background: #141827;
+  background: #00609C;
   border-radius: 12px;
   cursor: pointer;
   margin-bottom: 8px;
+  transition: background 0.2s;
+}
+.t-sidebar-accordion-head:hover {
+  background: #004f82;
 }
 .t-sidebar-accordion-head-label {
   font-family: 'Montserrat', sans-serif;
@@ -250,23 +258,28 @@
 }
 .t-sidebar-prog-item.active {
   font-weight: 700;
-  border-left-color: #141827;
+  color: #00609C;
+  border-left-color: #00BED6;
 }
 /* close padding after last item */
 .t-sidebar-accordion-body .t-sidebar-prog-item:last-child {
   padding-bottom: 22px;
 }
 
-/* Conditions row — black bg pill */
+/* Conditions row — navy bg pill */
 .t-sidebar-conditions {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 24px;
-  background: #141827;
+  background: #00609C;
   border-radius: 12px;
   cursor: pointer;
   margin-top: 4px;
+  transition: background 0.2s;
+}
+.t-sidebar-conditions:hover {
+  background: #004f82;
 }
 .t-sidebar-conditions-label {
   font-family: 'Montserrat', sans-serif;
@@ -297,12 +310,16 @@
   background: #F4F8FB;
   overflow: hidden;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
   display: flex;
   flex-direction: column;
   min-height: 200px;
 }
-.t-card:hover { background: #eee; }
+.t-card:hover {
+  background: #eef5f9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0,96,156,0.1);
+}
 
 .t-card-head {
   position: relative;
@@ -318,7 +335,7 @@
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: #141827;
+  color: #00BED6;
   line-height: 1.35;
   max-width: calc(100% - 56px);
 }
@@ -330,7 +347,7 @@
   height: 48px;
   border-radius: 50%;
   border: none;
-  background: #141827;
+  background: #00BED6;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -339,7 +356,7 @@
   transition: background 0.2s;
   flex-shrink: 0;
 }
-.t-card:hover .t-card-arrow { background: #333; }
+.t-card:hover .t-card-arrow { background: #00a8be; }
 .t-card-name {
   font-family: 'Montserrat', sans-serif;
   font-size: 22px;
@@ -367,7 +384,7 @@
 .t-card-featured {
   border: 1px solid #E3EDF3;
   margin: -1px 0 0 -1px;
-  background: #141827;
+  background: linear-gradient(135deg, #00609C 0%, #00BED6 100%);
   overflow: hidden;
   cursor: pointer;
   display: flex;
@@ -535,7 +552,7 @@
 .t-faq-icon {
   font-size: 20px;
   font-weight: 300;
-  color: #5B7E96;
+  color: #00BED6;
   flex-shrink: 0;
   line-height: 1;
   width: 20px;
@@ -547,11 +564,12 @@
   transition: max-height 0.3s ease;
 }
 .t-faq-a-inner {
-  padding: 0 0 20px;
+  padding: 4px 0 24px;
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   color: #5B7E96;
-  line-height: 1.8;
+  line-height: 1.85;
+  letter-spacing: 0.01em;
 }
 .t-faq-item.open .t-faq-a { max-height: 400px; }
 .t-faq-item.open .t-faq-icon::before { content: "\2212"; }
@@ -1279,16 +1297,16 @@
         </div>
       </div>
 
-      <!-- Col 3: Retreatments -->
+      <!-- Col 3: Treatments -->
       <div>
-        <div class="t-footer-col-heading">Retreatments</div>
+        <div class="t-footer-col-heading">Treatments</div>
         <div class="t-footer-col-links">
-          <a href="#">Diabetes Recovery Retreatment</a>
-          <a href="#">Water Fasting Retreatment</a>
-          <a href="#">Intermittent Fasting Retreatment</a>
-          <a href="#">Low Support Retreatment</a>
-          <a href="#">Get Fit &amp; Healthy Retreatment</a>
-          <a href="#">Mindfully Living Retreatment</a>
+          <a href="#">Diabetes Recovery Treatment</a>
+          <a href="#">Water Fasting Treatment</a>
+          <a href="#">Intermittent Fasting Treatment</a>
+          <a href="#">Low Support Treatment</a>
+          <a href="#">Get Fit &amp; Healthy Treatment</a>
+          <a href="#">Mindfully Living Treatment</a>
         </div>
       </div>
 
@@ -1296,10 +1314,10 @@
       <div>
         <div class="t-footer-col-heading">Meal Plans</div>
         <div class="t-footer-col-links">
-          <a href="#">Whole Cleanse Retreatment</a>
-          <a href="#">Green Detox Retreatment</a>
-          <a href="#">Intermittent Fasting Retreatment</a>
-          <a href="#">Low Calorie Retreatment</a>
+          <a href="#">Whole Cleanse Treatment</a>
+          <a href="#">Green Detox Treatment</a>
+          <a href="#">Intermittent Fasting Treatment</a>
+          <a href="#">Low Calorie Treatment</a>
         </div>
       </div>
 

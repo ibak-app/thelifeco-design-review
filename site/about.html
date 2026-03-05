@@ -147,6 +147,7 @@
   max-width: 460px;
 }
 .about-hero-img {
+  position: relative;
   border-radius: 24px;
   overflow: hidden;
   aspect-ratio: 4/3;
@@ -156,6 +157,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  filter: none;
+}
+.about-hero-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,96,156,0.1), rgba(0,190,214,0.1));
+  border-radius: 24px;
+  pointer-events: none;
 }
 
 /* ---------- STATS BAR ---------- */
@@ -189,7 +199,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.7);
   line-height: 1.5;
 }
 
@@ -400,7 +410,7 @@
   font-family: 'Montserrat', sans-serif;
   font-size: 13px;
   font-weight: 600;
-  color: #5B7E96;
+  color: #00BED6;
   margin-bottom: 20px;
 }
 .value-block h3 {
@@ -465,12 +475,14 @@
 .team-card-img {
   width: 100%;
   aspect-ratio: 3/4;
-  background: #E3EDF3;
+  background: linear-gradient(135deg, #00609C, #00BED6);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #5B7E96;
-  font-size: 48px;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
 }
 .team-card-body {
   padding: 20px 24px;
@@ -1106,9 +1118,7 @@
     <div class="team-grid">
 
       <div class="team-card">
-        <div class="team-card-img">
-          <i class="fa-solid fa-user"></i>
-        </div>
+        <div class="team-card-img">AY</div>
         <div class="team-card-body">
           <div class="team-card-name">Ali Yilmaz</div>
           <div class="team-card-role">Founder &amp; Chief Wellness Officer</div>
@@ -1116,9 +1126,7 @@
       </div>
 
       <div class="team-card">
-        <div class="team-card-img">
-          <i class="fa-solid fa-user"></i>
-        </div>
+        <div class="team-card-img">AK</div>
         <div class="team-card-body">
           <div class="team-card-name">Dr. Ayse Kaya</div>
           <div class="team-card-role">Medical Director, Internal Medicine</div>
@@ -1126,9 +1134,7 @@
       </div>
 
       <div class="team-card">
-        <div class="team-card-img">
-          <i class="fa-solid fa-user"></i>
-        </div>
+        <div class="team-card-img">MD</div>
         <div class="team-card-body">
           <div class="team-card-name">Dr. Mehmet Demir</div>
           <div class="team-card-role">Head of Nutritional Medicine</div>
@@ -1136,9 +1142,7 @@
       </div>
 
       <div class="team-card">
-        <div class="team-card-img">
-          <i class="fa-solid fa-user"></i>
-        </div>
+        <div class="team-card-img">SY</div>
         <div class="team-card-body">
           <div class="team-card-name">Selin Yildiz</div>
           <div class="team-card-role">Director of Mindfulness &amp; Wellbeing</div>
@@ -1277,9 +1281,9 @@
         </div>
       </div>
 
-      <!-- Col 3: Retreatments -->
+      <!-- Col 3: Treatments -->
       <div>
-        <div class="t-footer-col-heading">Retreatments</div>
+        <div class="t-footer-col-heading">Treatments</div>
         <div class="t-footer-col-links">
           <a href="#">Diabetes Recovery</a>
           <a href="#">Water Fasting</a>

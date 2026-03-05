@@ -777,3 +777,53 @@ h1,h2,h3,h4,h5,h6{font-weight:700;line-height:1.15}
   .btn-lg{padding:14px 28px;font-size:16px}
   .footer-top{grid-template-columns:1fr}
 }
+
+/* ============================================
+   Utility Extensions
+   ============================================ */
+
+/* --- Button System --- */
+.btn-primary{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;background:var(--brand-navy);color:#fff;
+  border-radius:100px;font-size:14px;font-weight:600;
+  transition:all .2s ease;border:none;cursor:pointer;
+}
+.btn-primary:hover{background:#004a7a}
+.btn-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;background:var(--brand-orange);color:#fff;
+  border-radius:100px;font-size:14px;font-weight:600;
+  transition:all .2s ease;border:none;cursor:pointer;
+}
+.btn-cta:hover{background:#E8944A}
+.btn-outline{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:14px 28px;background:transparent;color:var(--text-primary);
+  border:1.5px solid var(--border-dark);border-radius:100px;
+  font-size:14px;font-weight:600;transition:all .2s ease;cursor:pointer;
+}
+.btn-outline:hover{border-color:var(--brand-navy);color:var(--brand-navy)}
+
+/* --- Card Hover --- */
+.card-hover{transition:transform .2s ease,box-shadow .2s ease}
+.card-hover:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,96,156,.08)}
+
+/* --- Image Fallback --- */
+img[src=""]{display:none}
+img:not([src]){display:none}
+
+/* --- Links --- */
+a:hover{color:var(--brand-navy)}
+
+/* --- Form Elements --- */
+input:focus,select:focus,textarea:focus{
+  outline:none;border-color:var(--brand-teal);
+  box-shadow:0 0 0 3px rgba(0,190,214,.12);
+}
+
+/* --- Custom Scrollbar --- */
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.scroll-x::-webkit-scrollbar{height:4px}
+.scroll-x::-webkit-scrollbar-track{background:var(--off-white-3)}
+.scroll-x::-webkit-scrollbar-thumb{background:var(--brand-teal);border-radius:4px}
