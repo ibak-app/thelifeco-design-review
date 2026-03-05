@@ -102,14 +102,12 @@
   background: #000;
 }
 
-/* ---------- HERO (full-width landscape image + text overlay) ---------- */
+/* ---------- HERO (image only, heading below on white bg) ---------- */
 .t-hero {
   position: relative;
   width: 100%;
-  height: 480px;
+  height: 270px;
   overflow: hidden;
-  display: flex;
-  align-items: flex-end;
 }
 .t-hero-img {
   position: absolute;
@@ -117,6 +115,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 30%;
   filter: grayscale(25%);
 }
 .t-hero-overlay {
@@ -125,28 +124,26 @@
   background: linear-gradient(
     180deg,
     rgba(0,0,0,0.15) 0%,
-    rgba(0,0,0,0.45) 60%,
-    rgba(0,0,0,0.65) 100%
+    rgba(0,0,0,0.25) 100%
   );
 }
-.t-hero-content {
-  position: relative;
-  z-index: 1;
-  width: 100%;
+/* Heading section below hero on white bg */
+.t-hero-heading {
+  background: #fff;
+  padding: 48px 80px 40px;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 80px 60px;
 }
-.t-hero-content h1 {
+.t-hero-heading h1 {
   font-family: 'Manrope', sans-serif;
   font-size: 56px;
   font-weight: 400;
-  color: #fff;
+  color: #000;
   line-height: 1.1;
   letter-spacing: -1.5px;
-  max-width: 680px;
+  max-width: 750px;
 }
-.t-hero-content h1 strong {
+.t-hero-heading h1 strong {
   font-weight: 700;
 }
 
@@ -159,7 +156,7 @@
   margin: 0 auto;
   padding: 0 80px;
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 280px 1fr;
   gap: 0;
   align-items: start;
   border-bottom: 1px solid #e7e7e7;
@@ -169,51 +166,56 @@
 .t-sidebar {
   position: sticky;
   top: 0;
-  border-right: 1px solid #e7e7e7;
-  padding: 0 32px 64px 0;
+  padding: 0 40px 64px 0;
   min-height: 100%;
 }
 
-/* Sort row */
+/* Sort row — black bg pill */
 .t-sidebar-sort {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 28px 0 28px;
-  border-bottom: 1px solid #e7e7e7;
+  padding: 20px 24px;
+  background: #000;
+  border-radius: 12px;
   cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 12px;
 }
 .t-sidebar-sort-label {
   font-family: 'Manrope', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  color: #000;
+  color: #fff;
 }
 .t-sidebar-sort i {
-  font-size: 14px;
-  color: #717171;
+  font-size: 16px;
+  color: #fff;
 }
 
-/* Programs accordion */
+/* Programs accordion — black bg pill header */
 .t-sidebar-accordion {
-  border-bottom: 1px solid #e7e7e7;
+  border-bottom: none;
 }
 .t-sidebar-accordion-head {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 0;
+  padding: 20px 24px;
+  background: #000;
+  border-radius: 12px;
   cursor: pointer;
+  margin-bottom: 8px;
 }
 .t-sidebar-accordion-head-label {
   font-family: 'Manrope', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  color: #000;
+  color: #fff;
 }
 .t-sidebar-accordion-head i {
-  font-size: 14px;
-  color: #717171;
+  font-size: 16px;
+  color: #fff;
 }
 .t-sidebar-accordion-body {
   overflow: hidden;
@@ -229,48 +231,51 @@
   display: block;
   width: 100%;
   text-align: left;
-  padding: 10px 0;
+  padding: 10px 24px;
   font-family: 'Manrope', sans-serif;
   font-size: 15px;
   font-weight: 400;
-  color: #717171;
+  color: #000;
   background: none;
   border: none;
+  border-left: 3px solid transparent;
   cursor: pointer;
-  transition: color 0.15s;
+  transition: all 0.15s;
   line-height: 1.4;
 }
-.t-sidebar-prog-item:hover,
-.t-sidebar-prog-item.active {
+.t-sidebar-prog-item:hover {
   color: #000;
-  font-weight: 600;
+  font-weight: 500;
 }
 .t-sidebar-prog-item.active {
   font-weight: 700;
+  border-left-color: #000;
 }
 /* close padding after last item */
 .t-sidebar-accordion-body .t-sidebar-prog-item:last-child {
   padding-bottom: 22px;
 }
 
-/* Conditions row */
+/* Conditions row — black bg pill */
 .t-sidebar-conditions {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 0;
+  padding: 20px 24px;
+  background: #000;
+  border-radius: 12px;
   cursor: pointer;
-  border-bottom: 1px solid #e7e7e7;
+  margin-top: 4px;
 }
 .t-sidebar-conditions-label {
   font-family: 'Manrope', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
-  color: #000;
+  color: #fff;
 }
 .t-sidebar-conditions i {
-  font-size: 14px;
-  color: #717171;
+  font-size: 16px;
+  color: #fff;
 }
 
 /* ---------- TREATMENT GRID ---------- */
@@ -284,25 +289,26 @@
   margin-left: -1px;
 }
 
-/* Individual treatment card */
+/* Individual treatment card — no images, gray bg */
 .t-card {
   border: 1px solid #e7e7e7;
   margin: -1px 0 0 -1px;
-  background: #fff;
+  background: #f5f5f5;
   overflow: hidden;
   cursor: pointer;
   transition: background 0.2s;
   display: flex;
   flex-direction: column;
+  min-height: 200px;
 }
-.t-card:hover { background: #f9f9f9; }
+.t-card:hover { background: #eee; }
 
 .t-card-head {
   position: relative;
-  padding: 20px 20px 16px;
+  padding: 24px 24px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  justify-content: space-between;
   flex: 1;
 }
 .t-card-category {
@@ -310,29 +316,29 @@
   font-size: 11px;
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.6px;
-  color: #717171;
+  letter-spacing: 1.5px;
+  color: #000;
   line-height: 1.35;
-  max-width: calc(100% - 40px);
+  max-width: calc(100% - 56px);
 }
 .t-card-arrow {
   position: absolute;
-  top: 18px;
-  right: 18px;
-  width: 32px;
-  height: 32px;
+  top: 20px;
+  right: 20px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  border: 1px solid #e7e7e7;
-  background: #fff;
+  border: none;
+  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #000;
-  font-size: 12px;
+  color: #fff;
+  font-size: 16px;
   transition: background 0.2s;
   flex-shrink: 0;
 }
-.t-card:hover .t-card-arrow { background: #000; color: #fff; border-color: #000; }
+.t-card:hover .t-card-arrow { background: #333; }
 .t-card-name {
   font-family: 'Manrope', sans-serif;
   font-size: 22px;
@@ -340,27 +346,23 @@
   color: #000;
   line-height: 1.2;
   letter-spacing: -0.3px;
-  padding-bottom: 4px;
+  margin-top: auto;
+  padding-top: 24px;
 }
 .t-card-img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  display: block;
-  background: #e0e0e0;
-  filter: grayscale(10%);
+  display: none;
 }
 
 /* Empty filler card */
 .t-card-empty {
   border: 1px solid #e7e7e7;
   margin: -1px 0 0 -1px;
-  background: #fff;
-  aspect-ratio: 1 / 1.4;
+  background: #f5f5f5;
+  min-height: 200px;
   pointer-events: none;
 }
 
-/* Featured/CTA card inside grid */
+/* Featured/CTA card inside grid — spans 2 columns */
 .t-card-featured {
   border: 1px solid #e7e7e7;
   margin: -1px 0 0 -1px;
@@ -370,19 +372,20 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  grid-column: span 2;
 }
 .t-card-featured-img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 55%;
   object-fit: cover;
   display: block;
   filter: grayscale(20%) brightness(0.7);
 }
 .t-card-featured-body {
-  padding: 24px 24px 28px;
+  padding: 28px 32px 32px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
   flex: 1;
 }
 .t-card-featured-title {
@@ -423,11 +426,11 @@
 .t-cta-card {
   position: relative;
   overflow: hidden;
-  min-height: 260px;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 40px 48px;
+  padding: 32px 40px;
   color: #fff;
   border-right: 1px solid rgba(255,255,255,0.15);
 }
@@ -488,12 +491,12 @@
 .t-faq-section {
   background: #fff;
   border-top: 1px solid #e7e7e7;
-  padding: 0 0 80px;
+  padding: 0 0 56px;
 }
 .t-faq-inner {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 64px 80px 0;
+  padding: 48px 80px 0;
   display: grid;
   grid-template-columns: 1fr 400px;
   gap: 80px;
@@ -608,7 +611,7 @@
 .t-footer {
   background: #fff;
   border-top: 1px solid #e7e7e7;
-  padding: 64px 0 0;
+  padding: 48px 0 0;
 }
 .t-footer-inner {
   max-width: 1440px;
@@ -848,10 +851,11 @@
     alt="Treatments hero — serene wellness landscape"
   >
   <div class="t-hero-overlay"></div>
-  <div class="t-hero-content">
-    <h1>Find The Best <strong>Treatment Program</strong> For You</h1>
-  </div>
 </section>
+
+<div class="t-hero-heading">
+  <h1>Find The Best <strong>Treatment Program</strong> For You</h1>
+</div>
 
 <!-- ===========================
      SIDEBAR + GRID
@@ -1128,10 +1132,10 @@
       <div class="t-cta-card-overlay"></div>
       <div class="t-cta-card-content">
         <div class="t-cta-card-title">Let's discover which treatments suit you best.</div>
-        <a href="#" style="display:inline-flex;align-items:center;gap:8px;padding:12px 24px;background:#fff;color:#000;border-radius:100px;font-family:'Manrope',sans-serif;font-size:14px;font-weight:700;width:fit-content;text-decoration:none;">
-          Talk to an expert
-          <i class="fa-solid fa-arrow-right" style="font-size:12px;"></i>
-        </a>
+        <div style="display:flex;align-items:center;gap:12px;margin-top:4px;">
+          <span style="font-family:'Manrope',sans-serif;font-size:15px;font-weight:500;color:#fff;">Talk to an expert</span>
+          <div class="t-cta-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
+        </div>
       </div>
     </div>
 
@@ -1144,7 +1148,7 @@
       <div class="t-cta-card-content">
         <div class="t-cta-card-title">Explore this month's events.</div>
         <div class="t-cta-card-sub">See the latest news and special activities</div>
-        <div class="t-cta-card-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        <div class="t-cta-card-arrow"><i class="fa-solid fa-arrow-up-right"></i></div>
       </div>
     </div>
 
