@@ -2,3 +2,6 @@
 .claude/
 node_modules/
 .env
+.env.*
+.env*.local
+run-schema.mjs
